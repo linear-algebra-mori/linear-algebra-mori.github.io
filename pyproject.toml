@@ -1,0 +1,9 @@
+[project]
+name = "linearalgebra-pretext"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pretext[all]>=2.38.1",
+]
