@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-vector" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>数ベクトル</title>
+
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-section-name.ptx" />
+  <section xml:id="sec-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形代数とは</title>
+    <p>線形代数とはどのような学問なのだろうか？
+    端的に答えるならば「線形空間(<m>=</m>ベクトル空間)と線形写像の性質を明らかにする学問」ということになるだろう。
+    しかし、これでは初学者には意味が分からない。
+    これを乱暴に言い換えると「数ベクトルと行列の性質を明らかにする学問」ということになる。
+    つまり主役となるのは数ベクトルと行列である。
+    それ故、世界中の線形代数の授業は数ベクトルと行列の性質を延々と議論していく。
+    しかし、私は大学1年の時にいったい何のために行列を考えているのか、まったく分からなかった(そのためやる気がでなかった)。
+    真の主役である線形空間と線形写像が数ベクトルと行列に対応していることを説明してくれれば、行列積の不思議な定義の必然性も理解できて
+    行列が重要な概念であることが確信できたと思う。</p>
+
+    <p>この授業では数ベクトルと行列が一般的な線形空間と線形写像に対応していることも伝えていきたいと考えている。
+    まずは数ベクトルと行列をしっかり理解するところから始めよう。</p>
+  </section>
+
+  <section xml:id="sec-vector" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>数ベクトル</title>
+    <p>実数の集合を <m>\mathbb{R}</m>、複素数の集合を <m>\mathbb{C}</m> と書く。
+    <term>数ベクトル</term>は単純に数(通常は実数か複素数)を並べたもので、以下のように表される。</p>
+    <md>
+    \begin{bmatrix}
+    1\\
+    3\\
+    -2\\
+    8.3\\
+    -7
+    \end{bmatrix}
+    </md>
+    <p>
+    数ベクトルに含まれる数のことを<term>成分</term>という。
+    数ベクトルの成分の個数を数ベクトルの<term>次元</term>という。
+    成分がすべて実数の数ベクトルを<term>実数ベクトル</term>、複素数の数ベクトルを<term>複素数ベクトル</term>という(実数ベクトルを複素数ベクトルとみなしても問題はない)。
+    次元 <m>n</m> の実数ベクトルの集合を <m>\mathbb{R}^n</m>、次元 <m>n</m> の複素数ベクトルの集合を <m>\mathbb{C}^n</m> と書く。
+    以下、便宜上実数ベクトルを対象にして説明するが、複素数ベクトルの場合も同様に様々な記号、用語、演算などが定義される。
+    数ベクトルに記号を与えるときは <m>\boldsymbol{v}\in\mathbb{R}^n</m> のように太字で表すことにする(<m>\vec{v}\in\mathbb{R}^n</m> と表す流儀もあるし、単に <m>v\in\mathbb{R}^n</m> と表す流儀もある)。
+    各 <m>i\in\{1,2,\dotsc,n\}</m> について、数ベクトル <m>\bm{v}</m> の上から <m>i</m> 番目の成分を <m>\bm{v}</m> の<term>第 <m>i</m> 成分</term>という。
+    数ベクトル <m>\bm{v}\in\mathbb{R}^n</m> の第 <m>i</m> 成分が <m>v_i</m> のとき <m>\bm{v}=[v_i]_{1\le i\le n}</m> や <m>\bm{v}=[v_i]_i</m> と表す。
+    実数ベクトル <m>\mathbb{R}^n</m> を考えるとき、<m>\mathbb{R}</m> の要素のことを<term>スカラー</term>という。
+    </p>
+  </section>
+  <section xml:id="sec-vector-op" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>数ベクトルの和とスカラー倍</title>
+    <subsection xml:id="subsec-vector-op" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>数ベクトルの和とスカラー倍の定義</title>
+      <p>数ベクトルには和(足し算)とスカラー倍という2つの演算が定義される。</p>
+      <definition>
+        <title>数ベクトルの和</title>
+      <statement>
+         <p><m>n</m> 次元実ベクトル
+      <md>
+      <mrow>
+      \bm{v} \amp= [v_i]_i =
+      \begin{bmatrix}
+      v_1\\
+      v_2\\
+      \vdots\\
+      v_n
+      \end{bmatrix}\in\mathbb{R}^n,\amp
+      \bm{w} \amp= [w_i]_i =
+      \begin{bmatrix}
+      w_1\\
+      w_2\\
+      \vdots\\
+      w_n
+      \end{bmatrix}\in\mathbb{R}^n
+      </mrow>
+      </md>
+      について、<m>\bm{v}+\bm{w}\in\mathbb{R}^n</m> を
+      <md>
+      \bm{v} + \bm{w} \coloneqq [v_i+w_i]_i =
+      \begin{bmatrix}
+      v_1+w_1\\
+      v_2+w_2\\
+      \vdots\\
+      v_n+w_n
+      \end{bmatrix}
+      </md>
+      と定義する。
+      次元が異なる数ベクトル同士の和は定義されない。</p>
+      </statement>
+      </definition>
+      
+      <definition>
+        <title>数ベクトルのスカラー倍</title>
+        <statement>
+          <p><m>n</m> 次元数ベクトル
+          <md>
+          \bm{v} = [v_i]_i =
+          \begin{bmatrix}
+          v_1\\
+          v_2\\
+          \vdots\\
+          v_n
+          \end{bmatrix}\in\mathbb{R}^n
+          </md>
+         とスカラー <m>c\in\mathbb{R}</m> について、<m>c\bm{v}</m> を
+      <md>
+      c\bm{v}\coloneqq [cv_i]_i =
+      \begin{bmatrix}
+      cv_1\\
+      cv_2\\
+      \vdots\\
+      cv_n
+      \end{bmatrix}
+      </md>
+      と定義する。</p>
+        </statement>
+      </definition>
+      <p>また、<m>-\bm{v}:=(-1)\bm{v}</m> と定義する。つまり
+      <md>
+      -\bm{v}\coloneqq [-v_i]_i =
+      \begin{bmatrix}
+      -v_1\\
+      -v_2\\
+      \vdots\\
+      -v_n
+      \end{bmatrix}
+      </md>
+      である。
+      数ベクトル <m>\bm{v},\,\bm{w}\in\mathbb{R}^n</m> に対して差(引き算)を <m>\bm{v}-\bm{w}:=\bm{v}+(-\bm{w})</m> と定義する。つまり
+      <md>
+      \bm{v} - \bm{w} = [v_i-w_i]_i =
+      \begin{bmatrix}
+      v_1-w_1\\
+      v_2-w_2\\
+      \vdots\\
+      v_n-w_n
+      \end{bmatrix}
+      </md>
+      である。
+      </p>
+      
+      <p>
+      零ベクトル <m>\bm{0}\in\mathbb{R}^n</m> は成分がすべて0である数ベクトルである。
+      単に <m>\bm{0}</m> と書くと次元が分からないので、<m>\bm{0}_n</m> と書く方が間違いがないが、大抵の場合は次元は文脈上明らかなので単に <m>\bm{0}</m> と表す。
+      </p>
+    </subsection>
+    <subsection xml:id="subsec-vector-prop" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>数ベクトルの演算の性質</title>
+    <p>数ベクトルの和について以下の性質が成り立つことは簡単に確認できる。</p>
+
+    <p>任意の自然数 <m>n\in\mathbb{N}</m> と <m>\bm{x},\,\bm{y},\,\bm{z}\in\mathbb{R}^n</m> について</p>
+      <ul>
+        <li> [結合法則]  <m>(\bm{x}+\bm{y})+\bm{z} = \bm{x}+(\bm{y}+\bm{z})</m></li>
+        <li> [交換法則]  <m>\bm{x}+\bm{y} = \bm{y}+\bm{x}</m></li>
+        <li> [単位元の存在]  <m>\bm{0}+\bm{x} = \bm{x}+\bm{0} = \bm{x}</m></li>
+        <li> [逆元の存在]  <m>\bm{x}+(-\bm{x}) = \bm{0}</m></li>
+      </ul>
+
+      <p>同様にスカラー倍について以下の性質が成り立つことは簡単に確認できる。
+      任意の自然数 <m>n\in\mathbb{N}</m> と <m>\bm{x}\in\mathbb{R}^n</m> と <m>a,\,b\in\mathbb{R}</m> について</p>
+      <ul>
+        <li> [結合法則]  <m>(ab)\bm{x} = a(b\bm{x})</m></li>
+        <li> [単位元]  <m>1\bm{x} = \bm{x}</m></li>
+      </ul>
+
+      <p>さらに、数ベクトルの和とスカラー倍について以下の性質が成り立つことは簡単に確認できる。
+      任意の自然数 <m>n\in\mathbb{N}</m> と <m>\bm{x},\,\bm{y}\in\mathbb{R}^n</m> と <m>a,\,b\in\mathbb{R}</m> について</p>
+      <ul>
+        <li> [分配法則]  <m>(a+b)\bm{x} = a\bm{x} + b\bm{x}</m></li>
+        <li> [分配法則]  <m>a(\bm{x}+\bm{y}) = a\bm{x} + a\bm{y}</m></li>
+      </ul>
+
+
+    </subsection>
+  </section>
+  <section xml:id="sec-vector-intuition" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>数ベクトルのイメージ</title>
+    <p>数ベクトルをイメージするためには、<m>\mathbb{R}^2</m> や <m>\mathbb{R}^3</m> を考えると都合がよい。
+    2次元の数ベクトル <m>\begin{bmatrix}x\\y\end{bmatrix}\in\mathbb{R}^2</m> は二次元平面の座標 <m>(x,y)</m> に対応していると考えることができるが、
+    そうではなくて原点 <m>(0,0)</m> から <m>(x,y)</m> への矢印だと考えるとよい。</p>
+    
+    <p>例えば、<m>\bm{v}=\begin{bmatrix}1\\2\end{bmatrix}</m>  と <m>\bm{w}=\begin{bmatrix}-3\\1\end{bmatrix}</m>  は下の図のようにイメージするとよい。</p>
+    
+    <image width="30%">
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[step=.5cm,black!70] (-2,-2) grid (2,2);
+    \draw[very thick,->] (-2,0) -- (2,0);
+    \draw[very thick,->] (0,-2) -- (0,2);
+    \draw[very thick,->] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
+    \draw[very thick,->] (0,0) -- (-1.5,0.5) node[anchor=south] {$\bm{w}$};
+    \end{tikzpicture}
+    </latex-image>
+    </image>
+    
+    <p>そうすると数ベクトルの和<m>\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}-3\\1\end{bmatrix}=\begin{bmatrix}-2\\3\end{bmatrix}</m> は
+    
+    <image width="30%">
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[step=.5cm,black!70] (-2,-2) grid (2,2);
+    \draw[very thick,->] (-2,0) -- (2,0);
+    \draw[very thick,->] (0,-2) -- (0,2);
+    \draw[very thick,dashed,->] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
+    \draw[very thick,dashed,->] (0.5,1) -- (-1.0,1.5);
+    \draw[very thick,->] (0,0) -- (-1.0,1.5) node[anchor=south] {$\bm{v}+\bm{w}$};
+    \end{tikzpicture}
+    </latex-image>
+    </image>
+    
+    のように二つの矢印を繋げることで理解できる。
+    このように数ベクトルの和を考えるには座標ではなく矢印で理解する方が都合がよい。</p>
+    
+    
+    <p>また、スカラー倍については、ベクトルの「方向」を変えずに「長さ」を変化させる演算になる。</p>
+    
+    <image width="30%">
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[step=.5cm,black!70] (-2,-2) grid (2,2);
+    \draw[very thick,->] (-2,0) -- (2,0);
+    \draw[very thick,->] (0,-2) -- (0,2);
+    \draw[very thick,->] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
+    \draw[very thick,->] (0,0) -- (1,2) node[anchor=west] {$2\bm{v}$};
+    \draw[very thick,->] (0,0) -- (0.25,0.5) node[anchor=west] {$0.5\bm{v}$};
+    \draw[very thick,->] (0,0) -- (-0.5,-1) node[anchor=east] {$-\bm{v}$};
+    \end{tikzpicture}
+    </latex-image>
+    </image>
+    
+    <p>次元が4以上の場合や複素数ベクトルを考える場合はこのように理解することは厳密にはできないが、その場合でもこのようなイメージを持つことは理解の助けになる。</p>
+  </section>
+    
+
+
+
+</chapter>
