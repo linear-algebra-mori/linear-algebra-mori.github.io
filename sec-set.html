@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>正しく始める線形代数</title>
+<title>集合</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><span class="up-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></span><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-matrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-map.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -166,12 +166,12 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトルのイメージ</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">集合と要素</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set-rel" class="internal"><span class="codenumber">2.1.2</span> <span class="title">集合の関係</span></a></div></li>
 </ul>
@@ -188,14 +188,76 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="book" id="my-great-book"><nav class="summary-links"><ul>
-<li><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></li>
-<li><a href="ch-vector.html" class="internal"><span class="codenumber">1</span> <span class="title">数ベクトル</span></a></li>
-<li><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></li>
-<li><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></li>
-</ul></nav><div class="autopermalink" data-description="Book: 正しく始める線形代数"><a href="#my-great-book" title="Copy heading and permalink for Book: 正しく始める線形代数" aria-label="Copy heading and permalink for Book: 正しく始める線形代数">🔗</a></div></section></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-set">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">集合</span>
+</h2>
+<section class="subsection" id="subsec-set">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">集合と要素</span>
+</h3>
+<div class="para logical" id="subsec-set-2">
+<div class="para">
+<dfn class="terminology">集合</dfn>は対象の集まりである。例えば</div>
+<div class="displaymath process-math" id="subsec-set-2-2">
+\begin{align*}
+A\amp=\{1,2,3\},\amp B\amp=\{赤,青,黄,緑\}
+\end{align*}
+</div>
+<div class="para">のように表す。 集合を構成するものを<dfn class="terminology">要素</dfn>もしくは<dfn class="terminology">元</dfn>という。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-set-3">
+<div class="para">集合と要素の関係を</div>
+<ul class="disc" id="subsec-set-3-1">
+<li id="subsec-set-3-1-1">
+<div class="para" id="p-derived-subsec-set-3-1-1">
+<span class="process-math">\(x\in A\defiff\)</span> 要素 <span class="process-math">\(x\)</span> は集合 <span class="process-math">\(A\)</span> に含まれる</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-set-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-set-3-1-2">
+<div class="para" id="p-derived-subsec-set-3-1-2">
+<span class="process-math">\(x\notin A\defiff\)</span> 要素 <span class="process-math">\(x\)</span> は集合 <span class="process-math">\(A\)</span> に含まれない</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-set-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">と表す。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-set-4">
+<div class="para">
+<span class="process-math">\(|A|\)</span> で集合 <span class="process-math">\(A\)</span> の要素数を表すことにする。 要素数が無限の集合を考えることもできる。 例えば</div>
+<div class="displaymath process-math" id="subsec-set-4-3">
+\begin{align*}
+A\amp=\{n\in\mathbb{N}\mid \text{$n$ は偶数}\},\amp B\amp=\{x\in\mathbb{R}\mid \text{$x$ は無理数} \}
+\end{align*}
+</div>
+<div class="para">という集合は無限集合の例となる。 何も要素を持たない集合(要素数が零の集合)を<dfn class="terminology">空集合</dfn>といい <span class="process-math">\(\varnothing\)</span> で表す。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.1.1: 集合と要素"><a href="#subsec-set" title="Copy heading and permalink for Subsection 2.1.1: 集合と要素" aria-label="Copy heading and permalink for Subsection 2.1.1: 集合と要素">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-set-rel">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">集合の関係</span>
+</h3>
+<div class="para" id="subsec-set-rel-2">集合 <span class="process-math">\(A\)</span> の要素がすべて集合 <span class="process-math">\(B\)</span> に含まれるとき、<span class="process-math">\(A\)</span> を <span class="process-math">\(B\)</span> の<dfn class="terminology">部分集合</dfn>という。 部分集合に関連する集合関係について記号を以下のように定義する。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-rel-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-set-rel-3">
+\begin{align*}
+A\subseteq B \amp\defiff \forall x\,(x\in A\implies x \in B)\amp\text{($A$ は $B$ の部分集合)}\\
+A\supseteq B \amp\defiff B\subseteq A\amp\text{($A$ は $B$ の上位集合)}\\
+A = B \amp\defiff (A\subseteq B\land A\supseteq B)\amp \text{($A$ と $B$ は等しい)}\\
+A \ne B \amp\defiff \lnot(A = B)\amp \text{($A$ と $B$ は等しくない)}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Subsection 2.1.2: 集合の関係"><a href="#subsec-set-rel" title="Copy heading and permalink for Subsection 2.1.2: 集合の関係" aria-label="Copy heading and permalink for Subsection 2.1.2: 集合の関係">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 2.1: 集合"><a href="#sec-set" title="Copy heading and permalink for Section 2.1: 集合" aria-label="Copy heading and permalink for Section 2.1: 集合">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-matrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-map.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

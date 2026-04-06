@@ -77,7 +77,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="線形代数入門">
+<meta property="book:title" content="正しく始める線形代数">
 <meta property="book:author" content="森 立平">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -115,7 +115,7 @@ eBookConfig.enable_chatcodes =  false;
 </head>
 <body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">線形代数入門</span> <span class="subtitle">すべての数理の入口</span></a></h1>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">正しく始める線形代数</span> <span class="subtitle">すべての数理の入口</span></a></h1>
 <p class="byline">森 立平</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -129,13 +129,14 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="front-colophon.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-name.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="front-colophon.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-vector.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
 \newcommand{\bm}[1]{\boldsymbol{#1}}
 \newcommand{\coloneqq}{:=}
+\newcommand{\defiff}{\overset{\text{def}}{\iff}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -144,21 +145,45 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">線形代数とは</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-vector.html" class="internal"><span class="codenumber">1</span> <span class="title">数ベクトル</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Section Title</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro.html" class="internal"><span class="codenumber">1.2</span> <span class="title">線形代数とは</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトル</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector.html" class="internal"><span class="codenumber">1.1</span> <span class="title">数ベクトル</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-vector-op.html" class="internal"><span class="codenumber">1.4</span> <span class="title">数ベクトルの和とスカラー倍</span></a></div>
+<div class="toc-title-box"><a href="sec-vector-op.html" class="internal"><span class="codenumber">1.2</span> <span class="title">数ベクトルの和とスカラー倍</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-op.html#subsec-vector-op" class="internal"><span class="codenumber">1.4.1</span> <span class="title">数ベクトルの和とスカラー倍の定義</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-op.html#subsec-vector-prop" class="internal"><span class="codenumber">1.4.2</span> <span class="title">数ベクトルの演算の性質</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-op.html#subsec-vector-op" class="internal"><span class="codenumber">1.2.1</span> <span class="title">数ベクトルの和とスカラー倍の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-op.html#subsec-vector-prop" class="internal"><span class="codenumber">1.2.2</span> <span class="title">数ベクトルの演算の性質</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.5</span> <span class="title">数ベクトルのイメージ</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトルのイメージ</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">集合と要素</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set-rel" class="internal"><span class="codenumber">2.1.2</span> <span class="title">集合の関係</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-map.html" class="internal"><span class="codenumber">2.2</span> <span class="title">写像</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix.html" class="internal"><span class="codenumber">2.3</span> <span class="title">行列</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix-map.html" class="internal"><span class="codenumber">2.4</span> <span class="title">写像としての行列</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix-linmap.html" class="internal"><span class="codenumber">2.5</span> <span class="title">線形写像は行列</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.6</span> <span class="title">行列の例</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-zero-matrix" class="internal"><span class="codenumber">2.6.1</span> <span class="title">零行列</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -170,14 +195,12 @@ eBookConfig.enable_chatcodes =  false;
 <section class="introduction" id="ch-vector-2">
 <div class="para" id="ch-vector-2-1">Text before the first section.<div class="autopermalink" data-description="Paragraph"><a href="#ch-vector-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><nav class="summary-links"><ul>
-<li><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Section Title</span></a></li>
-<li><a href="sec-intro.html" class="internal"><span class="codenumber">1.2</span> <span class="title">線形代数とは</span></a></li>
-<li><a href="sec-vector.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトル</span></a></li>
-<li><a href="sec-vector-op.html" class="internal"><span class="codenumber">1.4</span> <span class="title">数ベクトルの和とスカラー倍</span></a></li>
-<li><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.5</span> <span class="title">数ベクトルのイメージ</span></a></li>
+<li><a href="sec-vector.html" class="internal"><span class="codenumber">1.1</span> <span class="title">数ベクトル</span></a></li>
+<li><a href="sec-vector-op.html" class="internal"><span class="codenumber">1.2</span> <span class="title">数ベクトルの和とスカラー倍</span></a></li>
+<li><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトルのイメージ</span></a></li>
 </ul></nav><div class="autopermalink" data-description="Chapter 1: 数ベクトル"><a href="#ch-vector" title="Copy heading and permalink for Chapter 1: 数ベクトル" aria-label="Copy heading and permalink for Chapter 1: 数ベクトル">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="front-colophon.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-name.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="front-colophon.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-vector.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
