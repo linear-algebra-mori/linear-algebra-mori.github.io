@@ -188,31 +188,31 @@
     <latex-image>
     \begin{tikzpicture}
     \draw[step=.5cm,black!70] (-2,-2) grid (2,2);
-    \draw[very thick,->] (-2,0) -- (2,0);
-    \draw[very thick,->] (0,-2) -- (0,2);
-    \draw[very thick,->] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
-    \draw[very thick,->] (0,0) -- (-1.5,0.5) node[anchor=south] {$\bm{w}$};
+    \draw[very thick,-Stealth] (-2,0) -- (2,0);
+    \draw[very thick,-Stealth] (0,-2) -- (0,2);
+    \draw[very thick,-Stealth] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
+    \draw[very thick,-Stealth] (0,0) -- (-1.5,0.5) node[anchor=south] {$\bm{w}$};
     \end{tikzpicture}
     </latex-image>
     </image>
     
-    <p>そうすると数ベクトルの和<m>\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}-3\\1\end{bmatrix}=\begin{bmatrix}-2\\3\end{bmatrix}</m> は
+    <p>そうすると数ベクトルの和 <m>\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}-3\\1\end{bmatrix}=\begin{bmatrix}-2\\3\end{bmatrix}</m> は</p>
     
     <image width="30%">
     <latex-image>
     \begin{tikzpicture}
     \draw[step=.5cm,black!70] (-2,-2) grid (2,2);
-    \draw[very thick,->] (-2,0) -- (2,0);
-    \draw[very thick,->] (0,-2) -- (0,2);
-    \draw[very thick,dashed,->] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
-    \draw[very thick,dashed,->] (0.5,1) -- (-1.0,1.5);
-    \draw[very thick,->] (0,0) -- (-1.0,1.5) node[anchor=south] {$\bm{v}+\bm{w}$};
+    \draw[very thick,-Stealth] (-2,0) -- (2,0);
+    \draw[very thick,-Stealth] (0,-2) -- (0,2);
+    \draw[very thick,dashed,-Stealth] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
+    \draw[very thick,dashed,-Stealth] (0.5,1) -- (-1.0,1.5);
+    \draw[very thick,-Stealth] (0,0) -- (-1.0,1.5) node[anchor=south] {$\bm{v}+\bm{w}$};
     \end{tikzpicture}
     </latex-image>
     </image>
     
-    のように二つの矢印を繋げることで理解できる。
-    このように数ベクトルの和を考えるには座標ではなく矢印で理解する方が都合がよい。</p>
+    <p>のように二つの矢印を繋げることで理解できる。
+    このように数ベクトルの和を考えるには<em>座標ではなく矢印で理解する方が都合がよい</em>。</p>
     
     
     <p>また、スカラー倍については、ベクトルの「方向」を変えずに「長さ」を変化させる演算になる。</p>
@@ -221,12 +221,12 @@
     <latex-image>
     \begin{tikzpicture}
     \draw[step=.5cm,black!70] (-2,-2) grid (2,2);
-    \draw[very thick,->] (-2,0) -- (2,0);
-    \draw[very thick,->] (0,-2) -- (0,2);
-    \draw[very thick,->] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
-    \draw[very thick,->] (0,0) -- (1,2) node[anchor=west] {$2\bm{v}$};
-    \draw[very thick,->] (0,0) -- (0.25,0.5) node[anchor=west] {$0.5\bm{v}$};
-    \draw[very thick,->] (0,0) -- (-0.5,-1) node[anchor=east] {$-\bm{v}$};
+    \draw[very thick,-Stealth] (-2,0) -- (2,0);
+    \draw[very thick,-Stealth] (0,-2) -- (0,2);
+    \draw[very thick,-Stealth] (0,0) -- (0.5,1) node[anchor=west] {$\bm{v}$};
+    \draw[very thick,-Stealth] (0,0) -- (1,2) node[anchor=west] {$2\bm{v}$};
+    \draw[very thick,-Stealth] (0,0) -- (0.25,0.5) node[anchor=west] {$0.5\bm{v}$};
+    \draw[very thick,-Stealth] (0,0) -- (-0.5,-1) node[anchor=east] {$-\bm{v}$};
     \end{tikzpicture}
     </latex-image>
     </image>
