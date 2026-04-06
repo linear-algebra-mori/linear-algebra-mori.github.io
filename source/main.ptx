@@ -5,7 +5,7 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>線形代数入門</title>
+    <title>正しく始める線形代数</title>
     <subtitle>すべての数理の入口</subtitle>
 
     <!-- Include frontmatter -->
@@ -13,6 +13,7 @@
 
     <!-- Include chapters -->
     <xi:include href="./ch-num-vectors.ptx" />
+    <xi:include href="./ch-matrix.ptx" />
 
 
     <!-- Include backmatter -->

@@ -26,6 +26,7 @@
      \newcommand{\R}{\mathbb R}
      \newcommand{\bm}[1]{\boldsymbol{#1}}
      \newcommand{\coloneqq}{:=}
+     \newcommand{\defiff}{\overset{\text{def}}{\iff}}
    </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
