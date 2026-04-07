@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>線形空間、部分空間</title>
+  <section xml:id="sec-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形空間</title>
+	<definition>
+      <title>線形空間と部分空間</title>
+	  <statement>
+	    <p><m>V\subseteq\mathbb{R}^n</m> が以下の条件を満すとき、<m>V</m> を <term>線形空間</term>であるという。
+		<ul>
+		  <li><m>c\bm{v}\in V\qquad \forall c\in\mathbb{R},\bm{v}\in V</m>.</li>
+		  <li><m>\bm{v}+\bm{w}\in V\qquad\forall\bm{v},\bm{w}\in V</m>.</li>
+		</ul></p>
+        <p>線形空間 <m>V, W\subseteq\mathbb{R}^n</m> が <m>W\subseteq V</m> を満すとき <m>W</m> は <m>V</m> の<term>部分空間</term>であるという。</p>
+	  </statement>
+	</definition>
+	<example>
+      <title>線形空間と部分空間の例</title>
+	  <ul>
+        <li><m>V=\mathbb{R}^n</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
+        <li><m>V=\{\bm{0}_n\}</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
+        <li>任意の <m>\bm{v}\in\mathbb{R}^n</m> について <m>V=\{c\bm{v}\mid c\in\mathbb{R}\}</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
+        <li>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について <m>V=\{c_1\bm{v}+\dotsb+c_k\bm{v}_k\mid c_1,\dotsc,c_k\in\mathbb{R}\}</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
+	  </ul>
+	</example>
+	<definition>
+      <title>スパン</title>
+	  <statement>
+	    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
+	    <md>
+		  \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\coloneqq\left\{\sum_{i=1}^k a_i\bm{v}_i\mid a_1,\dotsc, a_k\in\mathbb{R}\right\}
+	    </md>
+		と定義する。</p>
+	  </statement>
+	</definition>
+  </section>
+</chapter>

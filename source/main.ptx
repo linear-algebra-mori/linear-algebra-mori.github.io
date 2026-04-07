@@ -15,6 +15,7 @@
     <xi:include href="./ch-num-vectors.ptx" />
     <xi:include href="./ch-matrix.ptx" />
     <xi:include href="./ch-matrix-apps.ptx" />
+    <xi:include href="./ch-subspace.ptx" />
 
 
     <!-- Include backmatter -->
