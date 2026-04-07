@@ -91,6 +91,22 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       <title>写像、象、逆像</title>
       <p>集合 <m>A,\,B</m> について、写像 <m>f\colon A\to B</m> は <m>A</m> の各要素 <m>a\in A</m> について、<m>f(a)\in B</m> を対応させるものである。
       写像 <m>f\colon A\to B</m> について、集合 <m>A</m> を <m>f</m> の<term>定義域</term>、<m>B</m> を <m>f</m> の<term>値域</term>という。</p>
+      <p>具体的に写像 <m>f</m> を定義するために
+      <md>
+      <mrow>f\colon A\amp\to B</mrow>
+      <mrow>a\amp\mapsto f(a)</mrow>
+      </md>
+      と表すことにする。
+      </p>
+      <example>
+      <title>写像の定義の例</title>
+      <p>実数を3倍する写像は以下で表すことができる。
+      <md>
+      <mrow>f\colon \mathbb{R}\amp\to \mathbb{R}</mrow>
+      <mrow>x\amp\mapsto 3x</mrow>
+      </md>
+      </p>
+      </example>
       
       <p>また、<m>S\subseteq A</m>について、
       <md>
@@ -181,7 +197,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     \vdots\\
     v_m
     \end{bmatrix}
-    =
+    \coloneqq
     \begin{bmatrix}
     a_{1,1}v_1+a_{1,2}v_2+\dotsb+a_{1,m}v_m\\
     a_{2,1}v_1+a_{2,2}v_2+\dotsb+a_{2,m}v_m\\
@@ -189,8 +205,18 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     a_{n,1}v_1+a_{n,2}v_2+\dotsb+a_{n,m}v_m\\
     \end{bmatrix}.
       </md>
+      <p>言い換えると、
+      <md>
+        A\bm{v} = [A_{i,1}v_1 + \dotsb + A_{i,m}v_m]_i
+      </md>
+      である。</p>
     </statement></definition>
-    <p>このようにして <m>n\times m</m> 行列は <m>\mathbb{R}^m\to\mathbb{R}^n</m> という写像だと理解できる。</p>
+    <p>このようにして <m>n\times m</m> 行列 <m>A\in\mathbb{R}^{n\times m}</m> は
+    <md>
+    <mrow>f_A\colon \mathbb{R}^m\amp\to\mathbb{R}^n</mrow>
+    <mrow>\bm{v}\amp\mapsto A\bm{v}</mrow>
+    </md>
+    という写像を定義する。</p>
     </subsection>
     <subsection xml:id="subsec-matrix-lin" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列が表す写像の線形性</title>
@@ -205,7 +231,33 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
           を満たすとき<term>線形写像</term>という。</p>
         </statement>
       </definition>
-      <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、写像 <m>f(\bm{v}) \coloneqq A\bm{v}</m> が線形写像であることは <xref ref="def-mat-vec" /> から簡単に確認できる。</p>
+      <proposition>
+        <statement>
+      <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、写像
+       <md>
+         <mrow>\mathbb{R}^m\amp\to\mathbb{R}^n</mrow>
+         <mrow>\bm{v}\amp\mapsto A\bm{v}</mrow>
+       </md>
+       は線形写像である。</p>
+        </statement>
+        <proof>
+        <p>任意の <m>c\in\mathbb{R}</m> と <m>\bm{v}\in\mathbb{R}^m</m> について
+          <md>
+          <mrow> A(c\bm{v})\amp= A[cv_i]_i</mrow>
+          <mrow> \amp= [a_{i,1}(cv_1) + \dotsb + a_{i,m}(cv_m)]_i</mrow>
+          <mrow> \amp= [c(a_{i,1}v_1 + \dotsb + a_{i,m}v_m)]_i</mrow>
+          <mrow> \amp= c[a_{i,1}v_1 + \dotsb + a_{i,m}v_m]_i</mrow>
+          <mrow> \amp= cA\bm{v}.</mrow>
+          </md></p>
+        <p>任意の <m>\bm{v},\bm{w}\in\mathbb{R}^m</m> について
+          <md>
+          <mrow> A(\bm{v}+\bm{w})\amp= A[v_i+w_i]_i</mrow>
+          <mrow> \amp= [a_{i,1}(v_1+w_1)+\dotsb+a_{i,m}(v_m+w_m)]_i</mrow>
+          <mrow> \amp= [a_{i,1}v_1+\dotsb+a_{i,m}v_m]_i + [a_{i,1}w_1+\dotsb+a_{i,m}w_m]_i</mrow>
+          <mrow> \amp= A\bm{v}+A\bm{w}.</mrow>
+          </md></p>
+        </proof>
+      </proposition>
       <proposition>
         <title>線形性の条件</title>
         <statement>
@@ -257,7 +309,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
         </proof>
       </proposition>
     
-      <p>この線形性こそが、行列の本質である(次の章で意味が分かる)。</p>
+      <p>この線形性こそが行列の本質であり、線型写像は行列と同一視できることを次の章で示す。</p>
     </subsection>
   </section>
   <section xml:id="sec-matrix-linmap" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -654,7 +706,7 @@ R(\theta)\coloneqq
         <proof>
           <p><xref ref="prop-matrix-e" /> より、
           <md>
-            B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}
+            B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}.
           </md></p>
           <p>よって <xref ref="fact-mat" /> より、
           <md>
@@ -669,14 +721,14 @@ R(\theta)\coloneqq
             (AB)\bm{e}_i = A(B\bm{e}_i)
           </md>
           が成り立つ。</p>
-          <p>ここで二つの写像
+          <p>ここで二つの <m>\mathbb{R}^m</m> から <m>\mathbb{R}^n</m> への写像
             <md>
               <mrow>\bm{v}\longmapsto (AB)\bm{v}</mrow>
               <mrow>\bm{v}\longmapsto A(B\bm{v})</mrow>
             </md>
-          は線型写像である(一つ目は行列を掛ける写像なので線型写像、二つ目は線型写像の合成なので線型写像)。
+          は線型写像である(一つ目は行列を掛ける写像なので線型写像、二つ目は線型写像の合成なので <xref ref="prop-linear-comp" /> より線型写像)。
           よって標準ベクトルの行き先のみによって写像は定まる。
-          標準ベクトルの行き先が等しいので、<m>(AB)\bm{v}=A(B\bm{v})</m> である。</p>
+          この二つの線形写像は標準ベクトルの行き先が等しいので、<m>(AB)\bm{v}=A(B\bm{v})</m> である。</p>
         </proof>
       </theorem>
     </subsection>

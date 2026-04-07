@@ -140,4 +140,50 @@ I,\amp \text{if }n=0\\
 よって <m>F_{17}=1597</m> と分かる。</p>
 
     </section>
+    <section xml:id="sec-markov" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title><m>N</m> 日後の天気</title>
+	  <p>天気が晴れ、雨、曇りの三種類であるとし、ある日の天気は前日の天気から確率的に定まると仮定する。
+	  二日以上前の天気には依存しないと仮定する。
+	  ある日の天気が晴れのとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <m>0.7,0.1,0.2</m> とする。
+	  ある日の天気が雨のとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <m>0.5,0.2,0.3</m> とする。
+	  ある日の天気が曇りのとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <m>0.6,0.2,0.2</m> とする。
+	  </p>
+	  <p>ある日の天気が晴れ、雨、曇りの確率が <m>p_0,q_0,r_0</m> であるとする。
+	  このとき <m>t</m> 日後の天気が晴れ、雨曇りの確率を <m>p_t,q_t,r_t</m> とすると
+	  任意の <m>t\ge 0</m> について
+	  <md>
+	    \begin{bmatrix}
+		p_{t+1}\\q_{t+1}\\r_{t+1}
+		\end{bmatrix}
+		=
+	    \begin{bmatrix}
+		0.7 \amp 0.5\amp 0.6\\
+		0.1 \amp 0.2\amp 0.2\\
+		0.2 \amp 0.3\amp 0.2
+		\end{bmatrix}
+	    \begin{bmatrix}
+		p_t\\q_t\\r_t
+		\end{bmatrix}
+	  </md>
+	  が成り立つ。</p>
+	  <p>よって <m>N</m> 日後の天気は
+	  <md>
+	    \begin{bmatrix}
+		p_{N}\\q_{N}\\r_{N}
+		\end{bmatrix}
+		=
+	    \begin{bmatrix}
+		0.7 \amp 0.5\amp 0.6\\
+		0.1 \amp 0.2\amp 0.2\\
+		0.2 \amp 0.3\amp 0.2
+		\end{bmatrix}^{N}
+	    \begin{bmatrix}
+		p_0\\q_0\\r_0
+		\end{bmatrix}
+	  </md>
+	  と計算できる。</p>
+    </section>
+    <section xml:id="sec-graph" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>グラフのパスの個数</title>
+    </section>
   </chapter>

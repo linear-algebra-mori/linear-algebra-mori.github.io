@@ -9,7 +9,7 @@
 
   <section xml:id="sec-vector" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>数ベクトル</title>
-    <p>実数の集合を <m>\mathbb{R}</m>、複素数の集合を <m>\mathbb{C}</m> と書く。
+    <p>実数の集合を <m>\mathbb{R}</m>、複素数の集合を <m>\mathbb{C}</m> と表す。
     <term>数ベクトル</term>は単純に数(通常は実数か複素数)を並べたもので、以下のように表される。</p>
     <md>
     \begin{bmatrix}
