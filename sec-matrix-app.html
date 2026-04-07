@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>線形写像としての行列</title>
+<title>行列の簡単な応用</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-matrix.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-matrix-linmap.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-matrix-mul.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="ch-matrix-app.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -184,9 +184,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix.html" class="internal"><span class="codenumber">2.3</span> <span class="title">行列</span></a></div></li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-matrix-map.html" class="internal"><span class="codenumber">2.4</span> <span class="title">線形写像としての行列</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-map.html#subsec-matrix-map" class="internal"><span class="codenumber">2.4.1</span> <span class="title">写像としての行列</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-map.html#subsec-matrix-lin" class="internal"><span class="codenumber">2.4.2</span> <span class="title">行列が表す写像の線形性</span></a></div></li>
 </ul>
@@ -227,6 +227,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-comm" class="internal"><span class="codenumber">2.8.6</span> <span class="title">行列積の交換法則は成り立たない</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-matrix-app.html" class="internal"><span class="codenumber">2.9</span> <span class="title">行列の簡単な応用</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-app.html#subsec-fib" class="internal"><span class="codenumber">2.9.1</span> <span class="title">フィボナッチ数列</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -235,162 +239,178 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="sec-matrix-map">
+<section class="section" id="sec-matrix-app">
 <h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像としての行列</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列の簡単な応用</span>
 </h2>
-<section class="subsection" id="subsec-matrix-map">
+<section class="subsection" id="subsec-fib">
 <h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">写像としての行列</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">フィボナッチ数列</span>
 </h3>
-<div class="para" id="subsec-matrix-map-2">
-<span class="process-math">\(n\times m\)</span> 行列は <em class="emphasis"><span class="process-math">\(m\)</span> 次元数ベクトルを <span class="process-math">\(n\)</span> 次元数ベクトルへ写す写像(関数)</em>であると考えることができる。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-map-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-fib-2">
+<div class="para">フィボナッチ数列 <span class="process-math">\((F_n)_{n\ge 0}\)</span> は以下の漸化式で定義される。</div>
+<div class="displaymath process-math" id="subsec-fib-2-2">
+\begin{align*}
+F_0 \amp= 0,\qquad F_1 = 1\\
+F_n \amp= F_{n-1} + F_{n-2},\amp \text{if } n\ge 2
+\end{align*}
 </div>
-<article class="definition definition-like" id="def-mat-vec"><h4 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">写像 <span class="process-math">\(\mathbb{R}^m\to\mathbb{R}^n\)</span> としての行列.</span>
-</h4>
-<div class="para" id="def-mat-vec-2-1">
-<span class="process-math">\(n\times m\)</span> 行列 <span class="process-math">\(A=[a_{i,j}]_{i,j}\)</span> を  <span class="process-math">\(m\)</span> 次元数ベクトル <span class="process-math">\(\bm{v}=[v_i]_i\)</span> に作用させた結果得られる <span class="process-math">\(n\)</span> 次元数ベクトルは以下のように定義される。<div class="autopermalink" data-description="Paragraph"><a href="#def-mat-vec-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">フィボナッチ数列の最初の数項は</div>
+<div class="displaymath process-math" id="subsec-fib-2-3">
+\begin{equation*}
+0,1,1,2,3,5,8,13,21,\dotsc
+\end{equation*}
 </div>
-<div class="displaymath process-math" id="def-mat-vec-2-2">
+<div class="para">である。 <span class="process-math">\(F_n\)</span> は定義に従って <span class="process-math">\(n-1\)</span> 回足し算すれば計算できるが、行列を使うと(整数のかけ算も使うものの)もっと効率的に <span class="process-math">\(F_n\)</span>  が計算できる。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fib-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-fib-3">
+<div class="para">任意の <span class="process-math">\(n\ge 2\)</span> について</div>
+<div class="displaymath process-math" id="subsec-fib-3-2">
 \begin{equation*}
 \begin{bmatrix}
-a_{1,1}\amp a_{1,2}\amp\dotsc\amp a_{1,m}\\
-a_{2,1}\amp a_{2,2}\amp \dotsc\amp a_{2,m}\\
-\vdots\amp \vdots\amp \vdots\amp \vdots\\
-a_{n,1}\amp a_{n,2}\amp \dotsc\amp a_{n,m}\\
-\end{bmatrix}
-\begin{bmatrix}
-v_1\\
-v_2\\
-\vdots\\
-v_m
+F_n\\
+F_{n-1}
 \end{bmatrix}
 =
 \begin{bmatrix}
-a_{1,1}v_1+a_{1,2}v_2+\dotsb+a_{1,m}v_m\\
-a_{2,1}v_1+a_{2,2}v_2+\dotsb+a_{2,m}v_m\\
-\vdots\\
-a_{n,1}v_1+a_{n,2}v_2+\dotsb+a_{n,m}v_m\\
-\end{bmatrix}.
+1\amp1\\
+1\amp0
+\end{bmatrix}
+\begin{bmatrix}
+F_{n-1}\\
+F_{n-2}
+\end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列"><a href="#def-mat-vec" title="Copy heading and permalink for 定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列" aria-label="Copy heading and permalink for 定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列">🔗</a></div>
-</article>
-<div class="para" id="subsec-matrix-map-4">このようにして <span class="process-math">\(n\times m\)</span> 行列は <span class="process-math">\(\mathbb{R}^m\to\mathbb{R}^n\)</span> という写像だと理解できる。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-map-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 2.4.1: 写像としての行列"><a href="#subsec-matrix-map" title="Copy heading and permalink for Subsection 2.4.1: 写像としての行列" aria-label="Copy heading and permalink for Subsection 2.4.1: 写像としての行列">🔗</a></div>
-</section>
-<section class="subsection" id="subsec-matrix-lin">
-<h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列が表す写像の線形性</span>
-</h3>
-<article class="definition definition-like" id="subsec-matrix-lin-2"><h4 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像.</span>
-</h4>
-<div class="para logical" id="subsec-matrix-lin-2-2-1">
-<div class="para">写像 <span class="process-math">\(f\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> が</div>
-<ul class="disc" id="subsec-matrix-lin-2-2-1-2">
-<li id="subsec-matrix-lin-2-2-1-2-1">
-<div class="para" id="p-derived-subsec-matrix-lin-2-2-1-2-1"><span class="process-math">\(\displaystyle f(c\bm{v}) = cf(\bm{v})\qquad \forall c\in\mathbb{R},\bm{v}\in\mathbb{R}^m\)</span></div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-matrix-lin-2-2-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="subsec-matrix-lin-2-2-1-2-2">
-<div class="para" id="p-derived-subsec-matrix-lin-2-2-1-2-2"><span class="process-math">\(\displaystyle f(\bm{v}+\bm{w}) = f(\bm{v}) + f(\bm{w})\qquad\forall\bm{v},\bm{w}\in\mathbb{R}^m\)</span></div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-matrix-lin-2-2-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="para">を満たすとき<dfn class="terminology">線形写像</dfn>という。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="定義 2.4.2: 線形写像"><a href="#subsec-matrix-lin-2" title="Copy heading and permalink for 定義 2.4.2: 線形写像" aria-label="Copy heading and permalink for 定義 2.4.2: 線形写像">🔗</a></div>
-</article>
-<div class="para" id="subsec-matrix-lin-3">任意の行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、写像 <span class="process-math">\(f(\bm{v}) \coloneqq A\bm{v}\)</span> が線形写像であることは <a href="sec-matrix-map.html#def-mat-vec" class="xref" data-knowl="./knowl/xref/def-mat-vec.html" data-reveal-label="Reveal" data-close-label="Close" title="定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列">定義 2.4.1</a> から簡単に確認できる。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="proposition theorem-like" id="subsec-matrix-lin-4"><h4 class="heading">
-<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形性の条件.</span>
-</h4>
-<div class="para" id="subsec-matrix-lin-4-2-1">写像 <span class="process-math">\(f\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> について以下は同値<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<ol class="decimal" id="subsec-matrix-lin-4-2-2">
-<li id="subsec-matrix-lin-4-2-2-1">
-<div class="para" id="p-derived-subsec-matrix-lin-4-2-2-1">
-<span class="process-math">\(f\)</span> は線形写像。</div>
-<div class="autopermalink" data-description="Item 1"><a href="#subsec-matrix-lin-4-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="subsec-matrix-lin-4-2-2-2">
-<div class="para" id="p-derived-subsec-matrix-lin-4-2-2-2"><span class="process-math">\(\displaystyle f(a\bm{v} + b\bm{w}) = af(\bm{v}) + bf(\bm{w})\qquad\forall a,b\in\mathbb{R},\bm{v},\bm{w}\in\mathbb{R}^m.\)</span></div>
-<div class="autopermalink" data-description="Item 2"><a href="#subsec-matrix-lin-4-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-<li id="subsec-matrix-lin-4-2-2-3">
-<div class="para" id="p-derived-subsec-matrix-lin-4-2-2-3">
-<span class="process-math">\(f(a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k) = a_1f(\bm{v}_1) + \dotsb + a_kf(\bm{v}_k)\)</span><span class="process-math">\(\qquad\forall k\in\mathbb{N}, a_1,\dotsc,a_k\in\mathbb{R},\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^m.\)</span>
-</div>
-<div class="autopermalink" data-description="Item 3"><a href="#subsec-matrix-lin-4-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="命題 2.4.3: 線形性の条件"><a href="#subsec-matrix-lin-4" title="Copy heading and permalink for 命題 2.4.3: 線形性の条件" aria-label="Copy heading and permalink for 命題 2.4.3: 線形性の条件">🔗</a></div>
-</article>
-<details id="subsec-matrix-lin-4-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
-<article class="hiddenproof knowl__content">
-<div class="para logical" id="subsec-matrix-lin-4-3-1">
-<div class="para"><span class="process-math">\(1\Longrightarrow2\colon\)</span></div>
-<div class="displaymath process-math" id="subsec-matrix-lin-4-3-1-2">
+<div class="para">が成り立つことから、</div>
+<div class="displaymath process-math" id="subsec-fib-3-3">
 \begin{align*}
-f(a\bm{v} + b\bm{w}) \amp= f(a\bm{v}) + f(b\bm{w})\\
-\amp= af(\bm{v}) + bf(\bm{w})
+\begin{bmatrix}
+F_n\\
+F_{n-1}
+\end{bmatrix}
+\amp=
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+\begin{bmatrix}
+F_{1}\\
+F_{0}
+\end{bmatrix}\\
+\amp=
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">が成り立つ。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fib-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-matrix-lin-4-3-2">
-<div class="para">
-<span class="process-math">\(2\Longrightarrow3\colon\)</span> <span class="process-math">\(k\)</span> に関する帰納法で証明する。まずは <span class="process-math">\(k=1\)</span> の場合を証明する。</div>
-<div class="displaymath process-math" id="subsec-matrix-lin-4-3-2-4">
-\begin{align*}
-f(a_1\bm{v}_1) \amp= f(a_1\bm{v}_1 + 0\bm{v}_2)\\
-\amp= a_1f(\bm{v}_1) + 0f(\bm{v}_2)\\
-\amp= a_1f(\bm{v}_1).
-\end{align*}
-</div>
-<div class="para">次に</div>
-<div class="displaymath process-math" id="subsec-matrix-lin-4-3-2-5">
-\begin{align*}
-f(a_1\bm{v}_1+\dotsb+a_{k+1}\bm{v}_{k+1}) \amp= f(a_1\bm{v}_1 +\dotsb+ a_k\bm{v}_k)+a_{k+1}f(\bm{v}_{k+1})\\
-\amp= a_1f(\bm{v}_1) +\dotsb+ a_kf(\bm{v}_k)+a_{k+1}f(\bm{v}_{k+1})
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-matrix-lin-4-3-3">
-<div class="para">
-<span class="process-math">\(3\Longrightarrow1\colon\)</span> <span class="process-math">\(k=1\)</span> の場合を考えることで、</div>
-<div class="displaymath process-math" id="subsec-matrix-lin-4-3-3-3">
+<div class="para logical" id="subsec-fib-4">
+<div class="para">よって、 <span class="process-math">\(\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}\)</span> の一列目は <span class="process-math">\(\begin{bmatrix}F_n\\F_{n-1}\end{bmatrix}\)</span> に等しい。 二列目は <span class="process-math">\(n\ge 2\)</span> のとき、</div>
+<div class="displaymath process-math" id="subsec-fib-4-4">
 \begin{equation*}
-f(c\bm{v}) = cf(\bm{v}).
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-2}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_{n-1}\\
+F_{n-2}
+\end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">
-<span class="process-math">\(k=2\)</span> の場合を考えることで、</div>
-<div class="displaymath process-math" id="subsec-matrix-lin-4-3-3-5">
+<div class="para">である。よって <span class="process-math">\(n\ge 2\)</span> について、</div>
+<div class="displaymath process-math" id="subsec-fib-4-6">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+=
+\begin{bmatrix}
+F_n\amp F_{n-1}\\
+F_{n-1}\amp F_{n-2}
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">が成り立つ。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fib-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-fib-5">
+<div class="para">正方行列 <span class="process-math">\(A\)</span> について、<span class="process-math">\(A^n\)</span> は</div>
+<div class="displaymath process-math" id="subsec-fib-5-3">
+\begin{equation*}
+A^n =
+\begin{cases}
+I,\amp \text{if }n=0\\
+(A^{n/2})^2,\amp\text{if $n$ が正の偶数}\\
+(A^{(n-1)/2})^2A,\amp\text{それ以外}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">という漸化式に基づいて計算することができる。このアルゴリズムは <span class="process-math">\(A^n\)</span> の計算のために高々 <span class="process-math">\(2\log_2 n\)</span>  回の行列積の計算を含む。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fib-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-fib-6">
+<div class="para">例えば <span class="process-math">\(A=\begin{bmatrix}1\amp 1\\1\amp 0\end{bmatrix}\)</span> とおくと、</div>
+<div class="displaymath process-math" id="subsec-fib-6-2">
 \begin{align*}
-f(\bm{v}+\bm{w}) \amp= f(1\bm{v} + 1\bm{w})\\
-\amp= 1f(\bm{v}) + 1f(\bm{w})\\
-\amp= f(\bm{v}) + f(\bm{w}).
+A^2 \amp=
+\begin{bmatrix}
+2\amp 1\\
+1\amp 1
+\end{bmatrix}\\
+A^4 = (A^2)^2 \amp=
+\begin{bmatrix}
+5\amp 3\\
+3\amp 2
+\end{bmatrix}\\
+A^8 = (A^4)^2 \amp=
+\begin{bmatrix}
+34\amp 21\\
+21\amp 13
+\end{bmatrix}\\
+A^{16} = (A^8)^2 \amp=
+\begin{bmatrix}
+1597\amp 987\\
+987\amp 610
+\end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-4-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">よって <span class="process-math">\(F_{17}=1597\)</span> と分かる。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fib-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="証明 2.4.3.1"><a href="#subsec-matrix-lin-4-3" title="Copy heading and permalink for 証明 2.4.3.1" aria-label="Copy heading and permalink for 証明 2.4.3.1">🔗</a></div>
-</article></details>
-<div class="para" id="subsec-matrix-lin-5">この線形性こそが、行列の本質である(次の章で意味が分かる)。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 2.4.2: 行列が表す写像の線形性"><a href="#subsec-matrix-lin" title="Copy heading and permalink for Subsection 2.4.2: 行列が表す写像の線形性" aria-label="Copy heading and permalink for Subsection 2.4.2: 行列が表す写像の線形性">🔗</a></div>
-</section><div class="autopermalink" data-description="Section 2.4: 線形写像としての行列"><a href="#sec-matrix-map" title="Copy heading and permalink for Section 2.4: 線形写像としての行列" aria-label="Copy heading and permalink for Section 2.4: 線形写像としての行列">🔗</a></div>
+<div class="autopermalink" data-description="Subsection 2.9.1: フィボナッチ数列"><a href="#subsec-fib" title="Copy heading and permalink for Subsection 2.9.1: フィボナッチ数列" aria-label="Copy heading and permalink for Subsection 2.9.1: フィボナッチ数列">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 2.9: 行列の簡単な応用"><a href="#sec-matrix-app" title="Copy heading and permalink for Section 2.9: 行列の簡単な応用" aria-label="Copy heading and permalink for Section 2.9: 行列の簡単な応用">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-matrix.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-matrix-linmap.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-matrix-mul.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-matrix-app.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -118,7 +118,7 @@ eBookConfig.enable_chatcodes =  false;
 <h1 class="heading"><a href="my-great-book.html"><span class="title">正しく始める線形代数</span> <span class="subtitle">すべての数理の入口</span></a></h1>
 <p class="byline">森 立平</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<button class="toc-toggle button" title="目次"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">目次</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-matrix-linmap.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-matrix-linmap.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-matrix-ops.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -146,7 +146,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
-<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">前書き</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">線形代数とは</span></a></div></li>
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
@@ -176,17 +176,63 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set-rel" class="internal"><span class="codenumber">2.1.2</span> <span class="title">集合の関係</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-map.html" class="internal"><span class="codenumber">2.2</span> <span class="title">写像</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-map.html" class="internal"><span class="codenumber">2.2</span> <span class="title">写像</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-map.html#subsec-map-image" class="internal"><span class="codenumber">2.2.1</span> <span class="title">写像、象、逆像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-map.html#subsec-map-inverse" class="internal"><span class="codenumber">2.2.2</span> <span class="title">単射、全射、全単射、逆写像</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix.html" class="internal"><span class="codenumber">2.3</span> <span class="title">行列</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix-map.html" class="internal"><span class="codenumber">2.4</span> <span class="title">写像としての行列</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix-linmap.html" class="internal"><span class="codenumber">2.5</span> <span class="title">線形写像は行列</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-map.html" class="internal"><span class="codenumber">2.4</span> <span class="title">線形写像としての行列</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-map.html#subsec-matrix-map" class="internal"><span class="codenumber">2.4.1</span> <span class="title">写像としての行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-map.html#subsec-matrix-lin" class="internal"><span class="codenumber">2.4.2</span> <span class="title">行列が表す写像の線形性</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-linmap.html" class="internal"><span class="codenumber">2.5</span> <span class="title">線形写像は行列</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linmap.html#subsec-vector-e" class="internal"><span class="codenumber">2.5.1</span> <span class="title">標準ベクトルを用いた数ベクトルの分解</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linmap.html#subsec-matrix-e" class="internal"><span class="codenumber">2.5.2</span> <span class="title">標準ベクトルを用いた行列の理解</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linmap.html#subsec-lin" class="internal"><span class="codenumber">2.5.3</span> <span class="title">線形写像は行列で表すことができる</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.6</span> <span class="title">行列の例</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-zero-matrix" class="internal"><span class="codenumber">2.6.1</span> <span class="title">零行列</span></a></div></li></ul>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-zero-matrix" class="internal"><span class="codenumber">2.6.1</span> <span class="title">零行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-diagonal-matrix" class="internal"><span class="codenumber">2.6.2</span> <span class="title">対角行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-perm-matrix" class="internal"><span class="codenumber">2.6.3</span> <span class="title">置換行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-rotate-matrix" class="internal"><span class="codenumber">2.6.4</span> <span class="title">2次元回転行列</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-ops.html" class="internal"><span class="codenumber">2.7</span> <span class="title">行列の和とスカラー倍</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-ops.html#subsec-matrix-add" class="internal"><span class="codenumber">2.7.1</span> <span class="title">行列の和とスカラー倍の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-ops.html#subsec-matrix-ops-mean" class="internal"><span class="codenumber">2.7.2</span> <span class="title">行列の和とスカラー倍の線型写像としての意味</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-ops.html#subsec-matrix-ops-prop" class="internal"><span class="codenumber">2.7.3</span> <span class="title">行列の和とスカラー倍のその他の性質</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-mul.html" class="internal"><span class="codenumber">2.8</span> <span class="title">行列の積</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul" class="internal"><span class="codenumber">2.8.1</span> <span class="title">行列の積の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-linear-comp" class="internal"><span class="codenumber">2.8.2</span> <span class="title">線形写像の合成写像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-prop" class="internal"><span class="codenumber">2.8.3</span> <span class="title">行列の積と合成写像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-assos" class="internal"><span class="codenumber">2.8.4</span> <span class="title">行列積の結合法則</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-dist" class="internal"><span class="codenumber">2.8.5</span> <span class="title">行列積の分配法則</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-comm" class="internal"><span class="codenumber">2.8.6</span> <span class="title">行列積の交換法則は成り立たない</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li></ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-matrices">
@@ -197,12 +243,139 @@ eBookConfig.enable_chatcodes =  false;
 <h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">零行列</span>
 </h3>
+<div class="para" id="subsec-zero-matrix-2">成分がすべて 0 である行列を<dfn class="terminology">零行列</dfn>といい、<span class="process-math">\(O\)</span> と表す。 <span class="process-math">\(n\times m\)</span> の零行列であることが分かるように <span class="process-math">\(O_{n,m}\)</span> と表すこともある。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-zero-matrix-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-zero-matrix-3">零行列は任意の <span class="process-math">\(m\)</span> 次元数ベクトルを <span class="process-math">\(n\)</span> 次元零ベクトルへ写す写像であると理解できる。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-zero-matrix-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Subsection 2.6.1: 零行列"><a href="#subsec-zero-matrix" title="Copy heading and permalink for Subsection 2.6.1: 零行列" aria-label="Copy heading and permalink for Subsection 2.6.1: 零行列">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-diagonal-matrix">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">対角行列</span>
+</h3>
+<div class="para" id="subsec-diagonal-matrix-2">
+<span class="process-math">\(n\times n\)</span> 正方行列について考える。 各<span class="process-math">\(i\in\{1,2,\dotsc,n\}\)</span> について、<span class="process-math">\((i,i)\)</span> 成分のことを<dfn class="terminology">正方行列の対角成分</dfn>という。 対角成分でない成分のことを<dfn class="terminology">正方行列の非対角成分</dfn>という。 非対角成分がすべて 0 である正方行列を<dfn class="terminology">対角行列</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagonal-matrix-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-diagonal-matrix-3">
+<div class="para">一般に対角行列</div>
+<div class="displaymath process-math" id="subsec-diagonal-matrix-3-1">
+\begin{equation*}
+D =
+\begin{bmatrix}
+d_{1}\amp \amp \amp \\
+\amp d_{2}\amp \textrm{\LARGE $0$}\amp\\
+\amp \amp \ddots \amp\\
+\amp\textrm{\LARGE $0$} \amp \amp d_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">について、<span class="process-math">\(D\bm{e}_j = d_j\bm{e}_j\)</span> である。 つまり、<em class="emphasis">対角行列は数ベクトルの各成分を伸び縮みさせる写像</em>を表す。 例えば</div>
+<div class="displaymath process-math" id="subsec-diagonal-matrix-3-4">
+\begin{equation*}
+\begin{bmatrix}
+1/2\amp0\\
+0\amp2
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+(1/2)x\\
+2y
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">なので <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/subsec-diagonal-matrix-3-5.svg" role="img" class="contained"></div> という写像になる。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagonal-matrix-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-diagonal-matrix-4">
+<div class="para">対角成分がすべて 1 である対角行列を<dfn class="terminology">単位行列</dfn>といい <span class="process-math">\(I\)</span> と表す(<span class="process-math">\(E\)</span> と表す流儀もある)。 行列のサイズが分かるように <span class="process-math">\(I_n\)</span> と表すこともある。 任意の <span class="process-math">\(n\)</span> 次元数ベクトル <span class="process-math">\(\bm{v}\)</span> について、<span class="process-math">\(I_n\bm{v}=\bm{v}\)</span> である。 クロネッカーのデルタ</div>
+<div class="displaymath process-math" id="subsec-diagonal-matrix-4-8">
+\begin{equation*}
+\delta_{i,j}\coloneqq
+\begin{cases}
+1,\amp\text{if } i = j\\
+0,\amp\text{otherwise}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">を用いて、<span class="process-math">\(I_n=[\delta_{i,j}]_{i,j}\)</span> と表すこともできる。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagonal-matrix-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.6.2: 対角行列"><a href="#subsec-diagonal-matrix" title="Copy heading and permalink for Subsection 2.6.2: 対角行列" aria-label="Copy heading and permalink for Subsection 2.6.2: 対角行列">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-perm-matrix">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">置換行列</span>
+</h3>
+<div class="para" id="subsec-perm-matrix-2">正方行列 <span class="process-math">\(P\in\mathbb{R}^{n\times n}\)</span> で各行、各列に 1 が一つだけ存在して、それ以外の要素がすべて 0 であるような行列を<dfn class="terminology">置換行列</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-perm-matrix-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-perm-matrix-3">
+<div class="para">例えば</div>
+<div class="displaymath process-math" id="subsec-perm-matrix-3-1">
+\begin{equation*}
+\begin{bmatrix}
+1\amp0\\
+0\amp1
+\end{bmatrix}
+,\qquad
+\begin{bmatrix}
+0\amp1\\
+1\amp0
+\end{bmatrix}
+,\qquad
+\begin{bmatrix}
+0\amp1\amp0\\
+0\amp0\amp1\\
+1\amp0\amp0\\
+\end{bmatrix}
+,\qquad
+\begin{bmatrix}
+0\amp1\amp0\\
+1\amp0\amp0\\
+0\amp0\amp1\\
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">は置換行列である。 置換行列は<em class="emphasis">数ベクトルの成分を置換する</em>写像を表す。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-perm-matrix-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.6.3: 置換行列"><a href="#subsec-perm-matrix" title="Copy heading and permalink for Subsection 2.6.3: 置換行列" aria-label="Copy heading and permalink for Subsection 2.6.3: 置換行列">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-rotate-matrix">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">2次元回転行列</span>
+</h3>
+<div class="para logical" id="subsec-rotate-matrix-2">
+<div class="para">任意の <span class="process-math">\(\theta\in\mathbb{R}\)</span> について <span class="process-math">\(2\times 2\)</span> 実行列</div>
+<div class="displaymath process-math" id="subsec-rotate-matrix-2-3">
+\begin{equation*}
+R(\theta)\coloneqq
+\begin{bmatrix}
+\cos\theta \amp -\sin\theta\\
+\sin\theta \amp \cos\theta
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">を<dfn class="terminology">2次元回転行列</dfn>という。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rotate-matrix-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-rotate-matrix-3">
+\begin{align*}
+R(\theta)\bm{e}_1 \amp= \begin{bmatrix}\cos\theta\\\sin\theta\end{bmatrix}\\
+R(\theta)\bm{e}_2 \amp= \begin{bmatrix}-\sin\theta\\\cos\theta\end{bmatrix}
+\end{align*}
+</div>
+<div class="para" id="subsec-rotate-matrix-4">なので、 <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/subsec-rotate-matrix-4-1.svg" role="img" class="contained"></div> という写像になる。 つまり、<em class="emphasis">2次元回転行列 <span class="process-math">\(R(\theta)\)</span> は2次元実ベクトルを <span class="process-math">\(\theta\)</span> 回転させる行列</em>である。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rotate-matrix-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.6.4: 2次元回転行列"><a href="#subsec-rotate-matrix" title="Copy heading and permalink for Subsection 2.6.4: 2次元回転行列" aria-label="Copy heading and permalink for Subsection 2.6.4: 2次元回転行列">🔗</a></div>
 </section><div class="autopermalink" data-description="Section 2.6: 行列の例"><a href="#sec-matrices" title="Copy heading and permalink for Section 2.6: 行列の例" aria-label="Copy heading and permalink for Section 2.6: 行列の例">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-matrix-linmap.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-matrix-linmap.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-matrix-ops.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
