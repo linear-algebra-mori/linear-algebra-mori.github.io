@@ -35,6 +35,20 @@
 
   <!-- It is possible to rename elements: -->
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
+  <rename element="toc" xml:lang="en-US">目次</rename>
+  <rename element="frontmatter" xml:lang="en-US">前書き</rename>
+  <rename element="definition" xml:lang="en-US">定義</rename>
+  <rename element="theorem" xml:lang="en-US">定理</rename>
+  <rename element="proposition" xml:lang="en-US">命題</rename>
+  <rename element="lemma" xml:lang="en-US">補題</rename>
+  <rename element="fact" xml:lang="en-US">事実</rename>
+  <rename element="previous" xml:lang="en-US">一つ前</rename>
+  <rename element="next" xml:lang="en-US">一つ後</rename>
+  <rename element="up" xml:lang="en-US">一つ上</rename>
+  <rename element="previous-short" xml:lang="en-US">前</rename>
+  <rename element="next-short" xml:lang="en-US">次</rename>
+  <rename element="up-short" xml:lang="en-US">上</rename>
+  <rename element="proof" xml:lang="en-US">証明</rename>
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->

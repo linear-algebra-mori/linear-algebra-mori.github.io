@@ -86,7 +86,9 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
   </subsection>
   </section>
   <section xml:id="sec-map" xmlns:xi="http://www.w3.org/2001/XInclude">
-      <title>写像</title>
+    <title>写像</title>
+    <subsection xml:id="subsec-map-image" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>写像、象、逆像</title>
       <p>集合 <m>A,\,B</m> について、写像 <m>f\colon A\to B</m> は <m>A</m> の各要素 <m>a\in A</m> について、<m>f(a)\in B</m> を対応させるものである。
       写像 <m>f\colon A\to B</m> について、集合 <m>A</m> を <m>f</m> の<term>定義域</term>、<m>B</m> を <m>f</m> の<term>値域</term>という。</p>
       
@@ -100,7 +102,10 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       f^{-1}(T) \coloneqq \left\{ a\in A \mid f(a)\in T\right\}
       </md>
       を <term><m>f</m> による <m>T</m> の逆像(原像)</term>という。</p>
-      <p>集合 <m>S</m> の要素数を <m>|S|</m> と書くことにする。
+    </subsection>
+    <subsection xml:id="subsec-map-inverse" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>単射、全射、全単射、逆写像</title>
+      <p>
       各 <m>b\in B</m> について、<m>|f^{-1}(\{b\})|\le 1</m> のとき <m>f</m> は<term>単射</term>であるという。
       単射は<term>一対一写像</term>ということもある。
       各 <m>b\in B</m> について、<m>|f^{-1}(\{b\})|\ge 1</m> のとき <m>f</m> は<term>全射</term>であるという。
@@ -131,6 +136,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       全単射 <m>f\colon A\to B</m> について、 <m>(f^{-1})^{-1}=f</m> が成り立つ。</p>
       
       <p>特に有限集合 <m>A</m> について、全単射 <m>f\colon A\to A</m> を<term><m>A</m> 上の置換</term>という。</p>
+    </subsection>
   </section>
   <section xml:id="sec-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列</title>
@@ -154,9 +160,14 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     また、 <m>n\times n</m> 行列を<term>正方行列</term>という。</p>
   </section>
   <section xml:id="sec-matrix-map" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形写像としての行列</title>
+    <subsection xml:id="subsec-matrix-map" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>写像としての行列</title>
-    <p><m>n\times m</m> 行列は <em><m>m</m> 次元数ベクトルを <m>n</m> 次元数ベクトルへ写す写像(関数)</em>であると考えることができる。
-    <m>n\times m</m> 行列 <m>A=[a_{i,j}]_{i,j}</m> を  <m>m</m> 次元数ベクトルに作用させた結果得られる <m>n</m> 次元数ベクトルは以下のように定義される。</p>
+    <p><m>n\times m</m> 行列は <em><m>m</m> 次元数ベクトルを <m>n</m> 次元数ベクトルへ写す写像(関数)</em>であると考えることができる。</p>
+    <definition xml:id="def-mat-vec">
+      <title>写像 <m>\mathbb{R}^m\to\mathbb{R}^n</m> としての行列</title>
+      <statement>
+    <p><m>n\times m</m> 行列 <m>A=[a_{i,j}]_{i,j}</m> を  <m>m</m> 次元数ベクトル <m>\bm{v}=[v_i]_i</m> に作用させた結果得られる <m>n</m> 次元数ベクトルは以下のように定義される。</p>
     <md>
     \begin{bmatrix}
     a_{1,1}\amp a_{1,2}\amp\dotsc\amp a_{1,m}\\
@@ -176,49 +187,105 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     a_{2,1}v_1+a_{2,2}v_2+\dotsb+a_{2,m}v_m\\
     \vdots\\
     a_{n,1}v_1+a_{n,2}v_2+\dotsb+a_{n,m}v_m\\
-    \end{bmatrix}
-    \label{eq:matvec}
+    \end{bmatrix}.
       </md>
-      <p>以下の性質は簡単に確認できる。
-    任意の <m>A\in\mathbb{R}^{n\times m}</m>, <m>\bm{v},\,\bm{w}\in\mathbb{R}^m</m>,  <m>c\in\mathbb{R}</m>について
-    <ul>
-    <li><m>A(c\bm{v}) = c(A\bm{v})</m></li>
-    <li><m>A(\bm{v}+\bm{w}) = A\bm{v} + A\bm{w}</m></li>
-    </ul>
-    これらの性質のことを行列 <m>A</m>が定める写像の<term>線形性</term>という。
-    線形性を持つ写像を<term>線形写像</term>という。
-    線形性は次のように表すこともできる。</p>
+    </statement></definition>
+    <p>このようにして <m>n\times m</m> 行列は <m>\mathbb{R}^m\to\mathbb{R}^n</m> という写像だと理解できる。</p>
+    </subsection>
+    <subsection xml:id="subsec-matrix-lin" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列が表す写像の線形性</title>
+      <definition>
+        <title>線形写像</title>
+        <statement>
+          <p>写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> が
+            <ul>
+            <li><m>f(c\bm{v}) = cf(\bm{v})\qquad \forall c\in\mathbb{R},\bm{v}\in\mathbb{R}^m</m></li>
+            <li><m>f(\bm{v}+\bm{w}) = f(\bm{v}) + f(\bm{w})\qquad\forall\bm{v},\bm{w}\in\mathbb{R}^m</m></li>
+            </ul>
+          を満たすとき<term>線形写像</term>という。</p>
+        </statement>
+      </definition>
+      <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、写像 <m>f(\bm{v}) \coloneqq A\bm{v}</m> が線形写像であることは <xref ref="def-mat-vec" /> から簡単に確認できる。</p>
+      <proposition>
+        <title>線形性の条件</title>
+        <statement>
+          <p>写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> について以下は同値</p>
+          <ol>
+            <li><m>f</m> は線形写像。</li>
+            <li>
+              <m>
+                f(a\bm{v} + b\bm{w}) = af(\bm{v}) + bf(\bm{w})\qquad\forall a,b\in\mathbb{R},\bm{v},\bm{w}\in\mathbb{R}^m.
+              </m>
+            </li>
+            <li>
+              <m>
+                f(a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k) = a_1f(\bm{v}_1) + \dotsb + a_kf(\bm{v}_k)</m><m>\qquad\forall k\in\mathbb{N}, a_1,\dotsc,a_k\in\mathbb{R},\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^m.
+              </m>
+            </li>
+          </ol>
+        </statement>
+        <proof>
+          <p><m>1\Longrightarrow2\colon</m>
+          <md>
+            <mrow>f(a\bm{v} + b\bm{w}) \amp= f(a\bm{v}) + f(b\bm{w})</mrow>
+            <mrow>\amp= af(\bm{v}) + bf(\bm{w})</mrow>.
+          </md></p>
+          <p><m>2\Longrightarrow3\colon</m>
+            <m>k</m> に関する帰納法で証明する。まずは <m>k=1</m> の場合を証明する。
+            <md>
+              <mrow>f(a_1\bm{v}_1) \amp= f(a_1\bm{v}_1 + 0\bm{v}_2)</mrow>
+              <mrow>\amp= a_1f(\bm{v}_1) + 0f(\bm{v}_2)</mrow>
+              <mrow>\amp= a_1f(\bm{v}_1).</mrow>
+            </md>
+            次に 
+            <md>
+              <mrow>f(a_1\bm{v}_1+\dotsb+a_{k+1}\bm{v}_{k+1}) \amp= f(a_1\bm{v}_1 +\dotsb+ a_k\bm{v}_k)+a_{k+1}f(\bm{v}_{k+1})</mrow>
+              <mrow>\amp= a_1f(\bm{v}_1) +\dotsb+ a_kf(\bm{v}_k)+a_{k+1}f(\bm{v}_{k+1})</mrow>
+            </md>
+          </p>
+          <p><m>3\Longrightarrow1\colon</m>
+            <m>k=1</m> の場合を考えることで、
+            <md>
+              f(c\bm{v}) = cf(\bm{v}).
+            </md>
+            <m>k=2</m> の場合を考えることで、
+            <md>
+              <mrow>f(\bm{v}+\bm{w}) \amp= f(1\bm{v} + 1\bm{w})</mrow>
+              <mrow>\amp= 1f(\bm{v}) + 1f(\bm{w})</mrow>
+              <mrow>\amp= f(\bm{v}) + f(\bm{w}).</mrow>
+            </md></p>
+        </proof>
+      </proposition>
     
-    <p>任意の <m>A\in\mathbb{R}^{n\times m}</m>, <m>\bm{v},\,\bm{w}\in\mathbb{R}^m</m>, <m>a,\,b\in\mathbb{R}</m>について
-    <ul>
-    <li><m>A(a\bm{v} + b\bm{w}) = a(A\bm{v}) + b(A\bm{w})</m></li>
-    </ul>
-    この線形性こそが、行列の本質である(次の節で意味が分かる)。</p>
+      <p>この線形性こそが、行列の本質である(次の章で意味が分かる)。</p>
+    </subsection>
   </section>
   <section xml:id="sec-matrix-linmap" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形写像は行列</title>
-    <p>各 <m>j\in\{1,2,\dotsc,m\}</m> について<term>標準ベクトル</term> <m>\bm{e}_j</m> を
-    <md><mrow>
-    \bm{e}_j \amp:=
-    \begin{bmatrix}
-    0 \\
-    \vdots \\
-    0 \\
-    1 \\
-    0 \\
-    \vdots \\
-    0
-    \end{bmatrix}
-    \begin{array}{l}
-    1 \\
-    \phantom{\vdots} \\
-    j-1 \\
-    j \\
-    j+1 \\
-    \phantom{\vdots} \\
-    m
-    \end{array}
-  </mrow></md>
+    <subsection xml:id="subsec-vector-e" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>標準ベクトルを用いた数ベクトルの分解</title>
+      <p>各 <m>j\in\{1,2,\dotsc,m\}</m> について<term>標準ベクトル</term> <m>\bm{e}_j</m> を
+      <md><mrow>
+        \bm{e}_j \amp:=
+        \begin{bmatrix}
+        0 \\
+        \vdots \\
+        0 \\
+        1 \\
+        0 \\
+        \vdots \\
+        0
+        \end{bmatrix}
+        \begin{array}{l}
+        1 \\
+        \phantom{\vdots} \\
+        j-1 \\
+        j \\
+        j+1 \\
+        \phantom{\vdots} \\
+        m
+      \end{array}
+      </mrow></md>
     <!--
 <md>
 \bm{e}_j \coloneqq
@@ -233,42 +300,60 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
 \end{bNiceMatrix}
 </md>
 -->
-と定義する。つまり <m>\bm{e}_j</m> は第 <m>j</m> 成分が1でそれ以外の成分が0の数ベクトルである。</p>
+      と定義する。つまり <m>\bm{e}_j</m> は第 <m>j</m> 成分が1でそれ以外の成分が0の <m>m</m> 次元数ベクトルである。
+      任意の <m>m</m> 次元ベクトル <m>\bm{v}=[v_i]_i</m> は標準ベクトルを用いて
+        <md>
+          \bm{v} = v_1\bm{e}_1+v_2\bm{e}_2+\dotsb+v_m\bm{e}_m
+        </md>
+      と表すことができる。</p>
+    </subsection>
+    <subsection xml:id="subsec-matrix-e" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>標準ベクトルを用いた行列の理解</title>
 
-<p>この <m>\bm{e}_j</m> が行列 <m>A=[a_{i,j}]_{i,j}</m> で写る先について考えると、
-<md>
-\begin{bmatrix}
-a_{1,1}\amp a_{1,2}\amp \dotsc\amp a_{1,m}\\
-a_{2,1}\amp a_{2,2}\amp \dotsc\amp a_{2,m}\\
-\vdots\amp \vdots\amp \vdots\amp \vdots\\
-a_{n,1}\amp a_{n,2}\amp \dotsc\amp a_{n,m}\\
-\end{bmatrix}
-\bm{e}_j
-=
-\begin{bmatrix}
-a_{1,j}\\
-a_{2,j}\\
-\vdots\\
-a_{n,j}\\
-\end{bmatrix}
-=:\bm{a}_j
-</md>
-が成り立つ。
-右辺は行列 <m>A</m> の <m>j</m> 列目に他ならない。
-つまり、<em>行列 <m>A</m> は <m>\bm{e}_j</m> を <m>A</m> の <m>j</m> 列目に写す写像</em>であると分かる。
+      <proposition xml:id="prop-matrix-e">
+      <statement>
+        <p>任意の <m>n\times m</m> 行列 <m>A\in\mathbb{R}^{n\times m}</m> について
+        <md>
+          A=\begin{bmatrix} A\bm{e}_1\amp A\bm{e}_2\amp\dotsm\amp A\bm{e}_m\end{bmatrix}.
+        </md></p>
+      </statement>
+      <proof>
+        <p>標準ベクトル <m>\bm{e}_j</m> が行列 <m>A=[a_{i,j}]_{i,j}</m> で写る先について考えると、
+        <md>
+        A\bm{e}_j=
+        \begin{bmatrix}
+        a_{1,1}\amp a_{1,2}\amp \dotsc\amp a_{1,m}\\
+        a_{2,1}\amp a_{2,2}\amp \dotsc\amp a_{2,m}\\
+        \vdots\amp \vdots\amp \vdots\amp \vdots\\
+        a_{n,1}\amp a_{n,2}\amp \dotsc\amp a_{n,m}\\
+        \end{bmatrix}
+        \bm{e}_j
+        =
+        \begin{bmatrix}
+        a_{1,j}\\
+        a_{2,j}\\
+        \vdots\\
+        a_{n,j}\\
+        \end{bmatrix}
+        </md>
+        が成り立つ。
+        右辺は行列 <m>A</m> の <m>j</m> 列目に他ならない。</p>
+      </proof>
+      </proposition>
+<p>つまり、<em>行列 <m>A</m> は <m>\bm{e}_j</m> を <m>A</m> の <m>j</m> 列目に写す写像</em>であると分かる。
+このように行列を見るときは<em>列ごとに見ると線形写像として理解しやすい</em>。
 </p>
+    </subsection>
+    <subsection xml:id="subsec-lin" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>線形写像は行列で表すことができる</title>
 
-<p>また、写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> が線形性
-<md>
-f(a\bm{v}+b\bm{w}) = af(\bm{v})+bf(\bm{w})
-</md>
-を満たすとすると、任意の <m>\bm{v}=[v_i]_i</m> について、
+<p>写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> が線形性を満たすとすると、任意の <m>\bm{v}=[v_i]_i</m> について、
 <md>
 f(\bm{v}) = f(v_1\bm{e}_1+ v_2\bm{e}_2 + \dotsb + v_m\bm{e}_m)
 = v_1f(\bm{e}_1) + v_2f(\bm{e}_2) + \dotsb + v_mf(\bm{e}_m)
 </md>
 が得られる。
-つまり、<em><m>f</m> は標準ベクトル <m>\bm{e}_i</m> の行き先のみによって定まる</em>。</p>
+つまり線形写像 <em><m>f</m> は標準ベクトルの行き先 <m>f(\bm{e}_1),\dotsc,f(\bm{e}_m)</m> のみによって定まる</em>。</p>
 
 <p>
 一方で行列
@@ -280,16 +365,381 @@ f(\bm{e}_2)\amp
 f(\bm{e}_m)
 \end{bmatrix}
 </md>
-は各 <m>i\in\{1,2,\dotsc,m\}</m> について  <m>\bm{e_i}</m> を  <m>f(\bm{e}_i)</m> に写す線形写像を表す。
+は各 <m>j\in\{1,2,\dotsc,m\}</m> について  <m>\bm{e_j}</m> を  <m>f(\bm{e}_j)</m> に写す線形写像を表す。
 つまり、 <m>A</m> は <m>f</m> を表していることになる。
-よって、<em><m>m\times n</m> 実行列は任意の <m>\mathbb{R}^m\to\mathbb{R}^n</m> の線形写像を表現できる</em>ことになる。</p>
-<p>このように行列を見るときは<em>列ごとに見ると線形写像として理解しやすい</em>。</p>
+よって、<em>任意の <m>\mathbb{R}^m\to\mathbb{R}^n</m> の線形写像は <m>n\times m</m> 実行列で表現できる</em>ことになる。</p>
+    </subsection>
   </section>
   <section xml:id="sec-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列の例</title>
     <subsection xml:id="subsec-zero-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>零行列</title>
+      <p>成分がすべて 0 である行列を<term>零行列</term>といい、<m>O</m> と表す。
+      <m>n\times m</m> の零行列であることが分かるように <m>O_{n,m}</m> と表すこともある。</p>
 
+      <p>零行列は任意の <m>m</m> 次元数ベクトルを <m>n</m> 次元零ベクトルへ写す写像であると理解できる。</p>
+    </subsection>
+    <subsection xml:id="subsec-diagonal-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>対角行列</title>
+<p><m>n\times n</m> 正方行列について考える。
+各<m>i\in\{1,2,\dotsc,n\}</m> について、<m>(i,i)</m> 成分のことを<term>正方行列の対角成分</term>という。
+対角成分でない成分のことを<term>正方行列の非対角成分</term>という。
+非対角成分がすべて 0 である正方行列を<term>対角行列</term>という。</p>
+
+<p>一般に対角行列
+<md>
+D =
+\begin{bmatrix}
+d_{1}\amp \amp \amp \\
+\amp d_{2}\amp \textrm{\LARGE $0$}\amp\\
+\amp \amp \ddots \amp\\
+\amp\textrm{\LARGE $0$} \amp \amp d_n
+\end{bmatrix}
+</md>
+について、<m>D\bm{e}_j = d_j\bm{e}_j</m> である。
+つまり、<em>対角行列は数ベクトルの各成分を伸び縮みさせる写像</em>を表す。
+例えば
+<md>
+\begin{bmatrix}
+1/2\amp0\\
+0\amp2
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+(1/2)x\\
+2y
+\end{bmatrix}
+</md>
+なので
+
+<image width="30%">
+<latex-image>
+\begin{tikzpicture}
+\draw[step=1cm,black!70] (-2,-2) grid (2,2);
+\draw[very thick,-Stealth] (-2,0) -- (2,0);
+\draw[very thick,-Stealth] (0,-2) -- (0,2);
+\draw[very thick,-Stealth] (0,0) -- (1,0) node[anchor=north] {$\bm{e}_1$};
+\draw[very thick,-Stealth] (0,0) -- (0.5,0) node[anchor=north] {$D\bm{e}_1$};
+\draw[very thick,-Stealth] (0,0) -- (0,1) node[anchor=west] {$\bm{e}_2$};
+\draw[very thick,-Stealth] (0,0) -- (0,2) node[anchor=west] {$D\bm{e}_2$};
+\draw[very thick,-Stealth] (0,0) -- (2,1) node[anchor=west] {$\bm{v}$};
+\draw[very thick,-Stealth] (0,0) -- (1,2) node[anchor=west] {$D\bm{v}$};
+\end{tikzpicture}
+</latex-image>
+</image>
+
+という写像になる。</p>
+<p>対角成分がすべて 1 である対角行列を<term>単位行列</term>といい <m>I</m> と表す(<m>E</m> と表す流儀もある)。
+行列のサイズが分かるように <m>I_n</m> と表すこともある。
+任意の <m>n</m> 次元数ベクトル <m>\bm{v}</m> について、<m>I_n\bm{v}=\bm{v}</m> である。
+クロネッカーのデルタ
+<md>
+\delta_{i,j}\coloneqq
+\begin{cases}
+1,\amp\text{if } i = j\\
+0,\amp\text{otherwise}
+\end{cases}
+</md>
+を用いて、<m>I_n=[\delta_{i,j}]_{i,j}</m> と表すこともできる。</p>
+    </subsection>
+    <subsection xml:id="subsec-perm-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>置換行列</title>
+<p>正方行列 <m>P\in\mathbb{R}^{n\times n}</m> で各行、各列に 1 が一つだけ存在して、それ以外の要素がすべて 0 であるような行列を<term>置換行列</term>という。</p>
+<p>例えば
+  <md>
+\begin{bmatrix}
+1\amp0\\
+0\amp1
+\end{bmatrix}
+,\qquad
+\begin{bmatrix}
+0\amp1\\
+1\amp0
+\end{bmatrix}
+,\qquad
+\begin{bmatrix}
+0\amp1\amp0\\
+0\amp0\amp1\\
+1\amp0\amp0\\
+\end{bmatrix}
+,\qquad
+\begin{bmatrix}
+0\amp1\amp0\\
+1\amp0\amp0\\
+0\amp0\amp1\\
+\end{bmatrix}
+</md>
+は置換行列である。
+置換行列は<em>数ベクトルの成分を置換する</em>写像を表す。</p>
+    </subsection>
+    <subsection xml:id="subsec-rotate-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>2次元回転行列</title>
+<p>任意の <m>\theta\in\mathbb{R}</m> について <m>2\times 2</m> 実行列
+<md>
+R(\theta)\coloneqq
+\begin{bmatrix}
+\cos\theta \amp -\sin\theta\\
+\sin\theta \amp \cos\theta
+\end{bmatrix}
+</md>
+を<term>2次元回転行列</term>という。</p>
+<md>
+<mrow>R(\theta)\bm{e}_1 \amp= \begin{bmatrix}\cos\theta\\\sin\theta\end{bmatrix}</mrow>
+<mrow>R(\theta)\bm{e}_2 \amp= \begin{bmatrix}-\sin\theta\\\cos\theta\end{bmatrix}</mrow>
+</md>
+
+<p>なので、
+<image width="30%">
+<latex-image>
+\begin{tikzpicture}
+\draw[step=1cm,black!70] (-2,-2) grid (2,2);
+\draw[very thick,-Stealth] (-2,0) -- (2,0);
+\draw[very thick,-Stealth] (0,-2) -- (0,2);
+\draw[very thick,-Stealth] (0,0) -- (0:1) node[anchor=north] {$\bm{e}_1$};
+\draw[very thick,-Stealth] (0,0) -- (20:1) node[anchor=south] {$R\bm{e}_1$};
+\draw[very thick,-Stealth] (0,0) -- (90:1) node[anchor=west] {$\bm{e}_2$};
+\draw[very thick,-Stealth] (0,0) -- (110:1) node[anchor=east] {$R\bm{e}_2$};
+\draw[very thick,-Stealth] (0,0) -- (200:2) node[anchor=south] {$\bm{v}$};
+\draw[very thick,-Stealth] (0,0) -- (220:2) node[anchor=north] {$R\bm{v}$};
+\end{tikzpicture}
+</latex-image>
+</image>
+という写像になる。
+つまり、<em>2次元回転行列 <m>R(\theta)</m> は2次元実ベクトルを <m>\theta</m> 回転させる行列</em>である。</p>
+    </subsection>
+  </section>
+  <section xml:id="sec-matrix-ops" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の和とスカラー倍</title>
+    <subsection xml:id="subsec-matrix-add" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列の和とスカラー倍の定義</title>
+      <definition>
+        <title>行列の和</title>
+        <statement>
+         <p><m>n\times m</m> 行列 <m>A=[a_{i,j}]_{i,j},\,B=[b_{i,j}]_{i,j}</m> について、その和を <m>A+B\coloneqq[a_{i,j}+b_{i,j}]_{i,j}</m> と定義する。
+         型が異なる行列同士の和は定義されない。</p>
+      </statement></definition>
+
+      <definition>
+      <title>行列のスカラー倍の定義</title>
+        <statement>
+   <p>スカラー <m>c</m> と <m>n\times m</m> 行列 <m>A=[a_{i,j}]_{i,j}</m> について、スカラー倍を <m>cA\coloneqq[c a_{i,j}]_{i,j}</m> と定義する。</p>
+      </statement></definition>
+
+   <p>数ベクトルの場合と同様に <m>-A\coloneqq (-1)A</m> と定義する。また、<m>A-B\coloneqq A+(-B)</m> と定義する。</p>
+   <p><m>n</m> 次元数ベクトルを <m>n\times 1</m>行列とみなしても演算のルールとしては矛盾が生じない。</p>
+    </subsection>
+    <subsection xml:id="subsec-matrix-ops-mean" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列の和とスカラー倍の線型写像としての意味</title>
+      <proposition>
+        <statement>
+<p>任意の自然数 <m>n,\,m\in\mathbb{N}</m>と <m>A,\,B\in\mathbb{R}^{n\times m}</m> と <m>c\in\mathbb{R}</m>   と <m>\bm{v}\in\mathbb{R}^m</m> について
+<md>
+<mrow>(cA)\bm{v} = c(A\bm{v})</mrow>
+<mrow>(A+B)\bm{v} = A\bm{v} + B\bm{v}.</mrow>
+</md></p>
+        </statement>
+        <proof>
+          <p>行列 <m>\times</m> 数ベクトルの定義 <md>A\bm{v}=[a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i</md>
+            と行列のスカラー倍の定義 <md>cA=[ca_{i,j}]_{i,j}</md> より
+            <md>
+              <mrow>(cA)\bm{v} \amp= [(ca_{i,1})v_1+(ca_{i,2})v_2+\dotsb+(ca_{i,m})v_m]_i</mrow>
+              <mrow>\amp= c[a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i</mrow>
+              <mrow>\amp= c(A\bm{v}).</mrow>
+            </md>
+          </p>
+          <p>行列の和の定義 <md>A+B=[a_{i,j}+b_{i,j}]_{i,j}</md> より
+            <md>
+              <mrow>(A+B)\bm{v} \amp= [(a_{i,1}+b_{i,1})v_1+(a_{i,2}+b_{i,2})v_2+\dotsb+(a_{i,m}+b_{i,m})v_m]_i</mrow>
+              <mrow>\amp= [a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i</mrow>
+              <mrow>\amp\qquad + [b_{i,1}v_1+b_{i,2}v_2+\dotsb+b_{i,m}v_m]_i</mrow>
+              <mrow>\amp= A\bm{v} + B\bm{v}.</mrow>
+            </md>
+          </p>
+        </proof>
+      </proposition>
+    </subsection>
+    <subsection xml:id="subsec-matrix-ops-prop" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列の和とスカラー倍のその他の性質</title>
+      <p>数ベクトルの和とスカラー倍と同様に以下の性質が成り立つ。</p>
+          <p>任意の自然数 <m>n,\,m\in\mathbb{N}</m> と <m>A,\,B,\,C\in\mathbb{R}^{n\times m}</m> について</p>
+          <ul>
+          <li>[結合法則]  <m>(A+B)+C = A+(B+C)</m></li>
+          <li>[交換法則]  <m>A+B = B+A</m></li>
+          <li>[単位元の存在]  <m>O+A = A+O = A</m></li>
+          <li>[逆元の存在]  <m>A+(-A) = O</m></li>
+          </ul>
+
+<p>任意の自然数 <m>n,\,m\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times m}</m> と <m>a,\,b\in\mathbb{R}</m> について</p>
+<ul>
+<li>[結合法則]  <m>(ab)A = a(bA)</m></li>
+<li>[単位元]  <m>1A = A</m></li>
+</ul>
+
+<p>任意の自然数 <m>n,\,m\in\mathbb{N}</m>と <m>A,\,B\in\mathbb{R}^{n\times m}</m> と <m>a,\,b\in\mathbb{R}</m> について</p>
+<ul>
+<li>[分配法則]  <m>(a+b)A = aA + bA</m></li>
+<li>[分配法則]  <m>a(A+B) = aA + aB</m></li>
+</ul>
+
+    </subsection>
+  </section>
+  <section xml:id="sec-matrix-mul" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の積</title>
+    <subsection xml:id="subsec-matrix-mul" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列の積の定義</title>
+      <definition>
+        <title>行列の積</title>
+        <statement>
+        <p><m>n\times r</m> 行列 <m>A=[a_{i,j}]_{i,j}</m>  と <m>r\times m</m> 行列 <m>B=[b_{i,j}]_{i,j}</m> の積を
+        <md>
+         AB = \left[\sum_{k=1}^r a_{i,k} b_{k,j}\right]_{1\le i\le n,\,1\le j\le m}
+        </md>
+        と定義する。
+        <m>A</m> の列数と<m>B</m> の行数が等しくないとき、行列積 <m>AB</m> は定義されない。</p>
+        </statement>
+      </definition>
+      <p>行列 <m>B</m> が <m>r\times 1</m> 行列の場合、行列積 <m>AB</m> は <m>B</m> を数ベクトルとみなした場合の行列の作用 <m>AB</m> と等しい。</p>
+    </subsection>
+    <subsection xml:id="subsec-linear-comp" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>線形写像の合成写像</title>
+      <proposition xml:id="prop-linear-comp">
+        <statement>
+      写像 <m>f\colon\mathbb{R}^r\to\mathbb{R}^n</m>, <m>g\colon\mathbb{R}^m\to\mathbb{R}^r</m> が線形写像であると仮定する。このとき、合成写像 <m>f\circ g\colon\mathbb{R}^m\to\mathbb{R}^n</m> は線型写像である。
+        </statement>
+        <proof>
+          <p>任意の <m>\bm{v}\in\mathbb{R}^m</m> と <m>c\in\mathbb{R}</m> について</p>
+          <md>
+            <mrow>(f\circ g)(c\bm{v}) \amp= f(g(c\bm{v}))</mrow>
+            <mrow>\amp= f(cg(\bm{v}))</mrow>
+            <mrow>\amp= cf(g(\bm{v}))</mrow>
+            <mrow>\amp= c(f\circ g)(\bm{v}).</mrow>
+          </md>
+          <p>任意の <m>\bm{v},\bm{w}\in\mathbb{R}^m</m> について</p>
+          <md>
+            <mrow>(f\circ g)(\bm{v}+\bm{w}) \amp= f(g(\bm{v}+\bm{w}))</mrow>
+            <mrow>\amp= f(g(\bm{v})+g(\bm{w}))</mrow>
+            <mrow>\amp= f(g(\bm{v}))+f(g(\bm{w}))</mrow>
+            <mrow>\amp= (f\circ g)(\bm{v})+(f\circ g)(\bm{w}).</mrow>
+          </md>
+        </proof>
+      </proposition>
+    </subsection>
+    <subsection xml:id="subsec-matrix-mul-prop" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列の積と合成写像</title>
+      <p>行列 <m>\times</m> 数ベクトルの定義と行列 <m>\times</m> 行列の定義を見比べると以下の事実が確認できる。</p>
+      <fact xml:id="fact-mat">
+        <!-- <title>線形写像の合成写像</title> -->
+        <statement>
+          <p>任意の <m>n,m,r\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}</m>  について、<m>B</m> の <m>j</m> 列目を <m>\bm{b}_j</m> とすると
+          <md>
+          <mrow>AB \amp= A\begin{bmatrix}\bm{b}_1\amp\bm{b}_2\amp\dotsm\amp\bm{b}_m\end{bmatrix}\nonumber</mrow>
+          <mrow> \amp= \begin{bmatrix}A\bm{b}_1\amp A\bm{b}_2\amp\dotsm\amp A\bm{b}_m\end{bmatrix}</mrow>
+          </md>
+          である。</p>
+        </statement>
+      </fact>
+      <p>行列の積 <m>AB</m> は二つの線形写像 <m>A</m> と <m>B</m> の合成写像を表す行列である。</p>
+      <theorem>
+        <title>線形写像の合成写像</title>
+        <statement>
+          任意の <m>n,m,r\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}</m> と <m>\bm{v}\in\mathbb{R}^m</m> について
+          <md>
+             (AB)\bm{v} = A(B\bm{v}).
+          </md>
+        </statement>
+        <proof>
+          <p><xref ref="prop-matrix-e" /> より、
+          <md>
+            B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}
+          </md></p>
+          <p>よって <xref ref="fact-mat" /> より、
+          <md>
+            AB = \begin{bmatrix}A(B\bm{e}_1)\amp A(B\bm{e}_2)\amp \dotsm\amp A(B\bm{e}_m)\end{bmatrix}
+          </md>
+          が成り立つ。一方で
+          <md>
+            AB = \begin{bmatrix}(AB)\bm{e}_1\amp (AB)\bm{e}_2\amp \dotsm\amp (AB)\bm{e}_m\end{bmatrix}
+          </md>
+          より、任意の <m>i=1,2,\dotsc,m</m> について
+          <md>
+            (AB)\bm{e}_i = A(B\bm{e}_i)
+          </md>
+          が成り立つ。</p>
+          <p>ここで二つの写像
+            <md>
+              <mrow>\bm{v}\longmapsto (AB)\bm{v}</mrow>
+              <mrow>\bm{v}\longmapsto A(B\bm{v})</mrow>
+            </md>
+          は線型写像である(一つ目は行列を掛ける写像なので線型写像、二つ目は線型写像の合成なので線型写像)。
+          よって標準ベクトルの行き先のみによって写像は定まる。
+          標準ベクトルの行き先が等しいので、<m>(AB)\bm{v}=A(B\bm{v})</m> である。</p>
+        </proof>
+      </theorem>
+    </subsection>
+    <subsection xml:id="subsec-matrix-mul-assos" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列積の結合法則</title>
+      <theorem>
+        <title>行列積の結合法則</title>
+        <statement>
+          任意の <m>n,m,r,s\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r}</m>, <m>B\in\mathbb{R}^{r\times s}</m>, <m>C\in\mathbb{R}^{s\times m}</m>  について
+          <md>
+             (AB)C = A(BC).
+          </md>
+        </statement>
+        <proof>
+          <md>
+            <mrow>(AB)C \amp= (AB)\begin{bmatrix}\bm{c}_1\amp\dotsm\amp\bm{c}_s\end{bmatrix}</mrow>
+            <mrow>\amp= \begin{bmatrix}(AB)\bm{c}_1\amp\dotsm\amp(AB)\bm{c}_s\end{bmatrix}</mrow>
+            <mrow>\amp= \begin{bmatrix}A(B\bm{c}_1)\amp\dotsm\amp A(B\bm{c}_s)\end{bmatrix}</mrow>
+            <mrow>\amp= A\begin{bmatrix}B\bm{c}_1\amp\dotsm\amp B\bm{c}_s\end{bmatrix}</mrow>
+            <mrow>\amp= A(BC).</mrow>
+          </md>
+        </proof>
+      </theorem>
+    <p>
+       行列積の結合法則が成り立つため、括弧を省略して <m>ABC</m> と書いても曖昧さがない。
+   また、正方行列 <m>A</m> のべき乗を <m>A^n:= \underbrace{AA\dotsm A}_{n個}</m> と定義する。
+   </p>
+    </subsection>
+    <subsection xml:id="subsec-matrix-mul-dist" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列積の分配法則</title>
+      <proposition>
+        <title>行列積の分配法則</title>
+        <statement>
+          <p>任意の <m>n,m,r\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r}</m>, <m>B,C\in\mathbb{R}^{r\times m}</m>  について、<md>A(B+C)=AB+AC.</md></p>
+          <p>また、任意の <m>n,m,r\in\mathbb{N}</m> と <m>B,C\in\mathbb{R}^{n\times r},\,D\in\mathbb{R}^{r\times m}</m>  について、<md>(B+C)D=BD+CD.</md></p>
+        </statement>
+        <proof>
+          <md>
+           <mrow>A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}</mrow>
+           <mrow>\amp= \left[\sum_{k=1}^r a_{i,k} b_{k,j}+ \sum_{k=1}^r a_{i,k}c_{k,j}\right]_{i,j}</mrow>
+           <mrow>\amp= \left[\sum_{k=1}^r a_{i,k} b_{k,j}\right]_{i,j}+ \left[\sum_{k=1}^r a_{i,k}c_{k,j}\right]_{i,j}</mrow>
+           <mrow>\amp=AB+AC</mrow>
+          </md>
+          <md>
+           <mrow>(B+C)D \amp= \left[\sum_{k=1}^r (b_{i,k}+c_{i,k}) d_{k,j}\right]_{i,j}</mrow>
+           <mrow>\amp= \left[\sum_{k=1}^r b_{i,k} d_{k,j} + \sum_{k=1}^r c_{i,k} d_{k,j}\right]_{i,j}</mrow>
+           <mrow>\amp= \left[\sum_{k=1}^r b_{i,k} d_{k,j}\right]_{i,j} + \left[\sum_{k=1}^r c_{i,k} d_{k,j}\right]_{i,j}</mrow>
+           <mrow>\amp= BD+CD</mrow>
+          </md>
+        </proof>
+      </proposition>
+    </subsection>
+    <subsection xml:id="subsec-matrix-mul-comm" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列積の交換法則は成り立たない</title>
+         <p>一方で交換法則 <m>AB=BA</m> は成り立つとは限らない。
+   まず両辺の型が一致するために、<m>A</m> と <m>B</m> がともに <m>n\times n</m> 行列である必要がある。</p>
+   <p>そのような場合でも、例えば
+   <md>
+     <mrow>\begin{bmatrix}0\amp1\\1\amp0\end{bmatrix}\begin{bmatrix}1\amp0\\0\amp-1\end{bmatrix}\amp=\begin{bmatrix}0\amp-1\\1\amp0\end{bmatrix}</mrow>
+     <mrow>\begin{bmatrix}1\amp0\\0\amp-1\end{bmatrix}\begin{bmatrix}0\amp1\\1\amp0\end{bmatrix}\amp=\begin{bmatrix}0\amp1\\-1\amp0\end{bmatrix}</mrow>
+    </md>
+    のような反例が存在する。</p>
+    <p>行列積の交換法則が成り立たないため、一般に <md>(A+B)^2=A^2+AB+BA+B^2\ne A^2+2AB+B^2</md>である。</p>
     </subsection>
   </section>
 </chapter>

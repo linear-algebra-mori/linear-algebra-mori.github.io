@@ -14,10 +14,11 @@
     <!-- Include chapters -->
     <xi:include href="./ch-num-vectors.ptx" />
     <xi:include href="./ch-matrix.ptx" />
+    <xi:include href="./ch-matrix-apps.ptx" />
 
 
     <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
+    <!-- <xi:include href="./backmatter.ptx" /> -->
 
   </book>
 </pretext>

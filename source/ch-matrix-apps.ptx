@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <chapter xml:id="ch-matrix-app" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の簡単な応用</title>
+    <section xml:id="sec-fib" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>フィボナッチ数列</title>
+      <p>フィボナッチ数列 <m>(F_n)_{n\ge 0}</m> は以下の漸化式で定義される。
+      <md>
+       <mrow>F_0 \amp= 0,\qquad F_1 = 1</mrow>
+       <mrow>F_n \amp= F_{n-1} + F_{n-2},\amp \text{if } n\ge 2</mrow>
+      </md>
+フィボナッチ数列の最初の数項は <md>0,1,1,2,3,5,8,13,21,\dotsc</md> である。
+ <m>F_n</m> は定義に従って <m>n-1</m> 回足し算すれば計算できるが、行列を使うと(整数のかけ算も使うものの)もっと効率的に <m>F_n</m>  が計算できる。</p>
+
+<p>任意の <m>n\ge 2</m> について
+<md>
+\begin{bmatrix}
+F_n\\
+F_{n-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\amp1\\
+1\amp0
+\end{bmatrix}
+\begin{bmatrix}
+F_{n-1}\\
+F_{n-2}
+\end{bmatrix}
+</md>
+が成り立つことから、
+
+<md>
+<mrow>
+\begin{bmatrix}
+F_n\\
+F_{n-1}
+\end{bmatrix}
+\amp=
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+\begin{bmatrix}
+F_{1}\\
+F_{0}
+\end{bmatrix}</mrow>
+<mrow>
+\amp=
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}</mrow>
+</md>
+が成り立つ。</p>
+
+<p>
+よって、
+<m>\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}</m> の一列目は <m>\begin{bmatrix}F_n\\F_{n-1}\end{bmatrix}</m> に等しい。
+二列目は <m>n\ge 2</m> のとき、
+<md>
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-2}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_{n-1}\\
+F_{n-2}
+\end{bmatrix}
+</md>
+である。よって <m>n\ge 2</m> について、
+<md>
+\begin{bmatrix}
+1\amp 1\\
+1\amp 0
+\end{bmatrix}^{n-1}
+=
+\begin{bmatrix}
+F_n\amp F_{n-1}\\
+F_{n-1}\amp F_{n-2}
+\end{bmatrix}
+</md>
+が成り立つ。</p>
+
+<p>正方行列 <m>A</m> について、<m>A^n</m> は
+<md>
+A^n =
+\begin{cases}
+I,\amp \text{if }n=0\\
+(A^{n/2})^2,\amp\text{if $n$ が正の偶数}\\
+(A^{(n-1)/2})^2A,\amp\text{それ以外}
+\end{cases}
+</md>
+という漸化式に基づいて計算することができる。このアルゴリズムは <m>A^n</m> の計算のために高々 <m>2\log_2 n</m>  回の行列積の計算を含む。</p>
+
+<p>
+例えば <m>A=\begin{bmatrix}1\amp 1\\1\amp 0\end{bmatrix}</m> とおくと、
+<md>
+<mrow>A^2 \amp=
+\begin{bmatrix}
+2\amp 1\\
+1\amp 1
+\end{bmatrix}</mrow>
+<mrow>A^4 = (A^2)^2 \amp=
+\begin{bmatrix}
+5\amp 3\\
+3\amp 2
+\end{bmatrix}</mrow>
+<mrow>A^8 = (A^4)^2 \amp=
+\begin{bmatrix}
+34\amp 21\\
+21\amp 13
+\end{bmatrix}</mrow>
+<mrow>A^{16} = (A^8)^2 \amp=
+\begin{bmatrix}
+1597\amp 987\\
+987\amp 610
+\end{bmatrix}</mrow>
+</md>
+よって <m>F_{17}=1597</m> と分かる。</p>
+
+    </section>
+  </chapter>
