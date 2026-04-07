@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.1';
+eBookConfig.runestone_version = '7.13.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.f6b4a33441cf25ab.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.720279673ae692d7.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -231,7 +231,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.2</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.3</span> <span class="title">グラフのパスの個数</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li></ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
@@ -336,7 +344,7 @@ AB \amp= A\begin{bmatrix}\bm{b}_1\amp\bm{b}_2\amp\dotsm\amp\bm{b}_m\end{bmatrix}
 <a href="sec-matrix-linmap.html#prop-matrix-e" class="xref" data-knowl="./knowl/xref/prop-matrix-e.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.5.1">命題 2.5.1</a> より、</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html" id="subsec-matrix-mul-prop-5-3-1-2">
 \begin{equation*}
-B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}
+B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}.
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -364,14 +372,14 @@ AB = \begin{bmatrix}(AB)\bm{e}_1\amp (AB)\bm{e}_2\amp \dotsm\amp (AB)\bm{e}_m\en
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-matrix-mul-prop-5-3-3">
-<div class="para">ここで二つの写像</div>
-<div class="displaymath process-math" id="subsec-matrix-mul-prop-5-3-3-1">
+<div class="para">ここで二つの <span class="process-math">\(\mathbb{R}^m\)</span> から <span class="process-math">\(\mathbb{R}^n\)</span> への写像</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-comp.html" id="subsec-matrix-mul-prop-5-3-3-3">
 \begin{gather*}
 \bm{v}\longmapsto (AB)\bm{v}\\
 \bm{v}\longmapsto A(B\bm{v})
 \end{gather*}
 </div>
-<div class="para">は線型写像である(一つ目は行列を掛ける写像なので線型写像、二つ目は線型写像の合成なので線型写像)。 よって標準ベクトルの行き先のみによって写像は定まる。 標準ベクトルの行き先が等しいので、<span class="process-math">\((AB)\bm{v}=A(B\bm{v})\)</span> である。</div>
+<div class="para">は線型写像である(一つ目は行列を掛ける写像なので線型写像、二つ目は線型写像の合成なので <a href="sec-matrix-mul.html#prop-linear-comp" class="xref" data-knowl="./knowl/xref/prop-linear-comp.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.8.2">命題 2.8.2</a> より線型写像)。 よって標準ベクトルの行き先のみによって写像は定まる。 この二つの線形写像は標準ベクトルの行き先が等しいので、<span class="process-math">\((AB)\bm{v}=A(B\bm{v})\)</span> である。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-5-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="証明 2.8.4.1"><a href="#subsec-matrix-mul-prop-5-3" title="Copy heading and permalink for 証明 2.8.4.1" aria-label="Copy heading and permalink for 証明 2.8.4.1">🔗</a></div>
