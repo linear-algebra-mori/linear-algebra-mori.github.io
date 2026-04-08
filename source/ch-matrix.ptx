@@ -399,7 +399,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     <subsection xml:id="subsec-lin" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>線形写像は行列で表すことができる</title>
 
-<p>写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> が線形性を満たすとすると、任意の <m>\bm{v}=[v_i]_i</m> について、
+<p>写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> が線形性を満たすとすると、任意の <m>\bm{v}=[v_i]_i\in\mathbb{R}^m</m> について、
 <md>
 f(\bm{v}) = f(v_1\bm{e}_1+ v_2\bm{e}_2 + \dotsb + v_m\bm{e}_m)
 = v_1f(\bm{e}_1) + v_2f(\bm{e}_2) + \dotsb + v_mf(\bm{e}_m)
@@ -410,6 +410,7 @@ f(\bm{v}) = f(v_1\bm{e}_1+ v_2\bm{e}_2 + \dotsb + v_m\bm{e}_m)
 <p>
 一方で行列
 <md>
+A_f\coloneqq
 \begin{bmatrix}
 f(\bm{e}_1)\amp
 f(\bm{e}_2)\amp
@@ -417,9 +418,34 @@ f(\bm{e}_2)\amp
 f(\bm{e}_m)
 \end{bmatrix}
 </md>
-は各 <m>j\in\{1,2,\dotsc,m\}</m> について  <m>\bm{e_j}</m> を  <m>f(\bm{e}_j)</m> に写す線形写像を表す。
-つまり、 <m>A</m> は <m>f</m> を表していることになる。
-よって、<em>任意の <m>\mathbb{R}^m\to\mathbb{R}^n</m> の線形写像は <m>n\times m</m> 実行列で表現できる</em>ことになる。</p>
+とすると、<xref ref="prop-matrix-e" />より、
+<md>
+<mrow>A_{f_A}\amp=
+\begin{bmatrix}
+f_A(\bm{e}_1)\amp
+f_A(\bm{e}_2)\amp
+\dotsm
+f_A(\bm{e}_m)
+\end{bmatrix}</mrow>
+<mrow>\amp=
+\begin{bmatrix}
+A\bm{e}_1\amp
+A\bm{e}_2\amp
+\dotsm
+A\bm{e}_m
+\end{bmatrix}</mrow>
+<mrow>\amp=A</mrow>
+</md>
+である。
+また、各 <m>j\in\{1,2,\dotsc,m\}</m> について
+<md>
+  f_{A_f}(\bm{e}_j)= A_f\bm{e}_j = f(\bm{e}_j)
+</md>
+より、任意の <m>\bm{v}\in\mathbb{R}^m</m> について <m>f_{A_f}(\bm{v})=f(\bm{v})</m> であり、<m>f_{A_f}</m> と <m>f</m> は写像として等しい。
+
+よって、<em>任意の線型写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> は <m>n\times m</m> 実行列 <m>A_f</m> を用いて <m>f_{A_f}</m> と表すことができる</em>。</p>
+
+<p>以降は <m>A\in\mathbb{R}^{n\times m}</m> と線形写像 <m>f_A\colon\mathbb{R}^m\to\mathbb{R}^n</m> は同一視する。</p>
     </subsection>
   </section>
   <section xml:id="sec-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -726,7 +752,7 @@ R(\theta)\coloneqq
               <mrow>\bm{v}\longmapsto (AB)\bm{v}</mrow>
               <mrow>\bm{v}\longmapsto A(B\bm{v})</mrow>
             </md>
-          は線型写像である(一つ目は行列を掛ける写像なので線型写像、二つ目は線型写像の合成なので <xref ref="prop-linear-comp" /> より線型写像)。
+          は線型写像である(一つ目は行列を掛ける写像 <m>f_{AB}</m> なので線型写像、二つ目は線型写像の合成 <m>f_A\circ f_B</m> なので <xref ref="prop-linear-comp" /> より線型写像)。
           よって標準ベクトルの行き先のみによって写像は定まる。
           この二つの線形写像は標準ベクトルの行き先が等しいので、<m>(AB)\bm{v}=A(B\bm{v})</m> である。</p>
         </proof>

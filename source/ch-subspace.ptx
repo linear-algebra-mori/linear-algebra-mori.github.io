@@ -15,13 +15,15 @@
         <p>線形空間 <m>V, W\subseteq\mathbb{R}^n</m> が <m>W\subseteq V</m> を満すとき <m>W</m> は <m>V</m> の<term>部分空間</term>であるという。</p>
 	  </statement>
 	</definition>
+  <p><m>V=\mathbb{R}^n</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。
+  また、<m>V=\{\bm{0}_n\}</m> も線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。
+  これらは <m>\mathbb{R}^n</m> の<term>自明な部分空間</term> という。</p>
 	<example>
       <title>線形空間と部分空間の例</title>
 	  <ul>
-        <li><m>V=\mathbb{R}^n</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
-        <li><m>V=\{\bm{0}_n\}</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
         <li>任意の <m>\bm{v}\in\mathbb{R}^n</m> について <m>V=\{c\bm{v}\mid c\in\mathbb{R}\}</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
         <li>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について <m>V=\{c_1\bm{v}+\dotsb+c_k\bm{v}_k\mid c_1,\dotsc,c_k\in\mathbb{R}\}</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。</li>
+        <li><m>V=\left\{\bm{v}\in\mathbb{R}^2\mid v_1+v_2=0\right\}</m> は線形空間であり、<m>\mathbb{R}^2</m> の部分空間である。</li>
 	  </ul>
 	</example>
 	<definition>
@@ -31,8 +33,174 @@
 	    <md>
 		  \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\coloneqq\left\{\sum_{i=1}^k a_i\bm{v}_i\mid a_1,\dotsc, a_k\in\mathbb{R}\right\}
 	    </md>
-		と定義する。</p>
+		と定義する。
+		これを <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> のスパン</term>もしくは
+    <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が貼る線形空間(部分空間)</term>という。
+   また、<m>\mathrm{span}()=\{\bm{0}\}</m> と定義する。</p>
 	  </statement>
 	</definition>
+  </section>
+  <section xml:id="sec-linear-ind" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形独立性</title>
+  <p>スパンを使って <m>\mathbb{R}^n</m> の部分空間を表すことができるが、その際にベクトルが冗長になる場合もある。
+  	例えば <m>\mathbb{R}^3</m> において、
+  	<md>
+  		<mrow>\mathrm{span}(\bm{e}_1,\bm{e}_2,\bm{e}_1+\bm{e}_2) \amp= \mathrm{span}(\bm{e}_1,\bm{e}_2)</mrow>
+  		<mrow> \amp= \mathrm{span}(\bm{e}_1,\bm{e}_1+\bm{e}_2) = \mathrm{span}(\bm{e}_2,\bm{e}_1+\bm{e}_2)</mrow>
+ 	</md>
+  であり、三つめのベクトルは冗長となる。</p>
+  <p>冗長性を持たないベクトルの集合の性質を線形独立性として定義する。</p>
+  <definition>
+  <title>線形独立性</title>
+  <statement>
+   <p><m>k</m> 本の数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が<term>線形独立</term>であるとは
+   <md>
+   a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k = \bm{0} \iff a_1=a_2=\dotsb=a_k = 0
+   </md>
+   が成り立つことをいう。
+   空集合(<m>k=0</m> の場合)も線形独立であるという。</p>
+
+   <p>線形独立でないベクトル集合を<term>線形従属</term>であるという。</p>
+  </statement>
+  </definition>
+  <example>
+   <title>線形独立性の例</title>
+   <ul>
+   <li><m>\bm{v}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0}</m>.</li>
+   <li><m>\bm{v},\bm{w}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0},\,\bm{w}=a\bm{v}</m> を満たす <m>a\in \mathbb{R}</m> が存在しない。</li>
+   <li><m>\bm{e}_1,\dotsc,\bm{e}_n\in\mathbb{R}^n</m> は線形独立。</li>
+   <li><m>\bm{e}_1,\bm{e}_2,\bm{e}_1+\bm{e}_2\in\mathbb{R}^3</m> は線形従属。</li>
+   <li>ベクトルの集合 <m>S\subseteq \mathbb{R}^n</m> が線形独立 <m>\Longrightarrow</m> <m>S</m> の部分集合は線形独立。</li>
+   </ul>
+   \end{example}
+  </example>
+  <lemma>
+  <statement>
+<p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
+	<m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立である <m>\iff</m> 任意の <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m>
+について、
+<md>
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
+</md>
+を満たす <m>a_1,\dotsc,a_k\in \mathbb{R}</m> は唯一。</p>
+</statement>
+<proof>
+<p><m>\Leftarrow</m> は自明。</p>
+<p><m>\Rightarrow</m> を示す。
+ある <m>a_1,\dotsc,a_k,\,b_1,\dotsc,b_k\in \mathbb{R}</m> が
+<md>
+<mrow>a_1\bm{v}_1+\dotsb+a_k\bm{v}_k \amp= \bm{v}</mrow>
+<mrow>b_1\bm{v}_1+\dotsb+b_k\bm{v}_k \amp= \bm{v}</mrow>
+</md>
+を満たすと仮定する。
+<md>
+<mrow>\bm{0} \amp= a_1\bm{v}_1+\dotsb+a_k\bm{v}_k - (b_1\bm{v}_1+\dotsb+b_k\bm{v}_k)</mrow>
+<mrow>\amp= (a_1-b_1)\bm{v}_1+\dotsb+(a_k-b_k)\bm{v}_k</mrow>
+</md>
+が成り立つ。<m>\bm{v}_1,\dotsc,\bm{v}_k</m> は線形独立なので、 <m>a_1-b_1=\dotsb=a_k-b_k=0</m> が成り立つ。</p>
+</proof>
+</lemma>
+
+<corollary>
+   <p><m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>\bm{v}_1,\dotsc,\bm{v}_n,\bm{v}</m> は線形従属。</p>
+</corollary>
+</section>
+  <section xml:id="sec-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>基底</title>
+    <p>線形独立なベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。</p>
+    <definition>
+    	<title>リスト</title>
+    	<statement>
+   <p><m>\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n</m> について、ベクトルの列 <m>(\bm{v}_1,\dotsc,\bm{v}_k)</m> 
+   をベクトルの<term>リスト</term>という。
+   括弧を省略して <m>\bm{v}_1,\dotsc,\bm{v}_n</m> と表すこともある。</p>
+    	</statement>
+    </definition>
+
+  <lemma>
+<statement>
+<p>リスト <m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形従属 <m>\iff</m> ある <m>j\in\{1,2,\dotsc,k\}</m> が存在して、
+ <m>\bm{v}_j \in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})</m>.</p>
+</statement>
+<proof>
+<p><m>\Leftarrow</m> は自明。<m>\Rightarrow</m> を示す。</p>
+<p><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形従属であることから、「すべて0」ではない <m>a_1,\dotsc,a_k\in \mathbb{R}</m> が存在して
+<md>
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{0}.
+</md>
+<m>j</m> を <m>a_j\ne 0</m> である最大のものとすると、
+<md>
+a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
+</md>
+よって、
+<md>
+\bm{v}_j = -\frac{a_1}{a_j}\bm{v}_1-\dotsb-\frac{a_{j-1}}{a_j}\bm{v}_{j-1}.
+</md></p>
+</proof>
+  </lemma>
+
+<lemma>
+<statement>
+<p>任意の <m>\bm{v},\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について
+	<md>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)\iff 
+\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})=\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k).</md></p>
+</statement>
+<proof>
+<p><m>\Leftarrow</m> は自明。<m>\Rightarrow</m> を示す。</p>
+<p>
+<m>\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})\supseteq\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)</m> は自明なので
+<m>\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})\subseteq\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)</m> を示せばよい。</p>
+<p>仮定より
+<md>
+\bm{v} = a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k
+</md>
+を満たす <m>a_1,\dotsc,a_k\in \mathbb{R}</m> が存在する。</p>
+
+<p>任意の <m>\bm{w}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})</m> について、
+<md>
+\bm{w} = b_1\bm{v}_1 + \dotsb + b_k\bm{v}_k + b\bm{v}
+</md>
+を満たす <m>b_1,\dotsc,b_k,b\in \mathbb{R}</m> が存在する。</p>
+%
+<p>
+<md>
+<mrow>\bm{w} \amp= b_1\bm{v}_1 + \dotsb + b_k\bm{v}_k + b\bm{v}</mrow>
+<mrow>\amp= b_1\bm{v}_1 + \dotsb + b_k\bm{v}_k + b(a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k)</mrow>
+<mrow>\amp= (b_1+ba_1)\bm{v}_1 + \dotsb + (b_k+ba_k)\bm{v}_k</mrow>
+</md>
+よって
+<m>\bm{w}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)</m>。</p>
+</proof>
+  </lemma>
+
+<lemma>
+	<statement>
+    <p><m>\bm{v}_1,\dotsc,\bm{v}_m\in \mathbb{R}^n</m> について、<m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> に含まれる線形独立集合のサイズは高々 <m>m</m> である。</p>
+  </statement>
+  <proof>
+  	<p><m>V = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> とおく。
+  		<m>\bm{u}_1,\dotsc,\bm{u}_k\in V</m> が線形独立であると仮定する。
+  		このとき、<m>k\le m</m> を示せばよい。</p>
+    <ol>
+    	<li><m>B\leftarrow(\bm{v}_1,\dotsc,\bm{v}_m)</m></li>
+    	<li>for <m>i\in\{1,2,\dotsc,n\}</m>:</li>
+    	<li>　<m>B\leftarrow (\bm{u}_i, B)</m></li>
+    </ol>
+  </proof>
+</lemma>
+
+
+
+
+
+<theorem>
+	<statement>
+    <p><m>V</m> を <m>\mathbb{R}^n</m> の部分空間であるとする。
+    	数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> と <m>\bm{w}_1,\dotsc,\bm{w}_\ell\in V</m> がそれぞれ線形独立であり <m>k\lt\ell</m>とする。
+    	このとき、ある <m>i\in\{1,2,\dotsc,\ell\}</m> が存在し、<m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{w}_i</m> は線形独立である。
+    </p>
+	</statement>
+</theorem>
+
   </section>
 </chapter>

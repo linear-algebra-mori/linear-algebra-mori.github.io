@@ -166,7 +166,7 @@ I,\amp \text{if }n=0\\
 		\end{bmatrix}
 	  </md>
 	  が成り立つ。</p>
-	  <p>よって <m>N</m> 日後の天気は
+	  <p>よって <m>N</m> 日後の天気の確率分布は
 	  <md>
 	    \begin{bmatrix}
 		p_{N}\\q_{N}\\r_{N}

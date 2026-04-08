@@ -41,6 +41,7 @@
   <rename element="theorem" xml:lang="en-US">定理</rename>
   <rename element="proposition" xml:lang="en-US">命題</rename>
   <rename element="lemma" xml:lang="en-US">補題</rename>
+  <rename element="corollary" xml:lang="en-US">系</rename>
   <rename element="fact" xml:lang="en-US">事実</rename>
   <rename element="example" xml:lang="en-US">例</rename>
   <rename element="previous" xml:lang="en-US">一つ前</rename>
