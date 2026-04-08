@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.2';
+eBookConfig.runestone_version = '7.13.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.f6b4a33441cf25ab.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.720279673ae692d7.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -239,7 +239,11 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">基底</span></a></div></li>
+</ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
@@ -342,7 +346,7 @@ a_{n,j}\\
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像は行列で表すことができる</span>
 </h3>
 <div class="para logical" id="subsec-lin-2">
-<div class="para">写像 <span class="process-math">\(f\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> が線形性を満たすとすると、任意の <span class="process-math">\(\bm{v}=[v_i]_i\)</span> について、</div>
+<div class="para">写像 <span class="process-math">\(f\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> が線形性を満たすとすると、任意の <span class="process-math">\(\bm{v}=[v_i]_i\in\mathbb{R}^m\)</span> について、</div>
 <div class="displaymath process-math" id="subsec-lin-2-3">
 \begin{equation*}
 f(\bm{v}) = f(v_1\bm{e}_1+ v_2\bm{e}_2 + \dotsb + v_m\bm{e}_m)
@@ -354,8 +358,9 @@ f(\bm{v}) = f(v_1\bm{e}_1+ v_2\bm{e}_2 + \dotsb + v_m\bm{e}_m)
 </div>
 <div class="para logical" id="subsec-lin-3">
 <div class="para">一方で行列</div>
-<div class="displaymath process-math" id="subsec-lin-3-1">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html" id="subsec-lin-3-1">
 \begin{equation*}
+A_f\coloneqq
 \begin{bmatrix}
 f(\bm{e}_1)\amp
 f(\bm{e}_2)\amp
@@ -364,8 +369,36 @@ f(\bm{e}_m)
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">は各 <span class="process-math">\(j\in\{1,2,\dotsc,m\}\)</span> について  <span class="process-math">\(\bm{e_j}\)</span> を  <span class="process-math">\(f(\bm{e}_j)\)</span> に写す線形写像を表す。 つまり、 <span class="process-math">\(A\)</span> は <span class="process-math">\(f\)</span> を表していることになる。 よって、<em class="emphasis">任意の <span class="process-math">\(\mathbb{R}^m\to\mathbb{R}^n\)</span> の線形写像は <span class="process-math">\(n\times m\)</span> 実行列で表現できる</em>ことになる。</div>
+<div class="para">とすると、<a href="sec-matrix-linmap.html#prop-matrix-e" class="xref" data-knowl="./knowl/xref/prop-matrix-e.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.5.1">命題 2.5.1</a>より、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html" id="subsec-lin-3-3">
+\begin{align*}
+A_{f_A}\amp=
+\begin{bmatrix}
+f_A(\bm{e}_1)\amp
+f_A(\bm{e}_2)\amp
+\dotsm
+f_A(\bm{e}_m)
+\end{bmatrix}\\
+\amp=
+\begin{bmatrix}
+A\bm{e}_1\amp
+A\bm{e}_2\amp
+\dotsm
+A\bm{e}_m
+\end{bmatrix}\\
+\amp=A
+\end{align*}
+</div>
+<div class="para">である。 また、各 <span class="process-math">\(j\in\{1,2,\dotsc,m\}\)</span> について</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html" id="subsec-lin-3-5">
+\begin{equation*}
+f_{A_f}(\bm{e}_j)= A_f\bm{e}_j = f(\bm{e}_j)
+\end{equation*}
+</div>
+<div class="para">より、任意の <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について <span class="process-math">\(f_{A_f}(\bm{v})=f(\bm{v})\)</span> であり、<span class="process-math">\(f_{A_f}\)</span> と <span class="process-math">\(f\)</span> は写像として等しい。 よって、<em class="emphasis">任意の線型写像 <span class="process-math">\(f\colon \mathbb{R}^m\to\mathbb{R}^n\)</span> は <span class="process-math">\(n\times m\)</span> 実行列 <span class="process-math">\(A_f\)</span> を用いて <span class="process-math">\(f_{A_f}\)</span> と表すことができる</em>。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-lin-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-lin-4">以降は <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> と線形写像 <span class="process-math">\(f_A\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> は同一視する。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-lin-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 2.5.3: 線形写像は行列で表すことができる"><a href="#subsec-lin" title="Copy heading and permalink for Subsection 2.5.3: 線形写像は行列で表すことができる" aria-label="Copy heading and permalink for Subsection 2.5.3: 線形写像は行列で表すことができる">🔗</a></div>
 </section><div class="autopermalink" data-description="Section 2.5: 線形写像は行列"><a href="#sec-matrix-linmap" title="Copy heading and permalink for Section 2.5: 線形写像は行列" aria-label="Copy heading and permalink for Section 2.5: 線形写像は行列">🔗</a></div>
