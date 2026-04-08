@@ -104,9 +104,144 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
 <corollary>
    <p><m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>\bm{v}_1,\dotsc,\bm{v}_n,\bm{v}</m> は線形従属。</p>
 </corollary>
+<lemma xml:id="lem-elem-vec">
+<!-- <title><m>n</m>次元数ベクトル空間の線形独立ベクトルのサイズ</title> -->
+<statement>
+<p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> と <m>c\in\mathbb{R}</m> と <m>s\ne t\in\{1,\dotsc,n\}</m> について、<m>\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n</m> を
+<md>
+<mrow>\bm{v}'_t\amp=\bm{v}_t+c\bm{v}_s</mrow>
+<mrow>\bm{v}'_i\amp=\bm{v}_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{t\}</mrow>
+</md>
+と定義する。このとき、
+<ul>
+  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m>.</li>
+  <li><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立 <m>\iff</m> <m>\bm{v}'_1,\dotsc,\bm{v}'_k</m> が線形独立。</li>
+</ul></p>
+</statement>
+<proof>
+<p>まず
+  <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) \supseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m>
+は自明である。また、<m>\bm{v}'_t \leftarrow\bm{v}'_t-c\bm{v}'_s</m> とすることで、元の <m>\bm{v}_1,\dotsc,\bm{v}_k</m> が復元できるので、同様に
+  <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) \subseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m>
+  である。
+よって <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m> は示された。
+</p>
+<p>
+次に
+<md>
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k=\bm{0}
+</md>
+と仮定する。このとき、
+<md>
+a_1\bm{v}'_1+\dotsb+a_{t-1}\bm{v}'_{t-1} + a_t (\bm{v}'_t-c\bm{v}'_s) + a_{t+1}\bm{v}_{t+1}+\dotsb+a_k\bm{v}'_k=\bm{0}
+</md>
+である。よって、
+<md>
+<mrow>a'_s\amp=a_s-ca_t</mrow>
+<mrow>a'_i\amp=a_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}</mrow>
+</md>
+とおくと、
+<md>
+a'_1\bm{v}'_1+\dotsb+a'_k\bm{v}'_k=\bm{0}
+</md>
+である。
+</p>
+<p>
+ここで
+<md>
+a_1=\dotsb=a_k=0\Longrightarrow
+a'_1=\dotsb=a'_k=0
+</md>
+また、
+<md>
+<mrow>a_s\amp=a'_s+ca'_t</mrow>
+<mrow>a_i\amp=a'_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}</mrow>
+</md>
+なので
+<md>
+a'_1=\dotsb=a'_k=0\Longrightarrow
+a_1=\dotsb=a_k=0
+</md>
+</p>
+<p>よって
+  <md>\bm{v}_1,\dotsc,\bm{v}_k \text{ が線形独立} \iff \bm{v}'_1,\dotsc,\bm{v}'_k \text{ が線形独立}</md>
+が示された。</p>
+</proof>
+</lemma>
+<algorithm xml:id="alg-lin-ind">
+<title>数ベクトルの線形独立性判定アルゴリズム</title>
+<statement>
+<dl>
+<li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
+<li>出力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が線形独立かどうか？</li>
+</dl>
+<ol>
+<li>for <m>i=1,\dotsc,k</m> :</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>If <m>\bm{v}_i=\bm{0}</m> : return No</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>p_i\leftarrow \bm{v}_i</m> の非零成分のインデックス(どれでもよい)。</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_i\leftarrow \frac1{(\bm{v}_i)_{p_i}}\bm{v}_i</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i+1,\dotsc,k</m> :</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_j\leftarrow\bm{v}_j-(\bm{v}_j)_{p_i}\bm{v}_i</m></li>
+<li>return Yes</li>
+</ol>
+</statement>
+<proof>
+<p>このアルゴリズムの正当性を証明する。</p>
+<p>
+このアルゴリズムの中で <m>\bm{v}_1,\dotsc,\bm{v}_k</m> を更新しているが、線形独立性は変化していない。
+4行目で <m>\bm{v}_i</m> をスカラー(非零)倍しているが、これによって線形独立性は変化しない。
+6行目の更新は <xref ref="lem-elem-vec"/> より線形独立性を変えない。
+</p>
+<p>
+2行目で <m>\bm{v}_i=\bm{0}</m> のときは明らかに線形従属であるので No を返すのは正当である。
+7行目に到達したときに、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立であることを示す。
+<md>
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k=\bm{0}
+</md>
+とする。
+このとき、<m>\bm{v}_1</m> の <m>p_1</m> 成分は非零であり、<m>\bm{v}_2,\dotsc,\bm{v}_k</m> の <m>p_1</m> 成分は零である。よって <m>a_1=0</m> である。
+次に <m>a_1=0</m> を仮定すると、同様の議論から <m>a_2=0</m> である。
+この議論を繰り返すことで、<m>a_1=\dotsb=a_k=0</m> である。
+よって <m>\bm{v}_1,\dotsc,\bm{v}_k</m> は線形独立である。
+</p>
+</proof>
+</algorithm>
+<theorem xml:id="thm-vec-ind">
+<!-- <title><m>n</m> 次元数ベクトル空間の線形独立ベクトルの数</title> -->
+<statement>
+<p><m>n</m> 次元数ベクトル空間の線形独立なベクトルの個数は <m>n</m> 以下。</p>
+</statement>
+<proof>
+<p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が線形独立であるとすると、<xref ref="alg-lin-ind"/> はYes を返す。
+このとき、各 <m>i\in\{1,2,\dotsc,k\}</m> について、<m>p_i\in\{1,2,\dotsc,n\}</m> は互いに異なる。
+よって、<m>k\le n</m> である。
+</p>
+</proof>
+</theorem>
 </section>
   <section xml:id="sec-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>基底</title>
+    <definition>
+	  <title>基底</title>
+	  <statement>
+	    <p>線形空間 <m>V</m> について <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
+		<ul>
+		  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>
+		  <li><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立</li>
+		</ul>
+		</p>
+	  </statement>
+    </definition>
+	<theorem>
+	  <title>基底の延長定理</title>
+	  <statement>
+	  <p>任意の線形空間 <m>V</m> と線形独立なベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について、ある <m>V</m> の基底が存在し、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> を含む。</p>
+	  </statement>
+	</theorem>
+	<proposition>
+	  <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> は基底を持つ。</p>
+	</proposition>
+	<!--
     <p>線形独立なベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。</p>
     <definition>
     	<title>リスト</title>
@@ -172,6 +307,7 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
 <m>\bm{w}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)</m>。</p>
 </proof>
   </lemma>
+-->
 
 <lemma>
 	<statement>
@@ -181,11 +317,37 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
   	<p><m>V = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> とおく。
   		<m>\bm{u}_1,\dotsc,\bm{u}_k\in V</m> が線形独立であると仮定する。
   		このとき、<m>k\le m</m> を示せばよい。</p>
-    <ol>
-    	<li><m>B\leftarrow(\bm{v}_1,\dotsc,\bm{v}_m)</m></li>
-    	<li>for <m>i\in\{1,2,\dotsc,n\}</m>:</li>
-    	<li>　<m>B\leftarrow (\bm{u}_i, B)</m></li>
-    </ol>
+
+        <p>各 <m>i=1,2,\dotsc,k</m> と <m>j=1,2,\dotsc,m</m> について <m>a_{i,j}\in\mathbb{R}</m> が存在して、
+		<md>
+		  \bm{u}_i = a_{i,1}\bm{v}_1+\dotsb+a_{i,m}\bm{v}_m
+		</md>
+		が成り立つ。
+		ここで 各 <m>i=1,2,\dotsc,k</m> について <m>\bm{w}_i \coloneqq [a_{i,j}]_j \in\mathbb{R}^m</m> とおく。
+		このとき、<m>\bm{w}_1,\dotsc,\bm{w}_k</m> は線形独立であることを示す。
+		ある <m>c_1,\dotsc,c_k\in\mathbb{R}</m> について
+		<md>
+		  c_1\bm{w}_1+\dotsb+c_k\bm{w}_k=\bm{0}
+		</md>
+        であるとする。
+		このとき、<m>j=1,\dotsc,m</m> について
+		<md>
+		  c_1a_{1,j}+\dotsb+c_ka_{k,j}=0
+		</md>
+		である。
+		一方で、
+		<md>
+		  c_1\bm{u}_1+\dotsb+c_k\bm{u}_k= \sum_{j=1}^m (c_1a_{1,j}+\dotsb+c_ka_{k,j}) \bm{v}_j=\bm{0}
+		</md>
+		である。よって <m>\bm{u}_1,\dotsc,\bm{u}_k</m> の線形独立性より <m>c_1=\dotsb=c_k=0</m> である。
+		したがって、<m>\bm{w}_1,\dotsc,\bm{w}_k\in\mathbb{R}^m</m> が線形独立であることが示された。</p>
+		<p>以上のことから<xref ref="thm-vec-ind"/>より、<m>k\le m</m> である。
+		<!--<md>
+		  \bm{u}_1,\dotsc,\bm{u}_k\text{ が線形独立}\implies \bm{w}_1,\dotsc,\bm{w}_k\text{ が線形独立}
+		</md>
+		が成り立つ。
+		-->
+		</p>
   </proof>
 </lemma>
 
