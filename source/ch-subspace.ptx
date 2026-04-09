@@ -16,8 +16,8 @@
 	  </statement>
 	</definition>
   <p><m>V=\mathbb{R}^n</m> は線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。
-  また、<m>V=\{\bm{0}_n\}</m> も線形空間であり、<m>\mathbb{R}^n</m> の部分空間である。
-  これらは <m>\mathbb{R}^n</m> の<term>自明な部分空間</term> という。</p>
+  また、任意の線形空間 <m>V</m> について、<m>W=V</m> と <m>W=\{\bm{0}_n\}</m> は <m>V</m> の部分空間である。
+  これらは <m>V</m> の<term>自明な部分空間</term> という。</p>
 	<example>
       <title>線形空間と部分空間の例</title>
 	  <ul>
@@ -101,148 +101,15 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
 </proof>
 </lemma>
 
-<corollary>
+<corollary xml:id="cor-dep-add">
+  <statement>
    <p><m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>\bm{v}_1,\dotsc,\bm{v}_n,\bm{v}</m> は線形従属。</p>
+  </statement>
 </corollary>
-<lemma xml:id="lem-elem-vec">
-<!-- <title><m>n</m>次元数ベクトル空間の線形独立ベクトルのサイズ</title> -->
-<statement>
-<p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> と <m>c\in\mathbb{R}</m> と <m>s\ne t\in\{1,\dotsc,n\}</m> について、<m>\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n</m> を
-<md>
-<mrow>\bm{v}'_t\amp=\bm{v}_t+c\bm{v}_s</mrow>
-<mrow>\bm{v}'_i\amp=\bm{v}_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{t\}</mrow>
-</md>
-と定義する。このとき、
-<ul>
-  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m>.</li>
-  <li><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立 <m>\iff</m> <m>\bm{v}'_1,\dotsc,\bm{v}'_k</m> が線形独立。</li>
-</ul></p>
-</statement>
-<proof>
-<p>まず
-  <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) \supseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m>
-は自明である。また、<m>\bm{v}'_t \leftarrow\bm{v}'_t-c\bm{v}'_s</m> とすることで、元の <m>\bm{v}_1,\dotsc,\bm{v}_k</m> が復元できるので、同様に
-  <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) \subseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m>
-  である。
-よって <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_k)</m> は示された。
-</p>
-<p>
-次に
-<md>
-a_1\bm{v}_1+\dotsb+a_k\bm{v}_k=\bm{0}
-</md>
-と仮定する。このとき、
-<md>
-a_1\bm{v}'_1+\dotsb+a_{t-1}\bm{v}'_{t-1} + a_t (\bm{v}'_t-c\bm{v}'_s) + a_{t+1}\bm{v}_{t+1}+\dotsb+a_k\bm{v}'_k=\bm{0}
-</md>
-である。よって、
-<md>
-<mrow>a'_s\amp=a_s-ca_t</mrow>
-<mrow>a'_i\amp=a_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}</mrow>
-</md>
-とおくと、
-<md>
-a'_1\bm{v}'_1+\dotsb+a'_k\bm{v}'_k=\bm{0}
-</md>
-である。
-</p>
-<p>
-ここで
-<md>
-a_1=\dotsb=a_k=0\Longrightarrow
-a'_1=\dotsb=a'_k=0
-</md>
-また、
-<md>
-<mrow>a_s\amp=a'_s+ca'_t</mrow>
-<mrow>a_i\amp=a'_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}</mrow>
-</md>
-なので
-<md>
-a'_1=\dotsb=a'_k=0\Longrightarrow
-a_1=\dotsb=a_k=0
-</md>
-</p>
-<p>よって
-  <md>\bm{v}_1,\dotsc,\bm{v}_k \text{ が線形独立} \iff \bm{v}'_1,\dotsc,\bm{v}'_k \text{ が線形独立}</md>
-が示された。</p>
-</proof>
-</lemma>
-<algorithm xml:id="alg-lin-ind">
-<title>数ベクトルの線形独立性判定アルゴリズム</title>
-<statement>
-<dl>
-<li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
-<li>出力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が線形独立かどうか？</li>
-</dl>
-<ol>
-<li>for <m>i=1,\dotsc,k</m> :</li>
-<li><nbsp/><nbsp/><nbsp/><nbsp/>If <m>\bm{v}_i=\bm{0}</m> : return No</li>
-<li><nbsp/><nbsp/><nbsp/><nbsp/><m>p_i\leftarrow \bm{v}_i</m> の非零成分のインデックス(どれでもよい)。</li>
-<li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_i\leftarrow \frac1{(\bm{v}_i)_{p_i}}\bm{v}_i</m></li>
-<li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i+1,\dotsc,k</m> :</li>
-<li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_j\leftarrow\bm{v}_j-(\bm{v}_j)_{p_i}\bm{v}_i</m></li>
-<li>return Yes</li>
-</ol>
-</statement>
-<proof>
-<p>このアルゴリズムの正当性を証明する。</p>
-<p>
-このアルゴリズムの中で <m>\bm{v}_1,\dotsc,\bm{v}_k</m> を更新しているが、線形独立性は変化していない。
-4行目で <m>\bm{v}_i</m> をスカラー(非零)倍しているが、これによって線形独立性は変化しない。
-6行目の更新は <xref ref="lem-elem-vec"/> より線形独立性を変えない。
-</p>
-<p>
-2行目で <m>\bm{v}_i=\bm{0}</m> のときは明らかに線形従属であるので No を返すのは正当である。
-7行目に到達したときに、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立であることを示す。
-<md>
-a_1\bm{v}_1+\dotsb+a_k\bm{v}_k=\bm{0}
-</md>
-とする。
-このとき、<m>\bm{v}_1</m> の <m>p_1</m> 成分は非零であり、<m>\bm{v}_2,\dotsc,\bm{v}_k</m> の <m>p_1</m> 成分は零である。よって <m>a_1=0</m> である。
-次に <m>a_1=0</m> を仮定すると、同様の議論から <m>a_2=0</m> である。
-この議論を繰り返すことで、<m>a_1=\dotsb=a_k=0</m> である。
-よって <m>\bm{v}_1,\dotsc,\bm{v}_k</m> は線形独立である。
-</p>
-</proof>
-</algorithm>
-<theorem xml:id="thm-vec-ind">
-<!-- <title><m>n</m> 次元数ベクトル空間の線形独立ベクトルの数</title> -->
-<statement>
-<p><m>n</m> 次元数ベクトル空間の線形独立なベクトルの個数は <m>n</m> 以下。</p>
-</statement>
-<proof>
-<p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が線形独立であるとすると、<xref ref="alg-lin-ind"/> はYes を返す。
-このとき、各 <m>i\in\{1,2,\dotsc,k\}</m> について、<m>p_i\in\{1,2,\dotsc,n\}</m> は互いに異なる。
-よって、<m>k\le n</m> である。
-</p>
-</proof>
-</theorem>
-</section>
-  <section xml:id="sec-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>基底</title>
-    <definition>
-	  <title>基底</title>
-	  <statement>
-	    <p>線形空間 <m>V</m> について <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
-		<ul>
-		  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>
-		  <li><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立</li>
-		</ul>
-		</p>
-	  </statement>
-    </definition>
-	<theorem>
-	  <title>基底の延長定理</title>
-	  <statement>
-	  <p>任意の線形空間 <m>V</m> と線形独立なベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について、ある <m>V</m> の基底が存在し、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> を含む。</p>
-	  </statement>
-	</theorem>
-	<proposition>
-	  <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> は基底を持つ。</p>
-	</proposition>
-	<!--
-    <p>線形独立なベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。</p>
+  </section>
+  <section xml:id="sec-list-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>リストとアルゴリズム</title>
+    <p>ベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。</p>
     <definition>
     	<title>リスト</title>
     	<statement>
@@ -258,7 +125,7 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k=\bm{0}
  <m>\bm{v}_j \in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})</m>.</p>
 </statement>
 <proof>
-<p><m>\Leftarrow</m> は自明。<m>\Rightarrow</m> を示す。</p>
+<p><m>\Leftarrow</m> は<xref ref="cor-dep-add"/>より明らか。<m>\Rightarrow</m> を示す。</p>
 <p><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形従属であることから、「すべて0」ではない <m>a_1,\dotsc,a_k\in \mathbb{R}</m> が存在して
 <md>
 a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{0}.
@@ -274,6 +141,258 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
 </proof>
   </lemma>
 
+<lemma xml:id="lem-elem-vec">
+<!-- <title><m>n</m>次元数ベクトル空間の線形独立ベクトルのサイズ</title> -->
+<statement>
+<p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> と <m>c\in\mathbb{R}</m> と <m>1\le s \lt t\le n</m> について、<m>\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n</m> を
+<md>
+<mrow>\bm{v}'_t\amp=\bm{v}_t+c\bm{v}_s</mrow>
+<mrow>\bm{v}'_i\amp=\bm{v}_i\qquad\qquad\forall i\in\{1,\dotsc,k\}\setminus\{t\}</mrow>
+</md>
+と定義する。このとき、任意の <m>j\in\{1,2,\dotsc,k\}</m> について、
+<ul>
+  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m>.</li>
+  <li><m>\bm{v}_1,\dotsc,\bm{v}_j</m> が線形独立 <m>\iff</m> <m>\bm{v}'_1,\dotsc,\bm{v}'_j</m> が線形独立。</li>
+</ul></p>
+</statement>
+<proof>
+<p>任意の <m>j\in\{1,2,\dotsc,k\}</m> を固定する。<m>j\lt t</m> のとき、<m>\bm{v}'_i=\bm{v}_i</m> がすべての <m>i\le j</m> について成り立つので、補題の結論は自明に成り立つ。以下では <m>j\ge t</m> を仮定する。</p>
+<p>まず
+  <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) \supseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m>
+は自明である。また、<m>\bm{v}'_t \leftarrow\bm{v}'_t-c\bm{v}'_s</m> とすることで、元の <m>\bm{v}_1,\dotsc,\bm{v}_j</m> が復元できるので、同様に
+  <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) \subseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m>
+  である。
+よって <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m> は示された。
+</p>
+<p>
+次に
+<md>
+a_1\bm{v}_1+\dotsb+a_j\bm{v}_j=\bm{0}
+</md>
+と仮定する。このとき、
+<md>
+a_1\bm{v}'_1+\dotsb+a_{t-1}\bm{v}'_{t-1} + a_t (\bm{v}'_t-c\bm{v}'_s) + a_{t+1}\bm{v}_{t+1}+\dotsb+a_j\bm{v}'_j=\bm{0}
+</md>
+である。よって、
+<md>
+<mrow>a'_s\amp=a_s-ca_t</mrow>
+<mrow>a'_i\amp=a_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}</mrow>
+</md>
+とおくと、
+<md>
+a'_1\bm{v}'_1+\dotsb+a'_j\bm{v}'_j=\bm{0}
+</md>
+である。
+</p>
+<p>
+ここで
+<md>
+a_1=\dotsb=a_j=0\Longrightarrow
+a'_1=\dotsb=a'_j=0
+</md>
+また、
+<md>
+<mrow>a_s\amp=a'_s+ca'_t</mrow>
+<mrow>a_i\amp=a'_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}</mrow>
+</md>
+なので
+<md>
+a'_1=\dotsb=a'_j=0\Longrightarrow
+a_1=\dotsb=a_j=0
+</md>
+</p>
+<p>よって
+  <md>\bm{v}_1,\dotsc,\bm{v}_j \text{ が線形独立} \iff \bm{v}'_1,\dotsc,\bm{v}'_j \text{ が線形独立}</md>
+が示された。</p>
+</proof>
+</lemma>
+<algorithm xml:id="alg-lin-gauss">
+<title>ガウスの消去法</title>
+<statement>
+<ul>
+<li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
+<li><p>出力: <m>\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n</m> で任意の <m>j\in\{1,\dotsc,k\}</m> について以下の三条件を満たすもの。
+  <ol>
+    <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m>.</li>
+    <li><m>\bm{v}_1,\dotsc,\bm{v}_j</m> が線形独立 <m>\iff</m> <m>\bm{v}'_1,\dotsc,\bm{v}'_j</m> が線形独立。</li>
+    <!--<li><m>\bm{v}_j\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})\implies \bm{v}'_j=\bm{0}</m>.</li>-->
+    <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j})=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})\implies \bm{v}'_j=\bm{0}</m>.</li>
+  </ol></p>
+</li>
+</ul>
+<p>アルゴリズムの疑似コード</p>
+<ol>
+<li><m>(\bm{v}'_1,\dotsc,\bm{v}'_k) \leftarrow (\bm{v}_1,\dotsc,\bm{v}_k)</m></li>
+<li>for <m>i=1,\dotsc,k</m> :</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>If <m>\bm{v}'_i=\bm{0}</m> : continue<nbsp/>(2行目に戻る)</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>p_i\leftarrow \bm{v}'_i</m> の非零成分のインデックス(どれでもよい)</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}'_i\leftarrow \frac1{(\bm{v}'_i)_{p_i}}\bm{v}'_i</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i+1,\dotsc,k</m> :</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}'_j\leftarrow\bm{v}'_j-(\bm{v}'_j)_{p_i}\bm{v}'_i</m></li>
+<li>return <m>(\bm{v}'_1,\dotsc,\bm{v}'_k)</m></li>
+</ol>
+</statement>
+<proof>
+<p>このアルゴリズムの正当性を証明する。</p>
+<p>まず、スパンと線形独立性が保存されていることを証明する。
+このアルゴリズムの中で <m>\bm{v}'_1,\dotsc,\bm{v}'_k</m> を更新しているが、それは5行目と7行目である。
+5行目の更新はベクトルに非零のスカラー倍をする操作であるが、明らかにスパンや線形独立性は変化しない。
+7行目の更新は <xref ref="lem-elem-vec"/> よりスパンや線形独立性を変えない。
+</p>
+
+<p>
+次に
+<md>
+  \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j})=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})
+</md>
+を仮定する。スパンの保存条件より
+<md>
+  \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_{j})=\mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_{j-1})
+</md>
+が成り立つ。
+したがって
+<md>
+  \bm{v}'_{j}\in\mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_{j-1})
+</md>
+である。
+よって、ある <m>a_1,\dotsc,a_{j-1}\in\mathbb{R}</m> が存在し、
+<md>
+  \bm{v}'_j = a_1\bm{v}'_1+\dotsb+a_{j-1}\bm{v}'_{j-1}
+</md>
+が成り立つ。
+ここで <m>\bm{v}'_1\ne\bm{0}</m> のとき、<m>\bm{v}'_1,\dotsc,\bm{v}'_j</m> の中で <m>p_1</m> 成分が非零なのは <m>\bm{v}'_1</m> だけである。よって、<m>a_1=0</m> である。
+したがって、
+<md>
+  \bm{v}'_j = a_2\bm{v}'_2+\dotsb+a_{j-1}\bm{v}'_{j-1}
+</md>
+である(<m>\bm{v}'_1=\bm{0}</m> のときも明らかに成り立つ)。
+同じ議論を繰り返すことで、<m>\bm{v}'_j = \bm{0}</m> であることが分かる。
+</p>
+</proof>
+</algorithm>
+<theorem xml:id="thm-vec-ind">
+<!-- <title><m>n</m> 次元数ベクトル空間の線形独立ベクトルの数</title> -->
+<statement>
+<p><m>n</m> 次元数ベクトル空間の線形独立なベクトルの個数は <m>n</m> 以下。</p>
+</statement>
+<proof>
+<p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が線形独立であるとすると、<xref ref="alg-lin-gauss"/> はすべての <m>i\in\{1,\dotsc,k\}</m> について、ピボット <m>p_i\in\{1,2,\dotsc,n\}</m> を与えるが、これは互いに異なるため、<m>k\le n</m> である。
+</p>
+</proof>
+</theorem>
+</section>
+  <section xml:id="sec-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>基底と次元</title>
+    <definition>
+	  <title>基底</title>
+	  <statement>
+	    <p>線形空間 <m>V</m> について <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
+		<ul>
+		  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>
+		  <li><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立</li>
+		</ul>
+		</p>
+	  </statement>
+    </definition>
+<lemma xml:id="lem-ind-add">
+  <statement>
+   <p>任意の線形独立な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}</m> は線形独立。</p>
+  </statement>
+  <proof>
+    <p>ある <m>a_1,\dotsc,a_m,a\in\mathbb{R}</m> が
+    <md>
+      a_1\bm{v}_1+\dotsb+a_m\bm{v}_m+a\bm{v}=\bm{0}
+    </md>
+    を満たすとする。
+    <m>a\ne 0</m> と仮定すると、
+    <md>
+      \bm{v} = -\frac1a\left(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m\right)
+    </md>
+    より、<m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> となり矛盾。
+    したがって <m>a=0</m> であるが、このとき <m>\bm{v}_1,\dotsc,\bm{v}_m</m> の線形独立性より、<m>a_1=\dotsb=a_m=0</m> である。
+    よって、<m>\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}</m> は線形独立である。
+    </p>
+  </proof>
+</lemma>
+
+	<theorem>
+	  <title>基底の延長定理</title>
+	  <statement>
+	  <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> と線形独立なベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> を含む <m>V</m> の基底が存在する。</p>
+	  </statement>
+    <proof>
+      <p><m>V</m> の基底を以下のアルゴリズムで構成できる。
+      <ol>
+        <li><m>B\leftarrow \bm{v}_1,\dotsc,\bm{v}_k</m></li>
+        <li>while <m>\mathrm{span}(B)\ne V</m> :</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}\leftarrow V\setminus\mathrm{span}(B)</m> の任意に選んだ要素</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><m>B\leftarrow B,\bm{v}</m></li>
+      </ol>
+      上記のアルゴリズムの中で <m>B</m> に要素を追加していくが、<xref ref="lem-ind-add"/>より常に線形独立である。<xref ref="thm-vec-ind"/>より、<m>B</m> の要素数は高々 <m>n</m> なので、このアルゴリズムは停止する。</p>
+      <p>このアルゴリズムは抽象的なものである。2,3行目の具体的な計算方法は線形空間 <m>V</m> が具体的にどのように表されているかに依存する。</p>
+    </proof>
+	</theorem>
+<p>基底の延長定理を空集合(<m>k=0</m>)の場合に適用することで以下の系を得る。</p>
+	<corollary>
+	  <statement>
+	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> は基底を持つ。
+	  </statement>
+	</corollary>
+<!--
+	<lemma>
+  <statement>
+   <p>任意の線形従属な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m>  について、ある <m>i\in\{1,2,\dotsc,m\}</m> が存在し、<md>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_{i+1},\dotsc,\bm{v}_m).</md></p>
+  </statement>
+</lemma>
+<theorem xml:id="thm-basis-shrink">
+	  <title>基底の抽出定理</title>
+	  <statement>
+	  <p>任意のベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n</m> について、ある <m>1\le i_1\lt i_2\lt \dotsb \lt i_r\le k</m> が存在して、<m>\bm{v}_{i_1},\dotsc,\bm{v}_{i_r}</m> が <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の基底となる。</p>
+	  </statement>
+	</theorem>
+<example>
+  <title>基底抽出の例</title>
+	    <p><m>\bm{e}_1,\bm{e}_2,\bm{e}_1+\bm{e}_2\in\mathbb{R}^2</m> について、任意の二つのベクトルは <m>\mathbb{R}^2</m> の基底となる。</p>
+</example>
+<p><xref ref="thm-basis-shrink"/> は具体的に基底を選択するアルゴリズムを示すことで証明する。
+  アルゴリズムの考え方は<xref ref="alg-lin-gauss"/>と同じである。</p>
+<algorithm xml:id="alg-basis-shrink">
+<title>基底抽出アルゴリズム</title>
+<statement>
+<dl>
+<li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
+<li>出力: <m>\bm{v}_{i_1},\dotsc,\bm{v}_{i_r}\in\mathbb{R}^n</m> が基底となるような <m>1\le i_1\lt\dotsc\lt i_r\le m</m></li>
+</dl>
+<ol>
+<li><m>B\leftarrow ()</m> <nbsp/>(空のリストで初期化)</li>
+<li>for <m>i=1,\dotsc,k</m> :</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>If <m>\bm{v}_i=\bm{0}</m> : continue (2行目に戻る)</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>B\leftarrow B,i</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>p_i\leftarrow \bm{v}_i</m> の非零成分のインデックス(どれでもよい)。</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_i\leftarrow \frac1{(\bm{v}_i)_{p_i}}\bm{v}_i</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i+1,\dotsc,k</m> :</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_j\leftarrow\bm{v}_j-(\bm{v}_j)_{p_i}\bm{v}_i</m></li>
+<li>return <m>B</m></li>
+</ol>
+</statement>
+<proof>
+</proof>
+</algorithm>
+-->
+<!--
+<theorem>
+  <title>Steinitz exchange lemma</title>
+  <statement>
+	  <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in \mathbb{R}^n</m> について <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> とおく。任意の線形独立なベクトル <m>\bm{u}_1,\dotsc,\bm{u}_k\in V</m> について、ある <m>1\le i_1\lt\dotsb\lt i_r\le m</m> が存在し、<m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_{i_1},\dotsc,\bm{v}_{i_r}</m> が <m>V</m> の基底となる。</p>
+  </statement>
+  <proof>
+    <p>リスト <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> に対して<xref ref="alg-basis-shrink"/>を実行すればよい。<m>\bm{u}_1,\dotsc,\bm{u}_k</m> は線形独立なので必ず選択される。</p>
+  </proof>
+</theorem>
+-->
+
+
+	<!--
 <lemma>
 <statement>
 <p>任意の <m>\bm{v},\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について
@@ -309,15 +428,25 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
   </lemma>
 -->
 
-<lemma>
+<lemma xml:id="lem-ind-span">
 	<statement>
     <p><m>\bm{v}_1,\dotsc,\bm{v}_m\in \mathbb{R}^n</m> について、<m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> に含まれる線形独立集合のサイズは高々 <m>m</m> である。</p>
   </statement>
   <proof>
   	<p><m>V = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> とおく。
   		<m>\bm{u}_1,\dotsc,\bm{u}_k\in V</m> が線形独立であると仮定する。
-  		このとき、<m>k\le m</m> を示せばよい。</p>
+  		このとき、<m>k\gt m</m> を仮定して矛盾を導く。</p>
+    <p>
+      リスト <m>\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> は線形従属であり <m>V</m> を貼るので、<xref ref="alg-lin-gauss"/>を適用することで、少なくとも一つのベクトルが削除された <m>V</m> の基底が得られる。
+      これを繰替えすことで <m>\bm{u}_{k-1},\bm{u}_{k-2},\dotsc</m> を順番に追加していく。
+      このとき、<m>\bm{u}_1,\dotsc,\bm{u}_k</m> は線形独立なので削除されることはない。
+      <m>k\gt m</m> より、<m>\bm{u}_1</m> を追加する前に <m>\bm{v}_i</m> はすべて削除されている。
+      よって、<m>\bm{u}_2,\dotsc,\bm{u}_k</m> の部分集合が <m>V</m> の基底になる。
+      このとき、<m>\bm{u}_1\in\mathrm{span}(\bm{u}_2,\dotsc,\bm{u}_k)</m> となるが、これは <m>\bm{u}_1,\dotsc,\bm{u}_k</m> の線形独立性に矛盾。
+      よって、<m>k\le m</m> である。
+    </p>
 
+  	<!--
         <p>各 <m>i=1,2,\dotsc,k</m> と <m>j=1,2,\dotsc,m</m> について <m>a_{i,j}\in\mathbb{R}</m> が存在して、
 		<md>
 		  \bm{u}_i = a_{i,1}\bm{v}_1+\dotsb+a_{i,m}\bm{v}_m
@@ -342,27 +471,57 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
 		である。よって <m>\bm{u}_1,\dotsc,\bm{u}_k</m> の線形独立性より <m>c_1=\dotsb=c_k=0</m> である。
 		したがって、<m>\bm{w}_1,\dotsc,\bm{w}_k\in\mathbb{R}^m</m> が線形独立であることが示された。</p>
 		<p>以上のことから<xref ref="thm-vec-ind"/>より、<m>k\le m</m> である。
-		<!--<md>
-		  \bm{u}_1,\dotsc,\bm{u}_k\text{ が線形独立}\implies \bm{w}_1,\dotsc,\bm{w}_k\text{ が線形独立}
-		</md>
-		が成り立つ。
-		-->
 		</p>
+		-->
   </proof>
 </lemma>
 
 
+<proposition>
+  <statement>
+  <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> について、<m>V</m> の基底のサイズは一定。</p>
+  </statement>
+  <proof>
+    <p><m>\bm{u}_1,\dotsc,\bm{u}_\ell</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k</m> を <m>V</m> の基底とする。
+      <m>\bm{u}_1,\dotsc,\bm{u}_\ell</m> は線形独立であり、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> は <m>V</m> を貼るので<xref ref="lem-ind-span"/>より、<m>\ell\le k</m> である。同様に <m>k\le \ell</m> なので、<m>k=\ell</m> である。
+    </p>
+  </proof>
+</proposition>
+
+    <definition>
+	  <title>次元</title>
+	  <statement>
+	    <p>線形空間 <m>V\subseteq\mathbb{R}^n</m> について、その基底のサイズを <term><m>V</m> の次元</term>という。</p>
+	  </statement>
+    </definition>
 
 
-
-<theorem>
+<proposition>
 	<statement>
-    <p><m>V</m> を <m>\mathbb{R}^n</m> の部分空間であるとする。
-    	数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> と <m>\bm{w}_1,\dotsc,\bm{w}_\ell\in V</m> がそれぞれ線形独立であり <m>k\lt\ell</m>とする。
+    <p>
+    	数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n</m> と <m>\bm{w}_1,\dotsc,\bm{w}_\ell\in \mathbb{R}^n</m> がそれぞれ線形独立であり <m>k\lt\ell</m>とする。
     	このとき、ある <m>i\in\{1,2,\dotsc,\ell\}</m> が存在し、<m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{w}_i</m> は線形独立である。
     </p>
 	</statement>
-</theorem>
+  <proof>
+    <p>ある <m>i\in\{1,\dotsc,\ell\}</m> が存在し、<m>\bm{w}_i\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> のとき、<xref ref="lem-ind-add"/> より、<m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{w}_i</m> は線形独立である。
+      すべての <m>i\in\{1,\dotsc,\ell\}</m> について<m>\bm{w}_i\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> と仮定する。このとき<xref ref="lem-ind-span"/> より、<m>\ell\le k</m> であるので矛盾。</p>
+  </proof>
+</proposition>
+
+<proposition>
+	<statement>
+	  <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> とその二つの異なる基底
+	    <md>
+	      <mrow>B_0\amp=\{\bm{v}_1,\dotsc,\bm{v}_k\}</mrow>
+	      <mrow>B_1\amp=\{\bm{w}_1,\dotsc,\bm{w}_k\}</mrow>
+      </md>
+	    について、ある <m>\bm{v}\in B_0\setminus B_1</m> と <m>\bm{w}\in B_1\setminus B_0</m> が存在して、
+	  </p>
+ 	</statement>
+  <proof>
+  </proof>
+</proposition>
 
   </section>
 </chapter>
