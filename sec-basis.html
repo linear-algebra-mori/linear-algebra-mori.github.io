@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>基底</title>
+<title>基底と次元</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-ind.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-subspace.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-list-alg.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-subspace.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -242,161 +242,182 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">基底</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-basis">
 <h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">基底</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">基底と次元</span>
 </h2>
-<div class="para" id="sec-basis-2">線形独立なベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sec-basis-3"><h3 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">リスト.</span>
+<article class="definition definition-like" id="sec-basis-2"><h3 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">基底.</span>
 </h3>
-<div class="para" id="sec-basis-3-2-1">
-<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n\)</span> について、ベクトルの列 <span class="process-math">\((\bm{v}_1,\dotsc,\bm{v}_k)\)</span> をベクトルの<dfn class="terminology">リスト</dfn>という。 括弧を省略して <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_n\)</span> と表すこともある。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-basis-2-2-1">
+<div class="para">線形空間 <span class="process-math">\(V\)</span> について <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in V\)</span> が <dfn class="terminology"><span class="process-math">\(V\)</span> の基底</dfn> <span class="process-math">\(\defiff\)</span>
 </div>
-<div class="autopermalink" data-description="定義 4.3.1: リスト"><a href="#sec-basis-3" title="Copy heading and permalink for 定義 4.3.1: リスト" aria-label="Copy heading and permalink for 定義 4.3.1: リスト">🔗</a></div>
-</article>
-<article class="lemma theorem-like" id="sec-basis-4"><h3 class="heading">
-<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec-basis-4-1-1">リスト <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> が線形従属 <span class="process-math">\(\iff\)</span> ある <span class="process-math">\(j\in\{1,2,\dotsc,k\}\)</span> が存在して、 <span class="process-math">\(\bm{v}_j \in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="補題 4.3.2"><a href="#sec-basis-4" title="Copy heading and permalink for 補題 4.3.2" aria-label="Copy heading and permalink for 補題 4.3.2">🔗</a></div>
-</article>
-<details id="sec-basis-4-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
-<article class="hiddenproof knowl__content">
-<div class="para" id="sec-basis-4-2-1">
-<span class="process-math">\(\Leftarrow\)</span> は自明。<span class="process-math">\(\Rightarrow\)</span> を示す。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-basis-4-2-2">
-<div class="para">
-<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> が線形従属であることから、「すべて0」ではない <span class="process-math">\(a_1,\dotsc,a_k\in \mathbb{R}\)</span> が存在して</div>
-<div class="displaymath process-math" id="sec-basis-4-2-2-3">
-\begin{equation*}
-a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{0}.
-\end{equation*}
-</div>
-<div class="para">
-<span class="process-math">\(j\)</span> を <span class="process-math">\(a_j\ne 0\)</span> である最大のものとすると、</div>
-<div class="displaymath process-math" id="sec-basis-4-2-2-6">
-\begin{equation*}
-a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
-\end{equation*}
-</div>
-<div class="para">よって、</div>
-<div class="displaymath process-math" id="sec-basis-4-2-2-7">
-\begin{equation*}
-\bm{v}_j = -\frac{a_1}{a_j}\bm{v}_1-\dotsb-\frac{a_{j-1}}{a_j}\bm{v}_{j-1}.
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="証明 4.3.2.1"><a href="#sec-basis-4-2" title="Copy heading and permalink for 証明 4.3.2.1" aria-label="Copy heading and permalink for 証明 4.3.2.1">🔗</a></div>
-</article></details>
-<article class="lemma theorem-like" id="sec-basis-5"><h3 class="heading">
-<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para logical" id="sec-basis-5-1-1">
-<div class="para">任意の <span class="process-math">\(\bm{v},\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n\)</span> について</div>
-<div class="displaymath process-math" id="sec-basis-5-1-1-2">
-\begin{equation*}
-\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)\iff 
-\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})=\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k).
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="補題 4.3.3"><a href="#sec-basis-5" title="Copy heading and permalink for 補題 4.3.3" aria-label="Copy heading and permalink for 補題 4.3.3">🔗</a></div>
-</article>
-<details id="sec-basis-5-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
-<article class="hiddenproof knowl__content">
-<div class="para" id="sec-basis-5-2-1">
-<span class="process-math">\(\Leftarrow\)</span> は自明。<span class="process-math">\(\Rightarrow\)</span> を示す。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-basis-5-2-2">
-<span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})\supseteq\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)\)</span> は自明なので <span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})\subseteq\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)\)</span> を示せばよい。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-basis-5-2-3">
-<div class="para">仮定より</div>
-<div class="displaymath process-math" id="sec-basis-5-2-3-1">
-\begin{equation*}
-\bm{v} = a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k
-\end{equation*}
-</div>
-<div class="para">を満たす <span class="process-math">\(a_1,\dotsc,a_k\in \mathbb{R}\)</span> が存在する。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-basis-5-2-4">
-<div class="para">任意の <span class="process-math">\(\bm{w}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k,\bm{v})\)</span> について、</div>
-<div class="displaymath process-math" id="sec-basis-5-2-4-2">
-\begin{equation*}
-\bm{w} = b_1\bm{v}_1 + \dotsb + b_k\bm{v}_k + b\bm{v}
-\end{equation*}
-</div>
-<div class="para">を満たす <span class="process-math">\(b_1,\dotsc,b_k,b\in \mathbb{R}\)</span> が存在する。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-basis-5-2-5">
-<div class="displaymath process-math" id="sec-basis-5-2-5-1">
-\begin{align*}
-\bm{w} \amp= b_1\bm{v}_1 + \dotsb + b_k\bm{v}_k + b\bm{v}\\
-\amp= b_1\bm{v}_1 + \dotsb + b_k\bm{v}_k + b(a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k)\\
-\amp= (b_1+ba_1)\bm{v}_1 + \dotsb + (b_k+ba_k)\bm{v}_k
-\end{align*}
-</div>
-<div class="para">よって <span class="process-math">\(\bm{w}\in\mathrm{span}(\bm{v}_1,\dotsc\bm{v}_k)\)</span>。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="証明 4.3.3.1"><a href="#sec-basis-5-2" title="Copy heading and permalink for 証明 4.3.3.1" aria-label="Copy heading and permalink for 証明 4.3.3.1">🔗</a></div>
-</article></details>
-<article class="lemma theorem-like" id="sec-basis-6"><h3 class="heading">
-<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec-basis-6-1-1">
-<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_m\in \mathbb{R}^n\)</span> について、<span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)\)</span> に含まれる線形独立集合のサイズは高々 <span class="process-math">\(m\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="補題 4.3.4"><a href="#sec-basis-6" title="Copy heading and permalink for 補題 4.3.4" aria-label="Copy heading and permalink for 補題 4.3.4">🔗</a></div>
-</article>
-<details id="sec-basis-6-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
-<article class="hiddenproof knowl__content">
-<div class="para" id="sec-basis-6-2-1">
-<span class="process-math">\(V = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)\)</span> とおく。 <span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k\in V\)</span> が線形独立であると仮定する。 このとき、<span class="process-math">\(k\le m\)</span> を示せばよい。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="sec-basis-6-2-2">
-<li id="sec-basis-6-2-2-1">
-<div class="para" id="p-derived-sec-basis-6-2-2-1"><span class="process-math">\(\displaystyle B\leftarrow(\bm{v}_1,\dotsc,\bm{v}_m)\)</span></div>
-<div class="autopermalink" data-description="Item 1"><a href="#sec-basis-6-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<ul class="disc" id="sec-basis-2-2-1-5">
+<li id="sec-basis-2-2-1-5-1">
+<div class="para" id="p-derived-sec-basis-2-2-1-5-1"><span class="process-math">\(\displaystyle \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basis-2-2-1-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-basis-6-2-2-2">
-<div class="para" id="p-derived-sec-basis-6-2-2-2">for <span class="process-math">\(i\in\{1,2,\dotsc,n\}\text{:}\)</span>
-</div>
-<div class="autopermalink" data-description="Item 2"><a href="#sec-basis-6-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<li id="sec-basis-2-2-1-5-2">
+<div class="para" id="p-derived-sec-basis-2-2-1-5-2">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> が線形独立</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basis-2-2-1-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-basis-6-2-2-3">
-<div class="para" id="p-derived-sec-basis-6-2-2-3">　<span class="process-math">\(B\leftarrow (\bm{u}_i, B)\)</span>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#sec-basis-6-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="定義 4.4.1: 基底"><a href="#sec-basis-2" title="Copy heading and permalink for 定義 4.4.1: 基底" aria-label="Copy heading and permalink for 定義 4.4.1: 基底">🔗</a></div>
+</article>
+<article class="lemma theorem-like" id="lem-ind-add"><h3 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-ind-add-1-1">任意の線形独立な <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n\)</span> と <span class="process-math">\(\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)\)</span> について <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\)</span> は線形独立。<div class="autopermalink" data-description="Paragraph"><a href="#lem-ind-add-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="補題 4.4.2"><a href="#lem-ind-add" title="Copy heading and permalink for 補題 4.4.2" aria-label="Copy heading and permalink for 補題 4.4.2">🔗</a></div>
+</article>
+<details id="lem-ind-add-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="lem-ind-add-2-1">
+<div class="para">ある <span class="process-math">\(a_1,\dotsc,a_m,a\in\mathbb{R}\)</span> が</div>
+<div class="displaymath process-math" id="lem-ind-add-2-1-2">
+\begin{equation*}
+a_1\bm{v}_1+\dotsb+a_m\bm{v}_m+a\bm{v}=\bm{0}
+\end{equation*}
+</div>
+<div class="para">を満たすとする。 <span class="process-math">\(a\ne 0\)</span> と仮定すると、</div>
+<div class="displaymath process-math" id="lem-ind-add-2-1-4">
+\begin{equation*}
+\bm{v} = -\frac1a\left(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m\right)
+\end{equation*}
+</div>
+<div class="para">より、<span class="process-math">\(\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)\)</span> となり矛盾。 したがって <span class="process-math">\(a=0\)</span> であるが、このとき <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_m\)</span> の線形独立性より、<span class="process-math">\(a_1=\dotsb=a_m=0\)</span> である。 よって、<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\)</span> は線形独立である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-ind-add-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.4.2.1"><a href="#lem-ind-add-2" title="Copy heading and permalink for 証明 4.4.2.1" aria-label="Copy heading and permalink for 証明 4.4.2.1">🔗</a></div>
+</article></details>
+<article class="theorem theorem-like" id="sec-basis-4"><h3 class="heading">
+<span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">基底の延長定理.</span>
+</h3>
+<div class="para" id="sec-basis-4-2-1">任意の線形空間 <span class="process-math">\(V\subseteq\mathbb{R}^n\)</span> と線形独立なベクトル <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in V\)</span> について、<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> を含む <span class="process-math">\(V\)</span> の基底が存在する。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="定理 4.4.3: 基底の延長定理"><a href="#sec-basis-4" title="Copy heading and permalink for 定理 4.4.3: 基底の延長定理" aria-label="Copy heading and permalink for 定理 4.4.3: 基底の延長定理">🔗</a></div>
+</article>
+<details id="sec-basis-4-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-basis-4-3-1">
+<div class="para">
+<span class="process-math">\(V\)</span> の基底を以下のアルゴリズムで構成できる。</div>
+<ol class="decimal" id="sec-basis-4-3-1-2">
+<li id="sec-basis-4-3-1-2-1">
+<div class="para" id="p-derived-sec-basis-4-3-1-2-1"><span class="process-math">\(\displaystyle B\leftarrow \bm{v}_1,\dotsc,\bm{v}_k\)</span></div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-basis-4-3-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-basis-4-3-1-2-2">
+<div class="para" id="p-derived-sec-basis-4-3-1-2-2">while <span class="process-math">\(\mathrm{span}(B)\ne V\)</span> :</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-basis-4-3-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-basis-4-3-1-2-3">
+<div class="para" id="p-derived-sec-basis-4-3-1-2-3">    <span class="process-math">\(\bm{v}\leftarrow V\setminus\mathrm{span}(B)\)</span> の任意に選んだ要素</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-basis-4-3-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-basis-4-3-1-2-4">
+<div class="para" id="p-derived-sec-basis-4-3-1-2-4">    <span class="process-math">\(B\leftarrow B,\bm{v}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec-basis-4-3-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="証明 4.3.4.1"><a href="#sec-basis-6-2" title="Copy heading and permalink for 証明 4.3.4.1" aria-label="Copy heading and permalink for 証明 4.3.4.1">🔗</a></div>
-</article></details>
-<article class="theorem theorem-like" id="sec-basis-7"><h3 class="heading">
-<span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec-basis-7-1-1">
-<span class="process-math">\(V\)</span> を <span class="process-math">\(\mathbb{R}^n\)</span> の部分空間であるとする。 数ベクトル <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in V\)</span> と <span class="process-math">\(\bm{w}_1,\dotsc,\bm{w}_\ell\in V\)</span> がそれぞれ線形独立であり <span class="process-math">\(k\lt\ell\)</span>とする。 このとき、ある <span class="process-math">\(i\in\{1,2,\dotsc,\ell\}\)</span> が存在し、<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k,\bm{w}_i\)</span> は線形独立である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">上記のアルゴリズムの中で <span class="process-math">\(B\)</span> に要素を追加していくが、<a href="sec-basis.html#lem-ind-add" class="xref" data-knowl="./knowl/xref/lem-ind-add.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 4.4.2">補題 4.4.2</a>より常に線形独立である。<a href="sec-list-alg.html#thm-vec-ind" class="xref" data-knowl="./knowl/xref/thm-vec-ind.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 4.3.5">定理 4.3.5</a>より、<span class="process-math">\(B\)</span> の要素数は高々 <span class="process-math">\(n\)</span> なので、このアルゴリズムは停止する。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="定理 4.3.5"><a href="#sec-basis-7" title="Copy heading and permalink for 定理 4.3.5" aria-label="Copy heading and permalink for 定理 4.3.5">🔗</a></div>
-</article><div class="autopermalink" data-description="Section 4.3: 基底"><a href="#sec-basis" title="Copy heading and permalink for Section 4.3: 基底" aria-label="Copy heading and permalink for Section 4.3: 基底">🔗</a></div>
+<div class="para" id="sec-basis-4-3-2">このアルゴリズムは抽象的なものである。2,3行目の具体的な計算方法は線形空間 <span class="process-math">\(V\)</span> が具体的にどのように表されているかに依存する。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.4.3.1"><a href="#sec-basis-4-3" title="Copy heading and permalink for 証明 4.4.3.1" aria-label="Copy heading and permalink for 証明 4.4.3.1">🔗</a></div>
+</article></details>
+<div class="para" id="sec-basis-5">基底の延長定理を空集合(<span class="process-math">\(k=0\)</span>)の場合に適用することで以下の系を得る。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="sec-basis-6"><h3 class="heading">
+<span class="type">系</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>任意の線形空間 <span class="process-math">\(V\subseteq\mathbb{R}^n\)</span> は基底を持つ。<div class="autopermalink" data-description="系 4.4.4"><a href="#sec-basis-6" title="Copy heading and permalink for 系 4.4.4" aria-label="Copy heading and permalink for 系 4.4.4">🔗</a></div>
+</article>
+<article class="lemma theorem-like" id="lem-ind-span"><h3 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-ind-span-1-1">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_m\in \mathbb{R}^n\)</span> について、<span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)\)</span> に含まれる線形独立集合のサイズは高々 <span class="process-math">\(m\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#lem-ind-span-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="補題 4.4.5"><a href="#lem-ind-span" title="Copy heading and permalink for 補題 4.4.5" aria-label="Copy heading and permalink for 補題 4.4.5">🔗</a></div>
+</article>
+<details id="lem-ind-span-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="lem-ind-span-2-1">
+<span class="process-math">\(V = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)\)</span> とおく。 <span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k\in V\)</span> が線形独立であると仮定する。 このとき、<span class="process-math">\(k\gt m\)</span> を仮定して矛盾を導く。<div class="autopermalink" data-description="Paragraph"><a href="#lem-ind-span-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-ind-span-2-2">リスト <span class="process-math">\(\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m\)</span> は線形従属であり <span class="process-math">\(V\)</span> を貼るので、<a href="sec-list-alg.html#alg-lin-gauss" class="xref" data-knowl="./knowl/xref/alg-lin-gauss.html" data-reveal-label="Reveal" data-close-label="Close" title="アルゴリズム 4.3.4: ガウスの消去法">アルゴリズム 4.3.4</a>を適用することで、少なくとも一つのベクトルが削除された <span class="process-math">\(V\)</span> の基底が得られる。 これを繰替えすことで <span class="process-math">\(\bm{u}_{k-1},\bm{u}_{k-2},\dotsc\)</span> を順番に追加していく。 このとき、<span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k\)</span> は線形独立なので削除されることはない。 <span class="process-math">\(k\gt m\)</span> より、<span class="process-math">\(\bm{u}_1\)</span> を追加する前に <span class="process-math">\(\bm{v}_i\)</span> はすべて削除されている。 よって、<span class="process-math">\(\bm{u}_2,\dotsc,\bm{u}_k\)</span> の部分集合が <span class="process-math">\(V\)</span> の基底になる。 このとき、<span class="process-math">\(\bm{u}_1\in\mathrm{span}(\bm{u}_2,\dotsc,\bm{u}_k)\)</span> となるが、これは <span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k\)</span> の線形独立性に矛盾。 よって、<span class="process-math">\(k\le m\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#lem-ind-span-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.4.5.1"><a href="#lem-ind-span-2" title="Copy heading and permalink for 証明 4.4.5.1" aria-label="Copy heading and permalink for 証明 4.4.5.1">🔗</a></div>
+</article></details>
+<article class="proposition theorem-like" id="sec-basis-8"><h3 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-basis-8-1-1">任意の線形空間 <span class="process-math">\(V\subseteq\mathbb{R}^n\)</span> について、<span class="process-math">\(V\)</span> の基底のサイズは一定。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="命題 4.4.6"><a href="#sec-basis-8" title="Copy heading and permalink for 命題 4.4.6" aria-label="Copy heading and permalink for 命題 4.4.6">🔗</a></div>
+</article>
+<details id="sec-basis-8-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec-basis-8-2-1">
+<span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_\ell\)</span> と <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> を <span class="process-math">\(V\)</span> の基底とする。 <span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_\ell\)</span> は線形独立であり、<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> は <span class="process-math">\(V\)</span> を貼るので<a href="sec-basis.html#lem-ind-span" class="xref" data-knowl="./knowl/xref/lem-ind-span.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 4.4.5">補題 4.4.5</a>より、<span class="process-math">\(\ell\le k\)</span> である。同様に <span class="process-math">\(k\le \ell\)</span> なので、<span class="process-math">\(k=\ell\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.4.6.1"><a href="#sec-basis-8-2" title="Copy heading and permalink for 証明 4.4.6.1" aria-label="Copy heading and permalink for 証明 4.4.6.1">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="sec-basis-9"><h3 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">次元.</span>
+</h3>
+<div class="para" id="sec-basis-9-2-1">線形空間 <span class="process-math">\(V\subseteq\mathbb{R}^n\)</span> について、その基底のサイズを <dfn class="terminology"><span class="process-math">\(V\)</span> の次元</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="定義 4.4.7: 次元"><a href="#sec-basis-9" title="Copy heading and permalink for 定義 4.4.7: 次元" aria-label="Copy heading and permalink for 定義 4.4.7: 次元">🔗</a></div>
+</article>
+<article class="proposition theorem-like" id="sec-basis-10"><h3 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-basis-10-1-1">数ベクトル <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n\)</span> と <span class="process-math">\(\bm{w}_1,\dotsc,\bm{w}_\ell\in \mathbb{R}^n\)</span> がそれぞれ線形独立であり <span class="process-math">\(k\lt\ell\)</span>とする。 このとき、ある <span class="process-math">\(i\in\{1,2,\dotsc,\ell\}\)</span> が存在し、<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k,\bm{w}_i\)</span> は線形独立である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="命題 4.4.8"><a href="#sec-basis-10" title="Copy heading and permalink for 命題 4.4.8" aria-label="Copy heading and permalink for 命題 4.4.8">🔗</a></div>
+</article>
+<details id="sec-basis-10-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec-basis-10-2-1">ある <span class="process-math">\(i\in\{1,\dotsc,\ell\}\)</span> が存在し、<span class="process-math">\(\bm{w}_i\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\)</span> のとき、<a href="sec-basis.html#lem-ind-add" class="xref" data-knowl="./knowl/xref/lem-ind-add.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 4.4.2">補題 4.4.2</a> より、<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k,\bm{w}_i\)</span> は線形独立である。 すべての <span class="process-math">\(i\in\{1,\dotsc,\ell\}\)</span> について<span class="process-math">\(\bm{w}_i\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\)</span> と仮定する。このとき<a href="sec-basis.html#lem-ind-span" class="xref" data-knowl="./knowl/xref/lem-ind-span.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 4.4.5">補題 4.4.5</a> より、<span class="process-math">\(\ell\le k\)</span> であるので矛盾。<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.4.8.1"><a href="#sec-basis-10-2" title="Copy heading and permalink for 証明 4.4.8.1" aria-label="Copy heading and permalink for 証明 4.4.8.1">🔗</a></div>
+</article></details>
+<article class="proposition theorem-like" id="sec-basis-11"><h3 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-basis-11-1-1">
+<div class="para">任意の線形空間 <span class="process-math">\(V\subseteq\mathbb{R}^n\)</span> とその二つの異なる基底</div>
+<div class="displaymath process-math" id="sec-basis-11-1-1-2">
+\begin{align*}
+B_0\amp=\{\bm{v}_1,\dotsc,\bm{v}_k\}\\
+B_1\amp=\{\bm{w}_1,\dotsc,\bm{w}_k\}
+\end{align*}
+</div>
+<div class="para">について、ある <span class="process-math">\(\bm{v}\in B_0\setminus B_1\)</span> と <span class="process-math">\(\bm{w}\in B_1\setminus B_0\)</span> が存在して、</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="命題 4.4.9"><a href="#sec-basis-11" title="Copy heading and permalink for 命題 4.4.9" aria-label="Copy heading and permalink for 命題 4.4.9">🔗</a></div>
+</article>
+<details id="sec-basis-11-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content"><div class="autopermalink" data-description="証明 4.4.9.1"><a href="#sec-basis-11-2" title="Copy heading and permalink for 証明 4.4.9.1" aria-label="Copy heading and permalink for 証明 4.4.9.1">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Section 4.4: 基底と次元"><a href="#sec-basis" title="Copy heading and permalink for Section 4.4: 基底と次元" aria-label="Copy heading and permalink for Section 4.4: 基底と次元">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-linear-ind.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-list-alg.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

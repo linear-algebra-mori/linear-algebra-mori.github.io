@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>リストとアルゴリズム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "textmacros",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[tex]/textmacros",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="正しく始める線形代数">
+<meta property="book:author" content="森 立平">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.f6b4a33441cf25ab.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.720279673ae692d7.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">正しく始める線形代数</span> <span class="subtitle">すべての数理の入口</span></a></h1>
+<p class="byline">森 立平</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="目次"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">目次</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-ind.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-subspace.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-basis.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\coloneqq}{:=}
+\newcommand{\defiff}{\overset{\text{def}}{\iff}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">前書き</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">線形代数とは</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vector.html" class="internal"><span class="codenumber">1</span> <span class="title">数ベクトル</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector.html" class="internal"><span class="codenumber">1.1</span> <span class="title">数ベクトル</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-op.html" class="internal"><span class="codenumber">1.2</span> <span class="title">数ベクトルの和とスカラー倍</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-op.html#subsec-vector-op" class="internal"><span class="codenumber">1.2.1</span> <span class="title">数ベクトルの和とスカラー倍の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-op.html#subsec-vector-prop" class="internal"><span class="codenumber">1.2.2</span> <span class="title">数ベクトルの演算の性質</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトルのイメージ</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">集合と要素</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set-rel" class="internal"><span class="codenumber">2.1.2</span> <span class="title">集合の関係</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-map.html" class="internal"><span class="codenumber">2.2</span> <span class="title">写像</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-map.html#subsec-map-image" class="internal"><span class="codenumber">2.2.1</span> <span class="title">写像、象、逆像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-map.html#subsec-map-inverse" class="internal"><span class="codenumber">2.2.2</span> <span class="title">単射、全射、全単射、逆写像</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrix.html" class="internal"><span class="codenumber">2.3</span> <span class="title">行列</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-map.html" class="internal"><span class="codenumber">2.4</span> <span class="title">線形写像としての行列</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-map.html#subsec-matrix-map" class="internal"><span class="codenumber">2.4.1</span> <span class="title">写像としての行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-map.html#subsec-matrix-lin" class="internal"><span class="codenumber">2.4.2</span> <span class="title">行列が表す写像の線形性</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-linmap.html" class="internal"><span class="codenumber">2.5</span> <span class="title">線形写像は行列</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linmap.html#subsec-vector-e" class="internal"><span class="codenumber">2.5.1</span> <span class="title">標準ベクトルを用いた数ベクトルの分解</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linmap.html#subsec-matrix-e" class="internal"><span class="codenumber">2.5.2</span> <span class="title">標準ベクトルを用いた行列の理解</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linmap.html#subsec-lin" class="internal"><span class="codenumber">2.5.3</span> <span class="title">線形写像は行列で表すことができる</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.6</span> <span class="title">行列の例</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-zero-matrix" class="internal"><span class="codenumber">2.6.1</span> <span class="title">零行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-diagonal-matrix" class="internal"><span class="codenumber">2.6.2</span> <span class="title">対角行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-perm-matrix" class="internal"><span class="codenumber">2.6.3</span> <span class="title">置換行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrices.html#subsec-rotate-matrix" class="internal"><span class="codenumber">2.6.4</span> <span class="title">2次元回転行列</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-ops.html" class="internal"><span class="codenumber">2.7</span> <span class="title">行列の和とスカラー倍</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-ops.html#subsec-matrix-add" class="internal"><span class="codenumber">2.7.1</span> <span class="title">行列の和とスカラー倍の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-ops.html#subsec-matrix-ops-mean" class="internal"><span class="codenumber">2.7.2</span> <span class="title">行列の和とスカラー倍の線型写像としての意味</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-ops.html#subsec-matrix-ops-prop" class="internal"><span class="codenumber">2.7.3</span> <span class="title">行列の和とスカラー倍のその他の性質</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-mul.html" class="internal"><span class="codenumber">2.8</span> <span class="title">行列の積</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul" class="internal"><span class="codenumber">2.8.1</span> <span class="title">行列の積の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-linear-comp" class="internal"><span class="codenumber">2.8.2</span> <span class="title">線形写像の合成写像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-prop" class="internal"><span class="codenumber">2.8.3</span> <span class="title">行列の積と合成写像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-assos" class="internal"><span class="codenumber">2.8.4</span> <span class="title">行列積の結合法則</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-dist" class="internal"><span class="codenumber">2.8.5</span> <span class="title">行列積の分配法則</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-comm" class="internal"><span class="codenumber">2.8.6</span> <span class="title">行列積の交換法則は成り立たない</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.2</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.3</span> <span class="title">グラフのパスの個数</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-list-alg">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">リストとアルゴリズム</span>
+</h2>
+<div class="para" id="sec-list-alg-2">ベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。<div class="autopermalink" data-description="Paragraph"><a href="#sec-list-alg-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-list-alg-3"><h3 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">リスト.</span>
+</h3>
+<div class="para" id="sec-list-alg-3-2-1">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n\)</span> について、ベクトルの列 <span class="process-math">\((\bm{v}_1,\dotsc,\bm{v}_k)\)</span> をベクトルの<dfn class="terminology">リスト</dfn>という。 括弧を省略して <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_n\)</span> と表すこともある。<div class="autopermalink" data-description="Paragraph"><a href="#sec-list-alg-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="定義 4.3.1: リスト"><a href="#sec-list-alg-3" title="Copy heading and permalink for 定義 4.3.1: リスト" aria-label="Copy heading and permalink for 定義 4.3.1: リスト">🔗</a></div>
+</article>
+<article class="lemma theorem-like" id="sec-list-alg-4"><h3 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-list-alg-4-1-1">リスト <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> が線形従属 <span class="process-math">\(\iff\)</span> ある <span class="process-math">\(j\in\{1,2,\dotsc,k\}\)</span> が存在して、 <span class="process-math">\(\bm{v}_j \in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-list-alg-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="補題 4.3.2"><a href="#sec-list-alg-4" title="Copy heading and permalink for 補題 4.3.2" aria-label="Copy heading and permalink for 補題 4.3.2">🔗</a></div>
+</article>
+<details id="sec-list-alg-4-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec-list-alg-4-2-1">
+<span class="process-math">\(\Leftarrow\)</span> は<a href="sec-linear-ind.html#cor-dep-add" class="xref" data-knowl="./knowl/xref/cor-dep-add.html" data-reveal-label="Reveal" data-close-label="Close" title="系 4.2.4">系 4.2.4</a>より明らか。<span class="process-math">\(\Rightarrow\)</span> を示す。<div class="autopermalink" data-description="Paragraph"><a href="#sec-list-alg-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-list-alg-4-2-2">
+<div class="para">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> が線形従属であることから、「すべて0」ではない <span class="process-math">\(a_1,\dotsc,a_k\in \mathbb{R}\)</span> が存在して</div>
+<div class="displaymath process-math" id="sec-list-alg-4-2-2-3">
+\begin{equation*}
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{0}.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(j\)</span> を <span class="process-math">\(a_j\ne 0\)</span> である最大のものとすると、</div>
+<div class="displaymath process-math" id="sec-list-alg-4-2-2-6">
+\begin{equation*}
+a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
+\end{equation*}
+</div>
+<div class="para">よって、</div>
+<div class="displaymath process-math" id="sec-list-alg-4-2-2-7">
+\begin{equation*}
+\bm{v}_j = -\frac{a_1}{a_j}\bm{v}_1-\dotsb-\frac{a_{j-1}}{a_j}\bm{v}_{j-1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-list-alg-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.3.2.1"><a href="#sec-list-alg-4-2" title="Copy heading and permalink for 証明 4.3.2.1" aria-label="Copy heading and permalink for 証明 4.3.2.1">🔗</a></div>
+</article></details>
+<article class="lemma theorem-like" id="lem-elem-vec"><h3 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-elem-vec-1-1">
+<div class="para">任意の <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n\)</span> と <span class="process-math">\(c\in\mathbb{R}\)</span> と <span class="process-math">\(1\le s \lt t\le n\)</span> について、<span class="process-math">\(\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n\)</span> を</div>
+<div class="displaymath process-math" id="lem-elem-vec-1-1-5">
+\begin{align*}
+\bm{v}'_t\amp=\bm{v}_t+c\bm{v}_s\\
+\bm{v}'_i\amp=\bm{v}_i\qquad\qquad\forall i\in\{1,\dotsc,k\}\setminus\{t\}
+\end{align*}
+</div>
+<div class="para">と定義する。このとき、任意の <span class="process-math">\(j\in\{1,2,\dotsc,k\}\)</span> について、</div>
+<ul class="disc" id="lem-elem-vec-1-1-7">
+<li id="lem-elem-vec-1-1-7-1">
+<div class="para" id="p-derived-lem-elem-vec-1-1-7-1"><span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)\text{.}\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#lem-elem-vec-1-1-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="lem-elem-vec-1-1-7-2">
+<div class="para" id="p-derived-lem-elem-vec-1-1-7-2">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_j\)</span> が線形独立 <span class="process-math">\(\iff\)</span> <span class="process-math">\(\bm{v}'_1,\dotsc,\bm{v}'_j\)</span> が線形独立。</div>
+<div class="autopermalink" data-description="Item"><a href="#lem-elem-vec-1-1-7-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-elem-vec-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="補題 4.3.3"><a href="#lem-elem-vec" title="Copy heading and permalink for 補題 4.3.3" aria-label="Copy heading and permalink for 補題 4.3.3">🔗</a></div>
+</article>
+<details id="lem-elem-vec-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="lem-elem-vec-2-1">任意の <span class="process-math">\(j\in\{1,2,\dotsc,k\}\)</span> を固定する。<span class="process-math">\(j\lt t\)</span> のとき、<span class="process-math">\(\bm{v}'_i=\bm{v}_i\)</span> がすべての <span class="process-math">\(i\le j\)</span> について成り立つので、補題の結論は自明に成り立つ。以下では <span class="process-math">\(j\ge t\)</span> を仮定する。<div class="autopermalink" data-description="Paragraph"><a href="#lem-elem-vec-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-elem-vec-2-2">まず <span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) \supseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)\)</span> は自明である。また、<span class="process-math">\(\bm{v}'_t \leftarrow\bm{v}'_t-c\bm{v}'_s\)</span> とすることで、元の <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_j\)</span> が復元できるので、同様に <span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) \subseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)\)</span> である。 よって <span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)\)</span> は示された。<div class="autopermalink" data-description="Paragraph"><a href="#lem-elem-vec-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-elem-vec-2-3">
+<div class="para">次に</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-3-1">
+\begin{equation*}
+a_1\bm{v}_1+\dotsb+a_j\bm{v}_j=\bm{0}
+\end{equation*}
+</div>
+<div class="para">と仮定する。このとき、</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-3-2">
+\begin{equation*}
+a_1\bm{v}'_1+\dotsb+a_{t-1}\bm{v}'_{t-1} + a_t (\bm{v}'_t-c\bm{v}'_s) + a_{t+1}\bm{v}_{t+1}+\dotsb+a_j\bm{v}'_j=\bm{0}
+\end{equation*}
+</div>
+<div class="para">である。よって、</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-3-3">
+\begin{align*}
+a'_s\amp=a_s-ca_t\\
+a'_i\amp=a_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}
+\end{align*}
+</div>
+<div class="para">とおくと、</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-3-4">
+\begin{equation*}
+a'_1\bm{v}'_1+\dotsb+a'_j\bm{v}'_j=\bm{0}
+\end{equation*}
+</div>
+<div class="para">である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-elem-vec-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-elem-vec-2-4">
+<div class="para">ここで</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-4-1">
+\begin{equation*}
+a_1=\dotsb=a_j=0\Longrightarrow
+a'_1=\dotsb=a'_j=0
+\end{equation*}
+</div>
+<div class="para">また、</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-4-2">
+\begin{align*}
+a_s\amp=a'_s+ca'_t\\
+a_i\amp=a'_i\qquad\forall i\in\{1,\dotsc,k\}\setminus\{s\}
+\end{align*}
+</div>
+<div class="para">なので</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-4-3">
+\begin{equation*}
+a'_1=\dotsb=a'_j=0\Longrightarrow
+a_1=\dotsb=a_j=0
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-elem-vec-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-elem-vec-2-5">
+<div class="para">よって</div>
+<div class="displaymath process-math" id="lem-elem-vec-2-5-1">
+\begin{equation*}
+\bm{v}_1,\dotsc,\bm{v}_j \text{ が線形独立} \iff \bm{v}'_1,\dotsc,\bm{v}'_j \text{ が線形独立}
+\end{equation*}
+</div>
+<div class="para">が示された。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-elem-vec-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.3.3.1"><a href="#lem-elem-vec-2" title="Copy heading and permalink for 証明 4.3.3.1" aria-label="Copy heading and permalink for 証明 4.3.3.1">🔗</a></div>
+</article></details>
+<article class="algorithm theorem-like" id="alg-lin-gauss"><h3 class="heading">
+<span class="type">アルゴリズム</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ガウスの消去法.</span>
+</h3>
+<ul class="disc" id="alg-lin-gauss-2-1">
+<li id="alg-lin-gauss-2-1-1">
+<div class="para" id="p-derived-alg-lin-gauss-2-1-1">入力: <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#alg-lin-gauss-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-1-2">
+<div class="para logical" id="alg-lin-gauss-2-1-2-1">
+<div class="para">出力: <span class="process-math">\(\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n\)</span> で任意の <span class="process-math">\(j\in\{1,\dotsc,k\}\)</span> について以下の三条件を満たすもの。</div>
+<ol class="decimal" id="alg-lin-gauss-2-1-2-1-3">
+<li id="alg-lin-gauss-2-1-2-1-3-1">
+<div class="para" id="p-derived-alg-lin-gauss-2-1-2-1-3-1"><span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)\text{.}\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#alg-lin-gauss-2-1-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-1-2-1-3-2">
+<div class="para" id="p-derived-alg-lin-gauss-2-1-2-1-3-2">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_j\)</span> が線形独立 <span class="process-math">\(\iff\)</span> <span class="process-math">\(\bm{v}'_1,\dotsc,\bm{v}'_j\)</span> が線形独立。</div>
+<div class="autopermalink" data-description="Item"><a href="#alg-lin-gauss-2-1-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-1-2-1-3-3">
+<div class="para" id="p-derived-alg-lin-gauss-2-1-2-1-3-3"><span class="process-math">\(\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j})=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})\implies \bm{v}'_j=\bm{0}\text{.}\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#alg-lin-gauss-2-1-2-1-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#alg-lin-gauss-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#alg-lin-gauss-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> 
+<div class="para" id="alg-lin-gauss-2-2">アルゴリズムの疑似コード<div class="autopermalink" data-description="Paragraph"><a href="#alg-lin-gauss-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="alg-lin-gauss-2-3">
+<li id="alg-lin-gauss-2-3-1">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-1"><span class="process-math">\(\displaystyle (\bm{v}'_1,\dotsc,\bm{v}'_k) \leftarrow (\bm{v}_1,\dotsc,\bm{v}_k)\)</span></div>
+<div class="autopermalink" data-description="Item 1"><a href="#alg-lin-gauss-2-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-2">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-2">for <span class="process-math">\(i=1,\dotsc,k\)</span> :</div>
+<div class="autopermalink" data-description="Item 2"><a href="#alg-lin-gauss-2-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-3">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-3">    If <span class="process-math">\(\bm{v}'_i=\bm{0}\)</span> : continue (2行目に戻る)</div>
+<div class="autopermalink" data-description="Item 3"><a href="#alg-lin-gauss-2-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-4">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-4">    <span class="process-math">\(p_i\leftarrow \bm{v}'_i\)</span> の非零成分のインデックス(どれでもよい)</div>
+<div class="autopermalink" data-description="Item 4"><a href="#alg-lin-gauss-2-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-5">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-5">    <span class="process-math">\(\bm{v}'_i\leftarrow \frac1{(\bm{v}'_i)_{p_i}}\bm{v}'_i\)</span>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#alg-lin-gauss-2-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-6">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-6">    for <span class="process-math">\(j=i+1,\dotsc,k\)</span> :</div>
+<div class="autopermalink" data-description="Item 6"><a href="#alg-lin-gauss-2-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-7">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-7">        <span class="process-math">\(\bm{v}'_j\leftarrow\bm{v}'_j-(\bm{v}'_j)_{p_i}\bm{v}'_i\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#alg-lin-gauss-2-3-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li id="alg-lin-gauss-2-3-8">
+<div class="para" id="p-derived-alg-lin-gauss-2-3-8">return <span class="process-math">\((\bm{v}'_1,\dotsc,\bm{v}'_k)\)</span>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#alg-lin-gauss-2-3-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="アルゴリズム 4.3.4: ガウスの消去法"><a href="#alg-lin-gauss" title="Copy heading and permalink for アルゴリズム 4.3.4: ガウスの消去法" aria-label="Copy heading and permalink for アルゴリズム 4.3.4: ガウスの消去法">🔗</a></div>
+</article>
+<details id="alg-lin-gauss-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="alg-lin-gauss-3-1">このアルゴリズムの正当性を証明する。<div class="autopermalink" data-description="Paragraph"><a href="#alg-lin-gauss-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="alg-lin-gauss-3-2">まず、スパンと線形独立性が保存されていることを証明する。 このアルゴリズムの中で <span class="process-math">\(\bm{v}'_1,\dotsc,\bm{v}'_k\)</span> を更新しているが、それは5行目と7行目である。 5行目の更新はベクトルに非零のスカラー倍をする操作であるが、明らかにスパンや線形独立性は変化しない。 7行目の更新は <a href="sec-list-alg.html#lem-elem-vec" class="xref" data-knowl="./knowl/xref/lem-elem-vec.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 4.3.3">補題 4.3.3</a> よりスパンや線形独立性を変えない。<div class="autopermalink" data-description="Paragraph"><a href="#alg-lin-gauss-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="alg-lin-gauss-3-3">
+<div class="para">次に</div>
+<div class="displaymath process-math" id="alg-lin-gauss-3-3-1">
+\begin{equation*}
+\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j})=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{j-1})
+\end{equation*}
+</div>
+<div class="para">を仮定する。スパンの保存条件より</div>
+<div class="displaymath process-math" id="alg-lin-gauss-3-3-2">
+\begin{equation*}
+\mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_{j})=\mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_{j-1})
+\end{equation*}
+</div>
+<div class="para">が成り立つ。 したがって</div>
+<div class="displaymath process-math" id="alg-lin-gauss-3-3-3">
+\begin{equation*}
+\bm{v}'_{j}\in\mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_{j-1})
+\end{equation*}
+</div>
+<div class="para">である。 よって、ある <span class="process-math">\(a_1,\dotsc,a_{j-1}\in\mathbb{R}\)</span> が存在し、</div>
+<div class="displaymath process-math" id="alg-lin-gauss-3-3-5">
+\begin{equation*}
+\bm{v}'_j = a_1\bm{v}'_1+\dotsb+a_{j-1}\bm{v}'_{j-1}
+\end{equation*}
+</div>
+<div class="para">が成り立つ。 ここで <span class="process-math">\(\bm{v}'_1\ne\bm{0}\)</span> のとき、<span class="process-math">\(\bm{v}'_1,\dotsc,\bm{v}'_j\)</span> の中で <span class="process-math">\(p_1\)</span> 成分が非零なのは <span class="process-math">\(\bm{v}'_1\)</span> だけである。よって、<span class="process-math">\(a_1=0\)</span> である。 したがって、</div>
+<div class="displaymath process-math" id="alg-lin-gauss-3-3-11">
+\begin{equation*}
+\bm{v}'_j = a_2\bm{v}'_2+\dotsb+a_{j-1}\bm{v}'_{j-1}
+\end{equation*}
+</div>
+<div class="para">である(<span class="process-math">\(\bm{v}'_1=\bm{0}\)</span> のときも明らかに成り立つ)。 同じ議論を繰り返すことで、<span class="process-math">\(\bm{v}'_j = \bm{0}\)</span> であることが分かる。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#alg-lin-gauss-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.3.4.1"><a href="#alg-lin-gauss-3" title="Copy heading and permalink for 証明 4.3.4.1" aria-label="Copy heading and permalink for 証明 4.3.4.1">🔗</a></div>
+</article></details>
+<article class="theorem theorem-like" id="thm-vec-ind"><h3 class="heading">
+<span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="thm-vec-ind-1-1">
+<span class="process-math">\(n\)</span> 次元数ベクトル空間の線形独立なベクトルの個数は <span class="process-math">\(n\)</span> 以下。<div class="autopermalink" data-description="Paragraph"><a href="#thm-vec-ind-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="定理 4.3.5"><a href="#thm-vec-ind" title="Copy heading and permalink for 定理 4.3.5" aria-label="Copy heading and permalink for 定理 4.3.5">🔗</a></div>
+</article>
+<details id="thm-vec-ind-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm-vec-ind-2-1">
+<span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n\)</span> が線形独立であるとすると、<a href="sec-list-alg.html#alg-lin-gauss" class="xref" data-knowl="./knowl/xref/alg-lin-gauss.html" data-reveal-label="Reveal" data-close-label="Close" title="アルゴリズム 4.3.4: ガウスの消去法">アルゴリズム 4.3.4</a> はすべての <span class="process-math">\(i\in\{1,\dotsc,k\}\)</span> について、ピボット <span class="process-math">\(p_i\in\{1,2,\dotsc,n\}\)</span> を与えるが、これは互いに異なるため、<span class="process-math">\(k\le n\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#thm-vec-ind-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.3.5.1"><a href="#thm-vec-ind-2" title="Copy heading and permalink for 証明 4.3.5.1" aria-label="Copy heading and permalink for 証明 4.3.5.1">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Section 4.3: リストとアルゴリズム"><a href="#sec-list-alg" title="Copy heading and permalink for Section 4.3: リストとアルゴリズム" aria-label="Copy heading and permalink for Section 4.3: リストとアルゴリズム">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-linear-ind.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-basis.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
