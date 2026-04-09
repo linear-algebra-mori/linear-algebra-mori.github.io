@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>線形空間、部分空間</title>
+  <title>線形空間とその基底</title>
   <section xml:id="sec-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形空間</title>
 	<definition>
@@ -27,7 +27,7 @@
 	  </ul>
 	</example>
 	<definition>
-      <title>スパン</title>
+      <title>線形結合とスパン</title>
 	  <statement>
 	    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
 	    <md>
@@ -39,6 +39,48 @@
    また、<m>\mathrm{span}()=\{\bm{0}\}</m> と定義する。</p>
 	  </statement>
 	</definition>
+    <lemma>
+      <statement>
+  	  <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}\in\mathbb{R}^n</m> について
+  	  <md>
+  	    \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
+  		\iff \bm{v}\in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k).
+  	  </md></p>
+      </statement>
+	  <proof>
+	    <p><m>\Longrightarrow</m> :
+		  <md>
+  	        \bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
+		  </md>
+		</p>
+	    <p><m>\Longleftarrow</m> :
+		  <md>
+  	        \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) \supseteq \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
+		  </md>
+		  は明らか。
+		  ある <m>c_1,\dotsc,c_k\in\mathbb{R}</m> が存在して、
+		  <md>
+		    \bm{v} = c_1\bm{v}_1+\dotsb+c_k\bm{v}_k
+		  </md>
+		  よって、任意の <m>a_1,\dotsc,a_k,a\in\mathbb{R}</m> について
+		  <md>
+		    <mrow>a_1\bm{v}_1+\dotsb+a_k\bm{v}_k+a\bm{v} \amp=
+		    a_1\bm{v}_1+\dotsb+a_k\bm{v}_k+a(c_1\bm{v}_1+\dotsb+c_k\bm{v}_k)</mrow>
+		    <mrow>\amp=(a_1+ac_1)\bm{v}_1+\dotsb+(a_k+ac_k)\bm{v}_k</mrow>
+		    <mrow>\amp\in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</mrow>
+		  </md>
+		  よって、
+		  <md>
+  	        \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) \subseteq \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k).
+		  </md>
+		  両方の向きの包含関係が示されたので
+		  <md>
+  	        \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)
+		  </md>
+		  が示された。
+		</p>
+	  </proof>
+    </lemma>
   </section>
   <section xml:id="sec-linear-ind" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形独立性</title>
@@ -119,6 +161,7 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
     	</statement>
     </definition>
 
+<!--
   <lemma>
 <statement>
 <p>リスト <m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形従属 <m>\iff</m> ある <m>j\in\{1,2,\dotsc,k\}</m> が存在して、
@@ -140,6 +183,7 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
 </md></p>
 </proof>
   </lemma>
+-->
 
 <lemma xml:id="lem-elem-vec">
 <!-- <title><m>n</m>次元数ベクトル空間の線形独立ベクトルのサイズ</title> -->
@@ -270,6 +314,20 @@ a_1=\dotsb=a_j=0
 </p>
 </proof>
 </algorithm>
+
+<p>このアルゴリズムは様々な計算に使える汎用的なものである。</p>
+
+<fact>
+<statement>
+<p>問題
+<dl>
+  <li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}_{k+1}</m></li>
+  <li>出力: <m>\text{Yes}\iff\bm{v}_{k+1}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m></li>
+</dl>
+は<xref ref="alg-lin-gauss"/>を <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}_{k+1}</m> に対して実行し、<m>\bm{v}'_{k+1}=\bm{0}</m> であれば Yes を、そうでなければ No を出力すればよい。</p>
+</statement>
+</fact>
+
 <theorem xml:id="thm-vec-ind">
 <!-- <title><m>n</m> 次元数ベクトル空間の線形独立ベクトルの数</title> -->
 <statement>
@@ -496,6 +554,7 @@ a_1=\dotsb=a_j=0
     </definition>
 
 
+<!--
 <proposition>
 	<statement>
     <p>
@@ -522,6 +581,7 @@ a_1=\dotsb=a_j=0
   <proof>
   </proof>
 </proposition>
+-->
 
   </section>
 </chapter>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-lin-eq" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>線形方程式とその解法</title>
+  <section xml:id="sec-lin-eq" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形方程式</title>
+  </section>
+  <section xml:id="sec-img-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の像と核</title>
+  </section>
+</chapter>
+

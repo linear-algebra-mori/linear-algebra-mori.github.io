@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>行列</title>
+  <title>行列と線形写像</title>
 
   <section xml:id="sec-set" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>集合</title>
