@@ -317,7 +317,7 @@ a_1=\dotsb=a_j=0
 
 <p>このアルゴリズムは様々な計算に使える汎用的なものである。</p>
 
-<fact>
+<fact xml:id="fact-mem-span">
 <statement>
 <p>問題
 <dl>
