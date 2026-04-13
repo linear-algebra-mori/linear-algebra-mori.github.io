@@ -300,11 +300,13 @@ a_{n,1}v_1+a_{n,2}v_2+\dotsb+a_{n,m}v_m\\
 <div class="para">言い換えると、</div>
 <div class="displaymath process-math" id="def-mat-vec-2-3-1">
 \begin{equation*}
-A\bm{v} = [A_{i,1}v_1 + \dotsb + A_{i,m}v_m]_i
+A\bm{v} = [a_{i,1}v_1 + \dotsb + a_{i,m}v_m]_i
 \end{equation*}
 </div>
 <div class="para">である。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-mat-vec-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-mat-vec-2-4">この行列と数ベクトルから新しい数ベクトルを得る演算を<dfn class="terminology">行列と数ベクトルの積</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#def-mat-vec-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列"><a href="#def-mat-vec" title="Copy heading and permalink for 定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列" aria-label="Copy heading and permalink for 定義 2.4.1: 写像 \mathbb{R}^m\to\mathbb{R}^n としての行列">🔗</a></div>
 </article>
@@ -352,7 +354,7 @@ f_A\colon \mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
 <div class="para">任意の行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、写像</div>
 <div class="displaymath process-math" id="subsec-matrix-lin-3-1-1-2">
 \begin{align*}
-\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
+f_A\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
 \bm{v}\amp\longmapsto A\bm{v}
 \end{align*}
 </div>
@@ -371,7 +373,7 @@ A(c\bm{v})\amp= A[cv_i]_i\\
 \amp= [a_{i,1}(cv_1) + \dotsb + a_{i,m}(cv_m)]_i\\
 \amp= [c(a_{i,1}v_1 + \dotsb + a_{i,m}v_m)]_i\\
 \amp= c[a_{i,1}v_1 + \dotsb + a_{i,m}v_m]_i\\
-\amp= cA\bm{v}.
+\amp= c(A\bm{v}).
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -436,13 +438,14 @@ f(a_1\bm{v}_1) \amp= f(a_1\bm{v}_1 + 0\bm{v}_2)\\
 \amp= a_1f(\bm{v}_1).
 \end{align*}
 </div>
-<div class="para">次に</div>
-<div class="displaymath process-math" id="subsec-matrix-lin-4-3-2-5">
+<div class="para">ある <span class="process-math">\(k\)</span> 以下で命題が成立すると仮定すると、</div>
+<div class="displaymath process-math" id="subsec-matrix-lin-4-3-2-6">
 \begin{align*}
 f(a_1\bm{v}_1+\dotsb+a_{k+1}\bm{v}_{k+1}) \amp= f(a_1\bm{v}_1 +\dotsb+ a_k\bm{v}_k)+a_{k+1}f(\bm{v}_{k+1})\\
 \amp= a_1f(\bm{v}_1) +\dotsb+ a_kf(\bm{v}_k)+a_{k+1}f(\bm{v}_{k+1})
 \end{align*}
 </div>
+<div class="para">が得られる。1項目では帰納法の仮定を用いた。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-lin-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-matrix-lin-4-3-3">
