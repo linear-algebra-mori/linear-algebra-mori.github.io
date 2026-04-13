@@ -336,10 +336,12 @@ A\amp=\{2n\mid n\in\mathbb{Z}\}
 </div>
 <div class="displaymath process-math" id="subsec-set-rel-3">
 \begin{align*}
-A\subseteq B \amp\defiff \forall x\,(x\in A\implies x \in B)\amp\text{($A$ は $B$ の部分集合)}\\
+A\subseteq B \amp\defiff \text{$A$ の任意の要素は $B$ の要素}\amp\text{($A$ は $B$ の部分集合)}\\
 A\supseteq B \amp\defiff B\subseteq A\amp\text{($A$ は $B$ の上位集合)}\\
-A = B \amp\defiff (A\subseteq B\land A\supseteq B)\amp \text{($A$ と $B$ は等しい)}\\
-A \ne B \amp\defiff \lnot(A = B)\amp \text{($A$ と $B$ は等しくない)}
+A = B \amp\defiff A\subseteq B\text{ かつ } A\supseteq B\amp \text{($A$ と $B$ は等しい)}\\
+A \ne B \amp\defiff \text{$A = B$ ではない} \amp \text{($A$ と $B$ は等しくない)}\\
+A\subsetneq B \amp\defiff \text{$A\subseteq B$ かつ $A\ne B$}\amp\text{($A$ は $B$ の真部分集合)}\\
+A\supsetneq B \amp\defiff \text{$A\supseteq B$ かつ $A\ne B$}\amp\text{($A$ は $B$ の真上位集合)}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Subsection 2.1.2: 集合の関係"><a href="#subsec-set-rel" title="Copy heading and permalink for Subsection 2.1.2: 集合の関係" aria-label="Copy heading and permalink for Subsection 2.1.2: 集合の関係">🔗</a></div>
