@@ -12,7 +12,12 @@
       A\amp=\{1,2,3\},\amp B\amp=\{赤,青,黄,緑\}
       </mrow></md>
       のように表す。
-      集合を構成するものを<term>要素</term>もしくは<term>元</term>という。</p>
+      集合を構成するものを<term>要素</term>もしくは<term>元</term>という。
+      集合の要素に順番はないため、
+      <md><mrow>
+      A\amp=\{3,2,1\}
+      </mrow></md>
+      と表しても違いはない。</p>
       <p>集合と要素の関係を
       
       <ul>
@@ -26,11 +31,25 @@
       要素数が無限の集合を考えることもできる。
       例えば
       <md><mrow>
-      A\amp=\{n\in\mathbb{N}\mid \text{$n$ は偶数}\},\amp B\amp=\{x\in\mathbb{R}\mid \text{$x$ は無理数} \}
+        \mathbb{N}\amp\coloneqq \text{自然数(1以上の整数)の集合}\amp
+        \mathbb{Z}\amp\coloneqq \text{整数の集合}\\
+        \mathbb{R}\amp= \text{実数の集合}\amp
+        \mathbb{C}\amp= \text{複素数の集合}
       </mrow></md>
+      は無限集合である。
+      また、すでにある集合に条件をを加えることで新しい集合を定義することもできる。
+      集合の記号 <m>\{\}</m> の内側に縦棒 <m>|</m> を書いてその右側に条件を書く。
+      例えば偶数の集合は
+      <md><mrow>
+      A\amp=\{n\in\mathbb{Z}\mid \text{$n$ は偶数}\}
+      </mrow></md>
+      もしくは
+      <md><mrow>
+      A\amp=\{2n\mid n\in\mathbb{Z}\}
+      </mrow></md>
+      と表すことができる。</p>
       
-      という集合は無限集合の例となる。
-      何も要素を持たない集合(要素数が零の集合)を<term>空集合</term>といい <m>\varnothing</m> で表す。</p>
+      <p>何も要素を持たない集合(要素数が零の集合)を<term>空集合</term>といい <m>\varnothing</m> で表す。</p>
     </subsection>
 
     <subsection xml:id="subsec-set-rel" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -90,11 +109,11 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     <subsection xml:id="subsec-map-image" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>写像、象、逆像</title>
       <p>集合 <m>A,\,B</m> について、写像 <m>f\colon A\to B</m> は <m>A</m> の各要素 <m>a\in A</m> について、<m>f(a)\in B</m> を対応させるものである。
-      写像 <m>f\colon A\to B</m> について、集合 <m>A</m> を <m>f</m> の<term>定義域</term>、<m>B</m> を <m>f</m> の<term>値域</term>という。</p>
+      写像 <m>f\colon A\to B</m> について、集合 <m>A</m> を <m>f</m> の<term>定義域</term>、<m>B</m> を <m>f</m> の<term>終域</term>という。</p>
       <p>具体的に写像 <m>f</m> を定義するために
       <md>
-      <mrow>f\colon A\amp\to B</mrow>
-      <mrow>a\amp\mapsto f(a)</mrow>
+      <mrow>f\colon A\amp\longrightarrow B</mrow>
+      <mrow>a\amp\longmapsto f(a)</mrow>
       </md>
       と表すことにする。
       </p>
@@ -102,8 +121,8 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       <title>写像の定義の例</title>
       <p>実数を3倍する写像は以下で表すことができる。
       <md>
-      <mrow>f\colon \mathbb{R}\amp\to \mathbb{R}</mrow>
-      <mrow>x\amp\mapsto 3x</mrow>
+      <mrow>f\colon \mathbb{R}\amp\longrightarrow \mathbb{R}</mrow>
+      <mrow>x\amp\longmapsto 3x</mrow>
       </md>
       </p>
       </example>
@@ -112,7 +131,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       <md>
       f(S) \coloneqq \{ f(a) \mid a\in S\}
       </md>
-      を <term><m>f</m> による <m>S</m> の像</term>という。特に定義域の像を <m>\mathrm{Im}(f)\coloneqq f(A)</m>と書く。</p>
+      を <term><m>f</m> による <m>S</m> の像</term>という。特に定義域の像を <m>\mathrm{Im}(f)\coloneqq f(A)</m>と表し<term>値域</term>と呼ぶ。</p>
       <p>一方で <m>T\subseteq B</m> について、
       <md>
       f^{-1}(T) \coloneqq \left\{ a\in A \mid f(a)\in T\right\}
@@ -213,8 +232,8 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     </statement></definition>
     <p>このようにして <m>n\times m</m> 行列 <m>A\in\mathbb{R}^{n\times m}</m> は
     <md>
-    <mrow>f_A\colon \mathbb{R}^m\amp\to\mathbb{R}^n</mrow>
-    <mrow>\bm{v}\amp\mapsto A\bm{v}</mrow>
+    <mrow>f_A\colon \mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
+    <mrow>\bm{v}\amp\longmapsto A\bm{v}</mrow>
     </md>
     という写像を定義する。</p>
     </subsection>
@@ -235,8 +254,8 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
         <statement>
       <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、写像
        <md>
-         <mrow>\mathbb{R}^m\amp\to\mathbb{R}^n</mrow>
-         <mrow>\bm{v}\amp\mapsto A\bm{v}</mrow>
+         <mrow>\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
+         <mrow>\bm{v}\amp\longmapsto A\bm{v}</mrow>
        </md>
        は線形写像である。</p>
         </statement>

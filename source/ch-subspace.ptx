@@ -346,7 +346,7 @@ a_1=\dotsb=a_j=0
 <p>このアルゴリズムは様々な計算に使える汎用的なものである。
 例えば<xref ref="lem-span-inc"/>より、ベクトルがスパンに含まれるか判定問題を解くことができる。</p>
 
-<fact>
+<fact xml:id="fact-mem-span">
   <title>スパンのメンバーシップ問題</title>
 <statement>
 <p>問題
