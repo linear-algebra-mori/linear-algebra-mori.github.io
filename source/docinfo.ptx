@@ -52,6 +52,7 @@
   <rename element="next-short" xml:lang="en-US">次</rename>
   <rename element="up-short" xml:lang="en-US">上</rename>
   <rename element="proof" xml:lang="en-US">証明</rename>
+  <rename element="inlineexercise" xml:lang="en-US">練習問題</rename>
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->

@@ -52,16 +52,35 @@
       <p>何も要素を持たない集合(要素数が零の集合)を<term>空集合</term>といい <m>\varnothing</m> で表す。</p>
     </subsection>
 
+  <!--
+    <subsection xml:id="subsec-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>論理記号</title>
+      <p>
+        数学でよく使う論理記号をいくつか導入する。
+        真(True)か偽(False)の値 <m>a</m> と <m>b</m> について以下の論理演算を定義する。
+        <ul>
+          <li><m>\lnot\, a</m> : 真偽値を反転させる演算</li>
+          <li><m>a\lor b</m> : 論理和(<m>a</m> と <m>b</m> どちらかが真のときに真)</li>
+          <li><m>a\land b</m> : 論理積(<m>a</m> と <m>b</m> どちらも真のときに真)</li>
+          <li><m>a\implies b</m> : 「<m>a</m> が真のとき <m>b</m> は真」のとき真(<m>(\lnot\, a)\lor b</m> と等価)</li>
+          <li><m>a\iff b</m> : 「同値(<m>a</m> と <m>b</m> の真偽値は同じ)」のとき真</li>
+        </ul>
+      </p>
+    </subsection>
+  -->
+
     <subsection xml:id="subsec-set-rel" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>集合の関係</title>
 
 <p>集合 <m>A</m> の要素がすべて集合 <m>B</m> に含まれるとき、<m>A</m> を <m>B</m> の<term>部分集合</term>という。
 部分集合に関連する集合関係について記号を以下のように定義する。</p>
 <md>
-<mrow>A\subseteq B \amp\defiff \forall x\,(x\in A\implies x \in B)\amp\text{($A$ は $B$ の部分集合)}</mrow>
+<mrow>A\subseteq B \amp\defiff \text{$A$ の任意の要素は $B$ の要素}\amp\text{($A$ は $B$ の部分集合)}</mrow>
 <mrow>A\supseteq B \amp\defiff B\subseteq A\amp\text{($A$ は $B$ の上位集合)}</mrow>
-<mrow>A = B \amp\defiff (A\subseteq B\land A\supseteq B)\amp \text{($A$ と $B$ は等しい)}</mrow>
-<mrow>A \ne B \amp\defiff \lnot(A = B)\amp \text{($A$ と $B$ は等しくない)}</mrow>
+<mrow>A = B \amp\defiff A\subseteq B\text{ かつ } A\supseteq B\amp \text{($A$ と $B$ は等しい)}</mrow>
+<mrow>A \ne B \amp\defiff \text{$A = B$ ではない} \amp \text{($A$ と $B$ は等しくない)}</mrow>
+<mrow>A\subsetneq B \amp\defiff \text{$A\subseteq B$ かつ $A\ne B$}\amp\text{($A$ は $B$ の真部分集合)}</mrow>
+<mrow>A\supsetneq B \amp\defiff \text{$A\supseteq B$ かつ $A\ne B$}\amp\text{($A$ は $B$ の真上位集合)}</mrow>
 </md>
 
 <!--
@@ -237,6 +256,32 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     <mrow>\bm{v}\amp\longmapsto A\bm{v}</mrow>
     </md>
     という写像を定義する。</p>
+    <exercise>
+      <statement>
+        以下の行列ベクトル積を計算せよ。
+        <ol>
+          <li><md>
+            \begin{bmatrix}
+              1\amp 2\amp 3\\
+              2\amp 4\amp 6
+            \end{bmatrix}
+            \begin{bmatrix}
+              1\\2\\3
+            \end{bmatrix}.
+            </md></li>
+          <li><md>
+            \begin{bmatrix}
+              1\amp 2\\
+              3\amp 4\\
+              5\amp 6
+            \end{bmatrix}
+            \begin{bmatrix}
+              1\\2
+            \end{bmatrix}.
+            </md></li>
+        </ol>
+      </statement>
+    </exercise>
     </subsection>
     <subsection xml:id="subsec-matrix-lin" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列が表す写像の線形性</title>
@@ -331,6 +376,16 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       </proposition>
     
       <p>この線形性こそが行列の本質であり、線型写像は行列と同一視できることを次の章で示す。</p>
+    <exercise>
+      <statement>
+        <p><m>f\colon\mathbb{R}^2\to\mathbb{R}^2</m> を線形写像とする。
+        <md>
+          <mrow>f\left(\begin{bmatrix}1\\0\end{bmatrix}\right) \amp= \begin{bmatrix}1\\1\end{bmatrix}</mrow>
+          <mrow>f\left(\begin{bmatrix}0\\1\end{bmatrix}\right) \amp= \begin{bmatrix}1\\-1\end{bmatrix}</mrow>
+        </md>
+        であるとき、<m>f\left(\begin{bmatrix}200\\300\end{bmatrix}\right)</m> をもとめよ。</p>
+      </statement>
+    </exercise>
     </subsection>
   </section>
   <section xml:id="sec-matrix-linmap" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -698,7 +753,7 @@ R(\theta)\coloneqq
          AB = \left[\sum_{k=1}^r a_{i,k} b_{k,j}\right]_{1\le i\le n,\,1\le j\le m}
         </md>
         と定義する。
-        <m>A</m> の列数と<m>B</m> の行数が等しくないとき、行列積 <m>AB</m> は定義されない。</p>
+        <m>A</m> の列数と <m>B</m> の行数が等しくないとき、行列積 <m>AB</m> は定義されない。</p>
         </statement>
       </definition>
       <p>行列 <m>B</m> が <m>r\times 1</m> 行列の場合、行列積 <m>AB</m> は <m>B</m> を数ベクトルとみなした場合の行列の作用 <m>AB</m> と等しい。</p>

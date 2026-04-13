@@ -6,7 +6,7 @@
 
   <book xml:id="my-great-book">
     <title>正しく始める線形代数</title>
-    <subtitle>すべての数理の入口</subtitle>
+    <subtitle>ベクトルと行列とアルゴリズム</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
