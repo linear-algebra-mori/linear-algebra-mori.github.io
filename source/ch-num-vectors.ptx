@@ -3,10 +3,6 @@
 <chapter xml:id="ch-vector" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>数ベクトル</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
-
   <section xml:id="sec-vector" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>数ベクトル</title>
     <p>実数の集合を <m>\mathbb{R}</m>、複素数の集合を <m>\mathbb{C}</m> と表す。
@@ -22,12 +18,12 @@
     </md>
     <p>
     数ベクトルに含まれる数のことを<term>成分</term>という。
+    各 <m>i\in\{1,2,\dotsc,n\}</m> について、数ベクトル <m>\bm{v}</m> の上から <m>i</m> 番目の成分を <m>\bm{v}</m> の<term>第 <m>i</m> 成分</term>という。
     数ベクトルの成分の個数を数ベクトルの<term>次元</term>という。
     成分がすべて実数の数ベクトルを<term>実数ベクトル</term>、複素数の数ベクトルを<term>複素数ベクトル</term>という(実数ベクトルを複素数ベクトルとみなしても問題はない)。
     次元 <m>n</m> の実数ベクトルの集合を <m>\mathbb{R}^n</m>、次元 <m>n</m> の複素数ベクトルの集合を <m>\mathbb{C}^n</m> と書く。
     以下、便宜上実数ベクトルを対象にして説明するが、複素数ベクトルの場合も同様に様々な記号、用語、演算などが定義される。
     数ベクトルに記号を与えるときは <m>\boldsymbol{v}\in\mathbb{R}^n</m> のように太字で表すことにする(<m>\vec{v}\in\mathbb{R}^n</m> と表す流儀もあるし、単に <m>v\in\mathbb{R}^n</m> と表す流儀もある)。
-    各 <m>i\in\{1,2,\dotsc,n\}</m> について、数ベクトル <m>\bm{v}</m> の上から <m>i</m> 番目の成分を <m>\bm{v}</m> の<term>第 <m>i</m> 成分</term>という。
     数ベクトル <m>\bm{v}\in\mathbb{R}^n</m> の第 <m>i</m> 成分が <m>v_i</m> のとき <m>\bm{v}=[v_i]_{1\le i\le n}</m> や <m>\bm{v}=[v_i]_i</m> と表す。
     実数ベクトル <m>\mathbb{R}^n</m> を考えるとき、<m>\mathbb{R}</m> の要素のことを<term>スカラー</term>という。
     </p>
@@ -102,7 +98,7 @@
       </definition>
       <p>また、<m>-\bm{v}:=(-1)\bm{v}</m> と定義する。つまり
       <md>
-      -\bm{v}\coloneqq [-v_i]_i =
+      -\bm{v}= [-v_i]_i =
       \begin{bmatrix}
       -v_1\\
       -v_2\\
