@@ -167,7 +167,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列と線形写像</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
@@ -238,12 +238,20 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -264,7 +272,13 @@ eBookConfig.enable_chatcodes =  false;
 A\amp=\{1,2,3\},\amp B\amp=\{赤,青,黄,緑\}
 \end{align*}
 </div>
-<div class="para">のように表す。 集合を構成するものを<dfn class="terminology">要素</dfn>もしくは<dfn class="terminology">元</dfn>という。</div>
+<div class="para">のように表す。 集合を構成するものを<dfn class="terminology">要素</dfn>もしくは<dfn class="terminology">元</dfn>という。 集合の要素に順番はないため、</div>
+<div class="displaymath process-math" id="subsec-set-2-5">
+\begin{align*}
+A\amp=\{3,2,1\}
+\end{align*}
+</div>
+<div class="para">と表しても違いはない。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-set-3">
@@ -289,11 +303,28 @@ A\amp=\{1,2,3\},\amp B\amp=\{赤,青,黄,緑\}
 <span class="process-math">\(|A|\)</span> で集合 <span class="process-math">\(A\)</span> の要素数を表すことにする。 要素数が無限の集合を考えることもできる。 例えば</div>
 <div class="displaymath process-math" id="subsec-set-4-3">
 \begin{align*}
-A\amp=\{n\in\mathbb{N}\mid \text{$n$ は偶数}\},\amp B\amp=\{x\in\mathbb{R}\mid \text{$x$ は無理数} \}
+\mathbb{N}\amp\coloneqq \text{自然数(1以上の整数)の集合}\amp
+\mathbb{Z}\amp\coloneqq \text{整数の集合}\\
+\mathbb{R}\amp= \text{実数の集合}\amp
+\mathbb{C}\amp= \text{複素数の集合}
 \end{align*}
 </div>
-<div class="para">という集合は無限集合の例となる。 何も要素を持たない集合(要素数が零の集合)を<dfn class="terminology">空集合</dfn>といい <span class="process-math">\(\varnothing\)</span> で表す。</div>
+<div class="para">は無限集合である。 また、すでにある集合に条件をを加えることで新しい集合を定義することもできる。 集合の記号 <span class="process-math">\(\{\}\)</span> の内側に縦棒 <span class="process-math">\(|\)</span> を書いてその右側に条件を書く。 例えば偶数の集合は</div>
+<div class="displaymath process-math" id="subsec-set-4-6">
+\begin{align*}
+A\amp=\{n\in\mathbb{Z}\mid \text{$n$ は偶数}\}
+\end{align*}
+</div>
+<div class="para">もしくは</div>
+<div class="displaymath process-math" id="subsec-set-4-7">
+\begin{align*}
+A\amp=\{2n\mid n\in\mathbb{Z}\}
+\end{align*}
+</div>
+<div class="para">と表すことができる。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-set-5">何も要素を持たない集合(要素数が零の集合)を<dfn class="terminology">空集合</dfn>といい <span class="process-math">\(\varnothing\)</span> で表す。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-set-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 2.1.1: 集合と要素"><a href="#subsec-set" title="Copy heading and permalink for Subsection 2.1.1: 集合と要素" aria-label="Copy heading and permalink for Subsection 2.1.1: 集合と要素">🔗</a></div>
 </section>

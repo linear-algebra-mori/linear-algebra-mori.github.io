@@ -167,7 +167,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列と線形写像</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
@@ -238,12 +238,20 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -299,7 +307,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="例 4.1.2: 線形空間と部分空間の例"><a href="#sec-subspace-4" title="Copy heading and permalink for 例 4.1.2: 線形空間と部分空間の例" aria-label="Copy heading and permalink for 例 4.1.2: 線形空間と部分空間の例">🔗</a></div>
 </article></details>
 <article class="definition definition-like" id="sec-subspace-5"><h3 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">スパン.</span>
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形結合とスパン.</span>
 </h3>
 <div class="para logical" id="sec-subspace-5-2-1">
 <div class="para">任意の <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n\)</span> について、</div>
@@ -310,9 +318,78 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">と定義する。 これを <dfn class="terminology"><span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> のスパン</dfn>もしくは <dfn class="terminology"><span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k\)</span> が貼る線形空間(部分空間)</dfn>という。 また、<span class="process-math">\(\mathrm{span}()=\{\bm{0}\}\)</span> と定義する。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-subspace-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-subspace-5-2-2">ベクトル集合 <span class="process-math">\(\{\bm{v}_1,\dotsc,\bm{v}_k\}\)</span> を <span class="process-math">\(V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\)</span> の<dfn class="terminology">スパニングセット</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#sec-subspace-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="定義 4.1.3: スパン"><a href="#sec-subspace-5" title="Copy heading and permalink for 定義 4.1.3: スパン" aria-label="Copy heading and permalink for 定義 4.1.3: スパン">🔗</a></div>
-</article><div class="autopermalink" data-description="Section 4.1: 線形空間"><a href="#sec-subspace" title="Copy heading and permalink for Section 4.1: 線形空間" aria-label="Copy heading and permalink for Section 4.1: 線形空間">🔗</a></div>
+<div class="autopermalink" data-description="定義 4.1.3: 線形結合とスパン"><a href="#sec-subspace-5" title="Copy heading and permalink for 定義 4.1.3: 線形結合とスパン" aria-label="Copy heading and permalink for 定義 4.1.3: 線形結合とスパン">🔗</a></div>
+</article>
+<article class="lemma theorem-like" id="lem-span-inc"><h3 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-span-inc-1-1">
+<div class="para">任意の <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}\in\mathbb{R}^n\)</span> について</div>
+<div class="displaymath process-math" id="lem-span-inc-1-1-2">
+\begin{equation*}
+\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
+\iff \bm{v}\in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-span-inc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="補題 4.1.4"><a href="#lem-span-inc" title="Copy heading and permalink for 補題 4.1.4" aria-label="Copy heading and permalink for 補題 4.1.4">🔗</a></div>
+</article>
+<details id="lem-span-inc-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="lem-span-inc-2-1">
+<div class="para">
+<span class="process-math">\(\Longrightarrow\)</span> :</div>
+<div class="displaymath process-math" id="lem-span-inc-2-1-2">
+\begin{equation*}
+\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-span-inc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-span-inc-2-2">
+<div class="para">
+<span class="process-math">\(\Longleftarrow\)</span> :</div>
+<div class="displaymath process-math" id="lem-span-inc-2-2-2">
+\begin{equation*}
+\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) \supseteq \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
+\end{equation*}
+</div>
+<div class="para">は明らか。 ある <span class="process-math">\(c_1,\dotsc,c_k\in\mathbb{R}\)</span> が存在して、</div>
+<div class="displaymath process-math" id="lem-span-inc-2-2-4">
+\begin{equation*}
+\bm{v} = c_1\bm{v}_1+\dotsb+c_k\bm{v}_k
+\end{equation*}
+</div>
+<div class="para">よって、任意の <span class="process-math">\(a_1,\dotsc,a_k,a\in\mathbb{R}\)</span> について</div>
+<div class="displaymath process-math" id="lem-span-inc-2-2-6">
+\begin{align*}
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k+a\bm{v} \amp=
+a_1\bm{v}_1+\dotsb+a_k\bm{v}_k+a(c_1\bm{v}_1+\dotsb+c_k\bm{v}_k)\\
+\amp=(a_1+ac_1)\bm{v}_1+\dotsb+(a_k+ac_k)\bm{v}_k\\
+\amp\in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)
+\end{align*}
+</div>
+<div class="para">よって、</div>
+<div class="displaymath process-math" id="lem-span-inc-2-2-7">
+\begin{equation*}
+\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) \subseteq \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k).
+\end{equation*}
+</div>
+<div class="para">両方の向きの包含関係が示されたので</div>
+<div class="displaymath process-math" id="lem-span-inc-2-2-8">
+\begin{equation*}
+\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) = \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)
+\end{equation*}
+</div>
+<div class="para">が示された。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-span-inc-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 4.1.4.1"><a href="#lem-span-inc-2" title="Copy heading and permalink for 証明 4.1.4.1" aria-label="Copy heading and permalink for 証明 4.1.4.1">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Section 4.1: 線形空間"><a href="#sec-subspace" title="Copy heading and permalink for Section 4.1: 線形空間" aria-label="Copy heading and permalink for Section 4.1: 線形空間">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">

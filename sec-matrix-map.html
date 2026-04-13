@@ -167,7 +167,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列と線形写像</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
@@ -238,12 +238,20 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -304,8 +312,8 @@ A\bm{v} = [A_{i,1}v_1 + \dotsb + A_{i,m}v_m]_i
 <div class="para">このようにして <span class="process-math">\(n\times m\)</span> 行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> は</div>
 <div class="displaymath process-math" id="subsec-matrix-map-4-3">
 \begin{align*}
-f_A\colon \mathbb{R}^m\amp\to\mathbb{R}^n\\
-\bm{v}\amp\mapsto A\bm{v}
+f_A\colon \mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
+\bm{v}\amp\longmapsto A\bm{v}
 \end{align*}
 </div>
 <div class="para">という写像を定義する。</div>
@@ -344,8 +352,8 @@ f_A\colon \mathbb{R}^m\amp\to\mathbb{R}^n\\
 <div class="para">任意の行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、写像</div>
 <div class="displaymath process-math" id="subsec-matrix-lin-3-1-1-2">
 \begin{align*}
-\mathbb{R}^m\amp\to\mathbb{R}^n\\
-\bm{v}\amp\mapsto A\bm{v}
+\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
+\bm{v}\amp\longmapsto A\bm{v}
 \end{align*}
 </div>
 <div class="para">は線形写像である。</div>

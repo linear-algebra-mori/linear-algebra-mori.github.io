@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>線形空間、部分空間</title>
+<title>線形空間とその基底</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -167,7 +167,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列と線形写像</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
@@ -238,7 +238,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
@@ -246,17 +246,25 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-subspace">
 <h2 class="heading">
-<span class="type">Chapter</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形空間、部分空間</span>
+<span class="type">Chapter</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形空間とその基底</span>
 </h2>
 <nav class="summary-links"><ul>
 <li><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></li>
 <li><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></li>
 <li><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></li>
 <li><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></li>
-</ul></nav><div class="autopermalink" data-description="Chapter 4: 線形空間、部分空間"><a href="#ch-subspace" title="Copy heading and permalink for Chapter 4: 線形空間、部分空間" aria-label="Copy heading and permalink for Chapter 4: 線形空間、部分空間">🔗</a></div></section></div>
+</ul></nav><div class="autopermalink" data-description="Chapter 4: 線形空間とその基底"><a href="#ch-subspace" title="Copy heading and permalink for Chapter 4: 線形空間とその基底" aria-label="Copy heading and permalink for Chapter 4: 線形空間とその基底">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-graph.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-subspace.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

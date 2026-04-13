@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>写像</title>
+<title>線形方程式</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-set.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-matrix.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-lin-eq.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-lin-eq.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-img-ker.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -166,9 +166,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-intuition.html" class="internal"><span class="codenumber">1.3</span> <span class="title">数ベクトルのイメージ</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列と線形写像</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
 <ul class="structural toc-item-list">
@@ -176,9 +176,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-set.html#subsec-set-rel" class="internal"><span class="codenumber">2.1.2</span> <span class="title">集合の関係</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-map.html" class="internal"><span class="codenumber">2.2</span> <span class="title">写像</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-map.html#subsec-map-image" class="internal"><span class="codenumber">2.2.1</span> <span class="title">写像、象、逆像</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-map.html#subsec-map-inverse" class="internal"><span class="codenumber">2.2.2</span> <span class="title">単射、全射、全単射、逆写像</span></a></div></li>
 </ul>
@@ -246,114 +246,110 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="sec-map">
+<section class="section" id="sec-lin-eq">
 <h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">写像</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形方程式</span>
 </h2>
-<section class="subsection" id="subsec-map-image">
-<h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">写像、象、逆像</span>
+<article class="definition definition-like" id="sec-lin-eq-2"><h3 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形方程式.</span>
 </h3>
-<div class="para" id="subsec-map-image-2">集合 <span class="process-math">\(A,\,B\)</span> について、写像 <span class="process-math">\(f\colon A\to B\)</span> は <span class="process-math">\(A\)</span> の各要素 <span class="process-math">\(a\in A\)</span> について、<span class="process-math">\(f(a)\in B\)</span> を対応させるものである。 写像 <span class="process-math">\(f\colon A\to B\)</span> について、集合 <span class="process-math">\(A\)</span> を <span class="process-math">\(f\)</span> の<dfn class="terminology">定義域</dfn>、<span class="process-math">\(B\)</span> を <span class="process-math">\(f\)</span> の<dfn class="terminology">終域</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-image-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-lin-eq-2-2-1">
+<div class="para">行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> と <span class="process-math">\(\bm{b}\in\mathbb{R}^n\)</span> について</div>
+<div class="displaymath process-math" id="sec-lin-eq-2-2-1-3">
+\begin{equation*}
+A\bm{x}=\bm{b}
+\end{equation*}
 </div>
-<div class="para logical" id="subsec-map-image-3">
-<div class="para">具体的に写像 <span class="process-math">\(f\)</span> を定義するために</div>
-<div class="displaymath process-math" id="subsec-map-image-3-2">
-\begin{align*}
-f\colon A\amp\longrightarrow B\\
-a\amp\longmapsto f(a)
-\end{align*}
+<div class="para">という <span class="process-math">\(\bm{x}\in\mathbb{R}^m\)</span> に対する方程式を<dfn class="terminology">線形方程式</dfn>もしくは<dfn class="terminology">一次方程式</dfn>という。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-lin-eq-2-2-2">また、<span class="process-math">\(\bm{b}=\bm{0}\)</span> のとき<dfn class="terminology">斉次方程式</dfn>という。斉次方程式でないとき<dfn class="terminology">非斉次方程式</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">と表すことにする。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-image-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="定義 5.1.1: 線形方程式"><a href="#sec-lin-eq-2" title="Copy heading and permalink for 定義 5.1.1: 線形方程式" aria-label="Copy heading and permalink for 定義 5.1.1: 線形方程式">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-lin-eq-3"><h3 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像の像.</span>
+</h3>
+<div class="para logical" id="sec-lin-eq-3-2-1">
+<div class="para">行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、</div>
+<div class="displaymath process-math" id="sec-lin-eq-3-2-1-2">
+\begin{equation*}
+\mathrm{Im}(A) \coloneqq\left\{A\bm{v}\mid \bm{v}\in\mathbb{R}^m\right\}\subseteq\mathbb{R}^n
+\end{equation*}
 </div>
-<details id="subsec-map-image-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">例</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">写像の定義の例.</span>
-</h4></summary>
-<article class="example example-like knowl__content">
-<div class="para logical" id="subsec-map-image-4-2">
-<div class="para">実数を3倍する写像は以下で表すことができる。</div>
-<div class="displaymath process-math" id="subsec-map-image-4-2-1">
-\begin{align*}
-f\colon \mathbb{R}\amp\longrightarrow \mathbb{R}\\
-x\amp\longmapsto 3x
-\end{align*}
+<div class="para">を <dfn class="terminology"><span class="process-math">\(A\)</span> の像もしくはイメージ</dfn>という。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-image-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="定義 5.1.2: 線形写像の像"><a href="#sec-lin-eq-3" title="Copy heading and permalink for 定義 5.1.2: 線形写像の像" aria-label="Copy heading and permalink for 定義 5.1.2: 線形写像の像">🔗</a></div>
+</article>
+<article class="proposition theorem-like" id="sec-lin-eq-4"><h3 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-lin-eq-4-1-1">任意の行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、<span class="process-math">\(\mathrm{Im}(A)\)</span> は線形空間である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="例 2.2.1: 写像の定義の例"><a href="#subsec-map-image-4" title="Copy heading and permalink for 例 2.2.1: 写像の定義の例" aria-label="Copy heading and permalink for 例 2.2.1: 写像の定義の例">🔗</a></div>
+<div class="autopermalink" data-description="命題 5.1.3"><a href="#sec-lin-eq-4" title="Copy heading and permalink for 命題 5.1.3" aria-label="Copy heading and permalink for 命題 5.1.3">🔗</a></div>
+</article>
+<details id="sec-lin-eq-4-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec-lin-eq-4-2-1">任意の <span class="process-math">\(\bm{y}\in\mathrm{Im}(A)\)</span> について、ある <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> が存在して、<span class="process-math">\(A\bm{v}=\bm{y}\text{.}\)</span> 任意の <span class="process-math">\(c\in\mathbb{R}\)</span> について、<span class="process-math">\(c\bm{y}=A(c\bm{v})\)</span> なので、<span class="process-math">\(c\bm{y}\in\mathrm{Im}(A)\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-lin-eq-4-2-2">任意の <span class="process-math">\(\bm{y}_0,\bm{y}_1\in\mathrm{Im}(A)\)</span> について、ある <span class="process-math">\(\bm{v}_0,\bm{v}_1\in\mathbb{R}^m\)</span> が存在して、<span class="process-math">\(A\bm{v}_0=\bm{y}_0\)</span> と <span class="process-math">\(A\bm{v}_1=\bm{y}_1\)</span> が成り立つ。 よって、<span class="process-math">\(\bm{y}_0+\bm{y}_1=A(\bm{v}_0+\bm{v}_1)\)</span> であり、<span class="process-math">\(\bm{y}_0+\bm{y}_1\in\mathrm{Im}(A)\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 5.1.3.1"><a href="#sec-lin-eq-4-2" title="Copy heading and permalink for 証明 5.1.3.1" aria-label="Copy heading and permalink for 証明 5.1.3.1">🔗</a></div>
 </article></details>
-<div class="para logical" id="subsec-map-image-5">
-<div class="para">また、<span class="process-math">\(S\subseteq A\)</span>について、</div>
-<div class="displaymath process-math" id="subsec-map-image-5-2">
-\begin{equation*}
-f(S) \coloneqq \{ f(a) \mid a\in S\}
-\end{equation*}
-</div>
-<div class="para">を <dfn class="terminology"><span class="process-math">\(f\)</span> による <span class="process-math">\(S\)</span> の像</dfn>という。特に定義域の像を <span class="process-math">\(\mathrm{Im}(f)\coloneqq f(A)\)</span>と表し<dfn class="terminology">値域</dfn>と呼ぶ。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-image-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-map-image-6">
-<div class="para">一方で <span class="process-math">\(T\subseteq B\)</span> について、</div>
-<div class="displaymath process-math" id="subsec-map-image-6-2">
-\begin{equation*}
-f^{-1}(T) \coloneqq \left\{ a\in A \mid f(a)\in T\right\}
-\end{equation*}
-</div>
-<div class="para">を <dfn class="terminology"><span class="process-math">\(f\)</span> による <span class="process-math">\(T\)</span> の逆像(原像)</dfn>という。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-image-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 2.2.1: 写像、象、逆像"><a href="#subsec-map-image" title="Copy heading and permalink for Subsection 2.2.1: 写像、象、逆像" aria-label="Copy heading and permalink for Subsection 2.2.1: 写像、象、逆像">🔗</a></div>
-</section>
-<section class="subsection" id="subsec-map-inverse">
-<h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">単射、全射、全単射、逆写像</span>
+<article class="lemma theorem-like" id="sec-lin-eq-5"><h3 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="subsec-map-inverse-2">各 <span class="process-math">\(b\in B\)</span> について、<span class="process-math">\(|f^{-1}(\{b\})|\le 1\)</span> のとき <span class="process-math">\(f\)</span> は<dfn class="terminology">単射</dfn>であるという。 単射は<dfn class="terminology">一対一写像</dfn>ということもある。 各 <span class="process-math">\(b\in B\)</span> について、<span class="process-math">\(|f^{-1}(\{b\})|\ge 1\)</span> のとき <span class="process-math">\(f\)</span> は<dfn class="terminology">全射</dfn>であるという。 全射は<dfn class="terminology">上への写像</dfn>ということもある。 <span class="process-math">\(f\)</span> が単射かつ全射のとき <span class="process-math">\(f\)</span> は<dfn class="terminology">全単射</dfn>であるという。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-inverse-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-map-inverse-3">
-<div class="para">写像 <span class="process-math">\(f\colon A\to B\)</span> と <span class="process-math">\(g\colon B\to C\)</span> について、<dfn class="terminology"><span class="process-math">\(f\)</span> と <span class="process-math">\(g\)</span> の合成写像</dfn> <span class="process-math">\(g\circ f\colon A\to C\)</span> を</div>
-<div class="displaymath process-math" id="subsec-map-inverse-3-5">
+<div class="para logical" id="sec-lin-eq-5-1-1">
+<div class="para">任意の行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、各 <span class="process-math">\(j\in\{1,\dotsc,m\}\)</span> について <span class="process-math">\(A\)</span> の <span class="process-math">\(j\)</span> 列目を <span class="process-math">\(\bm{a}_j\)</span> とすると、</div>
+<div class="displaymath process-math" id="sec-lin-eq-5-1-1-6">
 \begin{equation*}
-(g\circ f)(a) \coloneqq g(f(a)),\qquad\forall a\in A
+\mathrm{Im}(A) = \mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m).
 \end{equation*}
 </div>
-<div class="para">で定義する。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-inverse-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-map-inverse-4">
-<div class="para">集合 <span class="process-math">\(A\)</span> 上の<dfn class="terminology">恒等写像</dfn> <span class="process-math">\(\mathrm{id}_A\)</span> を</div>
-<div class="displaymath process-math" id="subsec-map-inverse-4-4">
+<div class="autopermalink" data-description="補題 5.1.4"><a href="#sec-lin-eq-5" title="Copy heading and permalink for 補題 5.1.4" aria-label="Copy heading and permalink for 補題 5.1.4">🔗</a></div>
+</article>
+<details id="sec-lin-eq-5-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-lin-eq-5-2-1">
+<div class="para">任意の <span class="process-math">\(\bm{v}=[v_i]_i\)</span> について</div>
+<div class="displaymath process-math" id="sec-lin-eq-5-2-1-2">
 \begin{equation*}
-\mathrm{id}_A(a) \coloneqq a,\qquad\forall a\in A
+A\bm{v} = v_1\bm{a}_1+\dotsb+v_m\bm{a}_m
 \end{equation*}
 </div>
-<div class="para">で定義する。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-inverse-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">より明らか。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-map-inverse-5">
-<span class="process-math">\(f\colon A\to B\)</span> が単射のとき、ある <span class="process-math">\(g\colon B\to A\)</span> が存在して、<span class="process-math">\(g\circ f = \mathrm{id}_A\)</span>  が存在する。 この <span class="process-math">\(g\)</span> は以下のように決めればよい。 各 <span class="process-math">\(b\in B\)</span> について <span class="process-math">\(f^{-1}(\{b\})\)</span> は空集合もしくは要素数1の集合である。 <span class="process-math">\(f^{-1}(\{b\})=\{a\}\)</span> のとき、<span class="process-math">\(g(b):=a\)</span> と定義する。それ以外の <span class="process-math">\(b\in B\)</span> については <span class="process-math">\(g(b)\)</span>  を好きなように定義すればよい。 このような <span class="process-math">\(g\)</span> について <span class="process-math">\(g\circ f = \mathrm{id}_A\)</span> を満たす。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-inverse-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="証明 5.1.4.1"><a href="#sec-lin-eq-5-2" title="Copy heading and permalink for 証明 5.1.4.1" aria-label="Copy heading and permalink for 証明 5.1.4.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="sec-lin-eq-6">
+<div class="para">したがって、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mem-span.html" id="sec-lin-eq-6-1">
+\begin{equation*}
+A\bm{x}=\bm{b} \text{ が解を持つ} \iff \bm{b}\in\mathrm{Im}(A) \iff \bm{b}\in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+\end{equation*}
 </div>
-<div class="para" id="subsec-map-inverse-6">また、<span class="process-math">\(f\colon A\to B\)</span> が全単射のとき、上記のように決めた <span class="process-math">\(g\)</span>  は  <span class="process-math">\(f\circ g = \mathrm{id}_B\)</span>  も満たす。 このとき、 <span class="process-math">\(g\)</span>  を<dfn class="terminology"><span class="process-math">\(f\)</span> の逆写像</dfn>といい  <span class="process-math">\(f^{-1}\)</span> で表す。 逆像と同じ記号だが混同しないように注意すること。 全単射 <span class="process-math">\(f\colon A\to B\)</span> について、 <span class="process-math">\((f^{-1})^{-1}=f\)</span> が成り立つ。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-inverse-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">が成り立つ。 よって<a href="sec-list-alg.html#fact-mem-span" class="xref" data-knowl="./knowl/xref/fact-mem-span.html" data-reveal-label="Reveal" data-close-label="Close" title="事実 4.3.4: スパンのメンバーシップ問題">事実 4.3.4</a>で線形方程式の解の存在判定ができる。 以降は具体的に線形方程式の解を発見する方法について考える。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-lin-eq-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-map-inverse-7">特に有限集合 <span class="process-math">\(A\)</span> について、全単射 <span class="process-math">\(f\colon A\to A\)</span> を<dfn class="terminology"><span class="process-math">\(A\)</span> 上の置換</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-map-inverse-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 2.2.2: 単射、全射、全単射、逆写像"><a href="#subsec-map-inverse" title="Copy heading and permalink for Subsection 2.2.2: 単射、全射、全単射、逆写像" aria-label="Copy heading and permalink for Subsection 2.2.2: 単射、全射、全単射、逆写像">🔗</a></div>
-</section><div class="autopermalink" data-description="Section 2.2: 写像"><a href="#sec-map" title="Copy heading and permalink for Section 2.2: 写像" aria-label="Copy heading and permalink for Section 2.2: 写像">🔗</a></div>
+<div class="autopermalink" data-description="Section 5.1: 線形方程式"><a href="#sec-lin-eq" title="Copy heading and permalink for Section 5.1: 線形方程式" aria-label="Copy heading and permalink for Section 5.1: 線形方程式">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-set.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-matrix.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-lin-eq.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-img-ker.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

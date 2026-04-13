@@ -167,7 +167,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix.html" class="internal"><span class="codenumber">2</span> <span class="title">行列と線形写像</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-set.html" class="internal"><span class="codenumber">2.1</span> <span class="title">集合</span></a></div>
@@ -238,12 +238,20 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間、部分空間</span></a></div>
+<div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -265,7 +273,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para" id="sec-vector-4">数ベクトルに含まれる数のことを<dfn class="terminology">成分</dfn>という。 数ベクトルの成分の個数を数ベクトルの<dfn class="terminology">次元</dfn>という。 成分がすべて実数の数ベクトルを<dfn class="terminology">実数ベクトル</dfn>、複素数の数ベクトルを<dfn class="terminology">複素数ベクトル</dfn>という(実数ベクトルを複素数ベクトルとみなしても問題はない)。 次元 <span class="process-math">\(n\)</span> の実数ベクトルの集合を <span class="process-math">\(\mathbb{R}^n\)</span>、次元 <span class="process-math">\(n\)</span> の複素数ベクトルの集合を <span class="process-math">\(\mathbb{C}^n\)</span> と書く。 以下、便宜上実数ベクトルを対象にして説明するが、複素数ベクトルの場合も同様に様々な記号、用語、演算などが定義される。 数ベクトルに記号を与えるときは <span class="process-math">\(\boldsymbol{v}\in\mathbb{R}^n\)</span> のように太字で表すことにする(<span class="process-math">\(\vec{v}\in\mathbb{R}^n\)</span> と表す流儀もあるし、単に <span class="process-math">\(v\in\mathbb{R}^n\)</span> と表す流儀もある)。 各 <span class="process-math">\(i\in\{1,2,\dotsc,n\}\)</span> について、数ベクトル <span class="process-math">\(\bm{v}\)</span> の上から <span class="process-math">\(i\)</span> 番目の成分を <span class="process-math">\(\bm{v}\)</span> の<dfn class="terminology">第 <span class="process-math">\(i\)</span> 成分</dfn>という。 数ベクトル <span class="process-math">\(\bm{v}\in\mathbb{R}^n\)</span> の第 <span class="process-math">\(i\)</span> 成分が <span class="process-math">\(v_i\)</span> のとき <span class="process-math">\(\bm{v}=[v_i]_{1\le i\le n}\)</span> や <span class="process-math">\(\bm{v}=[v_i]_i\)</span> と表す。 実数ベクトル <span class="process-math">\(\mathbb{R}^n\)</span> を考えるとき、<span class="process-math">\(\mathbb{R}\)</span> の要素のことを<dfn class="terminology">スカラー</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-vector-4">数ベクトルに含まれる数のことを<dfn class="terminology">成分</dfn>という。 各 <span class="process-math">\(i\in\{1,2,\dotsc,n\}\)</span> について、数ベクトル <span class="process-math">\(\bm{v}\)</span> の上から <span class="process-math">\(i\)</span> 番目の成分を <span class="process-math">\(\bm{v}\)</span> の<dfn class="terminology">第 <span class="process-math">\(i\)</span> 成分</dfn>という。 数ベクトルの成分の個数を数ベクトルの<dfn class="terminology">次元</dfn>という。 成分がすべて実数の数ベクトルを<dfn class="terminology">実数ベクトル</dfn>、複素数の数ベクトルを<dfn class="terminology">複素数ベクトル</dfn>という(実数ベクトルを複素数ベクトルとみなしても問題はない)。 次元 <span class="process-math">\(n\)</span> の実数ベクトルの集合を <span class="process-math">\(\mathbb{R}^n\)</span>、次元 <span class="process-math">\(n\)</span> の複素数ベクトルの集合を <span class="process-math">\(\mathbb{C}^n\)</span> と書く。 以下、便宜上実数ベクトルを対象にして説明するが、複素数ベクトルの場合も同様に様々な記号、用語、演算などが定義される。 数ベクトルに記号を与えるときは <span class="process-math">\(\boldsymbol{v}\in\mathbb{R}^n\)</span> のように太字で表すことにする(<span class="process-math">\(\vec{v}\in\mathbb{R}^n\)</span> と表す流儀もあるし、単に <span class="process-math">\(v\in\mathbb{R}^n\)</span> と表す流儀もある)。 数ベクトル <span class="process-math">\(\bm{v}\in\mathbb{R}^n\)</span> の第 <span class="process-math">\(i\)</span> 成分が <span class="process-math">\(v_i\)</span> のとき <span class="process-math">\(\bm{v}=[v_i]_{1\le i\le n}\)</span> や <span class="process-math">\(\bm{v}=[v_i]_i\)</span> と表す。 実数ベクトル <span class="process-math">\(\mathbb{R}^n\)</span> を考えるとき、<span class="process-math">\(\mathbb{R}\)</span> の要素のことを<dfn class="terminology">スカラー</dfn>という。<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Section 1.1: 数ベクトル"><a href="#sec-vector" title="Copy heading and permalink for Section 1.1: 数ベクトル" aria-label="Copy heading and permalink for Section 1.1: 数ベクトル">🔗</a></div>
 </section>
