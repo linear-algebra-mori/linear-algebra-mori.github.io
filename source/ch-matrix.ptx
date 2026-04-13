@@ -249,6 +249,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
       </md>
       である。</p>
       <p>この行列と数ベクトルから新しい数ベクトルを得る演算を<term>行列と数ベクトルの積</term>という。</p>
+      <p>行列 <m>A</m> の列数と数ベクトル <m>\bm{v}</m> の次元が等しくないときは行列と数ベクトルの積 <m>A\bm{v}</m> は定義されない。</p>
     </statement></definition>
     <p>このようにして <m>n\times m</m> 行列 <m>A\in\mathbb{R}^{n\times m}</m> は
     <md>
