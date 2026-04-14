@@ -3,7 +3,7 @@
 <chapter xml:id="ch-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>線形空間とその基底</title>
   <section xml:id="sec-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>線形空間</title>
+    <title>線形空間と生成系</title>
 	<definition>
       <title>線形空間と部分空間</title>
 	  <statement>
@@ -27,7 +27,7 @@
 	  </ul>
 	</example>
 	<definition>
-      <title>線形結合とスパン</title>
+      <title>線形結合、スパン、生成系</title>
 	  <statement>
 	    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
 	    <md>
@@ -37,9 +37,12 @@
 		これを <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> のスパン</term>もしくは
     <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が貼る線形空間(部分空間)</term>という。
    また、<m>\mathrm{span}()=\{\bm{0}\}</m> と定義する。</p>
-      <p>ベクトル集合 <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> を <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の<term>スパニングセット</term>という。</p>
+      <p>ベクトル集合 <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> を <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の<term>生成系</term>という。</p>
 	  </statement>
 	</definition>
+  <fact>
+    <p>任意の線形空間 <m>V</m> と任意の生成系 <m>S\subseteq V</m> について、任意の上位集合 <m>S\subseteq L\subseteq V</m> は <m>V</m> の生成系である。</p>
+  </fact>
     <lemma xml:id="lem-span-inc">
       <statement>
   	  <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}\in\mathbb{R}^n</m> について
@@ -106,6 +109,9 @@
    <p>線形独立でないベクトル集合を<term>線形従属</term>であるという。</p>
   </statement>
   </definition>
+  <fact>
+    <p>任意の線形独立集合 <m>I\subseteq V</m> について、任意の部分集合 <m>J\subseteq I</m> は線形独立である。</p>
+  </fact>
   <example>
    <title>線形独立性の例</title>
    <ul>
@@ -113,7 +119,6 @@
    <li><m>\bm{v},\bm{w}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0},\,\bm{w}=a\bm{v}</m> を満たす <m>a\in \mathbb{R}</m> が存在しない。</li>
    <li><m>\bm{e}_1,\dotsc,\bm{e}_n\in\mathbb{R}^n</m> は線形独立。</li>
    <li><m>\bm{e}_1,\bm{e}_2,\bm{e}_1+\bm{e}_2\in\mathbb{R}^3</m> は線形従属。</li>
-   <li>ベクトルの集合 <m>S\subseteq \mathbb{R}^n</m> が線形独立 <m>\Longrightarrow</m> <m>S</m> の部分集合は線形独立。</li>
    </ul>
    \end{example}
   </example>
@@ -383,12 +388,42 @@ a_1=\dotsb=a_j=0
 		</p>
 	  </statement>
     </definition>
+  <p><xref ref="thm-vec-ind"/>より、任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> の任意の基底のサイズは <m>n</m> 以下である。</p>
+  <definition>
+  <p>任意の集合 <m>U</m> と <m>A\subseteq U</m> について<term><m>A</m> が性質 <m>P</m> を満たす <m>U</m> の極大な部分集合</term> <m>\defiff</m>
+    <md>
+      \mathcal{P}=\left\{S\subseteq U\mid \text{$S$ は $P$ を満たす}\right\}
+    </md>
+    について、<m>A\in\mathcal{P}</m> かつ任意の <m>B\supsetneq A</m> について <m>B\notin\mathcal{P}</m>。
+    </p>
+  <p>また、任意の集合 <m>U</m> と <m>A\subseteq U</m> について<term><m>A</m> が性質 <m>P</m> を満たす <m>U</m> の極小な部分集合</term> <m>\defiff</m>
+    <m>A\in\mathcal{P}</m> かつ任意の <m>B\subsetneq A</m> について <m>B\notin\mathcal{P}</m>。
+    </p>
+  </definition>
+	<proposition>
+	  <statement>
+	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> について、任意の極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> は <m>V</m> の基底である。
+	  </statement>
+	  <proof>
+      <p>極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <m>V</m> を貼らないと仮定する。
+        このとき、ある <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> が存在する。
+        <xref ref="lem-ind-add"/> より <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}</m> は線形独立であるため極大性に矛盾。
+        よって命題は示された。</p>
+	  </proof>
+	</proposition>
+<p>したがって、以下の二つの系を得る。</p>
+	<corollary>
+	  <statement>
+	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> は基底を持つ。
+	  </statement>
+	</corollary>
 
-	<theorem>
+	<corollary>
 	  <title>基底の延長定理</title>
 	  <statement>
 	  <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> と線形独立なベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> を含む <m>V</m> の基底が存在する。</p>
 	  </statement>
+	<!--
     <proof>
       <p><m>V</m> の基底を以下のアルゴリズムで構成できる。
       <ol>
@@ -400,13 +435,19 @@ a_1=\dotsb=a_j=0
       上記のアルゴリズムの中で <m>B</m> に要素を追加していくが、<xref ref="lem-ind-add"/>より常に線形独立である。<xref ref="thm-vec-ind"/>より、<m>B</m> の要素数は高々 <m>n</m> なので、このアルゴリズムは停止する。</p>
       <p>このアルゴリズムは抽象的なものである。2,3行目の具体的な計算方法は線形空間 <m>V</m> が具体的にどのように表されているかに依存する。</p>
     </proof>
-	</theorem>
-<p>基底の延長定理を空集合(<m>k=0</m>)の場合に適用することで以下の系を得る。</p>
-	<corollary>
-	  <statement>
-	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> は基底を持つ。
-	  </statement>
+  -->
 	</corollary>
+	<proposition>
+	  <statement>
+	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> について、任意の極小な生成系 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> は <m>V</m> の基底である。
+	  </statement>
+	  <proof>
+      <p>極小な生成系 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が線形独立でないと仮定する。
+        このとき、ある <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> が存在する。
+        <xref ref="lem-ind-add"/> より <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}</m> は線形独立であるため極大性に矛盾。
+        よって命題は示された。</p>
+	  </proof>
+	</proposition>
 <!--
 	<lemma>
   <statement>
