@@ -34,8 +34,8 @@
 		  \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\coloneqq\left\{\sum_{i=1}^k a_i\bm{v}_i\mid a_1,\dotsc, a_k\in\mathbb{R}\right\}
 	    </md>
 		と定義する。
-		これを <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> のスパン</term>もしくは
-    <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が貼る線形空間(部分空間)</term>という。
+		これを <term><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> のスパン</term>もしくは
+    <term><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が貼る線形空間(部分空間)</term>という。
    また、<m>\mathrm{span}()=\{\bm{0}\}</m> と定義する。</p>
       <p>ベクトル集合 <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> を <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の<term>生成系</term>という。</p>
 	  </statement>
@@ -99,11 +99,11 @@
   <definition>
   <title>線形独立性</title>
   <statement>
-   <p><m>k</m> 本の数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> が<term>線形独立</term>であるとは
+   <p><m>k</m> 本の数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、<m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が<term>線形独立</term>である<m>\defiff</m>
    <md>
    a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k = \bm{0} \iff a_1=a_2=\dotsb=a_k = 0
    </md>
-   が成り立つことをいう。
+   が成り立つ。
    空集合(<m>k=0</m> の場合)も線形独立であるという。</p>
 
    <p>線形独立でないベクトル集合を<term>線形従属</term>であるという。</p>
@@ -125,7 +125,7 @@
   <lemma>
   <statement>
 <p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
-	<m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立である <m>\iff</m> 任意の <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m>
+	<m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立である <m>\iff</m> 任意の <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m>
 について、
 <md>
 a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
@@ -151,12 +151,12 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
 
 <corollary xml:id="cor-dep-add">
   <statement>
-   <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}</m> は線形従属。</p>
+   <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\}</m> は線形従属。</p>
   </statement>
 </corollary>
 <lemma xml:id="lem-ind-add">
   <statement>
-   <p>任意の線形独立な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}</m> は線形独立。</p>
+   <p>任意の線形独立な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\}</m> は線形独立。</p>
   </statement>
   <proof>
     <p>ある <m>a_1,\dotsc,a_m,a\in\mathbb{R}</m> が
@@ -380,12 +380,13 @@ a_1=\dotsb=a_j=0
     <definition>
 	  <title>基底</title>
 	  <statement>
-	    <p>線形空間 <m>V</m> について <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
+	    <p>線形空間 <m>V</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
 		<ul>
 		  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>
-		  <li><m>\bm{v}_1,\dotsc,\bm{v}_k</m> が線形独立</li>
+		  <li><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立</li>
 		</ul>
 		</p>
+	  <p>基底に含まれる数ベクトルの順序を区別したもの <m>(\bm{v}_1,\dotsc,\bm{v}_k)</m> を<term>順序付き基底</term>という。</p>
 	  </statement>
     </definition>
   <p><xref ref="thm-vec-ind"/>より、任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> の任意の基底のサイズは <m>n</m> 以下である。</p>
