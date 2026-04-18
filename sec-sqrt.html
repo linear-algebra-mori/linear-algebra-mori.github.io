@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>平方根を含む整数演算</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="frontmatter-3.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="frontmatter.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="ch-vector.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-fib.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix-app.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-markov.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -145,11 +145,11 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter contains-active">
+<li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">前書き</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">線形代数とは</span></a></div></li>
-<li class="toc-item toc-colophon active"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -229,11 +229,11 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sqrt.html" class="internal"><span class="codenumber">3.2</span> <span class="title">平方根を含む整数演算</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-sqrt.html" class="internal"><span class="codenumber">3.2</span> <span class="title">平方根を含む整数演算</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.3</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.4</span> <span class="title">グラフのパスの個数</span></a></div></li>
 </ul>
@@ -257,21 +257,106 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="colophon" id="front-colophon">
+<section class="section" id="sec-sqrt">
 <h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Colophon</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">平方根を含む整数演算</span>
 </h2>
-<div class="credit">
-<b class="title">Website</b> <a class="external" href="https://pretextbook.org" target="_blank">My Website</a>
+<div class="para logical" id="sec-sqrt-2">
+<div class="para">フィボナッチ数列の一般項は</div>
+<div class="displaymath process-math" id="sec-sqrt-2-1">
+\begin{align*}
+\alpha\amp\coloneqq\frac{1+\sqrt{5}}2\\
+\beta\amp\coloneqq\frac{1-\sqrt{5}}2
+\end{align*}
 </div>
-<div class="para copyright">©2026–2026 Ryuhei Mori</div>
-<div class="para license">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a class="external" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CreativeCommons.org</a>
+<div class="para">とおくと</div>
+<div class="displaymath process-math" id="sec-sqrt-2-2">
+\begin{equation*}
+F_n = \frac{\alpha^n-\beta^n}{\alpha-\beta}
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Colophon"><a href="#front-colophon" title="Copy heading and permalink for Colophon" aria-label="Copy heading and permalink for Colophon">🔗</a></div>
+<div class="para">と書ける。 この等式に基づく <span class="process-math">\(F_n\)</span> の計算を整数演算だけで行うことを考える。 計算の中に現れる数はすべて、整数 <span class="process-math">\(a,b\in\mathbb{Z}\)</span> を使って <span class="process-math">\(a+b\sqrt{5}\)</span> という形で表せる。 専門的にはこういう数の集合を <span class="process-math">\(\mathbb{Z}[\sqrt{5}]\)</span> と表す。</div>
+<div class="displaymath process-math" id="sec-sqrt-2-7">
+\begin{equation*}
+a+b\sqrt{5}\longleftrightarrow\begin{bmatrix}a\\b\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">と二次元ベクトルに対応させることを考える。 <span class="process-math">\(\mathbb{Z}[\sqrt{5}]\)</span> の世界での足し算は <span class="process-math">\(\mathbb{R}^2\)</span> の世界での足し算に対応する。 <span class="process-math">\(\mathbb{Z}[\sqrt{5}]\)</span> の世界でのかけ算を考えよう。</div>
+<div class="displaymath process-math" id="sec-sqrt-2-11">
+\begin{equation*}
+(c+d\sqrt{5})(a+b\sqrt{5}) = ca + 5db + (da + cb)\sqrt{5}
+\end{equation*}
+</div>
+<div class="para">という関係から、<span class="process-math">\(c+d\sqrt{5}\)</span> を掛けるという操作は</div>
+<div class="displaymath process-math" id="sec-sqrt-2-13">
+\begin{equation*}
+\begin{bmatrix}
+a\\b
+\end{bmatrix}
+\longmapsto
+\begin{bmatrix}
+ca+5db\\da+cb
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">という線形変換に対応する。したがってこの線形変換は</div>
+<div class="displaymath process-math" id="sec-sqrt-2-14">
+\begin{equation*}
+\begin{bmatrix}
+c\amp 5d\\d\amp c
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">という行列を掛けることに対応する。</div>
+<div class="displaymath process-math" id="sec-sqrt-2-15">
+\begin{equation*}
+A\coloneqq
+\begin{bmatrix}
+0\amp 5\\1\amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">と定義すると、<span class="process-math">\(c+d\sqrt{5}\)</span> は</div>
+<div class="displaymath process-math" id="sec-sqrt-2-17">
+\begin{equation*}
+cI+dA
+\end{equation*}
+</div>
+<div class="para">に対応する。 <span class="process-math">\(c+d\sqrt{5}\)</span> を掛けてから <span class="process-math">\(e+f\sqrt{5}\)</span> を掛けるのは <span class="process-math">\((e+f\sqrt{5})(c+d\sqrt{5})\)</span> を掛けるのと同じであることから、</div>
+<div class="displaymath process-math" id="sec-sqrt-2-21">
+\begin{equation*}
+(e+f\sqrt{5})(c+d\sqrt{5}) = g+h\sqrt{5}
+\end{equation*}
+</div>
+<div class="para">のとき、</div>
+<div class="displaymath process-math" id="sec-sqrt-2-22">
+\begin{equation*}
+\begin{bmatrix}
+e\amp 5f\\f\amp e
+\end{bmatrix}
+\begin{bmatrix}
+c\amp 5d\\d\amp c
+\end{bmatrix}
+=
+\begin{bmatrix}
+g\amp 5h\\h\amp g
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">である。 よって、<span class="process-math">\(\left(\frac{1+\sqrt{5}}2\right)^n\)</span> は</div>
+<div class="displaymath process-math" id="sec-sqrt-2-24">
+\begin{equation*}
+\left(\frac{I+A}2\right)^n
+\end{equation*}
+</div>
+<div class="para">の一列目に対応する。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-sqrt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 3.2: 平方根を含む整数演算"><a href="#sec-sqrt" title="Copy heading and permalink for Section 3.2: 平方根を含む整数演算" aria-label="Copy heading and permalink for Section 3.2: 平方根を含む整数演算">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="frontmatter-3.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-vector.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-fib.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-markov.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

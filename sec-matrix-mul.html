@@ -101,7 +101,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.3';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -233,14 +233,15 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.2</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.3</span> <span class="title">グラフのパスの個数</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sqrt.html" class="internal"><span class="codenumber">3.2</span> <span class="title">平方根を含む整数演算</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.3</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.4</span> <span class="title">グラフのパスの個数</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間と生成系</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
@@ -341,61 +342,61 @@ AB \amp= A\begin{bmatrix}\bm{b}_1\amp\bm{b}_2\amp\dotsm\amp\bm{b}_m\end{bmatrix}
 </article>
 <div class="para" id="subsec-matrix-mul-prop-4">行列の積 <span class="process-math">\(AB\)</span> は二つの線形写像 <span class="process-math">\(A\)</span> と <span class="process-math">\(B\)</span> の合成写像を表す行列である。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="subsec-matrix-mul-prop-5"><h4 class="heading">
+<article class="theorem theorem-like" id="thm-matrix-associate"><h4 class="heading">
 <span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像の合成写像.</span>
-</h4>任意の <span class="process-math">\(n,m,r\in\mathbb{N}\)</span> と <span class="process-math">\(A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}\)</span> と <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について<div class="displaymath process-math" id="subsec-matrix-mul-prop-5-2-4">
+</h4>任意の <span class="process-math">\(n,m,r\in\mathbb{N}\)</span> と <span class="process-math">\(A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}\)</span> と <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について<div class="displaymath process-math" id="thm-matrix-associate-2-4">
 \begin{equation*}
 (AB)\bm{v} = A(B\bm{v}).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="定理 2.8.4: 線形写像の合成写像"><a href="#subsec-matrix-mul-prop-5" title="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像" aria-label="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像">🔗</a></div>
+<div class="autopermalink" data-description="定理 2.8.4: 線形写像の合成写像"><a href="#thm-matrix-associate" title="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像" aria-label="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像">🔗</a></div>
 </article>
-<details id="subsec-matrix-mul-prop-5-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<details id="thm-matrix-associate-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
 <article class="hiddenproof knowl__content">
-<div class="para logical" id="subsec-matrix-mul-prop-5-3-1">
+<div class="para logical" id="thm-matrix-associate-3-1">
 <div class="para">
 <a href="sec-matrix-linmap.html#prop-matrix-e" class="xref" data-knowl="./knowl/xref/prop-matrix-e.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.5.1">命題 2.5.1</a> より、</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html" id="subsec-matrix-mul-prop-5-3-1-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html" id="thm-matrix-associate-3-1-2">
 \begin{equation*}
 B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-matrix-mul-prop-5-3-2">
+<div class="para logical" id="thm-matrix-associate-3-2">
 <div class="para">よって <a href="sec-matrix-mul.html#fact-mat" class="xref" data-knowl="./knowl/xref/fact-mat.html" data-reveal-label="Reveal" data-close-label="Close" title="事実 2.8.3">事実 2.8.3</a> より、</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html" id="subsec-matrix-mul-prop-5-3-2-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html" id="thm-matrix-associate-3-2-2">
 \begin{equation*}
 AB = \begin{bmatrix}A(B\bm{e}_1)\amp A(B\bm{e}_2)\amp \dotsm\amp A(B\bm{e}_m)\end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">が成り立つ。一方で</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html" id="subsec-matrix-mul-prop-5-3-2-3">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html" id="thm-matrix-associate-3-2-3">
 \begin{equation*}
 AB = \begin{bmatrix}(AB)\bm{e}_1\amp (AB)\bm{e}_2\amp \dotsm\amp (AB)\bm{e}_m\end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">より、任意の <span class="process-math">\(i=1,2,\dotsc,m\)</span> について</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html" id="subsec-matrix-mul-prop-5-3-2-5">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html" id="thm-matrix-associate-3-2-5">
 \begin{equation*}
 (AB)\bm{e}_i = A(B\bm{e}_i)
 \end{equation*}
 </div>
 <div class="para">が成り立つ。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-matrix-mul-prop-5-3-3">
+<div class="para logical" id="thm-matrix-associate-3-3">
 <div class="para">ここで二つの <span class="process-math">\(\mathbb{R}^m\)</span> から <span class="process-math">\(\mathbb{R}^n\)</span> への写像</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-comp.html" id="subsec-matrix-mul-prop-5-3-3-3">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-comp.html" id="thm-matrix-associate-3-3-3">
 \begin{gather*}
 \bm{v}\longmapsto (AB)\bm{v}\\
 \bm{v}\longmapsto A(B\bm{v})
 \end{gather*}
 </div>
 <div class="para">は線型写像である(一つ目は行列を掛ける写像 <span class="process-math">\(f_{AB}\)</span> なので線型写像、二つ目は線型写像の合成 <span class="process-math">\(f_A\circ f_B\)</span> なので <a href="sec-matrix-mul.html#prop-linear-comp" class="xref" data-knowl="./knowl/xref/prop-linear-comp.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.8.2">命題 2.8.2</a> より線型写像)。 よって標準ベクトルの行き先のみによって写像は定まる。 この二つの線形写像は標準ベクトルの行き先が等しいので、<span class="process-math">\((AB)\bm{v}=A(B\bm{v})\)</span> である。</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-prop-5-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="証明 2.8.4.1"><a href="#subsec-matrix-mul-prop-5-3" title="Copy heading and permalink for 証明 2.8.4.1" aria-label="Copy heading and permalink for 証明 2.8.4.1">🔗</a></div>
+<div class="autopermalink" data-description="証明 2.8.4.1"><a href="#thm-matrix-associate-3" title="Copy heading and permalink for 証明 2.8.4.1" aria-label="Copy heading and permalink for 証明 2.8.4.1">🔗</a></div>
 </article></details><div class="autopermalink" data-description="Subsection 2.8.3: 行列の積と合成写像"><a href="#subsec-matrix-mul-prop" title="Copy heading and permalink for Subsection 2.8.3: 行列の積と合成写像" aria-label="Copy heading and permalink for Subsection 2.8.3: 行列の積と合成写像">🔗</a></div>
 </section>
 <section class="subsection" id="subsec-matrix-mul-assos">
@@ -412,18 +413,35 @@ AB = \begin{bmatrix}(AB)\bm{e}_1\amp (AB)\bm{e}_2\amp \dotsm\amp (AB)\bm{e}_m\en
 <div class="autopermalink" data-description="定理 2.8.5: 行列積の結合法則"><a href="#subsec-matrix-mul-assos-2" title="Copy heading and permalink for 定理 2.8.5: 行列積の結合法則" aria-label="Copy heading and permalink for 定理 2.8.5: 行列積の結合法則">🔗</a></div>
 </article>
 <details id="subsec-matrix-mul-assos-2-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
-<article class="hiddenproof knowl__content"><div class="displaymath process-math" id="subsec-matrix-mul-assos-2-3-1">
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="subsec-matrix-mul-assos-2-3-1">
+<div class="para">
+<a href="sec-matrix-mul.html#thm-matrix-associate" class="xref" data-knowl="./knowl/xref/thm-matrix-associate.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 2.8.4: 線形写像の合成写像">定理 2.8.4</a>より、任意の <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-matrix-associate.html" id="subsec-matrix-mul-assos-2-3-1-3">
 \begin{align*}
-(AB)C \amp= (AB)\begin{bmatrix}\bm{c}_1\amp\dotsm\amp\bm{c}_s\end{bmatrix}\\
-\amp= \begin{bmatrix}(AB)\bm{c}_1\amp\dotsm\amp(AB)\bm{c}_s\end{bmatrix}\\
-\amp= \begin{bmatrix}A(B\bm{c}_1)\amp\dotsm\amp A(B\bm{c}_s)\end{bmatrix}\\
-\amp= A\begin{bmatrix}B\bm{c}_1\amp\dotsm\amp B\bm{c}_s\end{bmatrix}\\
-\amp= A(BC).
+((AB)C)\bm{v} \amp= (AB)(C\bm{v})\\
+\amp= A(B(C\bm{v}))\\
+\amp= A((BC)\bm{v})\\
+\amp= (A(BC))\bm{v}
 \end{align*}
+</div>
+<div class="para">なので、<span class="process-math">\((AB)C\)</span> と <span class="process-math">\(A(BC)\)</span> は線形写像として等しい。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-assos-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="証明 2.8.5.1"><a href="#subsec-matrix-mul-assos-2-3" title="Copy heading and permalink for 証明 2.8.5.1" aria-label="Copy heading and permalink for 証明 2.8.5.1">🔗</a></div>
 </article></details>
-<div class="para" id="subsec-matrix-mul-assos-3">行列積の結合法則が成り立つため、括弧を省略して <span class="process-math">\(ABC\)</span> と書いても曖昧さがない。 また、正方行列 <span class="process-math">\(A\)</span> のべき乗を <span class="process-math">\(A^n:= \underbrace{AA\dotsm A}_{n個}\)</span> と定義する。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-assos-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-matrix-mul-assos-3">
+<div class="para">行列積の結合法則が成り立つため、括弧を省略して <span class="process-math">\(ABC\)</span> と書いても曖昧さがない。 また、正方行列 <span class="process-math">\(A\)</span> のべき乗を <span class="process-math">\(n\in\mathbb{Z}_{\ge 0}\)</span> について</div>
+<div class="displaymath process-math" id="subsec-matrix-mul-assos-3-4">
+\begin{equation*}
+A^n \coloneqq\begin{cases}
+I\amp\text{if } n = 0\\
+A^{n-1} A\amp\text{otherwise}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">と定義する。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-assos-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 2.8.4: 行列積の結合法則"><a href="#subsec-matrix-mul-assos" title="Copy heading and permalink for Subsection 2.8.4: 行列積の結合法則" aria-label="Copy heading and permalink for Subsection 2.8.4: 行列積の結合法則">🔗</a></div>
 </section>

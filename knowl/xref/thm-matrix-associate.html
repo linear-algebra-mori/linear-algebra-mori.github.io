@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像の合成写像.</span>
+</h4>任意の <span class="process-math">\(n,m,r\in\mathbb{N}\)</span> と <span class="process-math">\(A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}\)</span> と <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について<div class="displaymath process-math">
+\begin{equation*}
+(AB)\bm{v} = A(B\bm{v}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="定理 2.8.4: 線形写像の合成写像"><a href="#thm-matrix-associate" title="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像" aria-label="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<a href="sec-matrix-linmap.html#prop-matrix-e" class="xref" data-knowl="./knowl/xref/prop-matrix-e.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.5.1">命題 2.5.1</a> より、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-e.html">
+\begin{equation*}
+B = \begin{bmatrix}B\bm{e}_1\amp B\bm{e}_2\amp \dotsm\amp B\bm{e}_m\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">よって <a href="sec-matrix-mul.html#fact-mat" class="xref" data-knowl="./knowl/xref/fact-mat.html" data-reveal-label="Reveal" data-close-label="Close" title="事実 2.8.3">事実 2.8.3</a> より、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html">
+\begin{equation*}
+AB = \begin{bmatrix}A(B\bm{e}_1)\amp A(B\bm{e}_2)\amp \dotsm\amp A(B\bm{e}_m)\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">が成り立つ。一方で</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html">
+\begin{equation*}
+AB = \begin{bmatrix}(AB)\bm{e}_1\amp (AB)\bm{e}_2\amp \dotsm\amp (AB)\bm{e}_m\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">より、任意の <span class="process-math">\(i=1,2,\dotsc,m\)</span> について</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-mat.html">
+\begin{equation*}
+(AB)\bm{e}_i = A(B\bm{e}_i)
+\end{equation*}
+</div>
+<div class="para">が成り立つ。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">ここで二つの <span class="process-math">\(\mathbb{R}^m\)</span> から <span class="process-math">\(\mathbb{R}^n\)</span> への写像</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-comp.html">
+\begin{gather*}
+\bm{v}\longmapsto (AB)\bm{v}\\
+\bm{v}\longmapsto A(B\bm{v})
+\end{gather*}
+</div>
+<div class="para">は線型写像である(一つ目は行列を掛ける写像 <span class="process-math">\(f_{AB}\)</span> なので線型写像、二つ目は線型写像の合成 <span class="process-math">\(f_A\circ f_B\)</span> なので <a href="sec-matrix-mul.html#prop-linear-comp" class="xref" data-knowl="./knowl/xref/prop-linear-comp.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 2.8.2">命題 2.8.2</a> より線型写像)。 よって標準ベクトルの行き先のみによって写像は定まる。 この二つの線形写像は標準ベクトルの行き先が等しいので、<span class="process-math">\((AB)\bm{v}=A(B\bm{v})\)</span> である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="証明 2.8.4.1"><a href="#thm-matrix-associate-3" title="Copy heading and permalink for 証明 2.8.4.1" aria-label="Copy heading and permalink for 証明 2.8.4.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-matrix-mul.html#thm-matrix-associate">in-context</a></span>
+</body>
+</html>

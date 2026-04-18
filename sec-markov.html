@@ -101,7 +101,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.3';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-fib.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix-app.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-graph.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-sqrt.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-matrix-app.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-graph.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -233,14 +233,15 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.2</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.3</span> <span class="title">グラフのパスの個数</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sqrt.html" class="internal"><span class="codenumber">3.2</span> <span class="title">平方根を含む整数演算</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-markov.html" class="internal"><span class="codenumber">3.3</span> <span class="title"><span class="process-math">\(N\)</span> 日後の天気</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graph.html" class="internal"><span class="codenumber">3.4</span> <span class="title">グラフのパスの個数</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-subspace.html" class="internal"><span class="codenumber">4</span> <span class="title">線形空間とその基底</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">線形空間と生成系</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-ind.html" class="internal"><span class="codenumber">4.2</span> <span class="title">線形独立性</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-list-alg.html" class="internal"><span class="codenumber">4.3</span> <span class="title">リストとアルゴリズム</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">4.4</span> <span class="title">基底と次元</span></a></div></li>
@@ -258,12 +259,12 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-markov">
 <h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(N\)</span> 日後の天気</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(N\)</span> 日後の天気</span>
 </h2>
-<div class="para" id="sec-markov-2">天気が晴れ、雨、曇りの三種類であるとし、ある日の天気は前日の天気から確率的に定まると仮定する。 二日以上前の天気には依存しないと仮定する。 ある日の天気が晴れのとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <span class="process-math">\(0.7,0.1,0.2\)</span> とする。 ある日の天気が雨のとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <span class="process-math">\(0.5,0.2,0.3\)</span> とする。 ある日の天気が曇りのとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <span class="process-math">\(0.6,0.2,0.2\)</span> とする。<div class="autopermalink" data-description="Paragraph"><a href="#sec-markov-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-markov-2">天気が晴れ、雨、曇りの三種類であるとし、ある日の天気は前日の天気から確率的に定まると仮定する。 また、二日以上前の天気には依存しないと仮定する。 ある日の天気が晴れのとき、次の日の天気が晴れ、曇り、雨の確率はそれぞれ <span class="process-math">\(0.7,0.2,0.1\)</span> であるとする。 ある日の天気が曇りのとき、次の日の天気が晴れ、曇り、雨の確率はそれぞれ <span class="process-math">\(0.6,0.2,0.2\)</span> であるとする。 ある日の天気が雨のとき、次の日の天気が晴れ、曇り、雨の確率はそれぞれ <span class="process-math">\(0.5,0.3,0.2\)</span> であるとする。<div class="autopermalink" data-description="Paragraph"><a href="#sec-markov-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-markov-3">
-<div class="para">ある日の天気が晴れ、雨、曇りの確率が <span class="process-math">\(p_0,q_0,r_0\)</span> であるとする。 このとき <span class="process-math">\(t\)</span> 日後の天気が晴れ、雨曇りの確率を <span class="process-math">\(p_t,q_t,r_t\)</span> とすると 任意の <span class="process-math">\(t\ge 0\)</span> について</div>
+<div class="para">ある日の天気が晴れ、曇り、雨の確率が <span class="process-math">\(p_0,q_0,r_0\)</span> であるとする。 このとき <span class="process-math">\(t\)</span> 日後の天気が晴れ、雨曇りの確率を <span class="process-math">\(p_t,q_t,r_t\)</span> とすると 任意の <span class="process-math">\(t\ge 0\)</span> について</div>
 <div class="displaymath process-math" id="sec-markov-3-5">
 \begin{equation*}
 \begin{bmatrix}
@@ -271,9 +272,9 @@ p_{t+1}\\q_{t+1}\\r_{t+1}
 \end{bmatrix}
 =
 \begin{bmatrix}
-0.7 \amp 0.5\amp 0.6\\
-0.1 \amp 0.2\amp 0.2\\
-0.2 \amp 0.3\amp 0.2
+0.7 \amp 0.6\amp 0.5\\
+0.2 \amp 0.2\amp 0.3\\
+0.1 \amp 0.2\amp 0.2
 \end{bmatrix}
 \begin{bmatrix}
 p_t\\q_t\\r_t
@@ -292,9 +293,9 @@ p_{N}\\q_{N}\\r_{N}
 \end{bmatrix}
 =
 \begin{bmatrix}
-0.7 \amp 0.5\amp 0.6\\
-0.1 \amp 0.2\amp 0.2\\
-0.2 \amp 0.3\amp 0.2
+0.7 \amp 0.6\amp 0.5\\
+0.2 \amp 0.2\amp 0.3\\
+0.1 \amp 0.2\amp 0.2
 \end{bmatrix}^{N}
 \begin{bmatrix}
 p_0\\q_0\\r_0
@@ -304,11 +305,11 @@ p_0\\q_0\\r_0
 <div class="para">と計算できる。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-markov-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Section 3.2: N 日後の天気"><a href="#sec-markov" title="Copy heading and permalink for Section 3.2: N 日後の天気" aria-label="Copy heading and permalink for Section 3.2: N 日後の天気">🔗</a></div>
+<div class="autopermalink" data-description="Section 3.3: N 日後の天気"><a href="#sec-markov" title="Copy heading and permalink for Section 3.3: N 日後の天気" aria-label="Copy heading and permalink for Section 3.3: N 日後の天気">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-fib.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-graph.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-sqrt.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-graph.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
