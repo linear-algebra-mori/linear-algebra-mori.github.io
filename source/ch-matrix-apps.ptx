@@ -111,7 +111,7 @@ I,\amp \text{if }n=0\\
 (A^{(n-1)/2})^2A,\amp\text{それ以外}
 \end{cases}
 </md>
-という漸化式に基づいて計算することができる。このアルゴリズムは <m>A^n</m> の計算のために高々 <m>2\log_2 n</m>  回の行列積の計算を含む。</p>
+という漸化式に基づいて計算することができる。このアルゴリズムは <m>A^n</m> の計算のために高々 <m>2\log_2 n</m>  回の行列積の計算を含む。このアルゴリズムを<term>繰り返し二乗法</term>という。</p>
 
 <p>
 例えば <m>A=\begin{bmatrix}1\amp 1\\1\amp 0\end{bmatrix}</m> とおくと、
@@ -138,17 +138,100 @@ I,\amp \text{if }n=0\\
 \end{bmatrix}</mrow>
 </md>
 よって <m>F_{17}=1597</m> と分かる。</p>
+<p>
+	フィボナッチ数列の一般項は高校数学で計算できるよ！思うかもしれないが、
+	<m>\left(\frac{1+\sqrt{5}}2\right)^n</m> を整数演算だけで計算するには結局行列の <m>n</m> 乗の計算に帰着する。
+	</p>
+
+    </section>
+    <section xml:id="sec-sqrt" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>平方根を含む整数演算</title>
+      <p>
+      	フィボナッチ数列の一般項は
+      	<md>
+      		<mrow>\alpha\amp\coloneqq\frac{1+\sqrt{5}}2</mrow>
+      		<mrow>\beta\amp\coloneqq\frac{1-\sqrt{5}}2</mrow>
+      	</md>
+        とおくと
+        <md>
+        	F_n = \frac{\alpha^n-\beta^n}{\alpha-\beta}
+        </md>
+        と書ける。
+        この等式に基づく <m>F_n</m> の計算を整数演算だけで行うことを考える。
+        計算の中に現れる数はすべて、整数 <m>a,b\in\mathbb{Z}</m> を使って <m>a+b\sqrt{5}</m> という形で表せる。
+        専門的にはこういう数の集合を <m>\mathbb{Z}[\sqrt{5}]</m> と表す。
+        <md>
+        	a+b\sqrt{5}\longleftrightarrow\begin{bmatrix}a\\b\end{bmatrix}
+        </md>
+        と二次元ベクトルに対応させることを考える。
+        <m>\mathbb{Z}[\sqrt{5}]</m> の世界での足し算は <m>\mathbb{R}^2</m> の世界での足し算に対応する。
+        <m>\mathbb{Z}[\sqrt{5}]</m> の世界でのかけ算を考えよう。
+        <md>
+        	(c+d\sqrt{5})(a+b\sqrt{5}) = ca + 5db + (da + cb)\sqrt{5}
+        </md>
+        という関係から、<m>c+d\sqrt{5}</m> を掛けるという操作は
+        <md>
+        	\begin{bmatrix}
+        	a\\b
+        	\end{bmatrix}
+        	\longmapsto
+        	\begin{bmatrix}
+        	ca+5db\\da+cb
+        	\end{bmatrix}
+        </md>
+        という線形変換に対応する。したがってこの線形変換は
+        <md>
+        	\begin{bmatrix}
+        	c\amp 5d\\d\amp c
+        	\end{bmatrix}
+        </md>
+        という行列を掛けることに対応する。
+        <md>
+        	A\coloneqq
+        	\begin{bmatrix}
+        	0\amp 5\\1\amp 0
+        	\end{bmatrix}
+        </md>
+        と定義すると、<m>c+d\sqrt{5}</m> は
+        <md>
+        	cI+dA
+        </md>
+        に対応する。
+        <m>c+d\sqrt{5}</m> を掛けてから <m>e+f\sqrt{5}</m> を掛けるのは <m>(e+f\sqrt{5})(c+d\sqrt{5})</m> を掛けるのと同じであることから、
+        <md>
+        	(e+f\sqrt{5})(c+d\sqrt{5}) = g+h\sqrt{5}
+        </md>
+        のとき、
+        <md>
+        	\begin{bmatrix}
+        	e\amp 5f\\f\amp e
+        	\end{bmatrix}
+        	\begin{bmatrix}
+        	c\amp 5d\\d\amp c
+        	\end{bmatrix}
+        	=
+        	\begin{bmatrix}
+        	g\amp 5h\\h\amp g
+        	\end{bmatrix}
+        </md>
+        である。
+        よって、<m>\left(\frac{1+\sqrt{5}}2\right)^n</m> は
+        <md>
+        	\left(\frac{I+A}2\right)^n
+        </md>
+        の一列目に対応する。
+      </p>
 
     </section>
     <section xml:id="sec-markov" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title><m>N</m> 日後の天気</title>
 	  <p>天気が晴れ、雨、曇りの三種類であるとし、ある日の天気は前日の天気から確率的に定まると仮定する。
-	  二日以上前の天気には依存しないと仮定する。
-	  ある日の天気が晴れのとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <m>0.7,0.1,0.2</m> とする。
-	  ある日の天気が雨のとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <m>0.5,0.2,0.3</m> とする。
-	  ある日の天気が曇りのとき、次の日の天気が晴れ、雨、曇りの確率はそれぞれ <m>0.6,0.2,0.2</m> とする。
+	  また、二日以上前の天気には依存しないと仮定する。
+	  ある日の天気が晴れのとき、次の日の天気が晴れ、曇り、雨の確率はそれぞれ <m>0.7,0.2,0.1</m> であるとする。
+	  ある日の天気が曇りのとき、次の日の天気が晴れ、曇り、雨の確率はそれぞれ <m>0.6,0.2,0.2</m> であるとする。
+	  ある日の天気が雨のとき、次の日の天気が晴れ、曇り、雨の確率はそれぞれ <m>0.5,0.3,0.2</m> であるとする。
 	  </p>
-	  <p>ある日の天気が晴れ、雨、曇りの確率が <m>p_0,q_0,r_0</m> であるとする。
+	  <p>ある日の天気が晴れ、曇り、雨の確率が <m>p_0,q_0,r_0</m> であるとする。
 	  このとき <m>t</m> 日後の天気が晴れ、雨曇りの確率を <m>p_t,q_t,r_t</m> とすると
 	  任意の <m>t\ge 0</m> について
 	  <md>
@@ -157,9 +240,9 @@ I,\amp \text{if }n=0\\
 		\end{bmatrix}
 		=
 	    \begin{bmatrix}
-		0.7 \amp 0.5\amp 0.6\\
-		0.1 \amp 0.2\amp 0.2\\
-		0.2 \amp 0.3\amp 0.2
+		0.7 \amp 0.6\amp 0.5\\
+		0.2 \amp 0.2\amp 0.3\\
+		0.1 \amp 0.2\amp 0.2
 		\end{bmatrix}
 	    \begin{bmatrix}
 		p_t\\q_t\\r_t
@@ -173,9 +256,9 @@ I,\amp \text{if }n=0\\
 		\end{bmatrix}
 		=
 	    \begin{bmatrix}
-		0.7 \amp 0.5\amp 0.6\\
-		0.1 \amp 0.2\amp 0.2\\
-		0.2 \amp 0.3\amp 0.2
+		0.7 \amp 0.6\amp 0.5\\
+		0.2 \amp 0.2\amp 0.3\\
+		0.1 \amp 0.2\amp 0.2
 		\end{bmatrix}^{N}
 	    \begin{bmatrix}
 		p_0\\q_0\\r_0
@@ -185,5 +268,98 @@ I,\amp \text{if }n=0\\
     </section>
     <section xml:id="sec-graph" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>グラフのパスの個数</title>
+      <definition>
+      	<title>グラフ</title>
+      	<p>
+      		有限集合 <m>V</m> と
+      		<md>
+      			E\subseteq\left\{\{v,w\}\mid v,w\in V, v\ne w\right\}
+      		</md>
+      	  のペア <m>(V, E)</m> を<term>(無向単純)グラフ</term> という。
+      	</p>
+        <p><m>V</m> を<term>頂点集合</term>といいその要素を<term>頂点</term>という。
+           <m>E</m> を<term>辺集合</term>といいその要素を<term>辺</term>という。</p>
+      </definition>
+      <p>グラフは図で理解すると分かりやすい。
+      	グラフ <m>G=(V,E)</m>
+      	<md>
+      		<mrow>V\amp=\{a,b,c,d\}</mrow>
+      		<mrow>E\amp=\{\{a,b\},\{b,c\},\{b,d\},\{c,d\}\}</mrow>
+      	</md>
+        は以下の図で表される。
+      <image width="30%">
+        <latex-image>
+        	\begin{tikzpicture}
+            \node[circle,draw,fill=pink] (c) at (0, 3) {$a$};
+            \node[circle,draw,fill=pink] (d) at (3, 3) {$b$};
+            \node[circle,draw,fill=pink] (a) at (0, 0) {$c$};
+            \node[circle,draw,fill=pink] (b) at (3, 0) {$d$};
+            \draw[thick] (a) -- (b);
+            \draw[thick] (c) -- (d);
+            \draw[thick] (a) -- (d);
+            \draw[thick] (b) -- (d);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+      </p>
+      <definition>
+      	<title>隣接行列</title>
+      <p>
+      	グラフの<term>隣接行列</term> <m>A=[a_{i,j}]</m> は正方行列であり、各行と各列が <m>V</m> の要素に対応している。
+      	そして
+      	<md>
+      		a_{i,j}=\begin{cases}
+      		1\amp\text{if } \{i,j\} \in E\\
+      		0\amp\text{otherwise}
+      		\end{cases}
+    		</md>
+    	  と定義される。
+    	</p>
+    </definition>
+    <p>
+    上記のグラフの隣接行列は
+    		<md>
+    			\begin{bmatrix}
+    			0\amp 1\amp 0\amp 0\\
+    			1\amp 0\amp 1\amp 1\\
+    			0\amp 1\amp 0\amp 1\\
+    			0\amp 1\amp 1\amp 0
+    			\end{bmatrix}
+    		</md>
+    	  である。ただし、頂点 <m>a,b,c,d</m> はそれぞれ <m>1,2,3,4</m> 行目(列目)に対応しているとする。
+    	  隣接行列は <m>(i,j)</m> 成分と <m>(j,i)</m> 成分が等しい。
+    	  そのような行列を<term>対称行列</term>という。
+      </p>
+      <p>
+      	頂点列 <m>(\bm{v}_1,\dotsc,\bm{v}_\ell)</m> がすべての <m>i=1,\dotsc,\ell-1</m> について、<m>\{\bm{v}_i,\bm{v}_{i+1}\}\in E</m> を満たすとき、<term>ウォーク(歩道)</term>という。
+      	例えば上記のグラフで <m>(a,b,c,d,b,c)</m> はウォークである。ウォーク <m>(\bm{v}_1,\dotsc,\bm{v}_\ell)</m> について <m>\bm{v}_1</m> を<term>始点</term>、<m>\bm{v}_\ell</m> を<term>終点</term>という。
+      	また、<m>\ell-1</m> を<term>ウォークの長さ</term>という。
+      	任意の頂点 <m>v\in V</m> について、<m>(v)</m> は長さ0のウォークである。
+      	始点 <m>v\in V</m>、終点 <m>w\in V</m> を持つウォークを <term><m>v</m> から <m>w</m> へのウォーク</term> という。
+      </p>
+      <p>
+      	グラフ <m>G=(V,E)</m> と <m>v,w\in V</m> と <m>\ell\in\mathbb{Z}_{\ge0}</m> について
+      	<md>
+      		W^{(\ell)}_{v,w} \coloneqq\text{$v$ から $w$ への長さ $\ell$ のウォークの個数}
+      	</md>
+        と定義する。この <m>W^{(\ell)}_{v,w}</m> の計算について考えよう。
+        <m>v</m> から <m>w</m> へのウォークにおいて、<m>w</m> の一つ前の頂点で場合分けすることで
+      	<md>
+      		W^{(\ell)}_{v,w} \coloneqq \sum_{u\in V} W^{(\ell-1)}_{v, u} A_{u,w}
+      	</md>
+        が成り立つことが分かる。
+        したがって <m>n=|V|</m> とおくと、行列 <m>W^{(\ell)}\in\mathbb{R}^{n\times n}=[W^{(\ell)}_{i,j}]_{i,j}</m> は
+        <md>
+        	W^{(\ell)} = W^{(\ell-1)} A
+        </md>
+        を満たす。
+        したがって、任意の <m>\ell\in\mathbb{Z}_{\ge 0}</m> について
+        <md>
+        	W^{(\ell)} = A^\ell
+        </md>
+        である。
+      </p>
+
+
     </section>
   </chapter>

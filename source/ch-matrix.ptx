@@ -522,7 +522,7 @@ A\bm{e}_m
 
 よって、<em>任意の線型写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> は <m>n\times m</m> 実行列 <m>A_f</m> を用いて <m>f_{A_f}</m> と表すことができる</em>。</p>
 
-<p>以降は <m>A\in\mathbb{R}^{n\times m}</m> と線形写像 <m>f_A\colon\mathbb{R}^m\to\mathbb{R}^n</m> は同一視する。</p>
+<p>以降は <m>A\in\mathbb{R}^{n\times m}</m> と線形写像 <m>f_A\colon\mathbb{R}^m\to\mathbb{R}^n</m> は同一視するので、「線形写像 <m>A\in\mathbb{R}^{n\times m}</m>」と言うこともある。</p>
     </subsection>
   </section>
   <section xml:id="sec-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -798,7 +798,7 @@ R(\theta)\coloneqq
         </statement>
       </fact>
       <p>行列の積 <m>AB</m> は二つの線形写像 <m>A</m> と <m>B</m> の合成写像を表す行列である。</p>
-      <theorem>
+      <theorem xml:id="thm-matrix-associate">
         <title>線形写像の合成写像</title>
         <statement>
           任意の <m>n,m,r\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}</m> と <m>\bm{v}\in\mathbb{R}^m</m> について
@@ -846,6 +846,17 @@ R(\theta)\coloneqq
           </md>
         </statement>
         <proof>
+          <p>
+            <xref ref="thm-matrix-associate"/>より、任意の <m>\bm{v}\in\mathbb{R}^m</m> について
+            <md>
+              <mrow>((AB)C)\bm{v} \amp= (AB)(C\bm{v})</mrow>
+              <mrow>\amp= A(B(C\bm{v}))</mrow>
+              <mrow>\amp= A((BC)\bm{v})</mrow>
+              <mrow>\amp= (A(BC))\bm{v}</mrow>
+            </md>
+            なので、<m>(AB)C</m> と <m>A(BC)</m> は線形写像として等しい。
+          </p>
+          <!--
           <md>
             <mrow>(AB)C \amp= (AB)\begin{bmatrix}\bm{c}_1\amp\dotsm\amp\bm{c}_s\end{bmatrix}</mrow>
             <mrow>\amp= \begin{bmatrix}(AB)\bm{c}_1\amp\dotsm\amp(AB)\bm{c}_s\end{bmatrix}</mrow>
@@ -853,11 +864,19 @@ R(\theta)\coloneqq
             <mrow>\amp= A\begin{bmatrix}B\bm{c}_1\amp\dotsm\amp B\bm{c}_s\end{bmatrix}</mrow>
             <mrow>\amp= A(BC).</mrow>
           </md>
+          -->
         </proof>
       </theorem>
     <p>
        行列積の結合法則が成り立つため、括弧を省略して <m>ABC</m> と書いても曖昧さがない。
-   また、正方行列 <m>A</m> のべき乗を <m>A^n:= \underbrace{AA\dotsm A}_{n個}</m> と定義する。
+   また、正方行列 <m>A</m> のべき乗を <m>n\in\mathbb{Z}_{\ge 0}</m> について
+     <md>
+       A^n \coloneqq\begin{cases}
+       I\amp\text{if } n = 0\\
+       A^{n-1} A\amp\text{otherwise}
+       \end{cases}
+     </md>
+     と定義する。
    </p>
     </subsection>
     <subsection xml:id="subsec-matrix-mul-dist" xmlns:xi="http://www.w3.org/2001/XInclude">
