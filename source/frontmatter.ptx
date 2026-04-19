@@ -43,8 +43,15 @@
     真の主役である線形空間と線形写像が数ベクトルと行列に対応していることを説明してくれれば、行列積の不思議な定義の必然性も理解できて
     行列が重要な概念であることが確信できたと思う。</p>
 
-    <p>この授業では数ベクトルと行列が一般的な線形空間と線形写像に対応していることも伝えていきたいと考えている。
-    まずは数ベクトルと行列をしっかり理解するところから始めよう。</p>
+    <p>線形代数の最高の教科書として
+      <pubtitle><url href="https://linear.axler.net/">
+        Sheldon Axler, Linear Algebra Done Right, fourth edition, Open Access, 2026.
+      </url></pubtitle>
+    がある。これは二冊目に読む抽象的な線形代数の本であり、行列や数ベクトルはほとんど現れない。
+    本書は Linear Algebra Done Right にスムーズに接続するような一冊目の線形代数の本を目指して書かれている。
+    Linear Algebra Done Right とは逆に具体的な行列と数ベクトルを用いることで、必要以上に具体的ではあるが、直感的な理解ができるような説明を目指している。
+    </p>
+
   </preface>
 
   <colophon xml:id="front-colophon">

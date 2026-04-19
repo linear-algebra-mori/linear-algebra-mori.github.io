@@ -514,6 +514,14 @@ A\bm{e}_m
 <mrow>\amp=A</mrow>
 </md>
 である。
+<!--
+このとき、写像
+<md>
+  <mrow>(\mathbb{R}^m\to\mathbb{R}^n)\amp\longrightarrow \mathbb{R}^{n\times m}</mrow>
+  <mrow>f\amp\longmapsto A_f</mrow>
+</md>
+は明らかに全射である。
+-->
 また、各 <m>j\in\{1,2,\dotsc,m\}</m> について
 <md>
   f_{A_f}(\bm{e}_j)= A_f\bm{e}_j = f(\bm{e}_j)
@@ -523,6 +531,19 @@ A\bm{e}_m
 よって、<em>任意の線型写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> は <m>n\times m</m> 実行列 <m>A_f</m> を用いて <m>f_{A_f}</m> と表すことができる</em>。</p>
 
 <p>以降は <m>A\in\mathbb{R}^{n\times m}</m> と線形写像 <m>f_A\colon\mathbb{R}^m\to\mathbb{R}^n</m> は同一視するので、「線形写像 <m>A\in\mathbb{R}^{n\times m}</m>」と言うこともある。</p>
+    <exercise>
+      <statement>
+        <p>以下の線形写像 <m>f</m> を表す行列 <m>A_f</m>をもとめよ。</p>
+        <ol>
+          <li><md>
+            f\left(\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}\right)=\begin{bmatrix}x_2-3x_3\\x_1+5x_2+7x_3\\-9x_2\end{bmatrix}.
+          </md></li>
+          <li><md>
+            f\left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}\right)=\begin{bmatrix}x_2\\x_3\\x_4\\x_1\end{bmatrix}.
+          </md></li>
+        </ol>
+      </statement>
+    </exercise>
     </subsection>
   </section>
   <section xml:id="sec-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
