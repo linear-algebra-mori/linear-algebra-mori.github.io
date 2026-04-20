@@ -197,6 +197,9 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
   </section>
   <section xml:id="sec-list-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>リストとアルゴリズム</title>
+    <p>
+      実際に与えられたベクトルのスパンや線形独立性に関するアルゴリズムを考える。
+    </p>
 
 <!--
   <lemma>

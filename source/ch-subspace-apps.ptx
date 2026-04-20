@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-subspace-apps" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>線形独立性の簡単な応用</title>
+
+  <section xml:id="sec-data-comp" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>データ圧縮</title>
+  </section>
+</chapter>
