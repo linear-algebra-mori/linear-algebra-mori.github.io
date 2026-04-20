@@ -29,13 +29,19 @@
 	<definition>
       <title>線形結合、スパン、生成系</title>
 	  <statement>
+	    <p>任意の <m>a_1,\dotsc,a_k\in\mathbb{R}</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
+	      <md>
+	        a_1\bm{v}_1+\dotsb+a_k\bm{v}_k
+	      </md>
+	      の形の式を <term><m>\bm{v}_1,\dotsc,\bm{v}_k</m> の線形結合</term>という。
+	    </p>
 	    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
 	    <md>
 		  \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)\coloneqq\left\{\sum_{i=1}^k a_i\bm{v}_i\mid a_1,\dotsc, a_k\in\mathbb{R}\right\}
 	    </md>
 		と定義する。
 		これを <term><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> のスパン</term>もしくは
-    <term><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が貼る線形空間(部分空間)</term>という。
+    <term><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が張る線形空間(部分空間)</term>という。
    また、<m>\mathrm{span}()=\{\bm{0}\}</m> と定義する。</p>
       <p>ベクトル集合 <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> を <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の<term>生成系</term>という。</p>
 	  </statement>
@@ -174,18 +180,23 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
     </p>
   </proof>
 </lemma>
+<proposition xml:id="prop-ind-gen">
+  <statement>
+   <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> について以下は同値
+   <ol>
+     <li><m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> は線形独立。</li>
+     <li>任意の <m>i\in\{1,\dotsc,m\}</m> について、<md>\bm{v}_i\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_{i+1},\dotsc,\bm{v}_m).</md></li>
+   </ol>
+   </p>
+  </statement>
+  <proof>
+    <p><m>1\implies 2</m>: 対偶である「2でなければ1でない」を考えると<xref ref="cor-dep-add"/>より自明。</p>
+    <p><m>2\implies 1</m>: 対偶である「1でなければ2でない」を考えると<xref ref="lem-ind-add"/>の証明と同じ方針で示せる。</p>
+  </proof>
+</proposition>
   </section>
   <section xml:id="sec-list-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>リストとアルゴリズム</title>
-    <p>ベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。</p>
-    <definition>
-    	<title>リスト</title>
-    	<statement>
-   <p><m>\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n</m> について、ベクトルの列 <m>(\bm{v}_1,\dotsc,\bm{v}_k)</m> 
-   をベクトルの<term>リスト</term>という。
-   括弧を省略して <m>\bm{v}_1,\dotsc,\bm{v}_n</m> と表すこともある。</p>
-    	</statement>
-    </definition>
 
 <!--
   <lemma>
@@ -283,12 +294,21 @@ a_1=\dotsb=a_j=0
 -->
 </proof>
 </lemma>
+    <p>ベクトルの集合の要素に順序がついていると便利なので、順序付きの集合としてリストを導入する。</p>
+    <definition>
+    	<title>リスト</title>
+    	<statement>
+   <p><m>\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n</m> について、ベクトルの列 <m>(\bm{v}_1,\dotsc,\bm{v}_k)</m> 
+   をベクトルの<term>リスト</term>という。
+   括弧を省略して <m>\bm{v}_1,\dotsc,\bm{v}_n</m> と表すこともある。</p>
+    	</statement>
+    </definition>
 <algorithm xml:id="alg-lin-gauss">
 <title>ガウスの消去法</title>
 <statement>
 <ul>
-<li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
-<li><p>出力: <m>\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n</m> で任意の <m>j\in\{1,\dotsc,k\}</m> について以下の二条件を満たすもの。
+<li>入力: リスト <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
+<li><p>出力: リスト <m>\bm{v}'_1,\dotsc,\bm{v}'_k\in\mathbb{R}^n</m> で任意の <m>j\in\{1,\dotsc,k\}</m> について以下の二条件を満たすもの。
   <ol>
     <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) = \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m>.</li>
     <!--<li><m>\bm{v}_1,\dotsc,\bm{v}_j</m> が線形独立 <m>\iff</m> <m>\bm{v}'_1,\dotsc,\bm{v}'_j</m> が線形独立。</li>-->
@@ -548,7 +568,7 @@ a_1=\dotsb=a_j=0
   		<m>\bm{u}_1,\dotsc,\bm{u}_k\in V</m> が線形独立であると仮定する。
   		このとき、<m>k\gt m</m> を仮定して矛盾を導く。</p>
     <p>
-      リスト <m>\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> は線形従属であり <m>V</m> を貼るので、<xref ref="alg-lin-gauss"/>を適用することで、少なくとも一つのベクトルが削除された <m>V</m> の基底が得られる。
+      リスト <m>\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> は線形従属であり <m>V</m> を張るので、<xref ref="alg-lin-gauss"/>を適用することで、少なくとも一つのベクトルが削除された <m>V</m> の基底が得られる。
       これを繰替えすことで <m>\bm{u}_{k-1},\bm{u}_{k-2},\dotsc</m> を順番に追加していく。
       このとき、<m>\bm{u}_1,\dotsc,\bm{u}_k</m> は線形独立なので削除されることはない。
       <m>k\gt m</m> より、<m>\bm{u}_1</m> を追加する前に <m>\bm{v}_i</m> はすべて削除されている。
@@ -594,7 +614,7 @@ a_1=\dotsb=a_j=0
   </statement>
   <proof>
     <p><m>\bm{u}_1,\dotsc,\bm{u}_\ell</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k</m> を <m>V</m> の基底とする。
-      <m>\bm{u}_1,\dotsc,\bm{u}_\ell</m> は線形独立であり、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> は <m>V</m> を貼るので<xref ref="lem-ind-span"/>より、<m>\ell\le k</m> である。同様に <m>k\le \ell</m> なので、<m>k=\ell</m> である。
+      <m>\bm{u}_1,\dotsc,\bm{u}_\ell</m> は線形独立であり、<m>\bm{v}_1,\dotsc,\bm{v}_k</m> は <m>V</m> を張るので<xref ref="lem-ind-span"/>より、<m>\ell\le k</m> である。同様に <m>k\le \ell</m> なので、<m>k=\ell</m> である。
     </p>
   </proof>
 </proposition>
