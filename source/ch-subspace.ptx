@@ -325,7 +325,7 @@ a_1=\dotsb=a_j=0
 <li><m>(\bm{v}'_1,\dotsc,\bm{v}'_k) \leftarrow (\bm{v}_1,\dotsc,\bm{v}_k)</m></li>
 <li>for <m>i=1,\dotsc,k</m> :</li>
 <li><nbsp/><nbsp/><nbsp/><nbsp/>If <m>\bm{v}'_i=\bm{0}</m> : continue<nbsp/>(2行目に戻る)</li>
-<li><nbsp/><nbsp/><nbsp/><nbsp/><m>p_i\leftarrow \bm{v}'_i</m> の非零成分のインデックス(どれでもよい)</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>p_i\leftarrow \bm{v}'_i</m> の非零成分のインデックス(どれでもよい、<term>ピボット</term>と呼ばれる)</li>
 <li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}'_i\leftarrow \frac1{(\bm{v}'_i)_{p_i}}\bm{v}'_i</m></li>
 <li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i+1,\dotsc,k</m> :</li>
 <li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}'_j\leftarrow\bm{v}'_j-(\bm{v}'_j)_{p_i}\bm{v}'_i</m></li>
@@ -397,6 +397,18 @@ a_1=\dotsb=a_j=0
 </p>
 </proof>
 </theorem>
+<fact xml:id="fact-dec-ind">
+  <title>線形独立性の判定問題</title>
+<statement>
+<p>問題
+<dl>
+  <li>入力: <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
+  <li>出力: <m>\text{Yes}\iff\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立</li>
+</dl>
+は以下のアルゴリズムで解ける。</p>
+<p><xref ref="alg-lin-gauss"/>を <m>\bm{v}_1,\dotsc,\bm{v}_k</m> に対して実行し、<m>\bm{v}'_{i}=\bm{0}</m> となる <m>i\in\{1,\dotsc,i\}</m> が存在すれば Yes を、そうでなければ No を出力する。</p>
+</statement>
+</fact>
 </section>
   <section xml:id="sec-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>基底と次元</title>
