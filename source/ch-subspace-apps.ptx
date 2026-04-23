@@ -5,5 +5,8 @@
 
   <section xml:id="sec-data-comp" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>データ圧縮</title>
+    <p>
+      現代のデータ科学では大量のデータを学習し意思決定することを目標とする。
+    </p>
   </section>
 </chapter>
