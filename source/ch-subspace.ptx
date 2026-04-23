@@ -406,7 +406,7 @@ a_1=\dotsb=a_j=0
   <li>出力: <m>\text{Yes}\iff\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立</li>
 </dl>
 は以下のアルゴリズムで解ける。</p>
-<p><xref ref="alg-lin-gauss"/>を <m>\bm{v}_1,\dotsc,\bm{v}_k</m> に対して実行し、<m>\bm{v}'_{i}=\bm{0}</m> となる <m>i\in\{1,\dotsc,i\}</m> が存在すれば Yes を、そうでなければ No を出力する。</p>
+<p><xref ref="alg-lin-gauss"/>を <m>\bm{v}_1,\dotsc,\bm{v}_k</m> に対して実行し、<m>\bm{v}'_{i}=\bm{0}</m> となる <m>i\in\{1,\dotsc,i\}</m> が存在すれば No を、そうでなければ Yes を出力する。</p>
 </statement>
 </fact>
 </section>
