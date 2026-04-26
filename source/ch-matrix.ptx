@@ -956,10 +956,60 @@ R(\theta)\coloneqq
     <p>行列積の交換法則が成り立たないため、一般に <md>(A+B)^2=A^2+AB+BA+B^2\ne A^2+2AB+B^2</md>である。</p>
     </subsection>
     <subsection>
-      <title>行列積の計算量</title>
+      <title>[余談] 行列積の計算量</title>
       <p>
         行列積をするための計算量について考えてみよう。
+        計算量には様々な定義があるが、ここでは「実数の四則演算の回数」をアルゴリズムの計算量と定義する。
+        与えられた <m>A,B\in\mathbb{R}^{n\times n}</m> について <m>AB</m> を計算するための計算量を考える。
+        定義通り計算すると、一つの要素辺り <m>n-1</m> 回の足し算と <m>n</m> 回のかけ算をするので、全体で <m>n^2(2n-1)</m> 回の四則演算で計算することになる。
+        定数倍を無視すると <m>n^3</m> と等しいが、これより速くならないのだろうか？
       </p>
+      <p>
+        Strassen は1969年に(定数倍を無視した)計算量 <m>n^{\log_2 7}\approx n^{2.807}</m> で行列積を計算するアルゴリズムを発表した。
+        その後も定期的に行列積の計算量は更新され続け、2026年現在の最速は2024年にAlmanらが発表した <m>n^{2.371339}</m> 時間アルゴリズムである。
+        これらは理論的な結果であり、現実にこれらのアルゴリズムを実装しても遅いので使われることはまずない。
+      </p>
+    </subsection>
+    <subsection>
+      <title>行列積の結合法則を利用した計算量削減</title>
+      <p>行列 <m>A\in\mathbb{R}^{n\times r}</m> と <m>B\in\mathbb{R}^{r\times m}</m> について <m>AB</m> を定義通り計算する計算量は定数倍を無視すると <m>nrm</m> に等しい。これは実数の乗算回数だと思ってもいい。
+      このことを踏まえると、<m>(AB)C</m> と <m>A(BC)</m> のどちらを計算するかによって計算量は変わる。</p>
+      <p>例えば、<m>A, B, C</m> が <m>1\times 2,\,2\times 3,\,3,\times 4</m> 行列とする場合を考えよう。
+      <m>(AB)C</m> の順番で計算する場合、実数乗算回数は <m>1\cdot2\cdot 3 + 1\cdot3\cdot 4=18</m> であるが、<m>A(BC)</m> の順番で計算する場合は <m>2\cdot3\cdot 4+1\cdot2\cdot 4=32</m> 回となってしまう。
+      </p>
+      <exercise>
+        <title>行列積</title>
+        <statement>
+          <p>以下の行列積を計算せよ。
+          <ol>
+            <li><md>
+              \begin{bmatrix}
+              1\\2\\3\\4\\5\\6
+              \end{bmatrix}
+              \begin{bmatrix}
+              1\amp2\amp3\amp4\amp5\amp6
+              \end{bmatrix}
+              \begin{bmatrix}
+              1\\2\\3\\4\\5\\6
+              \end{bmatrix}
+            </md></li>
+            <li><md>
+              \begin{bmatrix}
+              1\amp2\amp3\\
+              2\amp4\amp6\\
+              3\amp6\amp9\\
+              4\amp8\amp12\\
+              \end{bmatrix}
+              \begin{bmatrix}
+              1\amp2\amp3\amp4\\
+              2\amp4\amp6\amp8\\
+              3\amp6\amp9\amp12
+              \end{bmatrix}
+            </md></li>
+          </ol>
+          </p>
+        </statement>
+      </exercise>
     </subsection>
   </section>
 </chapter>
