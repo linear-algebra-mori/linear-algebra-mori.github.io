@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.4';
+eBookConfig.runestone_version = '7.13.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -225,12 +225,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-assos" class="internal"><span class="codenumber">2.8.4</span> <span class="title">行列積の結合法則</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-dist" class="internal"><span class="codenumber">2.8.5</span> <span class="title">行列積の分配法則</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#subsec-matrix-mul-comm" class="internal"><span class="codenumber">2.8.6</span> <span class="title">行列積の交換法則は成り立たない</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#sec-matrix-mul-8" class="internal"><span class="codenumber">2.8.7</span> <span class="title">[余談] 行列積の計算量</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-mul.html#sec-matrix-mul-9" class="internal"><span class="codenumber">2.8.8</span> <span class="title">行列積の結合法則を利用した計算量削減</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列の簡単な応用</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-app.html" class="internal"><span class="codenumber">3</span> <span class="title">行列積の簡単な応用</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-fib.html" class="internal"><span class="codenumber">3.1</span> <span class="title">フィボナッチ数列</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sqrt.html" class="internal"><span class="codenumber">3.2</span> <span class="title">平方根を含む整数演算</span></a></div></li>
@@ -248,11 +250,15 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">5</span> <span class="title">線形方程式とその解法</span></a></div>
+<div class="toc-title-box"><a href="ch-subspace-apps.html" class="internal"><span class="codenumber">5</span> <span class="title">線形独立性の簡単な応用</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-data-comp.html" class="internal"><span class="codenumber">5.1</span> <span class="title">データ圧縮</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">6</span> <span class="title">線形方程式とその解法</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">5.1</span> <span class="title">線形方程式</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">5.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">5.3</span> <span class="title">ガウスの消去法</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">6.1</span> <span class="title">線形方程式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">6.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">6.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -291,55 +297,83 @@ eBookConfig.enable_chatcodes =  false;
 <h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列の和とスカラー倍の線型写像としての意味</span>
 </h3>
-<article class="proposition theorem-like" id="subsec-matrix-ops-mean-2"><h4 class="heading">
-<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="fact theorem-like" id="subsec-matrix-ops-mean-2"><h4 class="heading">
+<span class="type">事実</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="subsec-matrix-ops-mean-2-1-1">
+<div class="para">線形写像 <span class="process-math">\(f\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> とスカラー <span class="process-math">\(c\in\mathbb{R}\)</span> について</div>
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-1-1-3">
+\begin{align*}
+cf\;\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
+\bm{v}\amp\longmapsto c(f(\bm{v}))
+\end{align*}
+</div>
+<div class="para">は線型写像である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="subsec-matrix-ops-mean-2-1-2">
+<div class="para">また、線形写像 <span class="process-math">\(f, g\colon\mathbb{R}^m\to\mathbb{R}^n\)</span> について</div>
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-1-2-2">
+\begin{align*}
+f+g\;\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n\\
+\bm{v}\amp\longmapsto f(\bm{v}) + g(\bm{v})
+\end{align*}
+</div>
+<div class="para">は線型写像である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="事実 2.7.3"><a href="#subsec-matrix-ops-mean-2" title="Copy heading and permalink for 事実 2.7.3" aria-label="Copy heading and permalink for 事実 2.7.3">🔗</a></div>
+</article>
+<article class="proposition theorem-like" id="subsec-matrix-ops-mean-3"><h4 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="subsec-matrix-ops-mean-3-1-1">
 <div class="para">任意の自然数 <span class="process-math">\(n,\,m\in\mathbb{N}\)</span>と <span class="process-math">\(A,\,B\in\mathbb{R}^{n\times m}\)</span> と <span class="process-math">\(c\in\mathbb{R}\)</span>   と <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について</div>
-<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-1-1-5">
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-3-1-1-5">
 \begin{gather*}
 (cA)\bm{v} = c(A\bm{v})\\
 (A+B)\bm{v} = A\bm{v} + B\bm{v}.
 \end{gather*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">が成り立つ。つまり、<span class="process-math">\(f_{cA}=cf_A\text{,}\)</span> <span class="process-math">\(f_{A+B}=f_A+f_B\)</span>である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="命題 2.7.3"><a href="#subsec-matrix-ops-mean-2" title="Copy heading and permalink for 命題 2.7.3" aria-label="Copy heading and permalink for 命題 2.7.3">🔗</a></div>
+<div class="autopermalink" data-description="命題 2.7.4"><a href="#subsec-matrix-ops-mean-3" title="Copy heading and permalink for 命題 2.7.4" aria-label="Copy heading and permalink for 命題 2.7.4">🔗</a></div>
 </article>
-<details id="subsec-matrix-ops-mean-2-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<details id="subsec-matrix-ops-mean-3-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
 <article class="hiddenproof knowl__content">
-<div class="para logical" id="subsec-matrix-ops-mean-2-2-1">
+<div class="para logical" id="subsec-matrix-ops-mean-3-2-1">
 <div class="para">行列 <span class="process-math">\(\times\)</span> 数ベクトルの定義</div>
-<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-2-1-2">
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-3-2-1-2">
 \begin{equation*}
 A\bm{v}=[a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i
 \end{equation*}
 </div>
 <div class="para">と行列のスカラー倍の定義</div>
-<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-2-1-3">
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-3-2-1-3">
 \begin{equation*}
 cA=[ca_{i,j}]_{i,j}
 \end{equation*}
 </div>
 <div class="para">より</div>
-<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-2-1-4">
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-3-2-1-4">
 \begin{align*}
 (cA)\bm{v} \amp= [(ca_{i,1})v_1+(ca_{i,2})v_2+\dotsb+(ca_{i,m})v_m]_i\\
 \amp= c[a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i\\
 \amp= c(A\bm{v}).
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-matrix-ops-mean-2-2-2">
+<div class="para logical" id="subsec-matrix-ops-mean-3-2-2">
 <div class="para">行列の和の定義</div>
-<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-2-2-1">
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-3-2-2-1">
 \begin{equation*}
 A+B=[a_{i,j}+b_{i,j}]_{i,j}
 \end{equation*}
 </div>
 <div class="para">より</div>
-<div class="displaymath process-math" id="subsec-matrix-ops-mean-2-2-2-2">
+<div class="displaymath process-math" id="subsec-matrix-ops-mean-3-2-2-2">
 \begin{align*}
 (A+B)\bm{v} \amp= [(a_{i,1}+b_{i,1})v_1+(a_{i,2}+b_{i,2})v_2+\dotsb+(a_{i,m}+b_{i,m})v_m]_i\\
 \amp= [a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i\\
@@ -347,9 +381,9 @@ A+B=[a_{i,j}+b_{i,j}]_{i,j}
 \amp= A\bm{v} + B\bm{v}.
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-ops-mean-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="証明 2.7.3.1"><a href="#subsec-matrix-ops-mean-2-2" title="Copy heading and permalink for 証明 2.7.3.1" aria-label="Copy heading and permalink for 証明 2.7.3.1">🔗</a></div>
+<div class="autopermalink" data-description="証明 2.7.4.1"><a href="#subsec-matrix-ops-mean-3-2" title="Copy heading and permalink for 証明 2.7.4.1" aria-label="Copy heading and permalink for 証明 2.7.4.1">🔗</a></div>
 </article></details><div class="autopermalink" data-description="Subsection 2.7.2: 行列の和とスカラー倍の線型写像としての意味"><a href="#subsec-matrix-ops-mean" title="Copy heading and permalink for Subsection 2.7.2: 行列の和とスカラー倍の線型写像としての意味" aria-label="Copy heading and permalink for Subsection 2.7.2: 行列の和とスカラー倍の線型写像としての意味">🔗</a></div>
 </section>
 <section class="subsection" id="subsec-matrix-ops-prop">
