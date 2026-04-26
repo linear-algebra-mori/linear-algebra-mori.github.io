@@ -710,13 +710,31 @@ R(\theta)\coloneqq
     </subsection>
     <subsection xml:id="subsec-matrix-ops-mean" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>行列の和とスカラー倍の線型写像としての意味</title>
+      以下の事実は簡単に確認できる。
+      <fact>
+        <statement>
+          <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> とスカラー <m>c\in\mathbb{R}</m> について
+          <md>
+            <mrow>cf\;\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
+            <mrow>\bm{v}\amp\longmapsto c(f(\bm{v}))</mrow>
+          </md>
+          は線型写像である。</p>
+          <p>また、線形写像 <m>f, g\colon\mathbb{R}^m\to\mathbb{R}^n</m> について
+          <md>
+            <mrow>f+g\;\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
+            <mrow>\bm{v}\amp\longmapsto f(\bm{v}) + g(\bm{v})</mrow>
+          </md>
+          は線型写像である。</p>
+        </statement>
+      </fact>
       <proposition>
         <statement>
 <p>任意の自然数 <m>n,\,m\in\mathbb{N}</m>と <m>A,\,B\in\mathbb{R}^{n\times m}</m> と <m>c\in\mathbb{R}</m>   と <m>\bm{v}\in\mathbb{R}^m</m> について
 <md>
 <mrow>(cA)\bm{v} = c(A\bm{v})</mrow>
 <mrow>(A+B)\bm{v} = A\bm{v} + B\bm{v}.</mrow>
-</md></p>
+</md>
+            が成り立つ。つまり、<m>f_{cA}=cf_A</m>, <m>f_{A+B}=f_A+f_B</m>である。</p>
         </statement>
         <proof>
           <p>行列 <m>\times</m> 数ベクトルの定義 <md>A\bm{v}=[a_{i,1}v_1+a_{i,2}v_2+\dotsb+a_{i,m}v_m]_i</md>
@@ -876,6 +894,7 @@ R(\theta)\coloneqq
               <mrow>\amp= (A(BC))\bm{v}</mrow>
             </md>
             なので、<m>(AB)C</m> と <m>A(BC)</m> は線形写像として等しい。
+            そのため、行列としても等しい。
           </p>
           <!--
           <md>
@@ -935,6 +954,12 @@ R(\theta)\coloneqq
     </md>
     のような反例が存在する。</p>
     <p>行列積の交換法則が成り立たないため、一般に <md>(A+B)^2=A^2+AB+BA+B^2\ne A^2+2AB+B^2</md>である。</p>
+    </subsection>
+    <subsection>
+      <title>行列積の計算量</title>
+      <p>
+        行列積をするための計算量について考えてみよう。
+      </p>
     </subsection>
   </section>
 </chapter>
