@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <chapter xml:id="ch-matrix-app" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>行列の簡単な応用</title>
+    <title>行列積の簡単な応用</title>
     <section xml:id="sec-fib" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>フィボナッチ数列</title>
       <p>フィボナッチ数列 <m>(F_n)_{n\ge 0}</m> は以下の漸化式で定義される。

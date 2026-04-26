@@ -7,6 +7,25 @@
     <title>データ圧縮</title>
     <p>
       現代のデータ科学では大量のデータを学習し意思決定することを目標とする。
+      例えば人間のデータを以下のように表す。
+      こういったデータから、この人間にどの薬が効くかどうかを判定したりする。
+    <tabular>
+<row header="yes"><cell>年齢</cell><cell>身長(cm)</cell><cell>体重(kg)</cell><cell>収縮期血圧</cell><cell>拡張期血圧</cell><cell>脈圧</cell><cell>平均動脈圧</cell><cell>血糖値</cell></row>
+<row><cell>45</cell><cell>168</cell><cell>65</cell><cell>120</cell><cell>75</cell><cell>45</cell><cell>90</cell><cell>95</cell></row>
+<row><cell>62</cell><cell>160</cell><cell>58</cell><cell>138</cell><cell>90</cell><cell>48</cell><cell>106</cell><cell>110</cell></row>
+<row><cell>71</cell><cell>165</cell><cell>70</cell><cell>144</cell><cell>93</cell><cell>51</cell><cell>110</cell><cell>125</cell></row>
+<row><cell>35</cell><cell>172</cell><cell>68</cell><cell>126</cell><cell>81</cell><cell>45</cell><cell>96</cell><cell>88</cell></row>
+<row><cell>58</cell><cell>158</cell><cell>72</cell><cell>150</cell><cell>96</cell><cell>54</cell><cell>114</cell><cell>135</cell></row>
+<row><cell>28</cell><cell>175</cell><cell>63</cell><cell>114</cell><cell>72</cell><cell>42</cell><cell>86</cell><cell>82</cell></row>
+<row><cell>49</cell><cell>170</cell><cell>75</cell><cell>132</cell><cell>84</cell><cell>48</cell><cell>100</cell><cell>102</cell></row>
+<row><cell>66</cell><cell>162</cell><cell>78</cell><cell>159</cell><cell>99</cell><cell>60</cell><cell>119</cell><cell>140</cell></row>
+<row><cell>53</cell><cell>167</cell><cell>71</cell><cell>141</cell><cell>87</cell><cell>54</cell><cell>105</cell><cell>115</cell></row>
+<row><cell>41</cell><cell>155</cell><cell>55</cell><cell>129</cell><cell>78</cell><cell>51</cell><cell>95</cell><cell>92</cell></row>
+</tabular>
+    </p>
+    <p>
+    各データを数ベクトルで表すことができる。
+    この例の場合8次元である。
     </p>
   </section>
 </chapter>
