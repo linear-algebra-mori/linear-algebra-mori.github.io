@@ -840,10 +840,11 @@ R(\theta)\coloneqq
       <theorem xml:id="thm-matrix-associate">
         <title>線形写像の合成写像</title>
         <statement>
-          任意の <m>n,m,r\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}</m> と <m>\bm{v}\in\mathbb{R}^m</m> について
+          <p>任意の <m>n,m,r\in\mathbb{N}</m> と <m>A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}</m> と <m>\bm{v}\in\mathbb{R}^m</m> について
           <md>
-             (AB)\bm{v} = A(B\bm{v}).
+             (AB)\bm{v} = A(B\bm{v})
           </md>
+          である。つまり、<m>f_{AB}=f_A\circ f_B</m> である。</p>
         </statement>
         <proof>
           <p><xref ref="prop-matrix-e" /> より、
@@ -918,6 +919,30 @@ R(\theta)\coloneqq
      </md>
      と定義する。
    </p>
+      <p>
+        線型写像同士を何度合成しても線型写像であるというのはかなり強い性質である。
+        <m>n\times n</m> 行列を100回掛けるという操作もたった一つの <m>n\times n</m> 行列で表すことができる。
+        非線形写像の場合そうはいかない。与えられた実数を二乗して、 <m>\exp</m> を3回取って、1を足してから <m>\log</m> を取るという操作は <m>x\mapsto \log(1+\exp(\exp(\exp(x^2))))</m> より簡単に表せるとは思えない。
+        <!-- 入力 <m>x</m> が特定の値付近であることが分かっていれば、テイラー展開して低次数近似を合成することができるが。-->
+        合成する度に式は長くなり、入力 <m>\bm{x}</m> を受け取ってから、それぞれの関数を順番に適用しなくてはならない。
+        線型写像の場合、行列積を計算する必要があるが、一度行列積を計算してしまえば、入力 <m>\bm{v}</m> に対して行列を一回掛けるだけでよくなる。
+      </p>
+      <exercise>
+        <title>線形写像の合成と行列</title>
+        <statement>
+          <p><m>\bm{v}\in\mathbb{R}^2</m> に対して順番に
+            <ol>
+              <li>反時計回りに <m>\pi/3</m> 回転する</li>
+              <li>二番目の要素を2倍する</li>
+              <li>二つの要素を入れ替える</li>
+              <li>二番目の要素を-1倍する</li>
+              <li>一番最初の <m>\bm{v}</m> を足す</li>
+            </ol>
+            という操作をする。
+            この操作をまとめて一つの <m>2\times 2</m> 行列で表せ。
+          </p>
+        </statement>
+      </exercise>
     </subsection>
     <subsection xml:id="subsec-matrix-mul-dist" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>行列積の分配法則</title>
@@ -965,16 +990,16 @@ R(\theta)\coloneqq
         定数倍を無視すると <m>n^3</m> と等しいが、これより速くならないのだろうか？
       </p>
       <p>
-        Strassen は1969年に(定数倍を無視した)計算量 <m>n^{\log_2 7}\approx n^{2.807}</m> で行列積を計算するアルゴリズムを発表した。
+        Strassen は1969年に(定数倍を無視した)計算量 <m>n^{\log_2 7}\le n^{2.808}</m> で行列積を計算するアルゴリズムを発表した。
         その後も定期的に行列積の計算量は更新され続け、2026年現在の最速は2024年にAlmanらが発表した <m>n^{2.371339}</m> 時間アルゴリズムである。
-        これらは理論的な結果であり、現実にこれらのアルゴリズムを実装しても遅いので使われることはまずない。
+        これらは理論的な結果であり、現実にこれらのアルゴリズムを実装しても遅いため使われることはまずない。
       </p>
     </subsection>
     <subsection>
       <title>行列積の結合法則を利用した計算量削減</title>
       <p>行列 <m>A\in\mathbb{R}^{n\times r}</m> と <m>B\in\mathbb{R}^{r\times m}</m> について <m>AB</m> を定義通り計算する計算量は定数倍を無視すると <m>nrm</m> に等しい。これは実数の乗算回数だと思ってもいい。
-      このことを踏まえると、<m>(AB)C</m> と <m>A(BC)</m> のどちらを計算するかによって計算量は変わる。</p>
-      <p>例えば、<m>A, B, C</m> が <m>1\times 2,\,2\times 3,\,3,\times 4</m> 行列とする場合を考えよう。
+      このことを踏まえると、<m>(AB)C</m> と <m>A(BC)</m> のどちらの順番で計算するかによって計算量は変わる。</p>
+      <p>例えば、<m>A, B, C</m> が <m>1\times 2,\,2\times 3,\,3,\times 4</m> 行列の場合を考えよう。
       <m>(AB)C</m> の順番で計算する場合、実数乗算回数は <m>1\cdot2\cdot 3 + 1\cdot3\cdot 4=18</m> であるが、<m>A(BC)</m> の順番で計算する場合は <m>2\cdot3\cdot 4+1\cdot2\cdot 4=32</m> 回となってしまう。
       </p>
       <exercise>
