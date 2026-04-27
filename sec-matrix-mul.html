@@ -350,10 +350,16 @@ AB \amp= A\begin{bmatrix}\bm{b}_1\amp\bm{b}_2\amp\dotsm\amp\bm{b}_m\end{bmatrix}
 </div>
 <article class="theorem theorem-like" id="thm-matrix-associate"><h4 class="heading">
 <span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像の合成写像.</span>
-</h4>任意の <span class="process-math">\(n,m,r\in\mathbb{N}\)</span> と <span class="process-math">\(A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}\)</span> と <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について<div class="displaymath process-math" id="thm-matrix-associate-2-4">
+</h4>
+<div class="para logical" id="thm-matrix-associate-2-1">
+<div class="para">任意の <span class="process-math">\(n,m,r\in\mathbb{N}\)</span> と <span class="process-math">\(A\in\mathbb{R}^{n\times r},\,B\in\mathbb{R}^{r\times m}\)</span> と <span class="process-math">\(\bm{v}\in\mathbb{R}^m\)</span> について</div>
+<div class="displaymath process-math" id="thm-matrix-associate-2-1-4">
 \begin{equation*}
-(AB)\bm{v} = A(B\bm{v}).
+(AB)\bm{v} = A(B\bm{v})
 \end{equation*}
+</div>
+<div class="para">である。つまり、<span class="process-math">\(f_{AB}=f_A\circ f_B\)</span> である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-matrix-associate-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="定理 2.8.4: 線形写像の合成写像"><a href="#thm-matrix-associate" title="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像" aria-label="Copy heading and permalink for 定理 2.8.4: 線形写像の合成写像">🔗</a></div>
 </article>
@@ -449,14 +455,49 @@ A^{n-1} A\amp\text{otherwise}
 <div class="para">と定義する。</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-assos-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 2.8.4: 行列積の結合法則"><a href="#subsec-matrix-mul-assos" title="Copy heading and permalink for Subsection 2.8.4: 行列積の結合法則" aria-label="Copy heading and permalink for Subsection 2.8.4: 行列積の結合法則">🔗</a></div>
+<div class="para" id="subsec-matrix-mul-assos-4">線型写像同士を何度合成しても線型写像であるというのはかなり強い性質である。 <span class="process-math">\(n\times n\)</span> 行列を100回掛けるという操作もたった一つの <span class="process-math">\(n\times n\)</span> 行列で表すことができる。 非線形写像の場合そうはいかない。与えられた実数を二乗して、 <span class="process-math">\(\exp\)</span> を3回取って、1を足してから <span class="process-math">\(\log\)</span> を取るという操作は <span class="process-math">\(x\mapsto \log(1+\exp(\exp(\exp(x^2))))\)</span> より簡単に表せるとは思えない。  合成する度に式は長くなり、入力 <span class="process-math">\(\bm{x}\)</span> を受け取ってから、それぞれの関数を順番に適用しなくてはならない。 線型写像の場合、行列積を計算する必要があるが、一度行列積を計算してしまえば、入力 <span class="process-math">\(\bm{v}\)</span> に対して行列を一回掛けるだけでよくなる。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-assos-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-matrix-mul-assos-5" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">練習問題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像の合成と行列.</span>
+</h4></summary>
+<article class="exercise exercise-like knowl__content">
+<div class="para logical" id="subsec-matrix-mul-assos-5-2-1">
+<div class="para">
+<span class="process-math">\(\bm{v}\in\mathbb{R}^2\)</span> に対して順番に</div>
+<ol class="decimal" id="subsec-matrix-mul-assos-5-2-1-2">
+<li id="subsec-matrix-mul-assos-5-2-1-2-1">
+<div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-1">反時計回りに <span class="process-math">\(\pi/3\)</span> 回転する</div>
+<div class="autopermalink" data-description="Item 2.8.6.1"><a href="#subsec-matrix-mul-assos-5-2-1-2-1" title="Copy heading and permalink for Item 2.8.6.1" aria-label="Copy heading and permalink for Item 2.8.6.1">🔗</a></div>
+</li>
+<li id="subsec-matrix-mul-assos-5-2-1-2-2">
+<div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-2">二番目の要素を2倍する</div>
+<div class="autopermalink" data-description="Item 2.8.6.2"><a href="#subsec-matrix-mul-assos-5-2-1-2-2" title="Copy heading and permalink for Item 2.8.6.2" aria-label="Copy heading and permalink for Item 2.8.6.2">🔗</a></div>
+</li>
+<li id="subsec-matrix-mul-assos-5-2-1-2-3">
+<div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-3">二つの要素を入れ替える</div>
+<div class="autopermalink" data-description="Item 2.8.6.3"><a href="#subsec-matrix-mul-assos-5-2-1-2-3" title="Copy heading and permalink for Item 2.8.6.3" aria-label="Copy heading and permalink for Item 2.8.6.3">🔗</a></div>
+</li>
+<li id="subsec-matrix-mul-assos-5-2-1-2-4">
+<div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-4">二番目の要素を-1倍する</div>
+<div class="autopermalink" data-description="Item 2.8.6.4"><a href="#subsec-matrix-mul-assos-5-2-1-2-4" title="Copy heading and permalink for Item 2.8.6.4" aria-label="Copy heading and permalink for Item 2.8.6.4">🔗</a></div>
+</li>
+<li id="subsec-matrix-mul-assos-5-2-1-2-5">
+<div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-5">一番最初の <span class="process-math">\(\bm{v}\)</span> を足す</div>
+<div class="autopermalink" data-description="Item 2.8.6.5"><a href="#subsec-matrix-mul-assos-5-2-1-2-5" title="Copy heading and permalink for Item 2.8.6.5" aria-label="Copy heading and permalink for Item 2.8.6.5">🔗</a></div>
+</li>
+</ol>
+<div class="para">という操作をする。 この操作をまとめて一つの <span class="process-math">\(2\times 2\)</span> 行列で表せ。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-assos-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="練習問題 2.8.6: 線形写像の合成と行列"><a href="#subsec-matrix-mul-assos-5" title="Copy heading and permalink for 練習問題 2.8.6: 線形写像の合成と行列" aria-label="Copy heading and permalink for 練習問題 2.8.6: 線形写像の合成と行列">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Subsection 2.8.4: 行列積の結合法則"><a href="#subsec-matrix-mul-assos" title="Copy heading and permalink for Subsection 2.8.4: 行列積の結合法則" aria-label="Copy heading and permalink for Subsection 2.8.4: 行列積の結合法則">🔗</a></div>
 </section>
 <section class="subsection" id="subsec-matrix-mul-dist">
 <h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列積の分配法則</span>
 </h3>
 <article class="proposition theorem-like" id="subsec-matrix-mul-dist-2"><h4 class="heading">
-<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列積の分配法則.</span>
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列積の分配法則.</span>
 </h4>
 <div class="para logical" id="subsec-matrix-mul-dist-2-2-1">
 <div class="para">任意の <span class="process-math">\(n,m,r\in\mathbb{N}\)</span> と <span class="process-math">\(A\in\mathbb{R}^{n\times r}\text{,}\)</span> <span class="process-math">\(B,C\in\mathbb{R}^{r\times m}\)</span>  について、</div>
@@ -476,7 +517,7 @@ A(B+C)=AB+AC.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-mul-dist-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="命題 2.8.6: 行列積の分配法則"><a href="#subsec-matrix-mul-dist-2" title="Copy heading and permalink for 命題 2.8.6: 行列積の分配法則" aria-label="Copy heading and permalink for 命題 2.8.6: 行列積の分配法則">🔗</a></div>
+<div class="autopermalink" data-description="命題 2.8.7: 行列積の分配法則"><a href="#subsec-matrix-mul-dist-2" title="Copy heading and permalink for 命題 2.8.7: 行列積の分配法則" aria-label="Copy heading and permalink for 命題 2.8.7: 行列積の分配法則">🔗</a></div>
 </article>
 <details id="subsec-matrix-mul-dist-2-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
 <article class="hiddenproof knowl__content"><div class="displaymath process-math" id="subsec-matrix-mul-dist-2-3-1">
@@ -495,7 +536,7 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 \amp= BD+CD
 \end{align*}
 </div>
-<div class="autopermalink" data-description="証明 2.8.6.1"><a href="#subsec-matrix-mul-dist-2-3" title="Copy heading and permalink for 証明 2.8.6.1" aria-label="Copy heading and permalink for 証明 2.8.6.1">🔗</a></div>
+<div class="autopermalink" data-description="証明 2.8.7.1"><a href="#subsec-matrix-mul-dist-2-3" title="Copy heading and permalink for 証明 2.8.7.1" aria-label="Copy heading and permalink for 証明 2.8.7.1">🔗</a></div>
 </article></details><div class="autopermalink" data-description="Subsection 2.8.5: 行列積の分配法則"><a href="#subsec-matrix-mul-dist" title="Copy heading and permalink for Subsection 2.8.5: 行列積の分配法則" aria-label="Copy heading and permalink for Subsection 2.8.5: 行列積の分配法則">🔗</a></div>
 </section>
 <section class="subsection" id="subsec-matrix-mul-comm">
@@ -533,7 +574,7 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 </h3>
 <div class="para" id="sec-matrix-mul-8-2">行列積をするための計算量について考えてみよう。 計算量には様々な定義があるが、ここでは「実数の四則演算の回数」をアルゴリズムの計算量と定義する。 与えられた <span class="process-math">\(A,B\in\mathbb{R}^{n\times n}\)</span> について <span class="process-math">\(AB\)</span> を計算するための計算量を考える。 定義通り計算すると、一つの要素辺り <span class="process-math">\(n-1\)</span> 回の足し算と <span class="process-math">\(n\)</span> 回のかけ算をするので、全体で <span class="process-math">\(n^2(2n-1)\)</span> 回の四則演算で計算することになる。 定数倍を無視すると <span class="process-math">\(n^3\)</span> と等しいが、これより速くならないのだろうか？<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrix-mul-8-3">Strassen は1969年に(定数倍を無視した)計算量 <span class="process-math">\(n^{\log_2 7}\approx n^{2.807}\)</span> で行列積を計算するアルゴリズムを発表した。 その後も定期的に行列積の計算量は更新され続け、2026年現在の最速は2024年にAlmanらが発表した <span class="process-math">\(n^{2.371339}\)</span> 時間アルゴリズムである。 これらは理論的な結果であり、現実にこれらのアルゴリズムを実装しても遅いので使われることはまずない。<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-matrix-mul-8-3">Strassen は1969年に(定数倍を無視した)計算量 <span class="process-math">\(n^{\log_2 7}\le n^{2.808}\)</span> で行列積を計算するアルゴリズムを発表した。 その後も定期的に行列積の計算量は更新され続け、2026年現在の最速は2024年にAlmanらが発表した <span class="process-math">\(n^{2.371339}\)</span> 時間アルゴリズムである。 これらは理論的な結果であり、現実にこれらのアルゴリズムを実装しても遅いため使われることはまずない。<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 2.8.7: [余談] 行列積の計算量"><a href="#sec-matrix-mul-8" title="Copy heading and permalink for Subsection 2.8.7: [余談] 行列積の計算量" aria-label="Copy heading and permalink for Subsection 2.8.7: [余談] 行列積の計算量">🔗</a></div>
 </section>
@@ -541,12 +582,12 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 <h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列積の結合法則を利用した計算量削減</span>
 </h3>
-<div class="para" id="sec-matrix-mul-9-2">行列 <span class="process-math">\(A\in\mathbb{R}^{n\times r}\)</span> と <span class="process-math">\(B\in\mathbb{R}^{r\times m}\)</span> について <span class="process-math">\(AB\)</span> を定義通り計算する計算量は定数倍を無視すると <span class="process-math">\(nrm\)</span> に等しい。これは実数の乗算回数だと思ってもいい。 このことを踏まえると、<span class="process-math">\((AB)C\)</span> と <span class="process-math">\(A(BC)\)</span> のどちらを計算するかによって計算量は変わる。<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-matrix-mul-9-2">行列 <span class="process-math">\(A\in\mathbb{R}^{n\times r}\)</span> と <span class="process-math">\(B\in\mathbb{R}^{r\times m}\)</span> について <span class="process-math">\(AB\)</span> を定義通り計算する計算量は定数倍を無視すると <span class="process-math">\(nrm\)</span> に等しい。これは実数の乗算回数だと思ってもいい。 このことを踏まえると、<span class="process-math">\((AB)C\)</span> と <span class="process-math">\(A(BC)\)</span> のどちらの順番で計算するかによって計算量は変わる。<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrix-mul-9-3">例えば、<span class="process-math">\(A, B, C\)</span> が <span class="process-math">\(1\times 2,\,2\times 3,\,3,\times 4\)</span> 行列とする場合を考えよう。 <span class="process-math">\((AB)C\)</span> の順番で計算する場合、実数乗算回数は <span class="process-math">\(1\cdot2\cdot 3 + 1\cdot3\cdot 4=18\)</span> であるが、<span class="process-math">\(A(BC)\)</span> の順番で計算する場合は <span class="process-math">\(2\cdot3\cdot 4+1\cdot2\cdot 4=32\)</span> 回となってしまう。<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-matrix-mul-9-3">例えば、<span class="process-math">\(A, B, C\)</span> が <span class="process-math">\(1\times 2,\,2\times 3,\,3,\times 4\)</span> 行列の場合を考えよう。 <span class="process-math">\((AB)C\)</span> の順番で計算する場合、実数乗算回数は <span class="process-math">\(1\cdot2\cdot 3 + 1\cdot3\cdot 4=18\)</span> であるが、<span class="process-math">\(A(BC)\)</span> の順番で計算する場合は <span class="process-math">\(2\cdot3\cdot 4+1\cdot2\cdot 4=32\)</span> 回となってしまう。<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sec-matrix-mul-9-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">練習問題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列積.</span>
+<span class="type">練習問題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列積.</span>
 </h4></summary>
 <article class="exercise exercise-like knowl__content">
 <div class="para logical" id="sec-matrix-mul-9-4-2-1">
@@ -566,7 +607,7 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 \end{bmatrix}
 \end{equation*}
 </div></div>
-<div class="autopermalink" data-description="Item 2.8.7.1"><a href="#sec-matrix-mul-9-4-2-1-1-1" title="Copy heading and permalink for Item 2.8.7.1" aria-label="Copy heading and permalink for Item 2.8.7.1">🔗</a></div>
+<div class="autopermalink" data-description="Item 2.8.8.1"><a href="#sec-matrix-mul-9-4-2-1-1-1" title="Copy heading and permalink for Item 2.8.8.1" aria-label="Copy heading and permalink for Item 2.8.8.1">🔗</a></div>
 </li>
 <li id="sec-matrix-mul-9-4-2-1-1-2">
 <div class="para" id="p-derived-sec-matrix-mul-9-4-2-1-1-2"><div class="displaymath process-math" id="sec-matrix-mul-9-4-2-1-1-2-1">
@@ -584,12 +625,12 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 \end{bmatrix}
 \end{equation*}
 </div></div>
-<div class="autopermalink" data-description="Item 2.8.7.2"><a href="#sec-matrix-mul-9-4-2-1-1-2" title="Copy heading and permalink for Item 2.8.7.2" aria-label="Copy heading and permalink for Item 2.8.7.2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2.8.8.2"><a href="#sec-matrix-mul-9-4-2-1-1-2" title="Copy heading and permalink for Item 2.8.8.2" aria-label="Copy heading and permalink for Item 2.8.8.2">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-matrix-mul-9-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="練習問題 2.8.7: 行列積"><a href="#sec-matrix-mul-9-4" title="Copy heading and permalink for 練習問題 2.8.7: 行列積" aria-label="Copy heading and permalink for 練習問題 2.8.7: 行列積">🔗</a></div>
+<div class="autopermalink" data-description="練習問題 2.8.8: 行列積"><a href="#sec-matrix-mul-9-4" title="Copy heading and permalink for 練習問題 2.8.8: 行列積" aria-label="Copy heading and permalink for 練習問題 2.8.8: 行列積">🔗</a></div>
 </article></details><div class="autopermalink" data-description="Subsection 2.8.8: 行列積の結合法則を利用した計算量削減"><a href="#sec-matrix-mul-9" title="Copy heading and permalink for Subsection 2.8.8: 行列積の結合法則を利用した計算量削減" aria-label="Copy heading and permalink for Subsection 2.8.8: 行列積の結合法則を利用した計算量削減">🔗</a></div>
 </section><div class="autopermalink" data-description="Section 2.8: 行列の積"><a href="#sec-matrix-mul" title="Copy heading and permalink for Section 2.8: 行列の積" aria-label="Copy heading and permalink for Section 2.8: 行列の積">🔗</a></div>
 </section>
