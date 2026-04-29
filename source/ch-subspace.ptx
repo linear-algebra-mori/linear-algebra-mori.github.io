@@ -47,7 +47,7 @@
 	  </statement>
 	</definition>
   <fact>
-    <p>任意の線形空間 <m>V</m> と任意の生成系 <m>S\subseteq V</m> について、任意の上位集合 <m>S\subseteq L\subseteq V</m> は <m>V</m> の生成系である。</p>
+    <p>任意の線形空間 <m>V</m> と任意の生成系 <m>S\subseteq V</m> について、任意の上位集合 <m>V\supseteq L\supseteq S</m> は <m>V</m> の生成系である。</p>
   </fact>
     <lemma xml:id="lem-span-inc">
       <statement>
@@ -68,7 +68,7 @@
   	        \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}) \supseteq \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k) 
 		  </md>
 		  は明らか。
-		  ある <m>c_1,\dotsc,c_k\in\mathbb{R}</m> が存在して、
+		  仮定より、ある <m>c_1,\dotsc,c_k\in\mathbb{R}</m> が存在して、
 		  <md>
 		    \bm{v} = c_1\bm{v}_1+\dotsb+c_k\bm{v}_k
 		  </md>
@@ -116,15 +116,15 @@
   </statement>
   </definition>
   <fact>
-    <p>任意の線形独立集合 <m>I\subseteq V</m> について、任意の部分集合 <m>J\subseteq I</m> は線形独立である。</p>
+    <p>任意の線形独立集合 <m>I\subseteq \mathbb{R}^n</m> について、任意の部分集合 <m>J\subseteq I</m> は線形独立である。</p>
   </fact>
   <example>
    <title>線形独立性の例</title>
    <ul>
-   <li><m>\bm{v}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0}</m>.</li>
-   <li><m>\bm{v},\bm{w}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0},\,\bm{w}=a\bm{v}</m> を満たす <m>a\in \mathbb{R}</m> が存在しない。</li>
-   <li><m>\bm{e}_1,\dotsc,\bm{e}_n\in\mathbb{R}^n</m> は線形独立。</li>
-   <li><m>\bm{e}_1,\bm{e}_2,\bm{e}_1+\bm{e}_2\in\mathbb{R}^3</m> は線形従属。</li>
+   <li><m>\{\bm{v}\}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0}</m>.</li>
+   <li><m>\{\bm{v},\bm{w}\}</m> が線形独立 <m>\iff \bm{v}\ne \bm{0}</m> かつ <m>\bm{w}=a\bm{v}</m> を満たす <m>a\in \mathbb{R}</m> が存在しない。</li>
+   <li><m>\mathbb{R}^n</m> において、<m>\{\bm{e}_1,\dotsc,\bm{e}_n\}</m> は線形独立。</li>
+   <li><m>\mathbb{R}^3</m> において、<m>\{\bm{e}_1,\bm{e}_2,\bm{e}_1+\bm{e}_2\}</m> は線形従属。</li>
    </ul>
    \end{example}
   </example>
@@ -184,7 +184,7 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
   <statement>
    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> について以下は同値
    <ol>
-     <li><m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> は線形独立。</li>
+     <li><m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> は線形独立。</li>
      <li>任意の <m>i\in\{1,\dotsc,m\}</m> について、<md>\bm{v}_i\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_{i+1},\dotsc,\bm{v}_m).</md></li>
    </ol>
    </p>
@@ -307,7 +307,7 @@ a_1=\dotsb=a_j=0
     	</statement>
     </definition>
 <algorithm xml:id="alg-lin-gauss">
-<title>ガウスの消去法</title>
+<title>ガウスの消去法の前進消去</title>
 <statement>
 <ul>
 <li>入力: リスト <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m></li>
@@ -425,7 +425,9 @@ a_1=\dotsb=a_j=0
 	  </statement>
     </definition>
   <p><xref ref="thm-vec-ind"/>より、任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> の任意の基底のサイズは <m>n</m> 以下である。</p>
+  <!--
   <definition>
+    <p>ベクトル集合の性質 <m>
   <p>任意の集合 <m>U</m> と <m>A\subseteq U</m> について<term><m>A</m> が性質 <m>P</m> を満たす <m>U</m> の極大な部分集合</term> <m>\defiff</m>
     <md>
       \mathcal{P}=\left\{S\subseteq U\mid \text{$S$ は $P$ を満たす}\right\}
@@ -436,9 +438,15 @@ a_1=\dotsb=a_j=0
     <m>A\in\mathcal{P}</m> かつ任意の <m>B\subsetneq A</m> について <m>B\notin\mathcal{P}</m>。
     </p>
   </definition>
+  -->
 	<proposition>
 	  <statement>
-	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> について、任意の極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> は <m>V</m> の基底である。
+	    <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> と <m>S\subseteq V</m> について以下は同値。
+	      <ol>
+	        <li><m>S</m> は <m>V</m> の基底</li>
+	        <li><m>S</m> は線形独立であり、任意の <m>V\supseteq T\supsetneq S</m> は線形従属(<m>S</m> は <m>V</m> の<term>極大</term>な線形独立集合)</li>
+	      </ol>
+      </p>
 	  </statement>
 	  <proof>
       <p>極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <m>V</m> を貼らないと仮定する。
