@@ -425,6 +425,7 @@ a_1=\dotsb=a_j=0
 	  </statement>
     </definition>
   <p><xref ref="thm-vec-ind"/>より、任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> の任意の基底のサイズは <m>n</m> 以下である。</p>
+  <p>線形独立性のみに注目して基底を特徴付けることができる。</p>
   <!--
   <definition>
     <p>ベクトル集合の性質 <m>
@@ -449,8 +450,11 @@ a_1=\dotsb=a_j=0
       </p>
 	  </statement>
 	  <proof>
-      <p>極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <m>V</m> を貼らないと仮定する。
-        このとき、ある <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> が存在する。
+	    <p>
+	      <m>1\implies 2</m> : 基底の定義より <m>S</m> は線形独立。また、<m>S</m> は <m>V</m> の生成系なので、任意の <m>\bm{v}\in V</m> について、<m>\bm{v}\in\mathrm{span}(S)</m> である。よって<xref ref="cor-dep-add"/>より、<m>S\cup\{\bm{v}\}</m> は線形従属。
+	    </p>
+      <p><m>2\implies 1</m> : 極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <m>V</m> を貼らないと仮定する。
+        このとき、ある <m>\bm{v}\in V\setminus \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> が存在する。
         <xref ref="lem-ind-add"/> より <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}</m> は線形独立であるため極大性に矛盾。
         よって命題は示された。</p>
 	  </proof>
@@ -481,15 +485,27 @@ a_1=\dotsb=a_j=0
     </proof>
   -->
 	</corollary>
+  <p>また、生成系の観点から基底を特徴付けることもできる。</p>
 	<proposition>
 	  <statement>
-	    任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> について、任意の極小な生成系 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> は <m>V</m> の基底である。
+	    <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> と <m>S\subseteq V</m> について以下は同値。
+	      <ol>
+	        <li><m>S</m> は <m>V</m> の基底</li>
+	        <li><m>S</m> は <m>V</m> の生成系であり、任意の <m>T\subsetneq S</m> は <m>V</m> の生成系でない(<m>S</m> は <m>V</m> の<term>極小</term>な生成系)</li>
+	      </ol>
+      </p>
+	    <!-- 任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> について、任意の極小な生成系 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> は <m>V</m> の基底である。-->
 	  </statement>
 	  <proof>
-      <p>極小な生成系 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が線形独立でないと仮定する。
+	    <p><m>1\implies 2</m> : 基底の定義より <m>S</m> は <m>V</m> の生成系。
+	      ある <m>T\subsetneq S</m> が存在して <m>V</m> の生成系であると仮定する。
+	      このとき、<m>\bm{v}\in S\setminus T</m> について、<m>\bm{v}\in V=\mathrm{span}(T)</m> である。
+	      よって<xref ref="cor-dep-add"/>より、<m>T\cup\{\bm{v}\}</m> は線形従属である。
+	    </p>
+      <p><m>2\implies 1</m> : 極小な生成系 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が線形独立でないと仮定する。
         このとき、ある <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> が存在する。
         <xref ref="lem-ind-add"/> より <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}</m> は線形独立であるため極大性に矛盾。
-        よって命題は示された。</p>
+        </p>
 	  </proof>
 	</proposition>
 <!--
