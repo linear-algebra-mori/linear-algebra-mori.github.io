@@ -128,7 +128,7 @@
    </ul>
    \end{example}
   </example>
-  <lemma>
+  <lemma xml:id="lem-ind-decomp">
   <statement>
 <p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
 	<m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立である <m>\iff</m> 任意の <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m>
@@ -136,7 +136,7 @@
 <md>
 a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
 </md>
-を満たす <m>a_1,\dotsc,a_k\in \mathbb{R}</m> は唯一。</p>
+を満たす <m>a_1,\dotsc,a_k\in \mathbb{R}</m> が唯一存在する。</p>
 </statement>
 <proof>
 <p><m>\Leftarrow</m> は自明。</p>
@@ -668,7 +668,7 @@ a_1=\dotsb=a_j=0
   <p><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> の基底をもとめるために<xref ref="alg-lin-gauss"/>を使うことができる。
   </p>
 
-<proposition>
+<algorithm xml:id="alg-basis">
   <title>基底の計算</title>
 <statement>
 <p>問題
@@ -676,12 +676,12 @@ a_1=\dotsb=a_j=0
   <li><p>入力:
     <ul>
       <li><m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m></li>
-      <li><m>\bm{u}_1,\dotsc,\bm{u}_k\in\mathrm{span}(\bm{v}_1,\dots,v_m)</m>, 線形独立</li>
+      <li><m>\bm{u}_1,\dotsc,\bm{u}_k\in\mathbb{R}^n</m>, 線形独立</li>
     </ul></p></li>
-  <li>出力: <m>1\le i_1\lt\dotsb\lt i_r\le m</m> で <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_{i_1},\dotsc,\bm{v}_{i_r}</m> が <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の基底となるもの</li>
+  <li>出力: <m>1\le i_1\lt\dotsb\lt i_r\le m</m> で <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_{i_1},\dotsc,\bm{v}_{i_r}</m> が <m>\mathrm{span}(\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m)</m> の基底となるもの</li>
 </ul>
 は以下のアルゴリズムで解ける。</p>
-<p><xref ref="alg-lin-gauss"/>を <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> に対して実行し、 <m>\bm{u}'_1,\dotsc,\bm{u}'_k,\bm{v}'_1,\dotsc,\bm{v}'_m</m> を得る。
+<p><xref ref="alg-lin-gauss"/>を <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> に対して実行し、 <m>\bm{u}'_1,\dotsc,\bm{u}'_k,\bm{v}'_1,\dotsc,\bm{v}'_m</m> を得る。そして
   <md>
     \left\{i\in\{1,\dotsc,m\}\mid \bm{v}'_i\ne\bm{0}\right\}
   </md>
@@ -702,7 +702,14 @@ a_1=\dotsb=a_j=0
     <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_{i_1},\dotsc,\bm{v}_{i_r}</m> に対して<xref ref="alg-lin-gauss"/>を実行した場合も同じ
   </p>
 </proof>
-</proposition>
+</algorithm>
+
+<exercise>
+  <title>基底の計算</title>
+  <p>
+    以下の空間の基底を<xref ref="alg-basis"/>
+  </p>
+</exercise>
 
 <!--
 <proposition>

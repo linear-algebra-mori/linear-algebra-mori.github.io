@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-squre-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>正則行列と基底の変換</title>
+
+
+  <section xml:id="sec-square-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>正則行列</title>
+  <subsection xml:id="subsec-matrix-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>基底と線形写像</title>
+    <p>
+      線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> は標準ベクトル <m>\bm{e}_1,\dotsc,\bm{e}_m</m> の行き先 <m>f(\bm{e}_1),\dotsc,f(\bm{e}_m)</m> だけで定義されるのであった。
+      この標準ベクトルの役割を任意の <m>\mathbb{R}^m</m> の基底で置き換えることができる。
+    </p>
+    <p>
+      <m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> を <m>\mathbb{R}^m</m> の任意の基底とする。
+      任意の数ベクトル <m>\bm{a}_1,\dotsc,\bm{a}_m\in\mathbb{R}^n</m> について、線形写像
+      <md>
+        f(\bm{v}_i)\coloneqq \bm{a}_i \qquad\forall i\in\{1,\dotsc,m\}
+      </md>
+      と定義する。
+      一般の <m>\bm{v}\in\mathbb{R}^m</m> については<xref ref="lem-ind-decomp"/>より
+      <md>
+        \bm{v} = c_1\bm{v}_1+\dotsb+c_m\bm{v}_m
+      </md>
+      と一意に分解できる。よって、線形性より
+      <md>
+        <mrow>f(\bm{v})=f(c_1\bm{v}_1+\dotsb+c_m\bm{v}_m) \amp\coloneqq c_1 f(\bm{v}_1)+\dotsb+c_mf(\bm{v}_m)</mrow>
+        <mrow> \amp = c_1 \bm{a}_1+\dotsb+c_m\bm{a}_m</mrow>
+      </md>
+      と定義できる。
+      この <m>f</m> が線形写像であることは簡単に確認できる。
+      このように、<emph>基底の行き先を決めることで線型写像を定義することができる</emph>。
+    </p>
+    <p>
+      この線形写像 <m>f</m> の行列表現 <m>A_f</m> を得るには標準ベクトルの行き先 <m>f(\bm{e}_1),\dotsc,f(\bm{e}_m)</m> を得る必要がある。
+      ここで、
+      <md>
+        <mrow>g\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^m</mrow>
+        <mrow>\bm{v}_i\amp\longmapsto \bm{e}_i\qquad\forall i\in\{1,\dotsc,m\}</mrow>
+      </md>
+      と
+      <md>
+        <mrow>f'\colon\mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
+        <mrow>\bm{e}_i\amp\longmapsto \bm{a}_i\qquad\forall i\in\{1,\dotsc,m\}</mrow>
+      </md>
+      について、<m>f=f'\circ g</m> である。
+      ここで、<m>f'</m> の行列表現は
+      <md>
+        A_{f'}=\begin{bmatrix}\bm{a}_1\amp\dotsm\amp\bm{a}_m\end{bmatrix}
+      </md>
+      であるので、<m>g</m> の行列表現さえ分かれば
+      <md>
+        <mrow>A_f \amp= A_{f'}A_g</mrow>
+        <mrow>\amp= \begin{bmatrix}\bm{a}_1\amp\dotsm\amp\bm{a}_m\end{bmatrix}A_g</mrow>
+      </md>
+      と計算できる。
+    </p>
+  </subsection>
+  <subsection xml:id="subsec-invertible-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>正則行列</title>
+    <p>
+      <m>n\times m</m> 行列 <m>A\in\mathbb{R}^{n\times m}</m> は線形写像
+      <md>
+        <mrow>f_A\colon \mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
+        <mrow>\bm{v}\amp\longmapsto A\bm{v}</mrow>
+      </md>
+      を定めるのであった。
+      この線形写像 <m>f_A</m> は各 <m>i\in\{1,\dotsc,m\}</m> について <m>\bm{e}_i</m> を <m>A</m> の <m>i</m> 列目に写す線形写像である。
+    </p>
+    <definition xml:id="def-invertible">
+      <title>正則行列</title>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の各列が線形独立であるとき<term>正則行列(非特異行列、可逆行列)</term>という。</p>
+    </definition>
+  </subsection>
+  </section>
+</chapter>
