@@ -4,6 +4,8 @@
   <title>線形空間とその基底</title>
   <section xml:id="sec-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形空間と生成系</title>
+  <subsection xml:id="subsec-subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形空間</title>
 	<definition>
       <title>線形空間と部分空間</title>
 	  <statement>
@@ -26,6 +28,9 @@
         <li><m>V=\left\{\bm{v}\in\mathbb{R}^2\mid v_1+v_2=0\right\}</m> は線形空間であり、<m>\mathbb{R}^2</m> の部分空間である。</li>
 	  </ul>
 	</example>
+  </subsection>
+  <subsection xml:id="subsec-span" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>スパンと生成系</title>
 	<definition>
       <title>線形結合、スパン、生成系</title>
 	  <statement>
@@ -91,8 +96,37 @@
 		</p>
 	  </proof>
     </lemma>
+  </subsection>
+  <subsection xml:id="subsec-matirx-image" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の像</title>
+    <definition>
+      <title>行列の像</title>
+      <p>
+        行列 <m>A\in\mathbb{R}^{n\times m}</m> の像を
+      <md>
+        \mathrm{Im}(A) \coloneqq \{A\bm{v}\mid\bm{v}\in\mathbb{R}^m\}
+      </md>
+        と定義する。
+      </p>
+    </definition>
+    <p>
+      行列 <m>A\in\mathbb{R}^{n\times m}</m> の列を <m>\bm{a}_1,\dotsc,\bm{a}_m</m> と定義すると、
+      <md>
+        <mrow>A\bm{v}\amp=\begin{bmatrix}\bm{a}_1\amp\dotsm\amp\bm{a}_m\end{bmatrix}\begin{bmatrix}v_1\\\vdots\\v_m\end{bmatrix}</mrow>
+        <mrow>\amp=v_1\bm{a}_1+\dotsb+v_m\bm{a}_m</mrow>
+      </md>
+      より、
+      <md>
+        \mathrm{Im}(A) = \mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+      </md>
+      である。
+      したがって、行列の像は線形空間である。
+    </p>
+  </subsection>
   </section>
   <section xml:id="sec-linear-ind" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形独立性</title>
+  <subsection xml:id="subsec-linear-ind" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形独立性</title>
   <p>スパンを使って <m>\mathbb{R}^n</m> の部分空間を表すことができるが、その際にベクトルが冗長になる場合もある。
   	例えば <m>\mathbb{R}^3</m> において、
@@ -105,9 +139,9 @@
   <definition>
   <title>線形独立性</title>
   <statement>
-   <p><m>k</m> 本の数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、<m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が<term>線形独立</term>である<m>\defiff</m>
+   <p><m>k</m> 本の数ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、<m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が<term>線形独立</term>である<m>\defiff</m> <m>c_1,\dotsc,c_k\in\mathbb{R}</m> について
    <md>
-   a_1\bm{v}_1 + \dotsb + a_k\bm{v}_k = \bm{0} \iff a_1=a_2=\dotsb=a_k = 0
+   c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = \bm{0} \iff c_1=c_2=\dotsb=c_k = 0
    </md>
    が成り立つ。
    空集合(<m>k=0</m> の場合)も線形独立であるという。</p>
@@ -128,19 +162,48 @@
    </ul>
    \end{example}
   </example>
+  </subsection>
+  <subsection xml:id="subsec-matrix-kernel" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の核</title>
+    <definition>
+      <title>行列の核</title>
+      <p>
+        行列 <m>A\in\mathbb{R}^{n\times m}</m> の核を
+      <md>
+        \mathrm{Ker}(A) \coloneqq \{\bm{v}\in\mathbb{R}^m\mid A\bm{v}=\bm{0}\}
+      </md>
+        と定義する。
+      </p>
+    </definition>
+    <p>行列の核 <m>\mathrm{Ker}(A)</m> が線形空間であることは簡単に確認できる。</p>
+    <p>
+      行列 <m>A\in\mathbb{R}^{n\times m}</m> の列を <m>\bm{a}_1,\dotsc,\bm{a}_m</m> と定義すると、
+      <md>
+        <mrow>A\bm{v}\amp=\begin{bmatrix}\bm{a}_1\amp\dotsm\amp\bm{a}_m\end{bmatrix}\begin{bmatrix}v_1\\\vdots\\v_m\end{bmatrix}</mrow>
+        <mrow>\amp=v_1\bm{a}_1+\dotsb+v_m\bm{a}_m</mrow>
+      </md>
+      より、
+      <md>
+        \text{$\bm{a}_1,\dotsc,\bm{a}_m$ が線形独立}\iff \mathrm{Ker}(A)=\{\bm{0}\}
+      </md>
+      である。
+    </p>
+  </subsection>
+  <subsection xml:id="subsec-ind-prop" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形独立性の性質</title>
   <lemma xml:id="lem-ind-decomp">
   <statement>
 <p><m>\bm{v}_1,\dotsc,\bm{v}_k\in\mathbb{R}^n</m> について、
 	<m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立である <m>\iff</m> 任意の <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m>
 について、
 <md>
-a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
+c_1\bm{v}_1+\dotsb+c_k\bm{v}_k = \bm{v}
 </md>
-を満たす <m>a_1,\dotsc,a_k\in \mathbb{R}</m> が唯一存在する。</p>
+を満たす <m>c_1,\dotsc,c_k\in \mathbb{R}</m> が唯一存在する。</p>
 </statement>
 <proof>
-<p><m>\Leftarrow</m> は自明。</p>
-<p><m>\Rightarrow</m> を示す。
+<p><m>\impliedby</m> は自明。</p>
+<p><m>\implies</m> を示す。
 ある <m>a_1,\dotsc,a_k,\,b_1,\dotsc,b_k\in \mathbb{R}</m> が
 <md>
 <mrow>a_1\bm{v}_1+\dotsb+a_k\bm{v}_k \amp= \bm{v}</mrow>
@@ -194,6 +257,7 @@ a_1\bm{v}_1+\dotsb+a_k\bm{v}_k = \bm{v}
     <p><m>2\implies 1</m>: 対偶である「1でなければ2でない」を考えると<xref ref="lem-ind-add"/>の証明と同じ方針で示せる。</p>
   </proof>
 </proposition>
+  </subsection>
   </section>
   <section xml:id="sec-list-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>リストとアルゴリズム</title>
