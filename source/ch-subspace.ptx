@@ -51,9 +51,19 @@
       <p>ベクトル集合 <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> を <m>V=\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> の<term>生成系</term>という。</p>
 	  </statement>
 	</definition>
-  <fact>
-    <p>任意の線形空間 <m>V</m> と任意の生成系 <m>S\subseteq V</m> について、任意の上位集合 <m>V\supseteq L\supseteq S</m> は <m>V</m> の生成系である。</p>
-  </fact>
+    <exercise>
+      <title>生成系の計算</title>
+      <p>
+        以下の空間について生成系を一つもとめよ。
+        <ol>
+          <li><m>V=\left\{\bm{v}\in\mathbb{R}^2\mid v_1+v_2=0\right\}</m></li>
+          <li><m>V=\left\{\bm{v}\in\mathbb{R}^3\mid v_1+v_2+v_3=0\right\}</m></li>
+        </ol>
+      </p>
+    </exercise>
+    <fact>
+      <p>任意の線形空間 <m>V</m> と任意の生成系 <m>S\subseteq V</m> について、任意の集合 <m>L\subseteq V</m> で <m>L\supseteq S</m> であるものは <m>V</m> の生成系である。</p>
+    </fact>
     <lemma xml:id="lem-span-inc">
       <statement>
   	  <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}\in\mathbb{R}^n</m> について
@@ -164,6 +174,16 @@
    </ul>
    \end{example}
   </example>
+  <exercise>
+    <title>線形独立性の判定</title>
+    <p>
+      以下のベクトル集合が線形独立かどうか答えよ。
+      <ol>
+        <li><md>\left\{\begin{bmatrix}1\\1\end{bmatrix},\,\begin{bmatrix}1\\-1\end{bmatrix}\right\}</md></li>
+        <li><md>\left\{\begin{bmatrix}1\\1\\1\end{bmatrix},\,\begin{bmatrix}1\\-1\\1\end{bmatrix},\,\begin{bmatrix}1\\0\\1\end{bmatrix}\right\}</md></li>
+      </ol>
+    </p>
+  </exercise>
   </subsection>
 <!--
   <subsection xml:id="subsec-matrix-kernel" xmlns:xi="http://www.w3.org/2001/XInclude">
