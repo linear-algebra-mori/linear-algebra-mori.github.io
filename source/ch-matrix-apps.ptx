@@ -139,18 +139,18 @@ I,\amp \text{if }n=0\\
 </md>
 よって <m>F_{17}=1597</m> と分かる。</p>
 <p>
-	フィボナッチ数列の一般項は高校数学で計算できるよ！思うかもしれないが、
+	フィボナッチ数列の一般項は高校数学で導出できるよ！思うかもしれないが、
 	<m>\left(\frac{1+\sqrt{5}}2\right)^n</m> を整数演算だけで計算するには結局行列の <m>n</m> 乗の計算に帰着する。
 	</p>
 
     </section>
+<!--
     <section xml:id="sec-sqrt" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>平方根を含む整数演算</title>
       <p>
       	フィボナッチ数列の一般項は
       	<md>
-      		<mrow>\alpha\amp\coloneqq\frac{1+\sqrt{5}}2</mrow>
-      		<mrow>\beta\amp\coloneqq\frac{1-\sqrt{5}}2</mrow>
+      		<mrow>\alpha\amp\coloneqq\frac{1+\sqrt{5}}2,\amp\beta\amp\coloneqq\frac{1-\sqrt{5}}2</mrow>
       	</md>
         とおくと
         <md>
@@ -196,7 +196,7 @@ I,\amp \text{if }n=0\\
         <md>
         	cI+dA
         </md>
-        に対応する。
+        に対応する。<m>A^2=5I</m> であることから、<m>I\leftrightarrow 1</m>, <m>A\leftrightarrow A</m> と対応することが分かる。
         <m>c+d\sqrt{5}</m> を掛けてから <m>e+f\sqrt{5}</m> を掛けるのは <m>(e+f\sqrt{5})(c+d\sqrt{5})</m> を掛けるのと同じであることから、
         <md>
         	(e+f\sqrt{5})(c+d\sqrt{5}) = g+h\sqrt{5}
@@ -223,6 +223,7 @@ I,\amp \text{if }n=0\\
       </p>
 
     </section>
+-->
     <section xml:id="sec-markov" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title><m>N</m> 日後の天気</title>
 	  <p>天気が晴れ、雨、曇りの三種類であるとし、ある日の天気は前日の天気から確率的に定まると仮定する。
