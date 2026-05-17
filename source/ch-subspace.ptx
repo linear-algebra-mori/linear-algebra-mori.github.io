@@ -54,7 +54,7 @@
     <exercise>
       <title>生成系の計算</title>
       <p>
-        以下の空間について生成系を一つもとめよ。
+        以下の空間について生成系をそれぞれ一つもとめよ。
         <ol>
           <li><m>V=\left\{\bm{v}\in\mathbb{R}^2\mid v_1+v_2=0\right\}</m></li>
           <li><m>V=\left\{\bm{v}\in\mathbb{R}^3\mid v_1+v_2+v_3=0\right\}</m></li>
@@ -85,14 +85,14 @@
 		  は明らか。
 		  仮定より、ある <m>c_1,\dotsc,c_k\in\mathbb{R}</m> が存在して、
 		  <md>
-		    \bm{v} = c_1\bm{v}_1+\dotsb+c_k\bm{v}_k
+		    \bm{v} = c_1\bm{v}_1+\dotsb+c_k\bm{v}_k.
 		  </md>
 		  よって、任意の <m>a_1,\dotsc,a_k,a\in\mathbb{R}</m> について
 		  <md>
 		    <mrow>a_1\bm{v}_1+\dotsb+a_k\bm{v}_k+a\bm{v} \amp=
 		    a_1\bm{v}_1+\dotsb+a_k\bm{v}_k+a(c_1\bm{v}_1+\dotsb+c_k\bm{v}_k)</mrow>
 		    <mrow>\amp=(a_1+ac_1)\bm{v}_1+\dotsb+(a_k+ac_k)\bm{v}_k</mrow>
-		    <mrow>\amp\in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</mrow>
+		    <mrow>\amp\in \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k).</mrow>
 		  </md>
 		  よって、
 		  <md>
