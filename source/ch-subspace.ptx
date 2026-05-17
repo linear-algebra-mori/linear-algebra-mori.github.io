@@ -226,14 +226,14 @@ c_1\bm{v}_1+\dotsb+c_k\bm{v}_k = \bm{v}
 を満たす <m>c_1,\dotsc,c_k\in \mathbb{R}</m> が唯一存在する。</p>
 </statement>
 <proof>
-<p><m>\impliedby</m> は自明。</p>
+<p><m>\impliedby</m> は自明(<m>\bm{v}=\bm{0}</m>を選べばよい)。</p>
 <p><m>\implies</m> を示す。
 ある <m>a_1,\dotsc,a_k,\,b_1,\dotsc,b_k\in \mathbb{R}</m> が
 <md>
 <mrow>a_1\bm{v}_1+\dotsb+a_k\bm{v}_k \amp= \bm{v}</mrow>
 <mrow>b_1\bm{v}_1+\dotsb+b_k\bm{v}_k \amp= \bm{v}</mrow>
 </md>
-を満たすと仮定する。
+を満たすと仮定する。このとき
 <md>
 <mrow>\bm{0} \amp= a_1\bm{v}_1+\dotsb+a_k\bm{v}_k - (b_1\bm{v}_1+\dotsb+b_k\bm{v}_k)</mrow>
 <mrow>\amp= (a_1-b_1)\bm{v}_1+\dotsb+(a_k-b_k)\bm{v}_k</mrow>
@@ -247,40 +247,38 @@ c_1\bm{v}_1+\dotsb+c_k\bm{v}_k = \bm{v}
    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\}</m> は線形従属。</p>
   </statement>
 </corollary>
-<lemma xml:id="lem-ind-add">
-  <statement>
-   <p>任意の線形独立な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\}</m> は線形独立。</p>
-  </statement>
-  <proof>
-    <p>ある <m>a_1,\dotsc,a_m,a\in\mathbb{R}</m> が
-    <md>
-      a_1\bm{v}_1+\dotsb+a_m\bm{v}_m+a\bm{v}=\bm{0}
-    </md>
-    を満たすとする。
-    <m>a\ne 0</m> と仮定すると、
-    <md>
-      \bm{v} = -\frac1a\left(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m\right)
-    </md>
-    より、<m>\bm{v}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> となり矛盾。
-    したがって <m>a=0</m> であるが、このとき <m>\bm{v}_1,\dotsc,\bm{v}_m</m> の線形独立性より、<m>a_1=\dotsb=a_m=0</m> である。
-    よって、<m>\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}</m> は線形独立である。
-    </p>
-  </proof>
-</lemma>
 <proposition xml:id="prop-ind-gen">
   <statement>
    <p>任意の <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> について以下は同値
    <ol>
-     <li><m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> は線形独立。</li>
-     <li>任意の <m>i\in\{1,\dotsc,m\}</m> について、<md>\bm{v}_i\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_{i+1},\dotsc,\bm{v}_m).</md></li>
+     <li><m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> は線形従属。</li>
+     <li>ある <m>i\in\{1,\dotsc,m\}</m> が存在して、<md>\bm{v}_i\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1}).</md></li>
+     <li>ある <m>i\in\{1,\dotsc,m\}</m> が存在して、<md>\bm{v}_i\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_{i+1},\dotsc,\bm{v}_m).</md></li>
    </ol>
    </p>
   </statement>
   <proof>
-    <p><m>1\implies 2</m>: 対偶である「2でなければ1でない」を考えると<xref ref="cor-dep-add"/>より自明。</p>
-    <p><m>2\implies 1</m>: 対偶である「1でなければ2でない」を考えると<xref ref="lem-ind-add"/>の証明と同じ方針で示せる。</p>
+    <p><m>1\implies 2</m>: 
+    仮定より、あるオールゼロでない <m>a_1,\dotsc,a_m\in\mathbb{R}</m> が存在して
+    <md>
+      a_1\bm{v}_1+\dotsb+a_m\bm{v}_m=\bm{0}
+    </md>
+    を満たす。
+    ここで <m>i\in\{1,\dotsc,m\}</m> を <m>a_i\ne 0</m> を満たす最大のものとすると、
+    <md>
+      \bm{v}_i = -\frac1{a_i}\left(a_1\bm{v}_1+\dotsb+a_{i-1}\bm{v}_{i-1}\right).
+    </md>
+    よって、<m>\bm{v}_{i}\in\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_{i-1})</m>である。
+    </p>
+    <p><m>2\implies 3</m>: 自明。</p>
+    <p><m>3\implies 1</m>: <xref ref="cor-dep-add"/>から従う。</p>
   </proof>
 </proposition>
+<corollary xml:id="lem-ind-add">
+  <statement>
+   <p>任意の線形独立な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\}</m> は線形独立。</p>
+  </statement>
+</corollary >
   </subsection>
   </section>
   <section xml:id="sec-list-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
