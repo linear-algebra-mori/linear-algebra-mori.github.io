@@ -334,7 +334,7 @@ a_1\bm{v}_1+\dotsb+a_j\bm{v}_j = \bm{0}.
 </p>
 </statement>
 <proof>
-<p>任意の <m>j\in\{1,2,\dotsc,k\}</m> を固定する。<m>j\lt t</m> のとき、<m>\bm{v}'_i=\bm{v}_i</m> がすべての <m>i\le j</m> について成り立つので、補題の結論は自明に成り立つ。以下では <m>j\ge t</m> を仮定する。</p>
+<!--<p>任意の <m>j\in\{1,2,\dotsc,k\}</m> を固定する。<m>j\lt t</m> のとき、<m>\bm{v}'_i=\bm{v}_i</m> がすべての <m>i\le j</m> について成り立つので、補題の結論は自明に成り立つ。以下では <m>j\ge t</m> を仮定する。</p>-->
 <p>まず
   <m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_j) \supseteq \mathrm{span}(\bm{v}'_1,\dotsc,\bm{v}'_j)</m>
 は自明である。また、<m>\bm{v}'_t \leftarrow\bm{v}'_t-c\bm{v}'_s</m> とすることで、元の <m>\bm{v}_1,\dotsc,\bm{v}_j</m> が復元できるので、同様に
