@@ -274,7 +274,7 @@ c_1\bm{v}_1+\dotsb+c_k\bm{v}_k = \bm{v}
     <p><m>3\implies 1</m>: <xref ref="cor-dep-add"/>から従う。</p>
   </proof>
 </proposition>
-<corollary xml:id="lem-ind-add">
+<corollary xml:id="cor-ind-add">
   <statement>
    <p>任意の線形独立な <m>\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m> と <m>\bm{v}\notin\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_m)</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_m,\bm{v}\}</m> は線形独立。</p>
   </statement>
@@ -459,6 +459,17 @@ a_1=\dotsb=a_j=0
 </p>
 </proof>
 </algorithm>
+<exercise>
+  <title>ガウスの前進消去</title>
+  <p>以下のリストに対してガウスの前進消去を実行せよ。
+  <md>
+    <mrow>\bm{v}_1\amp=\begin{bmatrix}1\\1\\2\\2\end{bmatrix},\amp
+          \bm{v}_2\amp=\begin{bmatrix}1\\0\\1\\0\end{bmatrix},\amp
+          \bm{v}_3\amp=\begin{bmatrix}0\\1\\0\\1\end{bmatrix},\amp
+          \bm{v}_4\amp=\begin{bmatrix}1\\1\\-1\\-1\end{bmatrix}.
+          </mrow>
+  </md></p>
+</exercise>
 </subsection>
 
   <subsection xml:id="subsec-gauss-app" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -510,7 +521,8 @@ a_1=\dotsb=a_j=0
 	  <statement>
 	    <p>線形空間 <m>V</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
 		<ul>
-		  <li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>
+		  <!--<li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>-->
+		  <li><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が <m>V</m> の生成系</li>
 		  <li><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が線形独立</li>
 		</ul>
 		</p>
@@ -538,7 +550,7 @@ a_1=\dotsb=a_j=0
 	    <p>任意の線形空間 <m>V\subseteq\mathbb{R}^n</m> と <m>S\subseteq V</m> について以下は同値。
 	      <ol>
 	        <li><m>S</m> は <m>V</m> の基底</li>
-	        <li><m>S</m> は線形独立であり、任意の <m>V\supseteq T\supsetneq S</m> は線形従属(<m>S</m> は <m>V</m> の<term>極大</term>な線形独立集合)</li>
+	        <li><m>S</m> は線形独立であり、任意の <m>T\subseteq V</m> で <m>T\supsetneq S</m> であるものは線形従属(<m>S</m> は <m>V</m> の<term>極大</term>な線形独立集合)</li>
 	      </ol>
       </p>
 	  </statement>
@@ -548,7 +560,7 @@ a_1=\dotsb=a_j=0
 	    </p>
       <p><m>2\implies 1</m> : 極大な線形独立集合 <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> が <m>V</m> を貼らないと仮定する。
         このとき、ある <m>\bm{v}\in V\setminus \mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)</m> が存在する。
-        <xref ref="lem-ind-add"/> より <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}</m> は線形独立であるため極大性に矛盾。
+        <xref ref="cor-ind-add"/> より <m>\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}</m> は線形独立であるため極大性に矛盾。
       </p>
 	  </proof>
 	</proposition>
@@ -798,12 +810,14 @@ a_1=\dotsb=a_j=0
 </proof>
 </algorithm>
 
+<!--
 <exercise>
   <title>基底の計算</title>
   <p>
-    以下の空間の基底を<xref ref="alg-basis"/>
+    以下の空間の基底を <xref ref="alg-basis"/> を用いて
   </p>
 </exercise>
+-->
 
 <!--
 <proposition>
