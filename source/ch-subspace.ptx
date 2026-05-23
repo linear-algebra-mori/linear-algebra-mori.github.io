@@ -605,7 +605,8 @@ a_1=\dotsb=a_j=0
 	    <p><m>1\implies 2</m> : 基底の定義より <m>S</m> は <m>V</m> の生成系。
 	      ある <m>T\subsetneq S</m> が存在して <m>V</m> の生成系であると仮定する。
 	      このとき、<m>\bm{v}\in S\setminus T</m> について、<m>\bm{v}\in V=\mathrm{span}(T)</m> である。
-	      よって<xref ref="cor-dep-add"/>より、<m>T\cup\{\bm{v}\}</m> は線形従属である。
+	      よって<xref ref="cor-dep-add"/>より、<m>T\cup\{\bm{v}\}\subseteq S</m> は線形従属である。
+	      したがって <m>S</m> が基底であることに矛盾。
 	    </p>
       <p><m>2\implies 1</m> : 仮定より、<m>S=\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> と任意の <m>i\in\{1,\dotsc,k\}</m> について <m>S\setminus\{\bm{v}_i\}</m> は生成系ではない。
         よって、<m>\bm{v}_i\notin\mathrm{span}(S\setminus\{\bm{v}_i\})</m> である。
