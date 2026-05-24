@@ -712,6 +712,15 @@ a_1=\dotsb=a_j=0
   		<m>\bm{u}_1,\dotsc,\bm{u}_k\in V</m> が線形独立であると仮定する。
   		このとき、<m>k\gt m</m> を仮定して矛盾を導く。</p>
     <p>
+      リスト <m>\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> は線形従属であるので、<xref ref="prop-ind-gen"/>より、ある <m>i\in\{1,\dotsc,m\}</m> が存在して、<m>\bm{v}_i\in\mathrm{span}(\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{i-1})</m> である。
+      よって、<m>\{\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_{i+1},\dotsc,\bm{v}_m\}</m> は <m>V</m> の生成系である。
+      これを繰り替えすことで <m>\bm{u}_{k-1},\bm{u}_{k-2},\dotsc</m> を順番に追加していき、要素数 <m>m</m> の <m>V</m> の生成系をアップデートしていく。
+      このとき、<m>\bm{u}_1,\dotsc,\bm{u}_k</m> は線形独立なので削除されることはない。
+      <m>k\gt m</m> より、<m>\bm{u}_1</m> を追加する前に <m>\bm{v}_i</m> はすべて削除されている。
+      よって、<m>\bm{u}_2,\dotsc,\bm{u}_k</m> の部分集合が <m>V</m> の生成系になる。
+      このとき、<m>\bm{u}_1\in\mathrm{span}(\bm{u}_2,\dotsc,\bm{u}_k)</m> となるが、これは <m>\bm{u}_1,\dotsc,\bm{u}_k</m> の線形独立性に矛盾。
+      よって、<m>k\le m</m> である。
+    <!--
       リスト <m>\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_m</m> は線形従属であり <m>V</m> を張るので、<xref ref="alg-lin-gauss"/>を適用することで、少なくとも一つのベクトルが削除された <m>V</m> の基底が得られる。
       これを繰替えすことで <m>\bm{u}_{k-1},\bm{u}_{k-2},\dotsc</m> を順番に追加していく。
       このとき、<m>\bm{u}_1,\dotsc,\bm{u}_k</m> は線形独立なので削除されることはない。
@@ -719,6 +728,7 @@ a_1=\dotsb=a_j=0
       よって、<m>\bm{u}_2,\dotsc,\bm{u}_k</m> の部分集合が <m>V</m> の基底になる。
       このとき、<m>\bm{u}_1\in\mathrm{span}(\bm{u}_2,\dotsc,\bm{u}_k)</m> となるが、これは <m>\bm{u}_1,\dotsc,\bm{u}_k</m> の線形独立性に矛盾。
       よって、<m>k\le m</m> である。
+      -->
     </p>
 
   	<!--
