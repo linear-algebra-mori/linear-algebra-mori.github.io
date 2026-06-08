@@ -519,7 +519,7 @@ a_1=\dotsb=a_j=0
     <definition>
 	  <title>基底</title>
 	  <statement>
-	    <p>線形空間 <m>V</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k\in V</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
+	    <p>線形空間 <m>V\subseteq\mathbb{R}^n</m> と <m>\bm{v}_1,\dotsc,\bm{v}_k\in \mathbb{R}^n</m> について <m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が <term><m>V</m> の基底</term> <m>\defiff</m>
 		<ul>
 		  <!--<li><m>\mathrm{span}(\bm{v}_1,\dotsc,\bm{v}_k)=V</m></li>-->
 		  <li><m>\{\bm{v}_1,\dotsc,\bm{v}_k\}</m> が <m>V</m> の生成系</li>
