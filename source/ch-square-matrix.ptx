@@ -10,11 +10,11 @@
     <title>基底と線形写像</title>
     <p>
       線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> は標準ベクトル <m>\bm{e}_1,\dotsc,\bm{e}_m</m> の行き先 <m>f(\bm{e}_1),\dotsc,f(\bm{e}_m)</m> だけで定義されるのであった。
-      この標準ベクトルの役割を任意の <m>\mathbb{R}^m</m> の基底で置き換えることができる。
+      この標準ベクトルの役割を <m>\mathbb{R}^m</m> の任意の基底で置き換えることができる。
     </p>
     <p>
-      <m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> を <m>\mathbb{R}^m</m> の任意の基底とする。
-      任意の数ベクトル <m>\bm{a}_1,\dotsc,\bm{a}_m\in\mathbb{R}^n</m> について、線形写像
+      <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> を <m>\mathbb{R}^m</m> の任意の順序付き基底とする。
+      任意の数ベクトル <m>\bm{a}_1,\dotsc,\bm{a}_m\in\mathbb{R}^n</m> を用いて、線形写像
       <md>
         f(\bm{v}_i)\coloneqq \bm{a}_i \qquad\forall i\in\{1,\dotsc,m\}
       </md>
@@ -30,8 +30,12 @@
       </md>
       と定義できる。
       この <m>f</m> が線形写像であることは簡単に確認できる。
-      このように、<emph>基底の行き先を決めることで線型写像を定義することができる</emph>。
+      このように、<em>基底の行き先を決めることで線型写像を定義することができる</em>。
     </p>
+    <p>
+      このように定義された線形写像の行列表現がどうなるかは後で考えることにしよう。
+    </p>
+  <!--
     <p>
       この線形写像 <m>f</m> の行列表現 <m>A_f</m> を得るには標準ベクトルの行き先 <m>f(\bm{e}_1),\dotsc,f(\bm{e}_m)</m> を得る必要がある。
       ここで、
@@ -56,22 +60,49 @@
       </md>
       と計算できる。
     </p>
+    -->
   </subsection>
   <subsection xml:id="subsec-invertible-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>正則行列</title>
+    <title>正則な線形変換と正則行列</title>
     <p>
-      <m>n\times m</m> 行列 <m>A\in\mathbb{R}^{n\times m}</m> は線形写像
+      <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> を <m>\mathbb{R}^n</m> の任意の順序付き基底とする。
+      <m>\mathbb{R}^n</m> の任意の順序付き基底 <m>(\bm{w}_1,\dotsc,\bm{w}_n)</m> を用いて、線形写像
       <md>
-        <mrow>f_A\colon \mathbb{R}^m\amp\longrightarrow\mathbb{R}^n</mrow>
-        <mrow>\bm{v}\amp\longmapsto A\bm{v}</mrow>
+        f(\bm{v}_i)\coloneqq \bm{w}_i \qquad\forall i\in\{1,\dotsc,n\}
       </md>
-      を定めるのであった。
-      この線形写像 <m>f_A</m> は各 <m>i\in\{1,\dotsc,m\}</m> について <m>\bm{e}_i</m> を <m>A</m> の <m>i</m> 列目に写す線形写像である。
+      と定義しよう。
+      一方で線形写像 <m>g\colon\mathbb{R}^n\to\mathbb{R}^n</m> を
+      <md>
+        g(\bm{w}_i)\coloneqq \bm{v}_i \qquad\forall i\in\{1,\dotsc,n\}
+      </md>
+      と定義しよう。
+      これらの線形写像 <m>f,\;g</m> は逆変換の関係にあることは簡単に確認できる。
+      <md>
+        <mrow> (f\circ g)(\bm{w}_i)\amp=\bm{w}_i \qquad\forall i\in\{1,\dotsc,n\}</mrow>
+        <mrow> (g\circ f)(\bm{v}_i)\amp=\bm{v}_i \qquad\forall i\in\{1,\dotsc,n\}</mrow>
+      </md>
+      このように逆変換を持つ線形変換を<term>正則</term>もしくは<term>可逆な</term>線形変換という。
     </p>
+    <lemma>
+      <p>線形変換 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について以下は同値。
+        <ol>
+          <li><m>f</m> は正則</li>
+          <li><m>\mathbb{R}^n</m> の任意の基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
+          <li><m>(f(\bm{e}_1),\dotsc,f(\bm{e}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
+          <li><m>\mathbb{R}^n</m> のある基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> が存在して <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
+        </ol>
+      </p>
+    </lemma>
+    <p>正則な線形変換を表す行列 <m>A\in\mathbb{R}^{n\times n}</m> を正則行列という。</p>
     <definition xml:id="def-invertible">
       <title>正則行列</title>
       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の各列が線形独立であるとき<term>正則行列(非特異行列、可逆行列)</term>という。</p>
     </definition>
+    <definition xml:id="def-inverse">
+      <title>逆行列</title>
+      <p>正則行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<m>A^{-1}A=I</m> を満たす行列 <m>A^{-1}\in\mathbb{R}^{n\times n}</m> を<term>逆行列</term>という。</p>
+    </definition>
+
   </subsection>
   </section>
 </chapter>
