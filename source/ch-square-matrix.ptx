@@ -62,6 +62,91 @@
     </p>
     -->
   </subsection>
+<!--
+  <subsection xml:id="subsec-injective-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>単射である線形変換</title>
+    <p>線形写像 <m>f\colon\mathbb{R}^n\to\mathbb{R}^m</m> が単射である。</p>
+    <lemma>
+      <p>線形変換 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について以下は同値。
+        <ol>
+          <li><m>f</m> は単射</li>
+          <li><m>\mathbb{R}^n</m> の任意の基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は線形独立。</li>
+          <li><m>(f(\bm{e}_1),\dotsc,f(\bm{e}_n))</m> は線形独立。</li>
+          <li><m>\mathbb{R}^n</m> のある基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> が存在して <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は線形独立。</li>
+        </ol>
+      </p>
+    </lemma>
+    <proof>
+      <p><m>1\implies 2</m>: ある <m>a_1,\dotsc,a_n</m> が存在して
+      <md>
+        a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n)=\bm{0}
+      </md>
+      であると仮定する。
+      このとき <m>f</m> の逆写像 <m>f^{-1}</m> を両辺に適用すると
+      <md>
+        <mrow>\amp f^{-1}(a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n))=\bm{0}</mrow>
+        <mrow>\iff\amp a_1\bm{v}_1+\dotsb+a_n\bm{v}_n=\bm{0}</mrow>
+        <mrow>\iff\amp a_1=\dotsb=a_n=0</mrow>
+      </md>
+      したがって、<m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は線形独立であり、<m>\mathbb{R}_n</m> の基底である。
+      </p>
+      <p><m>2\implies 3</m>: 自明。
+      </p>
+      <p><m>3\implies 4</m>: 自明。
+      </p>
+      <p><m>4\implies 1</m>:
+         線形写像 <m>g\colon\mathbb{R}^n\to\mathbb{R}^n</m> を
+         <md>
+          g(f(\bm{v}_i)) \coloneqq \bm{v}_i\qquad\forall i\in\{1,\dotsc,n\}
+        </md>
+        で定義すると、<m>g</m> は <m>f</m> の逆写像となる。したがって <m>f</m> は正則である。
+      </p>
+    </proof>
+  </subsection>
+  -->
+  <subsection xml:id="subsec-im-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形写像と行列の像</title>
+    <definition>
+    <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> の像を
+    <md>
+      \mathrm{Im}(f)\coloneqq \{f(\bm{v})\mid\bm{v}\in\mathbb{R}^m\}
+    </md>
+    と定義する。</p>
+    <p>同様に行列 <m>A\in\mathbb{R}^{n\times m}</m> の像を
+    <md>
+      \mathrm{Im}(A)\coloneqq \{A\bm{v}\mid\bm{v}\in\mathbb{R}^m\}
+    </md>
+    と定義する。</p>
+    </definition>
+    <lemma xml:id="lem-im-span">
+    <p>任意の線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の任意の基底 <m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> について、
+    <md>
+      \mathrm{Im}(f) = \mathrm{span}(f(\bm{v}_1),\dotsc,f(\bm{v}_m))
+    </md>
+    である。
+    </p>
+    </lemma>
+    <proof>
+      <p><m>\supseteq</m>:
+        <md>
+          a_1f(\bm{v}_1)+\dotsb+a_mf(\bm{v}_m) = f(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m) \in\mathrm{Im}(f)
+        </md>
+      </p>
+      <p><m>\subseteq</m>:
+        任意の <m>\bm{v}\in\mathbb{R}^m</m> について、<m>a_1,\dotsc,a_m</m> が存在して
+        <md>
+          \bm{v} = a_1\bm{v}_1+\dotsb+a_m\bm{v}_m
+        </md>
+        である。
+        したがって、
+        <md>
+          <mrow>f(\bm{v}) \amp= f(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m)</mrow>
+          <mrow>\amp= a_1f(\bm{v}_1)+\dotsb+a_mf(\bm{v}_m)\in\mathrm{span}(f(\bm{v}_1),\dotsc,f(\bm{v}_m))</mrow>
+        </md>
+      </p>
+    </proof>
+    <p><xref ref="lem-im-span"/>より、<m>\mathrm{Im}(f)</m> が線形空間であることが分かる。</p>
+  </subsection>
   <subsection xml:id="subsec-invertible-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>正則な線形変換と正則行列</title>
     <p>
@@ -76,11 +161,12 @@
         g(\bm{w}_i)\coloneqq \bm{v}_i \qquad\forall i\in\{1,\dotsc,n\}
       </md>
       と定義しよう。
-      これらの線形写像 <m>f,\;g</m> は逆変換の関係にあることは簡単に確認できる。
+      これらの線形写像 <m>f,\;g</m> は
       <md>
         <mrow> (f\circ g)(\bm{w}_i)\amp=\bm{w}_i \qquad\forall i\in\{1,\dotsc,n\}</mrow>
         <mrow> (g\circ f)(\bm{v}_i)\amp=\bm{v}_i \qquad\forall i\in\{1,\dotsc,n\}</mrow>
       </md>
+      を満たすため、逆写像の関係にある。
       このように逆変換を持つ線形変換を<term>正則</term>もしくは<term>可逆な</term>線形変換という。
     </p>
     <lemma>
@@ -93,6 +179,32 @@
         </ol>
       </p>
     </lemma>
+    <proof>
+      <p><m>1\implies 2</m>: ある <m>a_1,\dotsc,a_n</m> が存在して
+      <md>
+        a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n)=\bm{0}
+      </md>
+      であると仮定する。
+      このとき <m>f</m> の逆写像 <m>f^{-1}</m> を両辺に適用すると
+      <md>
+        <mrow>\amp f^{-1}(a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n))=\bm{0}</mrow>
+        <mrow>\iff\amp a_1\bm{v}_1+\dotsb+a_n\bm{v}_n=\bm{0}</mrow>
+        <mrow>\iff\amp a_1=\dotsb=a_n=0</mrow>
+      </md>
+      したがって、<m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は線形独立であり、<m>\mathbb{R}_n</m> の基底である。
+      </p>
+      <p><m>2\implies 3</m>: 自明。
+      </p>
+      <p><m>3\implies 4</m>: 自明。
+      </p>
+      <p><m>4\implies 1</m>:
+         線形写像 <m>g\colon\mathbb{R}^n\to\mathbb{R}^n</m> を
+         <md>
+          g(f(\bm{v}_i)) \coloneqq \bm{v}_i\qquad\forall i\in\{1,\dotsc,n\}
+        </md>
+        で定義すると、<m>g</m> は <m>f</m> の逆写像となる。したがって <m>f</m> は正則である。
+      </p>
+    </proof>
     <p>正則な線形変換を表す行列 <m>A\in\mathbb{R}^{n\times n}</m> を正則行列という。</p>
     <definition xml:id="def-invertible">
       <title>正則行列</title>
