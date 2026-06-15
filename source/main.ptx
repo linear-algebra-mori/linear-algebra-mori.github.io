@@ -16,7 +16,7 @@
     <xi:include href="./ch-matrix.ptx" />
     <xi:include href="./ch-matrix-apps.ptx" />
     <xi:include href="./ch-subspace.ptx" />
-    <xi:include href="./ch-subspace-apps.ptx" />
+    <!--<xi:include href="./ch-subspace-apps.ptx" />-->
     <xi:include href="./ch-square-matrix.ptx" />
     <xi:include href="./ch-lineq.ptx" />
 

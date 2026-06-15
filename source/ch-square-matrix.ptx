@@ -104,6 +104,7 @@
     </proof>
   </subsection>
   -->
+<!--
   <subsection xml:id="subsec-im-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形写像と行列の像</title>
     <definition>
@@ -145,10 +146,24 @@
         </md>
       </p>
     </proof>
-    <p><xref ref="lem-im-span"/>より、<m>\mathrm{Im}(f)</m> が線形空間であることが分かる。</p>
+    <p><xref ref="lem-im-span"/>より、<m>\mathrm{Im}(f)</m> が線形空間であることが分かる。また、<m>f</m> が全射であることと <m>\mathrm{Im}(f)=\mathbb{R}^n</m> は同値である。</p>
+    <lemma>
+    <p>任意の線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の任意の基底 <m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> について以下は同値。
+    <ol>
+      <li><m>f</m> が単射</li>
+      <li><m>f(\bm{v}_1),\dotsc,f(\bm{v}_m)</m> が線形独立</li>
+    </ol>
+    </p>
+    </lemma>
+  <proof>
+  </proof>
   </subsection>
+-->
   <subsection xml:id="subsec-invertible-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>正則な線形変換と正則行列</title>
+    <p>
+
+    </p>
     <p>
       <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> を <m>\mathbb{R}^n</m> の任意の順序付き基底とする。
       <m>\mathbb{R}^n</m> の任意の順序付き基底 <m>(\bm{w}_1,\dotsc,\bm{w}_n)</m> を用いて、線形写像
@@ -170,7 +185,7 @@
       このように逆変換を持つ線形変換を<term>正則</term>もしくは<term>可逆な</term>線形変換という。
     </p>
     <lemma>
-      <p>線形変換 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について以下は同値。
+      <p>線形写像 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について以下は同値。
         <ol>
           <li><m>f</m> は正則</li>
           <li><m>\mathbb{R}^n</m> の任意の基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
@@ -180,15 +195,19 @@
       </p>
     </lemma>
     <proof>
-      <p><m>1\implies 2</m>: ある <m>a_1,\dotsc,a_n</m> が存在して
+      <p><m>1\implies 2</m>: ある <m>a_1,\dotsc,a_n\in\mathbb{R}</m> が存在して
       <md>
         a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n)=\bm{0}
       </md>
       であると仮定する。
-      このとき <m>f</m> の逆写像 <m>f^{-1}</m> を両辺に適用すると
+      このとき、<m>f</m> の線形性より
       <md>
-        <mrow>\amp f^{-1}(a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n))=\bm{0}</mrow>
-        <mrow>\iff\amp a_1\bm{v}_1+\dotsb+a_n\bm{v}_n=\bm{0}</mrow>
+        f(a_1\bm{v}_1+\dotsb+a_n\bm{v}_n)=\bm{0}
+      </md>
+      である。
+      ここで、 <m>f</m> の逆写像 <m>f^{-1}</m> を両辺に適用すると
+      <md>
+        <mrow>\amp a_1\bm{v}_1+\dotsb+a_n\bm{v}_n=f^{-1}(\bm{0})=\bm{0}</mrow>
         <mrow>\iff\amp a_1=\dotsb=a_n=0</mrow>
       </md>
       したがって、<m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は線形独立であり、<m>\mathbb{R}_n</m> の基底である。
@@ -214,6 +233,16 @@
       <title>逆行列</title>
       <p>正則行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<m>A^{-1}A=I</m> を満たす行列 <m>A^{-1}\in\mathbb{R}^{n\times n}</m> を<term>逆行列</term>という。</p>
     </definition>
+         <exercise>
+         <title>正則性の判定と逆行列の計算</title>
+         <p>
+           以下の行列について正則であるかどうか判定せよ。正則である場合は逆行列をもとめよ。
+           <ol>
+             <li><m>\begin{bmatrix}1\amp1\\1\amp-1\end{bmatrix}</m></li>
+             <li><m>\begin{bmatrix}1\amp1\amp1\\1\amp-1\amp0\\1\amp1\amp1\end{bmatrix}</m></li>
+           </ol>
+         </p>
+       </exercise>
 
   </subsection>
   </section>
