@@ -188,6 +188,7 @@
       <p>線形写像 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について以下は同値。
         <ol>
           <li><m>f</m> は正則</li>
+          <li>ある <m>g\colon\mathbb{R}^n\to\mathbb{R}^n</m> が存在して、<m>g\circ f</m> が恒等写像(<m>f</m> は単射)。</li>
           <li><m>\mathbb{R}^n</m> の任意の基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> について <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
           <li><m>(f(\bm{e}_1),\dotsc,f(\bm{e}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
           <li><m>\mathbb{R}^n</m> のある基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> が存在して <m>(f(\bm{v}_1),\dotsc,f(\bm{v}_n))</m> は <m>\mathbb{R}^n</m> の基底。</li>
