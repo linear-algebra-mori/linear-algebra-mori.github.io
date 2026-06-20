@@ -247,4 +247,7 @@
 
   </subsection>
   </section>
+  <section xml:id="sec-square-gauss" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行基本変形とガウスの消去法</title>
+  </section>
 </chapter>
