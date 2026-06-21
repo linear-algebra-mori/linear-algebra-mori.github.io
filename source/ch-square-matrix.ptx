@@ -244,10 +244,112 @@
            </ol>
          </p>
        </exercise>
+     <proposition>
+       <p>任意の正則行列 <m>A,B\in\mathbb{R}^{n\times n}</m> について、<m>AB</m> は正則行列であり、<m>(AB)^{-1}=B^{-1}A^{-1}</m> である。</p>
+     </proposition>
+     <proof>
+       <md>
+         (B^{-1}A^{-1})(AB) = B^{-1}(A^{-1}A) B = B^{-1} I B = B^{-1}B = I.
+       </md>
+     </proof>
 
   </subsection>
   </section>
   <section xml:id="sec-square-gauss" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行基本変形とガウスの消去法</title>
+    <subsection xml:id="subsec-elementary-rows" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行基本変形</title>
+    <definition xml:id="def-rows">
+      <title>行基本変形</title>
+      <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> に対し以下の操作を繰り返しおこなうことで実現する行列の変形を<term>行基本変形</term>という。
+        <ol>
+          <li>任意に選択した <m>i,j\in\{1,\dotsc,n\}</m> と <m>a\in\mathbb{R}</m> について、<m>i</m> 行目の <m>a</m> 倍を <m>j</m> 行目に足す。</li>
+          <li>任意に選択した <m>i\in\{1,\dotsc,n\}</m> と <m>a\in\mathbb{R}\setminus\{0\}</m> について、<m>i</m> 行目を <m>a</m> 倍する。</li>
+        </ol>
+      </p>
+    </definition>
+    <p>
+    行基本変形により <em><m>i</m> 行目と <m>j</m> 行目を交換する</em>ことができる。具体的には
+    <ol>
+      <li><m>i</m> 行目の <m>-1</m> 倍を<m>j</m> 行目に足す</li>
+      <li><m>j</m> 行目を <m>i</m> 行目に足す</li>
+      <li><m>i</m> 行目の <m>-1</m> 倍を<m>j</m> 行目に足す</li>
+      <li><m>j</m> 行目を<m>-1</m> 倍する</li>
+    </ol>
+    </p>
+    <fact>
+      <title>行基本変形の線形性と正則性</title>
+      <p>正方行列 <m>R_{i,j,a}\in\mathbb{R}^{n\times n}</m> を単位行列の <m>(j,i)</m> 成分を <m>a\in\mathbb{R}</m> に置き換えたものと定義する。また、正方行列 <m>D_{i,a}\in\mathbb{R}^{n\times n}</m> を単位行列の <m>(i,i)</m> 成分を <m>a\in\mathbb{R}\setminus\{0\}</m> に置き換えたものと定義する。
+        つまり
+        <md>
+          <mrow>
+          R_{i,j,a}\amp={\begin{bmatrix}1\amp\amp\amp\amp\amp\amp\\\amp\ddots \amp\amp\amp\amp\amp\\\amp\amp1\amp\amp \amp\amp\\\amp\amp\amp\ddots \amp\amp\amp\\\amp\amp a\amp\amp1\amp\amp\\\amp\amp\amp\amp\amp\ddots \amp\\\amp\amp\amp\amp\amp\amp1\\\end{bmatrix}}\qquad \forall i\ne j\in\{1,\dotsc,n\}
+          </mrow>
+          <mrow>
+          D_{i,a}\amp={\begin{bmatrix}1\amp\amp\amp\amp\amp\amp\\\amp\ddots \amp\amp\amp\amp\amp\\\amp\amp1\amp\amp\amp\amp\\\amp\amp\amp a\amp\amp\amp\\\amp\amp\amp\amp1\amp\amp\\\amp\amp\amp\amp\amp\ddots \amp\\\amp\amp\amp\amp\amp\amp1\end{bmatrix}}\qquad\forall i\in\{1,\dotsc,n\},a\in\mathbb{R}\setminus\{0\}
+          </mrow>
+        </md>
+        である。
+        このとき、行基本変形の操作「<m>i</m> 行目の <m>a</m> 倍を <m>j</m> 行目に足す」は <m>R_{i,j,a}</m> を左から掛けることに等しい。
+        また、行基本変形の操作「<m>i</m> 行目を <m>a</m> 倍する」は <m>D_{i,a}</m> を左から掛けることに等しい。
+      </p>
+      <p>これらの行列は正則であり、
+        <md>
+          <mrow>R_{i,j,a}^{-1} \amp= R_{i,j,-a}</mrow>
+          <mrow>D_{i,a}^{-1} \amp= D_{i,a^{-1}}</mrow>
+        </md>
+      </p>
+      である。
+    </fact>
+    </subsection>
+    <subsection xml:id="subsec-gaussian" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>ガウスの消去法</title>
+      <p>一般的な正則行列 <m>A\in\mathbb{R}^{n\times n}</m> の逆行列の計算アルゴリズムについて考えよう。
+        行基本変形により、行列 <m>A</m> が単位行列に変化したとする。
+        このとき、ある正則行列 <m>B\in\mathbb{R}^{n\times n}</m> が存在して、
+        <md>
+          BA = I
+        </md>
+        である。
+        よって、<m>B=A^{-1}</m> である。
+        ここで、<m>A</m> を <m>I</m> に変化させる行基本変形を <m>I</m> に対して実行すれば、<m>A^{-1}</m> に変化する。
+        共通の行基本変形により
+        <md>
+          <mrow>A\amp\longmapsto I</mrow>
+          <mrow>I\amp\longmapsto A^{-1}</mrow>
+        </md>
+        ということである。
+      </p>
+      <algorithm xml:id="alg-gaussian">
+        <title>ガウスの消去法</title>
+        <p>
+        <ul>
+          <li>入力: 正方行列 <m>A\in\mathbb{R}^{n\times n}</m></li>
+          <li>出力: <m>A</m> が正則なとき、逆行列 <m>A^{-1}</m>、正則でないときは「正則でない」</li>
+        </ul>
+        </p>
+        <p>
+          アルゴリズムの疑似コード
+        </p>
+        <p>
+        <ol>
+        <li><m>A' \leftarrow \begin{bmatrix}A\amp I\end{bmatrix}</m></li>
+        <li>for <m>i=1,\dotsc,n</m> :</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/>If <m>A'_{k,i}\ne 0</m> となる <m>k\in\{i,\dotsc,n\}</m> が存在しない: return<nbsp/> 「正則でない」</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><m>k\leftarrow</m> <m>A'_{k,i}\ne 0</m> となる <m>k\in\{i,\dotsc,n\}</m></li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><m>A'</m> の <m>i</m> 行目と <m>k</m> 行目を交換 (<m>k=i</m> の場合は何もしない)</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><m>A'</m> の <m>i</m> 行目を <m>1/A'_{i,i}</m> 倍する</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i+1,\dotsc,n</m> :</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>A'</m> の <m>i</m> 行目の <m>-A'_{j,i}</m> 倍を <m>j</m> 行目に足す</li>
+        <li>for <m>i=n,\dotsc,1</m> :</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i-1,\dotsc,1</m> :</li>
+        <li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>A'</m> の <m>i</m> 行目の <m>-A'_{j,i}</m> 倍を <m>j</m> 行目に足す</li>
+        <li>return <m>A'=\begin{bmatrix}I\amp B\end{bmatrix}</m> となる <m>B</m></li>
+        </ol>
+        このアルゴリズムを<term>ガウスの消去法</term>もしくは<term>掃き出し法</term>という。また、8行目までを<term>前進消去</term>、それより後を<term>交代代入</term>という。
+        </p>
+
+      </algorithm >
+    </subsection>
   </section>
 </chapter>
