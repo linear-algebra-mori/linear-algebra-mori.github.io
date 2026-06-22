@@ -234,6 +234,8 @@
       <title>逆行列</title>
       <p>正則行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<m>A^{-1}A=I</m> を満たす行列 <m>A^{-1}\in\mathbb{R}^{n\times n}</m> を<term>逆行列</term>という。</p>
     </definition>
+    <p><m>A</m> が逆行列 <m>A^{-1}</m> を持つとき、<m>AA^{-1}=I</m> である。
+    これは線形写像として考えることで簡単に確認できる。</p>
          <exercise>
          <title>正則性の判定と逆行列の計算</title>
          <p>
@@ -244,7 +246,7 @@
            </ol>
          </p>
        </exercise>
-     <proposition>
+     <proposition xml:id="prop-reg-mul">
        <p>任意の正則行列 <m>A,B\in\mathbb{R}^{n\times n}</m> について、<m>AB</m> は正則行列であり、<m>(AB)^{-1}=B^{-1}A^{-1}</m> である。</p>
      </proposition>
      <proof>
@@ -298,20 +300,33 @@
           <mrow>R_{i,j,a}^{-1} \amp= R_{i,j,-a}</mrow>
           <mrow>D_{i,a}^{-1} \amp= D_{i,a^{-1}}</mrow>
         </md>
-      </p>
       である。
+      </p>
     </fact>
+    <proposition xml:id="prop-regular">
+      <p>
+      任意に固定された正則行列 <m>R\in\mathbb{R}^{n\times n}</m> について、
+      行列 <m>A, B\in\mathbb{R}^{n\times n}</m> が <m>A=RB</m> を満たすとき、
+      <md>
+        \text{$A$ は正則}\iff\text{$B$ は正則}.
+      </md>
+      </p>
+    </proposition>
+    <proof>
+      <p><m>\implies</m>: <m>B=R^{-1}A</m> と <xref ref="prop-reg-mul"/> より <m>B</m> は正則。</p>
+      <p><m>\impliedby</m>: <m>A=RB</m> と <xref ref="prop-reg-mul"/> より <m>A</m> は正則。</p>
+    </proof>
     </subsection>
     <subsection xml:id="subsec-gaussian" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>ガウスの消去法</title>
       <p>一般的な正則行列 <m>A\in\mathbb{R}^{n\times n}</m> の逆行列の計算アルゴリズムについて考えよう。
         行基本変形により、行列 <m>A</m> が単位行列に変化したとする。
-        このとき、ある正則行列 <m>B\in\mathbb{R}^{n\times n}</m> が存在して、
+        このとき、ある正則行列 <m>R\in\mathbb{R}^{n\times n}</m> が存在して、
         <md>
-          BA = I
+          RA = I
         </md>
         である。
-        よって、<m>B=A^{-1}</m> である。
+        よって、<m>R=A^{-1}</m> である。
         ここで、<m>A</m> を <m>I</m> に変化させる行基本変形を <m>I</m> に対して実行すれば、<m>A^{-1}</m> に変化する。
         共通の行基本変形により
         <md>
@@ -325,7 +340,7 @@
         <p>
         <ul>
           <li>入力: 正方行列 <m>A\in\mathbb{R}^{n\times n}</m></li>
-          <li>出力: <m>A</m> が正則なとき、逆行列 <m>A^{-1}</m>、正則でないときは「正則でない」</li>
+          <li>出力: <m>A</m> が正則であるとき、逆行列 <m>A^{-1}</m>、正則でないときは「正則でない」</li>
         </ul>
         </p>
         <p>
@@ -344,12 +359,49 @@
         <li>for <m>i=n,\dotsc,1</m> :</li>
         <li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>j=i-1,\dotsc,1</m> :</li>
         <li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>A'</m> の <m>i</m> 行目の <m>-A'_{j,i}</m> 倍を <m>j</m> 行目に足す</li>
-        <li>return <m>A'=\begin{bmatrix}I\amp B\end{bmatrix}</m> となる <m>B</m></li>
+        <li>return <m>A'=\begin{bmatrix}I\amp R\end{bmatrix}</m> となる <m>R</m></li>
         </ol>
         このアルゴリズムを<term>ガウスの消去法</term>もしくは<term>掃き出し法</term>という。また、8行目までを<term>前進消去</term>、それより後を<term>交代代入</term>という。
         </p>
 
-      </algorithm >
+      </algorithm>
+      <proof>
+        <p>
+        アルゴリズムが行列 <m>R</m> を出力したとき、<m>R=A^{-1}</m> であることは明らか。
+        アルゴリズムが「正則でない」と出力したとき、<m>A</m> が非正則であることを証明する。
+        </p>
+        <p>
+        アルゴリズムが <m>\ell</m> ステップ目で「正則でない」と出力したと仮定する。
+        この時点の <m>A'</m> とすべての <m>i\in\{1,\dotsc,\ell-1\}</m> について、
+        <md>
+          A'_{i,j} = 0 \qquad\forall j\in\{\ell,\dotsc,n\}
+        </md>
+        である。
+        よって、<m>A'</m> の1列目から <m>\ell</m> 列目は線形従属である。
+        したがって、<m>A'</m> は正則ではないが、<xref ref="prop-regular"/> より、<m>A</m> も正則ではない。
+        </p>
+      </proof>
     </subsection>
+         <exercise>
+         <title>ガウスの消去法による逆行列の計算</title>
+         <p>
+           以下の行列について正則であるかどうか判定せよ。正則である場合は逆行列をもとめよ。
+           <ol>
+             <li><m>\begin{bmatrix}
+               1\amp2\amp0\\
+               0\amp1\amp3\\
+               2\amp-1\amp1\\
+               \end{bmatrix}
+               </m></li>
+             <li><m>\begin{bmatrix}
+               1\amp1\amp1\amp1\\
+               1\amp-1\amp1\amp-1\\
+               1\amp1\amp-1\amp-1\\
+               1\amp-1\amp-1\amp1\\
+               \end{bmatrix}
+               </m></li>
+           </ol>
+         </p>
+       </exercise>
   </section>
 </chapter>
