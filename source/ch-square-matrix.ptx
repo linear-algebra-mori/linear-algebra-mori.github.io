@@ -196,7 +196,9 @@
       </p>
     </lemma>
     <proof>
-      <p><m>1\implies 2</m>: ある <m>a_1,\dotsc,a_n\in\mathbb{R}</m> が存在して
+      <p><m>1\implies 2</m>: 自明。
+      </p>
+      <p><m>2\implies 3</m>: ある <m>a_1,\dotsc,a_n\in\mathbb{R}</m> が存在して
       <md>
         a_1f(\bm{v}_1)+\dotsb+a_nf(\bm{v}_n)=\bm{0}
       </md>
@@ -232,7 +234,7 @@
     </definition>
     <definition xml:id="def-inverse">
       <title>逆行列</title>
-      <p>正則行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<m>A^{-1}A=I</m> を満たす行列 <m>A^{-1}\in\mathbb{R}^{n\times n}</m> を<term>逆行列</term>という。</p>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<m>A^{-1}A=I</m> を満たす行列 <m>A^{-1}\in\mathbb{R}^{n\times n}</m> を <term><m>A</m> の逆行列</term>という。</p>
     </definition>
     <p><m>A</m> が逆行列 <m>A^{-1}</m> を持つとき、<m>AA^{-1}=I</m> である。
     これは線形写像として考えることで簡単に確認できる。</p>
@@ -254,6 +256,7 @@
          (B^{-1}A^{-1})(AB) = B^{-1}(A^{-1}A) B = B^{-1} I B = B^{-1}B = I.
        </md>
      </proof>
+   <p>また、自明に <m>(A^{-1})^{-1}=A</m> である。</p>
 
   </subsection>
   </section>
@@ -403,5 +406,8 @@
            </ol>
          </p>
        </exercise>
+     <corollary>
+       <p>任意の正則行列は <m>R_{i,j,a}</m> と <m>D_{i,a}</m> の積として表される。</p>
+     </corollary>
   </section>
 </chapter>
