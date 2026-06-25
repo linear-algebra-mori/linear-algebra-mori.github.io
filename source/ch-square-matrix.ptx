@@ -384,7 +384,6 @@
         したがって、<m>A'</m> は正則ではないが、<xref ref="prop-regular"/> より、<m>A</m> も正則ではない。
         </p>
       </proof>
-    </subsection>
          <exercise>
          <title>ガウスの消去法による逆行列の計算</title>
          <p>
@@ -409,5 +408,39 @@
      <corollary>
        <p>任意の正則行列は <m>R_{i,j,a}</m> と <m>D_{i,a}</m> の積として表される。</p>
      </corollary>
+    </subsection>
+    <subsection xml:id="subsec-matrix-rep" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>線形写像の行列表現</title>
+      <p>線形写像
+      <md>
+        f(\bm{v}_i)=\bm{a}_i\qquad\forall i\in\{1,\dotsc,n\}
+      </md>
+      の行列表現について考えよう。
+      <md>
+        <mrow>g(\bm{e}_i)=\bm{v}_i\qquad\forall i\in\{1,\dotsc,n\}</mrow>
+        <mrow>h(\bm{e}_i)=\bm{a}_i\qquad\forall i\in\{1,\dotsc,n\}</mrow>
+      </md>
+      とおくと、
+      <md>
+        f\circ g = h
+      </md>
+      である。
+      したがって
+      <md>
+        A_f A_g = A_h
+      </md>
+      である。
+      ここで、
+      <md>
+        <mrow>A_g=\begin{bmatrix}\bm{v}_1\amp\cdots\amp\bm{v}_n\end{bmatrix}</mrow>
+        <mrow>A_h=\begin{bmatrix}\bm{a}_1\amp\cdots\amp\bm{a}_n\end{bmatrix}</mrow>
+      </md>
+      であり <m>A_g</m> は正則なので、
+      <md>
+        A_f = A_h A_g^{-1}
+      </md>
+      である。
+      </p>
+    </subsection>
   </section>
 </chapter>
