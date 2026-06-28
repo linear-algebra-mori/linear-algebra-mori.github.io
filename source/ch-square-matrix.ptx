@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-squre-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>正則行列と基底の変換</title>
+  <title>正則行列</title>
 
 
   <section xml:id="sec-square-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -411,7 +411,7 @@
     </subsection>
     <subsection xml:id="subsec-matrix-rep" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>線形写像の行列表現</title>
-      <p>線形写像
+      <p><xref ref="subsec-matrix-basis"/>で考えた線形写像
       <md>
         f(\bm{v}_i)=\bm{a}_i\qquad\forall i\in\{1,\dotsc,n\}
       </md>
