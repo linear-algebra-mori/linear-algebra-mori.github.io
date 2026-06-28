@@ -2,6 +2,190 @@
 
 <chapter xml:id="ch-lin-eq" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>線形方程式とその解法</title>
+  <section xml:id="sec-im-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形写像の像と核</title>
+       <subsection xml:id="subsec-im-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
+       <title>線形写像と行列の像</title>
+       <definition>
+       <title>線形写像と行列の像</title>
+       <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> の<term>像(イメージ)</term>を
+       <md>
+         \mathrm{Im}(f)\coloneqq \{f(\bm{v})\mid\bm{v}\in\mathbb{R}^m\}
+       </md>
+       と定義する。</p>
+       <p>同様に行列 <m>A\in\mathbb{R}^{n\times m}</m> の<term>像(イメージ)</term>を
+       <md>
+         \mathrm{Im}(A)\coloneqq \{A\bm{v}\mid\bm{v}\in\mathbb{R}^m\}
+       </md>
+       と定義する。</p>
+       </definition>
+       <lemma xml:id="lem-im-span">
+       <p>任意の線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の任意の基底 <m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> について、
+       <md>
+         \mathrm{Im}(f) = \mathrm{span}(f(\bm{v}_1),\dotsc,f(\bm{v}_m))
+       </md>
+       である。
+       </p>
+       </lemma>
+       <proof>
+         <p><m>\supseteq</m>:
+           <md>
+             a_1f(\bm{v}_1)+\dotsb+a_mf(\bm{v}_m) = f(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m) \in\mathrm{Im}(f)
+           </md>
+         </p>
+         <p><m>\subseteq</m>:
+           任意の <m>\bm{v}\in\mathbb{R}^m</m> について、<m>a_1,\dotsc,a_m</m> が存在して
+           <md>
+             \bm{v} = a_1\bm{v}_1+\dotsb+a_m\bm{v}_m
+           </md>
+           である。
+           したがって、
+           <md>
+             <mrow>f(\bm{v}) \amp= f(a_1\bm{v}_1+\dotsb+a_m\bm{v}_m)</mrow>
+             <mrow>\amp= a_1f(\bm{v}_1)+\dotsb+a_mf(\bm{v}_m)\in\mathrm{span}(f(\bm{v}_1),\dotsc,f(\bm{v}_m))</mrow>
+           </md>
+         </p>
+       </proof>
+       <corollary xml:id="cor-im-span">
+       <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、
+       <md>
+         \mathrm{Im}(A) = \mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+       </md>
+       である。
+       </p>
+       </corollary>
+       <p><xref ref="lem-im-span"/>より、<m>\mathrm{Im}(f)</m> が線形空間であることが分かる。</p>
+     <!--
+       <lemma>
+       <p>任意の線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の任意の基底 <m>\{\bm{v}_1,\dotsc,\bm{v}_m\}</m> について以下は同値。
+       <ol>
+         <li><m>f</m> が単射</li>
+         <li><m>f(\bm{v}_1),\dotsc,f(\bm{v}_m)</m> が線形独立</li>
+       </ol>
+       </p>
+       </lemma>
+     <proof>
+     </proof>
+     -->
+    <definition>
+       <title>線形写像と行列のランク</title>
+       <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> の<term>ランク</term>を
+          <md>
+            \mathrm{rank}(f) \coloneqq \dim \mathrm{Im}(f)
+          </md>
+        と定義する。
+        </p>
+        <p>同様に行列 <m>A\in\mathbb{R}^{n\times m}</m> の<term>ランク</term>を
+          <md>
+            \mathrm{rank}(A) \coloneqq \dim \mathrm{Im}(A)
+          </md>
+          と定義する。
+        </p>
+    </definition>
+       <p>また、<m>f</m> が全射であることは <m>\mathrm{rank}(f)=n</m> と等価である。</p>
+     </subsection>
+     <subsection xml:id="subsec-ker-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
+       <title>線形写像と行列の核</title>
+    <definition>
+       <title>線形写像と行列の核</title>
+      <statement>
+       <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> の<term>核(カーネル)</term>を
+          <md>
+            \mathrm{Ker}(f) \coloneqq\left\{\bm{v}\mid f(\bm{v})=\bm{0}\right\}\subseteq\mathbb{R}^m
+          </md>
+        と定義する。
+        </p>
+        <p>同様に行列 <m>A\in\mathbb{R}^{n\times m}</m> の<term>核(カーネル)</term>を
+          <md>
+            \mathrm{Ker}(A) \coloneqq\left\{\bm{v}\mid A\bm{v}=\bm{0}\right\}\subseteq\mathbb{R}^m
+          </md>
+          と定義する。
+        </p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、<m>\mathrm{Ker}(A)</m> は線形空間である。</p>
+      </statement>
+      <proof>
+        <p>任意の <m>\bm{v}\in\mathrm{Ker}(A)</m> について、<m>A(c\bm{v})=cA\bm{v}=\bm{0}</m> なので、<m>c\bm{v}\in\mathrm{Ker}(A)</m> である。
+        </p>
+        <p>任意の <m>\bm{v}_0,\bm{v}_1\in\mathrm{Ker}(A)</m> について、<m>A(\bm{v}_0+\bm{v}_1)=A\bm{v}_0+A\bm{v}_1=\bm{0}+\bm{0}=\bm{0}</m> なので、<m>\bm{v}_0+\bm{v}_1\in\mathrm{Ker}(A)</m> である。
+        </p>
+      </proof>
+    </proposition>
+
+    <lemma>
+    <statement>
+      <p>線形写像 <m>A\in\mathbb{R}^{n\times m}</m> が単射 <m>\iff\mathrm{Ker}(A)=\{\bm{0}\}</m>。</p>
+    </statement>
+    <proof>
+<p><m>\Longrightarrow</m> は自明。</p>
+<p><m>\Longleftarrow</m> を示す。
+<m>A\bm{v}_1=A\bm{v}_2</m> とすると、<m>A(\bm{v}_1-\bm{v}_2)=\bm{0}</m> よって、<m>\bm{v}_1-\bm{v}_2\in\mathrm{Ker}(A)</m> である。仮定より、<m>\bm{v}_1-\bm{v}_2=\bm{0}</m> なので、<m>\bm{v}_1=\bm{v}_2</m> であり、<m>A</m> は単射である。</p>
+    </proof>
+    </lemma>
+    </subsection>
+
+     <subsection xml:id="subsec-im-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>線型写像の基本定理</title>
+    <theorem>
+      <title>線型写像の基本定理</title>
+      <statement>
+        <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、
+        <md>
+          m = \dim\mathrm{Im}(A) + \dim\mathrm{Ker}(A)
+        </md>
+        </p>
+      </statement>
+      <proof>
+      <p><m>\bm{u}_1,\dotsc,\bm{u}_k\in\mathrm{Ker}(A)</m> を <m>\mathrm{Ker}(A)</m> の基底とする。
+<xref ref="lem-basis-ext"/>より、ベクトル <m>\bm{v}_1,\dotsc,\bm{v}_{m-k}\in \mathbb{R}^m</m> を追加して <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{m-k}</m> が <m>\mathbb{R}^m</m> の基底となるようにできる。
+このとき、 <m>\dim \mathrm{Im}(A)=m-k</m> を示せばよい。
+以下では <m>A\bm{v}_1,\dotsc, A\bm{v}_{m-k}</m> が <m>\mathrm{Im}(A)</m> の基底であることを示す。
+
+任意の <m>\bm{v}\in \mathbb{R}^m</m> について、 <m>c_1,\dotsc,c_{m}\in \mathbb{R}</m> が一意に存在して
+<md>
+\bm{v} = c_1\bm{u}_1+\dotsb c_k\bm{u}_k + c_{k+1}\bm{v}_1 + \dotsb c_{m}\bm{v}_{m-k}
+</md>
+を満たす。
+このとき、
+<md>
+<mrow>A\bm{v} \amp= c_1A\bm{u}_1+\dotsb c_kA\bm{u}_k + c_{k+1}A\bm{v}_1 + \dotsb c_{m}A\bm{v}_{m-k}</mrow>
+<mrow>\amp= c_{k+1}A\bm{v}_1 + \dotsb c_{m}A\bm{v}_{m-k}\in\mathrm{span}(A\bm{v}_1,\dotsc,A\bm{v}_{m-k})</mrow>
+</md>
+である。
+よって、 <m>\mathrm{Im}(A) = \mathrm{span}(A\bm{v}_1,\dotsc,A\bm{v}_{m-k})</m> である。
+</p>
+
+<p>
+次に <m>A\bm{v}_1,\dotsc,A\bm{v}_{m-k}</m> が線形独立であることを示す。
+ある <m>c_1,\dotsc,c_{m-k}\in \mathbb{R}</m> について
+<md>
+c_1A\bm{v}_1+\dotsb +c_{m-k}A\bm{v}_{m-k}=\bm{0}
+</md>
+であると仮定する。
+このとき、
+<md>
+A(c_1\bm{v}_1+\dotsb +c_{m-k}\bm{v}_{m-k})=\bm{0}
+</md>
+より
+ <m>c_1\bm{v}_1+\dotsb +c_{m-k}\bm{v}_{m-k}\in\mathrm{Ker}(A)</m> であるので、
+ある <m>d_1,\dotsc,d_m\in \mathbb{R}</m> が存在し、
+<md>
+c_1\bm{v}_1+\dotsb +c_{m-k}\bm{v}_{m-k}=
+d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
+</md>
+である。
+このとき、 <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{m-k}</m> の線形独立性より <m>c_1=\dotsb=c_{m-k}=d_1=\dotsb=d_{k}=0</m> である。
+よって <m>A\bm{v}_1,\dotsc,A\bm{v}_{m-k}</m> は線形独立である。
+
+よって <m>A\bm{v}_1,\dotsc,A\bm{v}_{m-k}</m> は <m>\mathrm{Im}(A)</m> の基底であり、この次元は <m>m-k</m> であることが示された。
+</p>
+      </proof>
+    </theorem>
+     </subsection>
+  </section>
   <section xml:id="sec-lin-eq" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>線形方程式</title>
     <definition>
@@ -67,96 +251,6 @@
     </p>
   </section>
   <section xml:id="sec-img-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>行列の核と線形方程式の解</title>
-    <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> で定まる斉次方程式の解集合を行列の核という。</p>
-    <definition>
-      <title>線形写像の核</title>
-      <statement>
-        <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> について、
-          <md>
-            \mathrm{Ker}(A) \coloneqq\left\{\bm{v}\mid A\bm{v}=\bm{0}\right\}\subseteq\mathbb{R}^m
-          </md>
-          を <term><m>A</m> の核もしくはカーネル</term>という。
-        </p>
-      </statement>
-    </definition>
-    <proposition>
-      <statement>
-        <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、<m>\mathrm{Ker}(A)</m> は線形空間である。</p>
-      </statement>
-      <proof>
-        <p>任意の <m>\bm{v}\in\mathrm{Ker}(A)</m> について、<m>A(c\bm{v})=cA\bm{v}=\bm{0}</m> なので、<m>c\bm{v}\in\mathrm{Ker}(A)</m> である。
-        </p>
-        <p>任意の <m>\bm{v}_0,\bm{v}_1\in\mathrm{Ker}(A)</m> について、<m>A(\bm{v}_0+\bm{v}_1)=A\bm{v}_0+A\bm{v}_1=\bm{0}+\bm{0}=\bm{0}</m> なので、<m>\bm{v}_0+\bm{v}_1\in\mathrm{Ker}(A)</m> である。
-        </p>
-      </proof>
-    </proposition>
-
-    <lemma>
-    <statement>
-      <p>線形写像 <m>A\in\mathbb{R}^{n\times m}</m> が単射 <m>\iff\mathrm{Ker}(A)=\{\bm{0}\}</m>。</p>
-    </statement>
-    <proof>
-<p><m>\Longrightarrow</m> は自明。</p>
-<p><m>\Longleftarrow</m> を示す。
-<m>A\bm{v}_1=A\bm{v}_2</m> とすると、<m>A(\bm{v}_1-\bm{v}_2)=\bm{0}</m> よって、<m>\bm{v}_1-\bm{v}_2\in\mathrm{Ker}(A)</m> である。仮定より、<m>\bm{v}_1-\bm{v}_2=\bm{0}</m> なので、<m>\bm{v}_1=\bm{v}_2</m> であり、<m>A</m> は単射である。</p>
-    </proof>
-    </lemma>
-
-    <theorem>
-      <title>線型写像の基本定理</title>
-      <statement>
-        <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、
-        <md>
-          m = \dim\mathrm{Im}(A) + \dim\mathrm{Ker}(A)
-        </md>
-        </p>
-      </statement>
-      <proof>
-      <!--
-      <p><m>\bm{u}_1,\dotsc,\bm{u}_m\in\mathrm{Ker}(T)</m> を<m>\mathrm{Ker}(T)</m> の基底とする。
-補題~\ref{lem:ext}より、ベクトル$\bm{v}_1,\dotsc,\bm{v}_n\in V$を追加して$\bm{u}_1,\dotsc,\bm{u}_m,\bm{v}_1,\dotsc,\bm{v}_n$が$V$の基底となるようにできる。
-このとき、$\dim V = n+m$、$\dim \mathrm{Ker}(T) = m$なので、$\dim \mathrm{Im}(T)=n$を示せばよい。
-以下では$(T\bm{v}_i)_{i\in\{1,\dotsc,n\}}$が$\mathrm{Im}(T)$の基底であることを示す。
-
-任意の$\bm{v}\in V$について、$c_1,\dotsc,c_{n+m}\in F$が一意に存在して
-\begin{align*}
-\bm{v} &= c_1\bm{u}_1+\dotsb c_m\bm{u}_m + c_{m+1}\bm{v}_1 + \dotsb c_{n+m}\bm{v}_n
-\end{align*}
-を満たす。
-このとき、
-\begin{align*}
-T\bm{v} &= c_1T\bm{u}_1+\dotsb c_mT\bm{u}_m + c_{m+1}T\bm{v}_1 + \dotsb c_{n+m}T\bm{v}_n\\
-&= c_{m+1}T\bm{v}_1 + \dotsb c_{n+m}T\bm{v}_n\in\mathrm{span}(T\bm{v}_1,\dotsc,T\bm{v}_n)
-\end{align*}
-である。
-よって、$\mathrm{Im}(T) = \mathrm{span}(T\bm{v}_1,\dotsc,T\bm{v}_n)$である。
-
-次に$(T\bm{v}_i)$が線形独立であることを示す。
-ある$c_1,\dotsc,c_n\in F$について
-\begin{align*}
-c_1T\bm{v}_1+\dotsb +c_nT\bm{v}_n=\bm{0}
-\end{align*}
-であると仮定する。
-このとき、
-\begin{align*}
-T(c_1\bm{v}_1+\dotsb +c_n\bm{v}_n)=\bm{0}
-\end{align*}
-より
-$c_1\bm{v}_1+\dotsb +c_n\bm{v}_n\in\mathrm{Ker}(T)$であるので、
-ある$d_1,\dotsc,d_m\in F$が存在し、
-\begin{align*}
-c_1\bm{v}_1+\dotsb +c_n\bm{v}_n=
-d_1\bm{u}_1+\dotsb +d_m\bm{u}_m
-\end{align*}
-である。
-このとき、$\bm{u}_1,\dotsc,\bm{u}_m,\bm{v}_1,\dotsc,\bm{v}_n$の線形独立性より$c_1=\dotsb=c_n=d_1=\dotsb=d_m=0$である。
-よって$(T\bm{v}_i)$は線形独立である。
-
-よって$(T\bm{v}_i)$は$\mathrm{Im}(T)$の基底であり、この次元は$n$であることが示された。
--->
-      </proof>
-    </theorem>
 
     <p>非斉次方程式の解を斉次方程式の解を用いて表すことができる。</p>
     <proposition>
