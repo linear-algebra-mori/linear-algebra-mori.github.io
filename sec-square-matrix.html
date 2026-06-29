@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.4';
+eBookConfig.runestone_version = '8.1.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d1480f934b51d4ec.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.fa61545fa3ffbf2f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<script src="_static/prefix-runtime.53a23d1b65c1dce2.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.4787412a251795e3.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -267,13 +267,14 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-squre-matrix.html" class="internal"><span class="codenumber">5</span> <span class="title">正則行列と基底の変換</span></a></div>
+<div class="toc-title-box"><a href="ch-squre-matrix.html" class="internal"><span class="codenumber">5</span> <span class="title">正則行列</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-square-matrix.html" class="internal"><span class="codenumber">5.1</span> <span class="title">正則行列</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-square-matrix.html#subsec-matrix-basis" class="internal"><span class="codenumber">5.1.1</span> <span class="title">基底と線形写像</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-square-matrix.html#subsec-invertible-matrix" class="internal"><span class="codenumber">5.1.2</span> <span class="title">正則な線形変換と正則行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-square-matrix.html#subsec-matrix-rep" class="internal"><span class="codenumber">5.1.3</span> <span class="title">線形写像の行列表現</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -288,8 +289,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-lin-eq.html" class="internal"><span class="codenumber">6</span> <span class="title">線形方程式とその解法</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">6.1</span> <span class="title">線形方程式</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-img-ker.html" class="internal"><span class="codenumber">6.2</span> <span class="title">行列の核と線形方程式の解</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-im-ker.html" class="internal"><span class="codenumber">6.1</span> <span class="title">線形写像の像と核</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-im-ker.html#subsec-im-linear" class="internal"><span class="codenumber">6.1.1</span> <span class="title">線形写像と行列の像</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-im-ker.html#subsec-ker-linear" class="internal"><span class="codenumber">6.1.2</span> <span class="title">線形写像と行列の核</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-im-ker.html#subsec-im-ker" class="internal"><span class="codenumber">6.1.3</span> <span class="title">線型写像の基本定理</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lin-eq.html" class="internal"><span class="codenumber">6.2</span> <span class="title">線形方程式</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">6.3</span> <span class="title">ガウスの消去法</span></a></div></li>
 </ul>
 </li>
@@ -502,6 +510,56 @@ g(f(\bm{v}_i)) \coloneqq \bm{v}_i\qquad\forall i\in\{1,\dotsc,n\}
 <div class="para" id="subsec-invertible-matrix-13">また、自明に <span class="process-math">\((A^{-1})^{-1}=A\)</span> である。<div class="autopermalink" data-description="Paragraph"><a href="#subsec-invertible-matrix-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 5.1.2: 正則な線形変換と正則行列"><a href="#subsec-invertible-matrix" title="Copy heading and permalink for Subsection 5.1.2: 正則な線形変換と正則行列" aria-label="Copy heading and permalink for Subsection 5.1.2: 正則な線形変換と正則行列">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-matrix-rep">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線形写像の行列表現</span>
+</h3>
+<div class="para logical" id="subsec-matrix-rep-2">
+<div class="para">
+<a href="sec-square-matrix.html#subsec-matrix-basis" class="internal" title="Subsection 5.1.1: 基底と線形写像">Subsection 5.1.1</a>で考えた線形写像 <span class="process-math">\(f\colon\mathbb{R}^m\to\mathbb{R}^n\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-matrix-basis.html" id="subsec-matrix-rep-2-3">
+\begin{equation*}
+f(\bm{v}_i)=\bm{a}_i\qquad\forall i\in\{1,\dotsc,m\}
+\end{equation*}
+</div>
+<div class="para">の行列表現について考えよう。</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-matrix-basis.html" id="subsec-matrix-rep-2-4">
+\begin{gather*}
+g(\bm{e}_i)=\bm{v}_i\qquad\forall i\in\{1,\dotsc,m\}\\
+h(\bm{e}_i)=\bm{a}_i\qquad\forall i\in\{1,\dotsc,m\}
+\end{gather*}
+</div>
+<div class="para">とおくと、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-matrix-basis.html" id="subsec-matrix-rep-2-5">
+\begin{equation*}
+f\circ g = h
+\end{equation*}
+</div>
+<div class="para">である。 したがって</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-matrix-basis.html" id="subsec-matrix-rep-2-6">
+\begin{equation*}
+A_f A_g = A_h
+\end{equation*}
+</div>
+<div class="para">である。 ここで、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-matrix-basis.html" id="subsec-matrix-rep-2-7">
+\begin{align*}
+A_g=\begin{bmatrix}\bm{v}_1\amp\cdots\amp\bm{v}_n\end{bmatrix}\\
+A_h=\begin{bmatrix}\bm{a}_1\amp\cdots\amp\bm{a}_n\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">であり <span class="process-math">\(A_g\)</span> は正則なので、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-matrix-basis.html" id="subsec-matrix-rep-2-9">
+\begin{equation*}
+A_f = A_h A_g^{-1}
+\end{equation*}
+</div>
+<div class="para">である。</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-rep-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 5.1.3: 線形写像の行列表現"><a href="#subsec-matrix-rep" title="Copy heading and permalink for Subsection 5.1.3: 線形写像の行列表現" aria-label="Copy heading and permalink for Subsection 5.1.3: 線形写像の行列表現">🔗</a></div>
 </section><div class="autopermalink" data-description="Section 5.1: 正則行列"><a href="#sec-square-matrix" title="Copy heading and permalink for Section 5.1: 正則行列" aria-label="Copy heading and permalink for Section 5.1: 正則行列">🔗</a></div>
 </section>
 </div>
