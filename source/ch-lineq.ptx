@@ -47,7 +47,7 @@
          </p>
        </proof>
        <corollary xml:id="cor-im-span">
-       <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、
+       <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、<m>A</m> の <m>i\in\{1,\dotsc,m\}</m> 列目を <m>\bm{a}_i</m> とおくと
        <md>
          \mathrm{Im}(A) = \mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
        </md>
@@ -83,6 +83,10 @@
         </p>
     </definition>
        <p>また、<m>f</m> が全射であることは <m>\mathrm{rank}(f)=n</m> と等価である。</p>
+    <fact>
+      <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> は <m>n \gt m</m> のとき全射ではない。
+        </p>
+    </fact>
      </subsection>
      <subsection xml:id="subsec-ker-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
        <title>線形写像と行列の核</title>
@@ -117,12 +121,12 @@
 
     <lemma>
     <statement>
-      <p>線形写像 <m>A\in\mathbb{R}^{n\times m}</m> が単射 <m>\iff\mathrm{Ker}(A)=\{\bm{0}\}</m>。</p>
+      <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> が単射 <m>\iff\mathrm{Ker}(f)=\{\bm{0}\}</m>。</p>
     </statement>
     <proof>
 <p><m>\Longrightarrow</m> は自明。</p>
 <p><m>\Longleftarrow</m> を示す。
-<m>A\bm{v}_1=A\bm{v}_2</m> とすると、<m>A(\bm{v}_1-\bm{v}_2)=\bm{0}</m> よって、<m>\bm{v}_1-\bm{v}_2\in\mathrm{Ker}(A)</m> である。仮定より、<m>\bm{v}_1-\bm{v}_2=\bm{0}</m> なので、<m>\bm{v}_1=\bm{v}_2</m> であり、<m>A</m> は単射である。</p>
+<m>f(\bm{v}_1)=f(\bm{v}_2)</m> とすると、<m>f(\bm{v}_1-\bm{v}_2)=\bm{0}</m> よって、<m>\bm{v}_1-\bm{v}_2\in\mathrm{Ker}(f)</m> である。仮定より、<m>\bm{v}_1-\bm{v}_2=\bm{0}</m> なので、<m>\bm{v}_1=\bm{v}_2</m> であり、<m>f</m> は単射である。</p>
     </proof>
     </lemma>
     </subsection>
@@ -144,18 +148,12 @@
 このとき、 <m>\dim \mathrm{Im}(A)=m-k</m> を示せばよい。
 以下では <m>A\bm{v}_1,\dotsc, A\bm{v}_{m-k}</m> が <m>\mathrm{Im}(A)</m> の基底であることを示す。
 
-任意の <m>\bm{v}\in \mathbb{R}^m</m> について、 <m>c_1,\dotsc,c_{m}\in \mathbb{R}</m> が一意に存在して
+<xref ref="lem-im-span"/>より
 <md>
-\bm{v} = c_1\bm{u}_1+\dotsb c_k\bm{u}_k + c_{k+1}\bm{v}_1 + \dotsb c_{m}\bm{v}_{m-k}
+  <mrow>\mathrm{Im}(A)\amp=\mathrm{span}(A\bm{u}_1,\dotsc,A\bm{u}_k,A\bm{v}_1,\dotsc,A\bm{v}_{m-k})</mrow>
+  <mrow>\amp=\mathrm{span}(A\bm{v}_1,\dotsc,A\bm{v}_{m-k})</mrow>
 </md>
-を満たす。
-このとき、
-<md>
-<mrow>A\bm{v} \amp= c_1A\bm{u}_1+\dotsb c_kA\bm{u}_k + c_{k+1}A\bm{v}_1 + \dotsb c_{m}A\bm{v}_{m-k}</mrow>
-<mrow>\amp= c_{k+1}A\bm{v}_1 + \dotsb c_{m}A\bm{v}_{m-k}\in\mathrm{span}(A\bm{v}_1,\dotsc,A\bm{v}_{m-k})</mrow>
-</md>
-である。
-よって、 <m>\mathrm{Im}(A) = \mathrm{span}(A\bm{v}_1,\dotsc,A\bm{v}_{m-k})</m> である。
+したがって、<m>A\bm{v}_1,\dotsc, A\bm{v}_{m-k}</m> は <m>\mathrm{Im}(A)</m> の生成系である。
 </p>
 
 <p>
@@ -180,10 +178,14 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
 このとき、 <m>\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{m-k}</m> の線形独立性より <m>c_1=\dotsb=c_{m-k}=d_1=\dotsb=d_{k}=0</m> である。
 よって <m>A\bm{v}_1,\dotsc,A\bm{v}_{m-k}</m> は線形独立である。
 
-よって <m>A\bm{v}_1,\dotsc,A\bm{v}_{m-k}</m> は <m>\mathrm{Im}(A)</m> の基底であり、この次元は <m>m-k</m> であることが示された。
+したがって <m>A\bm{v}_1,\dotsc,A\bm{v}_{m-k}</m> は <m>\mathrm{Im}(A)</m> の基底であり、この次元は <m>m-k</m> であることが示された。
 </p>
       </proof>
     </theorem>
+    <corollary>
+      <p>線形写像 <m>f\colon\mathbb{R}^m\to\mathbb{R}^n</m> は <m>n \lt m</m> のとき単射ではない。
+        </p>
+    </corollary>
      </subsection>
   </section>
   <section xml:id="sec-lin-eq" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -202,6 +204,7 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
         </p>
       </statement>
     </definition>
+  <!--
     <definition>
       <title>線形写像の像</title>
       <statement>
@@ -242,15 +245,18 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
         </p>
       </proof>
     </lemma>
-    <p>したがって、
+    -->
+    <p>
       <md>A\bm{x}=\bm{b} \text{ が解を持つ} \iff \bm{b}\in\mathrm{Im}(A) \iff \bm{b}\in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
       </md>
       が成り立つ。
       よって<xref ref="fact-mem-span"/>で線形方程式の解の存在判定ができる。
       以降は具体的に線形方程式の解を発見する方法について考える。
     </p>
+  <!--
   </section>
   <section xml:id="sec-img-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
+  -->
 
     <p>非斉次方程式の解を斉次方程式の解を用いて表すことができる。</p>
     <proposition>
