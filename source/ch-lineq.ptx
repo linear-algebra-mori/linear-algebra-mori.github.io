@@ -258,7 +258,7 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
   <section xml:id="sec-img-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
   -->
 
-    <p>非斉次方程式の解を斉次方程式の解を用いて表すことができる。</p>
+    <p>斉次方程式の解集合は <m>\mathrm{Ker}(A)</m> に他ならない。非斉次方程式の解を斉次方程式の解を用いて表すことができる。</p>
     <proposition>
       <statement>
         <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> と <m>b\in\mathbb{R}^n</m> について、線形方程式 <m>A\bm{x}=\bm{b}</m> がある解 <m>\bm{x}^*\in\mathbb{R}^m</m> を持つとする。
@@ -297,6 +297,42 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
   </section>
   <section xml:id="sec-gauss" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>ガウスの消去法</title>
+    <subsection xml:id="subsec-invertible-lineq" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>正則行列と等価な線形方程式</title>
+      <p>線形方程式
+      <md number="yes" xml:id="eq-Axb">
+        A\bm{x}=\bm{b}
+      </md>
+      の両辺に左から正則行列 <m>G\in\mathbb{R}^{n\times n}</m> を掛けることで
+      <md number="yes" xml:id="eq-GAxGb">
+        GA\bm{x}=G\bm{b}
+      </md>
+      という線形方程式を得る。
+      よって、<xref ref="eq-Axb"/> の解は <xref ref="eq-GAxGb"/> の解である。
+      一方で <m>G</m> は正則であるので、<xref ref="eq-GAxGb"/> の両辺に左から <m>G^{-1}</m> を掛けることで、<xref ref="eq-Axb"/> を得る。
+      したがって、<xref ref="eq-GAxGb"/> の解は <xref ref="eq-Axb"/> の解であり、二つの線形方程式の解集合は等しい。
+      線形方程式 <xref ref="eq-Axb"/> を解くために、左から正則な行列 <m>G</m> を掛けることでより解き易い線形方程式 <xref ref="eq-GAxGb"/> を得ることを目標とする。
+      </p>
+    </subsection>
+    <subsection xml:id="subsec-row-lineq" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行基本変形と行階段簡約形</title>
+      <p>
+        左から正則な行列を掛けることと行基本変形することは等価であった。
+        行基本変形を用いて、与えられた行列 <m>A\in\mathbb{R}^{n\times m}</m> を性質のよい行列 <m>B\in\mathbb{R}^{n\times m}</m> に変形することを考える。この行列 <m>B</m> は前節の <m>GA</m> に当たるものである。
+      </p>
+      <definition>
+        <title>行階段形と行階段簡約形</title>
+        <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> が行基本変形で行列 <m>B\in\mathbb{R}^{n\times m}</m> に変形できるとする。
+          このとき、<m>B</m> が <term><m>A</m> の行階段形</term> <m>\defiff</m>
+          各 <m>i\in\{1,\dotsc,n\}</m> について <m>j_i\in\{1,\dotsc,m\}</m> が存在し、
+          <ul>
+            <li>ある <m>k\in\{\}</m> すべて0の行より下にすべて0ではない行が現れない。</li>
+            <li><m>j_1\lt j_2\lt\dotsb\lt j_n</m> である。</li>
+            <li>任意の <m>i\in\{1,\dotsc,n\}</m> と <m>j\in\{1,\dotsc,j_i-1\}</m> について、<m>(i, j)</m> 成分は 0 である。</li>
+          </ul>
+        </p>
+      </definition>
+    </subsection>
   </section>
 </chapter>
 
