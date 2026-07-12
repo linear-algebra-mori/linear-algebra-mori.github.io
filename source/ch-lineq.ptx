@@ -324,12 +324,19 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
         <title>行階段形と行階段簡約形</title>
         <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> が行基本変形で行列 <m>B\in\mathbb{R}^{n\times m}</m> に変形できるとする。
           このとき、<m>B</m> が <term><m>A</m> の行階段形</term> <m>\defiff</m>
-          各 <m>i\in\{1,\dotsc,n\}</m> について <m>j_i\in\{1,\dotsc,m\}</m> が存在し、
           <ul>
-            <li>ある <m>k\in\{\}</m> すべて0の行より下にすべて0ではない行が現れない。</li>
+            <li>ある <m>r\in\{1,\dotsc,n\}</m> が存在し、1行目から <m>r</m> 行目はオール0ではなく、<m>r+1</m> 行目から <m>n</m> 行目はオール0である。</li>
+            <li><p>各 <m>i\in\{1,\dotsc,r\}</m> について <m>j_i\in\{1,\dotsc,m\}</m> が存在し以下を満たす
+              <ul>
             <li><m>j_1\lt j_2\lt\dotsb\lt j_n</m> である。</li>
-            <li>任意の <m>i\in\{1,\dotsc,n\}</m> と <m>j\in\{1,\dotsc,j_i-1\}</m> について、<m>(i, j)</m> 成分は 0 である。</li>
+            <li>任意の <m>i\in\{1,\dotsc,r\}</m> と <m>j\in\{1,\dotsc,j_i-1\}</m> について、<m>(i, j)</m> 成分は 0 である。</li>
+            <li>任意の <m>i\in\{1,\dotsc,r\}</m> について、<m>(i, j_i)</m> 成分は非零である。</li>
+              </ul></p>
+            </li>
           </ul>
+        </p>
+        <p>
+          また、各 <m>i\in\{1,\dotsc,r\}</m> について、<m>(i, j_i)</m> 成分を<term>主成分</term>という。
         </p>
       </definition>
     </subsection>
