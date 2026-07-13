@@ -370,6 +370,9 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
           </p>
         </proof>
       </proposition>
+      <corollary>
+        <p>行列の行簡約階段形は唯一である。</p>
+      </corollary>
       <exercise>
         <title>CR分解</title>
         <p>以下の行列をCR分解せよ。</p>
