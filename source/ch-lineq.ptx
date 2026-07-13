@@ -315,13 +315,13 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
       </p>
     </subsection>
     <subsection xml:id="subsec-row-lineq" xmlns:xi="http://www.w3.org/2001/XInclude">
-      <title>行基本変形と行階段簡約形</title>
+      <title>行基本変形と行簡約階段形</title>
       <p>
         左から正則な行列を掛けることと行基本変形することは等価であった。
         行基本変形を用いて、与えられた行列 <m>A\in\mathbb{R}^{n\times m}</m> を性質のよい行列 <m>B\in\mathbb{R}^{n\times m}</m> に変形することを考える。この行列 <m>B</m> は前節の <m>GA</m> に当たるものである。
       </p>
       <definition>
-        <title>行階段形と行階段簡約形</title>
+        <title>行階段形と行簡約階段形</title>
         <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> が行基本変形で行列 <m>B\in\mathbb{R}^{n\times m}</m> に変形できるとする。
           このとき、<m>B</m> が <term><m>A</m> の行階段形</term> <m>\defiff</m>
           <ul>
@@ -329,8 +329,8 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
             <li><p>各 <m>i\in\{1,\dotsc,r\}</m> について <m>j_i\in\{1,\dotsc,m\}</m> が存在し以下を満たす
               <ul>
             <li><m>j_1\lt j_2\lt\dotsb\lt j_n</m> である。</li>
-            <li>任意の <m>i\in\{1,\dotsc,r\}</m> と <m>j\in\{1,\dotsc,j_i-1\}</m> について、<m>(i, j)</m> 成分は 0 である。</li>
             <li>任意の <m>i\in\{1,\dotsc,r\}</m> について、<m>(i, j_i)</m> 成分は非零である。</li>
+            <li>任意の <m>i\in\{1,\dotsc,r\}</m> と <m>j\in\{1,\dotsc,j_i-1\}</m> について、<m>(i, j)</m> 成分は 0 である。</li>
               </ul></p>
             </li>
           </ul>
@@ -338,7 +338,50 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
         <p>
           また、各 <m>i\in\{1,\dotsc,r\}</m> について、<m>(i, j_i)</m> 成分を<term>主成分</term>という。
         </p>
+        <p>行列 <m>A\in\mathbb{R}^{n\times m}</m> の行階段形 <m>B\in\mathbb{R}^{n\times m}</m> がさらに以下の条件を満たすとき、<m>B</m> を<term>行簡約階段形</term>という。
+          <ul>
+            <li>任意の主成分が1である。</li>
+            <li>主成分を含む任意の列の主成分以外の要素は0である。</li>
+          </ul>
+        </p>
       </definition>
+      <p>
+        詳細な説明はしないが、逆行列をもとめる場合と同様のガウスの消去法で行列の行階段形や行簡約階段形をもとめることができる。
+      </p>
+      <proposition>
+        <title>CR分解</title>
+        <statement>
+        <p>
+          任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> は行簡約階段形からオール0の行を取り除いたもの <m>R\in\mathbb{R}^{r\times m}</m> と列が独立な行列 <m>C\in\mathbb{R}^{n\times r}</m> を用いて <m>A=CR</m> と一意に分解できる。
+          また、このとき <m>C</m> の列は <m>A</m> の列を左から順に線形独立なものだけを選び並べたものである。
+        </p>
+        </statement>
+        <proof>
+          <p>
+            任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> は行基本変形で行簡約階段形 <m>R'\in\mathbb{R}^{n\times m}</m> にすることができる。したがって、ある正則行列 <m>G\in\mathbb{R}^{n\times n}</m> が存在し、<m>GA=R'</m> である。ここで、<m>C'=G^{-1}</m> とおくと、<m>A=C'R'</m> である。
+            行簡約階段形 <m>R'</m> からオール0の行を取り除いたものを <m>R\in\mathbb{R}^{r\times n}</m> とおく。また、対応する <m>C'</m> の列を取り除いたものを <m>C\in\mathbb{R}^{n\times r}</m> とおく。
+            このとき、<m>A=CR</m> を満たす。
+          </p>
+          <p>
+            <m>R</m> の <m>(i,j)</m> 成分が主成分であるとする。
+            このとき、<m>A=CR</m> の <m>j</m> 列目は <m>C</m> の <m>i</m> 列目である。
+            また、<m>A=CR</m> の 1列目から <m>j-1</m> 列目は <m>C</m> の 1列目から <m>i-1</m> 列目で貼られる。
+            したがって、<m>C</m> の列は <m>A</m> の列を左から順に線形独立なものだけを選び並べたものである。
+          </p>
+        </proof>
+      </proposition>
+      <exercise>
+        <title>CR分解</title>
+        <p>以下の行列をCR分解せよ。</p>
+        <ol>
+          <li>
+            <md>\begin{bmatrix}1\amp2\amp3\\2\amp4\amp6\\1\amp1\amp2\end{bmatrix}</md>
+          </li>
+          <li>
+            <md>\begin{bmatrix}1\amp2\amp1\amp3\\0\amp0\amp1\amp1\\1\amp2\amp2\amp4\end{bmatrix}</md>
+          </li>
+        </ol>
+      </exercise>
     </subsection>
   </section>
 </chapter>
