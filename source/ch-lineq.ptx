@@ -434,6 +434,18 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
     </md>
     と表すことができる。
   </p>
+      <exercise>
+        <title>線形方程式</title>
+        <p>以下の線形方程式を解け。解が存在する場合は任意の一つの解 <m>\bm{x}^*</m> と <m>\mathrm{Ker}(A)</m> の基底をもとめよ。</p>
+        <ol>
+          <li>
+            <md>\begin{bmatrix}1\amp1\amp1\\2\amp2\amp2\\1\amp-1\amp1\end{bmatrix}\bm{x}=\begin{bmatrix}2\\4\\0\end{bmatrix}</md>
+          </li>
+          <li>
+            <md>\begin{bmatrix}1\amp2\amp1\amp-1\\0\amp0\amp1\amp3\\1\amp2\amp2\amp2\\2\amp4\amp1\amp-5\end{bmatrix}\bm{x}=\begin{bmatrix}4\\-2\\2\\10\end{bmatrix}</md>
+          </li>
+        </ol>
+      </exercise>
 
   </section>
 </chapter>
