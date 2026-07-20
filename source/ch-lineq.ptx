@@ -363,6 +363,16 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
             このとき、<m>A=CR</m> を満たす。
           </p>
           <p>
+            行列 <m>C'</m> は正則行列であるため、<m>C'</m> の各列は線形独立である。
+            したがって <m>C</m> の各列も線形独立である。
+
+            <!--
+            また、<m>A=CR</m> の各列は <m>C</m> の列の線形結合である。
+            したがって、<m>C</m> の列集合は <m>A</m> の列が生成する線形空間すなわち <m>\mathrm{Im}(A)</m> の生成系である。
+            よって、<m>C</m> の列集合は <m>\mathrm{Im}(A)</m> の基底である。
+            -->
+
+            
             <m>R</m> の <m>(i,j)</m> 成分が主成分であるとする。
             このとき、<m>A=CR</m> の <m>j</m> 列目は <m>C</m> の <m>i</m> 列目である。
             また、<m>A=CR</m> の 1列目から <m>j-1</m> 列目は <m>C</m> の 1列目から <m>i-1</m> 列目で貼られる。
@@ -385,7 +395,46 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
           </li>
         </ol>
       </exercise>
+    <p>また、行階段行列のランクはオール0でない行の数 <m>r</m> であることが分かる。
+       したがって、線形写像の基本定理より <m>\dim\mathrm{Ker}(A)=m-r</m> である。</p>
     </subsection>
+  </section>
+  <section xml:id="sec-alg-lineq" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>線形方程式を解くアルゴリズム</title>
+    <algorithm xml:id="alg-lineq">
+<title>線形方程式を解くアルゴリズム</title>
+<statement>
+<ul>
+<li><p>入力: 行列 <m>A\in\mathbb{R}^{n\times m}</m>、ベクトル <m>\bm{b}\in\mathbb{R}^n</m></p></li>
+<li><p>出力: 線形方程式 <m>A\bm{x}=\bm{b}</m> について、解がない場合「解なし」、解がある場合、任意の解 <m>\bm{x}^*\in\mathbb{R}^m</m> と <m>\mathrm{Ker}(A)</m> の基底</p></li>
+</ul>
+<p>アルゴリズムの疑似コード
+<ol>
+<li><m>\begin{bmatrix}A\amp \mid\amp b\end{bmatrix}</m> を行基本変形で <m>\begin{bmatrix}R'\amp \mid\amp b'\end{bmatrix}</m> へ変換。ここで、<m>R'</m> は行簡約階段形。</li>
+<li><m>R'</m> のオール0の行について、対応する <m>b'</m> が非零成分を持つとき、「解なし」を出力して終了。</li>
+<li>(<m>\bm{x}^*</m> をもとめるパート)</li>
+<li><nbsp/><nbsp/><m>\bm{x}^*\leftarrow\bm{0}_m</m></li>
+<li><nbsp/><nbsp/><m>R'</m>の各主成分 <m>(i,j)</m> について、<m>\bm{x}^*_{j} \leftarrow \bm{b}'_i</m></li>
+<li>(<m>\mathrm{Ker}(A)</m> の基底 <m>B</m> をもとめるパート)</li>
+<li><nbsp/><nbsp/><m>B\leftarrow()</m><nbsp/><nbsp/>(空のリストで <m>B</m> を初期化)</li>
+<li><nbsp/><nbsp/>for <m>k\in</m> <m>R'</m> の主成分を含まない列のインデックス集合:</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}\leftarrow\bm{0}_m</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_k\leftarrow1</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/>for <m>(i,j)\in</m> <m>R'</m> の主成分:</li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><m>\bm{v}_j\leftarrow-R'_{i,k}</m></li>
+<li><nbsp/><nbsp/><nbsp/><nbsp/><m>B</m> に <m>\bm{v}</m> を追加</li>
+<li>return <m>(x^*, B)</m></li>
+</ol>
+</p>
+</statement>
+</algorithm>
+  <p>このアルゴリズムによって <m>(x^*, B)</m> が得られると、解集合は
+    <md>
+      <mrow>\left\{\bm{x}\in\mathbb{R}^m\mid A\bm{x}=\bm{b}\right\} \amp= \left\{\bm{x}^*+\bm{z}\mid \bm{z}\in\mathrm{span}(B)\right\}</mrow>
+    </md>
+    と表すことができる。
+  </p>
+
   </section>
 </chapter>
 
