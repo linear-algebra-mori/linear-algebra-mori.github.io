@@ -397,6 +397,7 @@ d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
       </exercise>
     <p>また、行階段行列のランクはオール0でない行の数 <m>r</m> であることが分かる。
        したがって、線形写像の基本定理より <m>\dim\mathrm{Ker}(A)=m-r</m> である。</p>
+     <p>またCR分解より、行列のランクが行空間の次元と等しいことも分かる(執筆予定)。</p>
     </subsection>
   </section>
   <section xml:id="sec-alg-lineq" xmlns:xi="http://www.w3.org/2001/XInclude">
