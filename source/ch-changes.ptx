@@ -4,7 +4,35 @@
   <title>行列の基底変換と不変量</title>
   <section xml:id="sec-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列の基底変換</title>
-    <p><xref ref="lem-regular" />より正則行列は基底を基底を基底に写す。
+    <p><xref ref="lem-regular" />より正則行列は基底を基底を基底に写す。</p>
+    <definition>
+    <title>線型写像の基底を指定した行列表現</title>
+    <p>線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> について
+    <md>
+      T\bm{v}_i = \sum_{j=1}^n a_{j,i} \bm{u}_j
+    </md>
+    を満たすとき、<m>[a_{i,j}]</m> を <term><m>T</m> の基底 <m>(\bm{v}_i)</m>, <m>(\bm{u}_j)</m> に対する行列表現</term>という。
     </p>
+    </definition>
+    <p>線形写像 <m>T</m> の通常の行列表現 <m>A_T\in\mathbb{R}^{n\times m}</m> は標準基底 <m>(\bm{e}_i\in\mathbb{R}^m)</m>, <m>(\bm{e}_j\in\mathbb{R}^n)</m> に対する行列表現である。
+    </p>
+    <proposition>
+      <title>行列の基底変換</title>
+      <p>線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> に対する行列表現を <m>B\in\mathbb{R}^{n\times m}</m> とすると
+      <md>
+        <mrow>P \amp= \begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_m\end{bmatrix}</mrow>
+        <mrow>Q \amp= \begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_n\end{bmatrix}</mrow>
+        <mrow>B \amp= Q^{-1}A_TP</mrow>
+      </md>
+      </p>
+    <proof>
+      <p>
+      <md>
+        QB = A_TP
+      </md>
+      を示せばよい。
+      </p>
+    </proof>
+    </proposition>
   </section>
 </chapter>
