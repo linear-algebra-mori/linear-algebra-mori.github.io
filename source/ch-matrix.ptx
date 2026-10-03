@@ -259,6 +259,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
     という写像を定義する。</p>
     <exercise>
       <statement>
+        <p>
         以下の行列ベクトル積を計算せよ。
         <ol>
           <li><md>
@@ -281,6 +282,7 @@ A\setminus B &\coloneqq \left\{x\mid x\in A \textsf{ かつ } x \notin B\right\}
             \end{bmatrix}.
             </md></li>
         </ol>
+        </p>
       </statement>
     </exercise>
     </subsection>
@@ -533,7 +535,7 @@ A\bm{e}_m
 <p>以降は <m>A\in\mathbb{R}^{n\times m}</m> と線形写像 <m>f_A\colon\mathbb{R}^m\to\mathbb{R}^n</m> は同一視するので、「線形写像 <m>A\in\mathbb{R}^{n\times m}</m>」と言うこともある。</p>
     <exercise>
       <statement>
-        <p>以下の線形写像 <m>f</m> を表す行列 <m>A_f</m>をもとめよ。</p>
+        <p>以下の線形写像 <m>f</m> を表す行列 <m>A_f</m>をもとめよ。
         <ol>
           <li><md>
             f\left(\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}\right)=\begin{bmatrix}x_2-3x_3\\x_1+5x_2+7x_3\\-9x_2\end{bmatrix}.
@@ -542,6 +544,7 @@ A\bm{e}_m
             f\left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}\right)=\begin{bmatrix}x_2\\x_3\\x_4\\x_1\end{bmatrix}.
           </md></li>
         </ol>
+        </p>
       </statement>
     </exercise>
     </subsection>

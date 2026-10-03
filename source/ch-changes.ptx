@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>行列の基底変換と不変量</title>
+  <section xml:id="sec-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列の基底変換</title>
+    <p><xref ref="lem-regular" />より正則行列は基底を基底を基底に写す。
+    </p>
+  </section>
+</chapter>

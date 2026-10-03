@@ -19,6 +19,7 @@
     <!--<xi:include href="./ch-subspace-apps.ptx" />-->
     <xi:include href="./ch-square-matrix.ptx" />
     <xi:include href="./ch-lineq.ptx" />
+    <xi:include href="./ch-changes.ptx" />
 
 
     <!-- Include backmatter -->

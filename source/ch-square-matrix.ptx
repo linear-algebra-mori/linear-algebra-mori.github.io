@@ -184,7 +184,7 @@
       を満たすため、逆写像の関係にある。
       このように逆変換を持つ線形変換を<term>正則</term>もしくは<term>可逆な</term>線形変換という。
     </p>
-    <lemma>
+    <lemma xml:id="lem-regular">
       <p>線形写像 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について以下は同値。
         <ol>
           <li><m>f</m> は正則</li>
