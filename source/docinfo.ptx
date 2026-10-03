@@ -27,7 +27,8 @@
      \newcommand{\bm}[1]{\boldsymbol{#1}}
      \newcommand{\coloneqq}{:=}
      \newcommand{\defiff}{\overset{\text{def}}{\iff}}
-   </macros>
+  </macros>
+  <directories external="../assets"/>
 
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
