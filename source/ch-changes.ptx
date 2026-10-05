@@ -52,10 +52,21 @@
     <p>
       この <m>A_T</m> と <m>B</m> は同じ線形写像 <m>T</m> を表している行列であるが、その際に参照している基底が異なる。その基底を変換するのが、<m>P^{-1}</m> や <m>Q</m> の役割である。
     </p>
+    <example>
+      <title>行列の基底変換</title>
+    </example>
+    <definition>
+      <title>二項関係</title>
+      <p>
+        集合 <m>U</m> について、<m>U\times U</m> を <m>U</m> の要素のペアの集合とする。
+        部分集合 <m>R\subseteq U\times U</m> を<term>二項関係</term>という。
+      </p>
+    </definition>
+    <p>任意の <m>a,b\in U</m> について、 <m>(a,b)\in R</m> であることを <m>a\sim b</m> や <m>a\preceq b</m> などの記号を使って表す。</p>
     <definition>
       <title>同値関係</title>
       <p>
-        集合 <m>U</m> の上の関係 <m>\sim</m> が以下を満たすとき<term>同値関係</term>という。
+        集合 <m>U</m> の上の二項関係 <m>\sim</m> が以下を満たすとき <term><m>U</m> 上の同値関係</term>という。
         <ol>
           <li>[反射律] <m>\forall a\in U,\quad a\sim a.</m></li>
           <li>[対称律] <m>\forall a,b\in U,\quad a\sim b\implies b\sim a.</m></li>
@@ -63,5 +74,140 @@
         </ol>
       </p>
     </definition>
+    <p>例えば <m>a,b\in\mathbb{Z}</m> について、<m>a\sim b\defiff a\equiv b\mod 3</m> は <m>\mathbb{Z}</m> 上の同値関係である。</p>
+    <proposition>
+      <title>基底変換の同値関係</title>
+      <p>行列 <m>A,B\in\mathbb{R}^{n\times m}</m> について
+      <md>
+        A\sim B \defiff \text{ある正則行列 } P\in\mathbb{R}^{m\times m}, Q\in\mathbb{R}^{n\times n}\text{ が存在して } A = QBP^{-1}
+      </md>
+      は同値関係である。
+      </p>
+      <proof>
+        <ol>
+          <li>[反射律] <m>A = I_nBI_m</m> より <m>A\sim B</m> である。</li>
+          <li>[対称律] <m>A = QBP^{-1}</m> のとき <m>B = Q^{-1}AP</m> である。</li>
+          <li>[推移律] <m>A = QBP^{-1}</m> かつ <m>B = Q'CP^{'-1}</m> のとき <m>A = QQ'CP^{'-1}P^{-1}</m> である。よって <m>A = (QQ') C (PP')^{-1}</m> である。</li>
+        </ol>
+      </proof>
+    </proposition>
+    <definition>
+      <title>同値関係の不変量</title>
+      <p>集合 <m>U</m> 上の同値関係 <m>\sim</m> とする。
+        ある集合 <m>C</m> と関数 <m>\Phi\colon U\to C</m> が
+        <md>A\sim B\implies \Phi(A)=\Phi(B)</md>
+        を満たすとき <m>\Phi</m> を <term>同値関係 <m>\sim</m> の不変量</term> という。
+        さらに
+        <md>\Phi(A)=\Phi(B)\implies A\sim B</md>
+        も満たすとき <m>\Phi</m> を <term>同値関係 <m>\sim</m> の完全不変量</term> という。
+      </p>
+    </definition>
+    <lemma>
+      <title>ランクは不変量</title>
+      <p>行列のランクは基底変換による同値関係の不変量である。</p>
+      <proof>
+        <p>
+          行列 <m>A\in\mathbb{R}^{n\times m}</m> の列 <m>\bm{a}_1,\dotsc,\bm{a}_m\in\mathbb{R}^n</m> について
+          <md>
+            \mathrm{rank}(A) = \dim\mathrm{Im}(A) = \dim\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+          </md>
+          である。
+          <md>
+            c_1\bm{a}_{i_1} + \dotsb + c_k\bm{a}_{i_k} = \bm{0} \implies
+            c_1Q\bm{a}_{i_1} + \dotsb + c_kQ\bm{a}_{i_k} = \bm{0}
+          </md>
+          より <m>Q\in\mathbb{R}^{n\times n}</m> について
+          <md>
+            \dim\mathrm{span}(Q\bm{a}_1,\dotsc,Q\bm{a}_m)\le
+            \dim\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+          </md>
+          である。
+          したがって
+          <md>
+            \mathrm{rank}(QA) \le \mathrm{rank}(A).
+          </md>
+          また、<m>Q</m> が正則のとき
+          <md>
+            \mathrm{rank}(A) = \mathrm{rank}(Q^{-1}QA) \le  \mathrm{rank}(QA)  
+          </md>
+          である。
+          したがって <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> である。
+        </p>
+        <p>
+          次に正則行列 <m>P\in\mathbb{R}^m</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。。<m>AP</m> の <m>j</m> 列目は
+          <md>
+            \sum_{i=1}^mp_{i,j}\bm{a}_i \in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+          </md>
+          である。したがって
+          <md>
+            \mathrm{rank}(AP) \le \mathrm{rank}(A).
+          </md>
+          また、<m>P</m> が正則であることから
+          <md>
+            \mathrm{rank}(A) = \mathrm{rank}(APP^{-1}) \le  \mathrm{rank}(AP)  
+          </md>
+          である。
+          したがって <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> である。
+        </p>
+      </proof>
+    </lemma>
+    <proposition>
+      <title>階数標準形</title>
+      <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、そのランクを <m>r=\mathrm{rank}(A)</m> とすると、
+      <md>
+        A\sim
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+      </md>
+      である。右辺の行列を <term><m>A</m> の階数標準形</term> という。
+      また、ランクは行列の基底変換による同値関係の完全不変量である。</p>
+      <proof>
+        <p>任意の行列は行基本変形により行簡約階段形にすることができる。
+        したがって、ある正則行列 <m>Q\in\mathbb{R}^{n\times n}</m> が存在して <m>QA</m> は行簡約階段形である。
+        行簡約階段形のランク <m>r</m> は非零行の数である。
+        また、行簡約階段形に列基本変形を適用することで、
+      <md>
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+      </md>
+        の形にすることができる。
+        したがって、ある正則行列 <m>P\in\mathbb{R}^{m\times m}</m> と <m>Q\in\mathbb{R}^{n\times n}</m> が存在して
+      <md>
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+        = QAP^{-1}
+      </md>
+        である。
+        </p>
+      <p>
+        また、<m>A,B\in\mathbb{R}^{n\times m}</m> について <m>\mathrm{rank}(A)=\mathrm{rank}(B)=r</m> のとき
+      <md>
+        A\sim
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+        \sim B
+      </md>
+      より、<m>A\sim B</m> である。
+      したがって、ランクは完全不変量である。
+      </p>
+      </proof>
+    </proposition>
+    <p>
+      任意の集合 <m>U</m> 上の同値関係 <m>\sim</m> について、<m>a\in U</m> の<term>同値類</term>を
+      <md>
+        [a]\coloneqq\left\{b\in U\mid a\sim b\right\}
+      </md>
+      と定義する。
+      行列の基底変換の同値関係の場合、各同値類は <m>\begin{bmatrix}I_r\amp O\\O\amp O\end{bmatrix}</m> の形の行列を一つづつ含む。
+      この形の行列は各同値類を代表するものだと考えることができ、<term>同値類の代表元</term>と呼ぶ。
+    </p>
   </section>
 </chapter>
