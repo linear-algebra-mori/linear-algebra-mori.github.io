@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>行列の入出力の基底変換</title>
+<title>一般の行列の入出力の基底変換</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
@@ -294,13 +294,13 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-changes.html" class="internal"><span class="codenumber">7</span> <span class="title">行列の基底変換と不変量</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-changes"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-changes.html" class="internal"><span class="codenumber">7.1</span> <span class="title">行列の入出力の基底変換</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-changes"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-changes.html" class="internal"><span class="codenumber">7.1</span> <span class="title">一般の行列の入出力の基底変換</span></a></div></li></ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-changes">
 <h1 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列の入出力の基底変換</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">一般の行列の入出力の基底変換</span>
 </h1>
 <div class="para logical" id="sec-changes-2">
 <div class="para">線形写像 <span class="process-math">\(f\colon \mathbb{R}^m\to\mathbb{R}^n\)</span> の行列表現 <span class="process-math">\(A_f=[a_{i,j}]\in\mathbb{R}^{n\times m}\)</span> は</div>
@@ -537,64 +537,67 @@ A\sim B\implies \Phi(A)=\Phi(B)
 <details id="sec-changes-13-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="sec-changes-13-3-1">
-<div class="para">行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> の列 <span class="process-math">\(\bm{a}_1,\dotsc,\bm{a}_m\in\mathbb{R}^n\)</span> について</div>
-<div class="displaymath process-math" id="sec-changes-13-3-1-3">
-\begin{equation*}
-\mathrm{rank}(A) = \dim\mathrm{Im}(A) = \dim\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
-\end{equation*}
+<div class="para">任意の正則行列 <span class="process-math">\(P\in\mathbb{R}^{m\times m},\,Q\in\mathbb{R}^{n\times n}\)</span> について</div>
+<div class="displaymath process-math" id="sec-changes-13-3-1-2">
+\begin{align*}
+\mathrm{rank}(QA) \amp= \mathrm{rank}(A)\\
+\mathrm{rank}(AP) \amp= \mathrm{rank}(A)
+\end{align*}
 </div>
-<div class="para">である。</div>
-<div class="displaymath process-math" id="sec-changes-13-3-1-4">
-\begin{equation*}
-c_1\bm{a}_{i_1} + \dotsb + c_k\bm{a}_{i_k} = \bm{0} \implies
-c_1Q\bm{a}_{i_1} + \dotsb + c_kQ\bm{a}_{i_k} = \bm{0}
-\end{equation*}
-</div>
-<div class="para">より <span class="process-math">\(Q\in\mathbb{R}^{n\times n}\)</span> について</div>
-<div class="displaymath process-math" id="sec-changes-13-3-1-6">
-\begin{equation*}
-\dim\mathrm{span}(Q\bm{a}_1,\dotsc,Q\bm{a}_m)\le
-\dim\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
-\end{equation*}
-</div>
-<div class="para">である。 したがって</div>
-<div class="displaymath process-math" id="sec-changes-13-3-1-7">
-\begin{equation*}
-\mathrm{rank}(QA) \le \mathrm{rank}(A).
-\end{equation*}
-</div>
-<div class="para">また、<span class="process-math">\(Q\)</span> が正則のとき</div>
-<div class="displaymath process-math" id="sec-changes-13-3-1-9">
-\begin{equation*}
-\mathrm{rank}(A) = \mathrm{rank}(Q^{-1}QA) \le  \mathrm{rank}(QA)  
-\end{equation*}
-</div>
-<div class="para">である。 したがって <span class="process-math">\(\mathrm{rank}(QA)=\mathrm{rank}(A)\)</span> である。</div>
+<div class="para">をそれぞれ示す。</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-13-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-changes-13-3-2">
-<div class="para">次に正則行列 <span class="process-math">\(P\in\mathbb{R}^{m\times m}\)</span> について <span class="process-math">\(\mathrm{rank}(AP)=\mathrm{rank}(A)\)</span> であることを示す。<span class="process-math">\(AP\)</span> の <span class="process-math">\(j\)</span> 列目は</div>
-<div class="displaymath process-math" id="sec-changes-13-3-2-5">
+<div class="para">まず正則行列 <span class="process-math">\(Q\in\mathbb{R}^{m\times m}\)</span> について <span class="process-math">\(\mathrm{rank}(QA)=\mathrm{rank}(A)\)</span> であることを示す。 <a href="sec-im-ker.html#thm-lin-fund" class="xref" data-knowl="./knowl/xref/thm-lin-fund.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 6.1.9: 線型写像の基本定理">定理 6.1.9</a> より、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-13-3-2-4">
 \begin{equation*}
-\sum_{i=1}^mp_{i,j}\bm{a}_i \in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+\dim\mathrm{Ker}(QA)=\dim\mathrm{Ker}(A)
+\end{equation*}
+</div>
+<div class="para">を示せばよい。 自明に</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-13-3-2-5">
+\begin{equation*}
+\mathrm{Ker}(QA)\supseteq \mathrm{Ker}(A)
+\end{equation*}
+</div>
+<div class="para">なので</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-13-3-2-6">
+\begin{equation*}
+\dim\mathrm{Ker}(QA)\ge \dim\mathrm{Ker}(A)
+\end{equation*}
+</div>
+<div class="para">である。 また、<span class="process-math">\(Q\)</span> が正則であることから</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-13-3-2-8">
+\begin{equation*}
+\dim\mathrm{Ker}(A)=\dim\mathrm{Ker}(Q^{-1}QA)\ge \dim\mathrm{Ker}(QA)
+\end{equation*}
+</div>
+<div class="para">したがって <span class="process-math">\(\dim\mathrm{Ker}(QA)=\dim\mathrm{Ker}(A)\)</span> である。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-13-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-changes-13-3-3">
+<div class="para">次に正則行列 <span class="process-math">\(P\in\mathbb{R}^{m\times m}\)</span> について <span class="process-math">\(\mathrm{rank}(AP)=\mathrm{rank}(A)\)</span> であることを示す。 自明に</div>
+<div class="displaymath process-math" id="sec-changes-13-3-3-3">
+\begin{equation*}
+\mathrm{Im}(AP)\subseteq\mathrm{Im}(A)
 \end{equation*}
 </div>
 <div class="para">である。したがって</div>
-<div class="displaymath process-math" id="sec-changes-13-3-2-6">
+<div class="displaymath process-math" id="sec-changes-13-3-3-4">
 \begin{equation*}
 \mathrm{rank}(AP) \le \mathrm{rank}(A).
 \end{equation*}
 </div>
 <div class="para">また、<span class="process-math">\(P\)</span> が正則であることから</div>
-<div class="displaymath process-math" id="sec-changes-13-3-2-8">
+<div class="displaymath process-math" id="sec-changes-13-3-3-6">
 \begin{equation*}
 \mathrm{rank}(A) = \mathrm{rank}(APP^{-1}) \le  \mathrm{rank}(AP)  
 \end{equation*}
 </div>
 <div class="para">である。 したがって <span class="process-math">\(\mathrm{rank}(AP)=\mathrm{rank}(A)\)</span> である。</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-13-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-13-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-changes-13-3-3">よって、任意の <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> と正則行列 <span class="process-math">\(P\in\mathbb{R}^{m\times m}\)</span> と <span class="process-math">\(Q\in\mathbb{R}^{n\times n}\)</span> について <span class="process-math">\(\mathrm{rank}(QAP^{-1})=\mathrm{rank}(A)\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-13-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-changes-13-3-4">よって、任意の <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> と正則行列 <span class="process-math">\(P\in\mathbb{R}^{m\times m}\)</span> と <span class="process-math">\(Q\in\mathbb{R}^{n\times n}\)</span> について <span class="process-math">\(\mathrm{rank}(QAP^{-1})=\mathrm{rank}(A)\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-13-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.1.8.1"><a tabindex="-1" href="#sec-changes-13-3" title="Copy heading and permalink for 証明 7.1.8.1" aria-label="Copy heading and permalink for 証明 7.1.8.1">🔗</a></div>
 </article></details>
@@ -706,67 +709,47 @@ P^{-1}
 <details id="sec-changes-16-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="sec-changes-16-2-1">
-<div class="para">任意の <span class="process-math">\(j\in\{1,\dotsc,m\}\)</span> について <span class="process-math">\(P^{-1}\bm{v}_j=\bm{e}_j\)</span> である。  よって</div>
-<div class="displaymath process-math" id="sec-changes-16-2-1-3">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-16-2-1-1">
 \begin{align*}
-\mathrm{Ker}\left(
+AP \amp= Q
 \begin{bmatrix}
 I_r\amp O\\
 O\amp O
-\end{bmatrix}P^{-1}\right)=\mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)
+\end{bmatrix}
 \end{align*}
 </div>
-<div class="para">である。  <span class="process-math">\(Q\)</span> は正則であるため</div>
-<div class="displaymath process-math" id="sec-changes-16-2-1-5">
+<div class="para">より、</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-16-2-1-2">
 \begin{align*}
-\mathrm{Ker}(A) \amp=\mathrm{Ker}\left(
+A\bm{v}_j = AP\bm{e}_j = Q
 \begin{bmatrix}
 I_r\amp O\\
 O\amp O
-\end{bmatrix}P^{-1}\right)= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)
+\end{bmatrix}\bm{e}_j
+=\begin{cases}
+\bm{u}_j\amp\text{if } j\le r\\
+\bm{0}\amp\text{otherwise}
+\end{cases}
+\end{align*}
+</div>
+<div class="para">したがって</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-16-2-1-3">
+\begin{align*}
+\mathrm{Ker}(A) \amp\supseteq \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)\\
+\mathrm{Im}(A) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)
+\end{align*}
+</div>
+<div class="para">である。 <a href="sec-im-ker.html#thm-lin-fund" class="xref" data-knowl="./knowl/xref/thm-lin-fund.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 6.1.9: 線型写像の基本定理">定理 6.1.9</a> より、<span class="process-math">\(\dim\mathrm{Ker}(A) = m-r\)</span> なので</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="sec-changes-16-2-1-6">
+\begin{align*}
+\mathrm{Ker}(A) \amp= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)
 \end{align*}
 </div>
 <div class="para">である。</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-changes-16-2-2">
-<div class="para">また、</div>
-<div class="displaymath process-math" id="sec-changes-16-2-2-1">
-\begin{equation*}
-Q
-\begin{bmatrix}
-I_r\amp O\\
-O\amp O
-\end{bmatrix}
-=
-\begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_r\amp\bm{0}\amp\dotsm\amp\bm{0}\end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">であるため</div>
-<div class="displaymath process-math" id="sec-changes-16-2-2-2">
-\begin{align*}
-\mathrm{Im}\left(Q
-\begin{bmatrix}
-I_r\amp O\\
-O\amp O
-\end{bmatrix}\right) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)
-\end{align*}
-</div>
-<div class="para">である。 したがって <span class="process-math">\(\mathrm{Im}(P^{-1})=\mathbb{R}^m\)</span> より</div>
-<div class="displaymath process-math" id="sec-changes-16-2-2-4">
-\begin{align*}
-\mathrm{Im}(A)=\mathrm{Im}\left(Q
-\begin{bmatrix}
-I_r\amp O\\
-O\amp O
-\end{bmatrix}\right) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)
-\end{align*}
-</div>
-<div class="para">である。</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-16-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.1.10.1"><a tabindex="-1" href="#sec-changes-16-2" title="Copy heading and permalink for 証明 7.1.10.1" aria-label="Copy heading and permalink for 証明 7.1.10.1">🔗</a></div>
-</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 7.1: 行列の入出力の基底変換"><a tabindex="-1" href="#sec-changes" title="Copy heading and permalink for Section 7.1: 行列の入出力の基底変換" aria-label="Copy heading and permalink for Section 7.1: 行列の入出力の基底変換">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 7.1: 一般の行列の入出力の基底変換"><a tabindex="-1" href="#sec-changes" title="Copy heading and permalink for Section 7.1: 一般の行列の入出力の基底変換" aria-label="Copy heading and permalink for Section 7.1: 一般の行列の入出力の基底変換">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
