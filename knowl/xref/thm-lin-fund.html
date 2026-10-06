@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線型写像の基本定理.</span>
+</h2>
+<div class="para logical">
+<div class="para">任意の行列 <span class="process-math">\(A\in\mathbb{R}^{n\times m}\)</span> について、</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m = \dim\mathrm{Im}(A) + \dim\mathrm{Ker}(A)
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-lin-fund-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="定理 6.1.9: 線型写像の基本定理"><a tabindex="-1" href="#thm-lin-fund" title="Copy heading and permalink for 定理 6.1.9: 線型写像の基本定理" aria-label="Copy heading and permalink for 定理 6.1.9: 線型写像の基本定理">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k\in\mathrm{Ker}(A)\)</span> を <span class="process-math">\(\mathrm{Ker}(A)\)</span> の基底とする。 <a href="sec-basis.html#lem-basis-ext" class="xref" data-knowl="./knowl/xref/lem-basis-ext.html" data-reveal-label="Reveal" data-close-label="Close" title="系 4.4.4: 基底の延長定理">系 4.4.4</a>より、ベクトル <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_{m-k}\in \mathbb{R}^m\)</span> を追加して <span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{m-k}\)</span> が <span class="process-math">\(\mathbb{R}^m\)</span> の基底となるようにできる。 このとき、 <span class="process-math">\(\dim \mathrm{Im}(A)=m-k\)</span> を示せばよい。 以下では <span class="process-math">\(A\bm{v}_1,\dotsc, A\bm{v}_{m-k}\)</span> が <span class="process-math">\(\mathrm{Im}(A)\)</span> の基底であることを示す。 <a href="sec-im-ker.html#lem-im-span" class="xref" data-knowl="./knowl/xref/lem-im-span.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 6.1.2">補題 6.1.2</a>より</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-basis-ext.html ./knowl/xref/lem-im-span.html">
+\begin{align*}
+\mathrm{Im}(A)\amp=\mathrm{span}(A\bm{u}_1,\dotsc,A\bm{u}_k,A\bm{v}_1,\dotsc,A\bm{v}_{m-k})\\
+\amp=\mathrm{span}(A\bm{v}_1,\dotsc,A\bm{v}_{m-k})
+\end{align*}
+</div>
+<div class="para">したがって、<span class="process-math">\(A\bm{v}_1,\dotsc, A\bm{v}_{m-k}\)</span> は <span class="process-math">\(\mathrm{Im}(A)\)</span> の生成系である。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-lin-fund-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">次に <span class="process-math">\(A\bm{v}_1,\dotsc,A\bm{v}_{m-k}\)</span> が線形独立であることを示す。 ある <span class="process-math">\(c_1,\dotsc,c_{m-k}\in \mathbb{R}\)</span> について</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1A\bm{v}_1+\dotsb +c_{m-k}A\bm{v}_{m-k}=\bm{0}
+\end{equation*}
+</div>
+<div class="para">であると仮定する。 このとき、</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(c_1\bm{v}_1+\dotsb +c_{m-k}\bm{v}_{m-k})=\bm{0}
+\end{equation*}
+</div>
+<div class="para">より <span class="process-math">\(c_1\bm{v}_1+\dotsb +c_{m-k}\bm{v}_{m-k}\in\mathrm{Ker}(A)\)</span> であるので、 ある <span class="process-math">\(d_1,\dotsc,d_m\in \mathbb{R}\)</span> が存在し、</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1\bm{v}_1+\dotsb +c_{m-k}\bm{v}_{m-k}=
+d_1\bm{u}_1+\dotsb +d_k\bm{u}_k
+\end{equation*}
+</div>
+<div class="para">である。 このとき、 <span class="process-math">\(\bm{u}_1,\dotsc,\bm{u}_k,\bm{v}_1,\dotsc,\bm{v}_{m-k}\)</span> の線形独立性より <span class="process-math">\(c_1=\dotsb=c_{m-k}=d_1=\dotsb=d_{k}=0\)</span> である。 よって <span class="process-math">\(A\bm{v}_1,\dotsc,A\bm{v}_{m-k}\)</span> は線形独立である。 したがって <span class="process-math">\(A\bm{v}_1,\dotsc,A\bm{v}_{m-k}\)</span> は <span class="process-math">\(\mathrm{Im}(A)\)</span> の基底であり、この次元は <span class="process-math">\(m-k\)</span> であることが示された。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-lin-fund-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 6.1.9.1"><a tabindex="-1" href="#thm-lin-fund-3" title="Copy heading and permalink for 証明 6.1.9.1" aria-label="Copy heading and permalink for 証明 6.1.9.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-im-ker.html#thm-lin-fund">In Context</a></span>
+</body>
+</html>
