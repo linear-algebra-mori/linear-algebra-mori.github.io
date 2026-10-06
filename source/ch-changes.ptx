@@ -515,7 +515,7 @@
 <p>
 これらのことから <m>D\colon\mathbb{R}^2\times\mathbb{R}^2\to\mathbb{R}</m> について以下の性質が成り立つことが分かる。
 <ol>
-<li>[双線形性] <m>\forall\bm{w}\in\mathbb{R}^2\quad D_1(\bm{v}):=D(\bm{v},\bm{w})</m> と <m>D_2(\bm{v}):=D(\bm{w},\bm{v})</m> は線形。</li>
+<li>[双線形性] <m>\forall\bm{v},\bm{w}\in\mathbb{R}^2\quad D_1(\bm{x}):=D(\bm{x},\bm{w})</m> と <m>D_2(\bm{y}):=D(\bm{v},\bm{y})</m> は線形写像。</li>
 <li>[交代性] <m>\forall\bm{v}\in\mathbb{R}^2\quad D(\bm{v},\bm{v})=0</m>.</li>
 <li>[正規化] <m>D(\bm{e}_1,\bm{e}_2)=1</m>.</li>
 </ol>
@@ -574,11 +574,19 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
 </md>
 </proof>
 </proposition>
+    <p>以上のことから、
+      <md>
+        \mathrm{det}\left(
+        \begin{bmatrix}
+          a\amp b\\c\amp d
+        \end{bmatrix}\right)\coloneqq ad-bc
+      </md>
+      を行列 <m>\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}</m> の<term>行列式</term>と定義する。
+    </p>
     </subsection>
-
 </section>
   <section xml:id="sec-determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>行列式</title>
+    <title>一般の正方行列の行列式</title>
     <definition>
       <title>多重線形写像</title>
       <md>
@@ -607,6 +615,6 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
           \mathrm{det}(A) \coloneqq \sum_{\sigma\in S_n} a_{i,\sigma(i)}
         </md>
       </p>
-      </definition>
+    </definition>
   </section>
 </chapter>
