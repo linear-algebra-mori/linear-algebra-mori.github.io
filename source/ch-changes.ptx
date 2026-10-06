@@ -3,7 +3,7 @@
 <chapter xml:id="ch-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>行列の基底変換と不変量</title>
   <section xml:id="sec-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>行列の入出力の基底変換</title>
+    <title>一般の行列の入出力の基底変換</title>
       <!-- <p> <xref ref="lem-regular" />より正則行列は基底を基底を基底に写す。</p>-->
     <p>
       線形写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> の行列表現 <m>A_f=[a_{i,j}]\in\mathbb{R}^{n\times m}</m> は
@@ -322,8 +322,13 @@
       </md>
       したがって
       <md>
-        <mrow>\mathrm{Ker}(A) \amp= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
+        <mrow>\mathrm{Ker}(A) \amp\supseteq \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
         <mrow>\mathrm{Im}(A) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
+      </md>
+      である。
+      <xref ref="thm-lin-fund" /> より、<m>\dim\mathrm{Ker}(A) = m-r</m> なので
+      <md>
+        <mrow>\mathrm{Ker}(A) \amp= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
       </md>
       である。
       </p>
