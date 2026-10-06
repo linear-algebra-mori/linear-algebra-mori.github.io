@@ -608,7 +608,44 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <definition>
       <title>置換</title>
       <p>集合 <m>[n]\coloneqq\{1,2,\dotsc,n\}</m> 上の全単射を<term>置換</term>という。
-      集合 <m>[n]</m> 上の置換の集合を <m>S_n</m> で表す。</p>
+      集合 <m>[n]</m> 上の置換の集合を <m>S_n</m> で表す。<m>|S_n|=n!</m> である。</p>
+      <p>
+      また、恒等置換を
+      <md>
+      <mrow>\mathrm{id}\colon [n]\amp\longrightarrow[n]</mrow>
+      <mrow>i\amp\longmapsto i</mrow>
+      </md>
+      と定義する。
+      任意の <m>\sigma\in S_n</m> について、逆置換を <m>\sigma^{-1}</m> で表す。
+      </p>
+    </definition>
+      <p>
+      置換を
+      <md>
+      \sigma=\begin{pmatrix}1\amp 2\amp \dotsm\amp n\\\sigma(1)\amp\sigma(2)\amp\dotsm\amp\sigma(n)\end{pmatrix}
+      </md>
+      と表す<term>コーシーの二行記法</term>が便利である。
+      </p>
+    <definition>
+      <title>巡回置換</title>
+      <p>
+      任意の相異なる <m>a_0,\dotsc,a_{r-1}\in[n]</m> について
+      <md>
+        <mrow>\sigma(a_i) \amp= a_{i+1\bmod r}\qquad\forall i\in\{0,\dotsc,r-1\}</mrow>
+        <mrow>\sigma(a) \amp= a\qquad\forall a\in [n]\setminus\{a_0,\dotsc,a_{r-1}\}</mrow>
+      </md>
+      を長さ <m>r</m> の<term>巡回置換</term> といい、
+      <md>
+        \begin{pmatrix}
+          a_0\amp a_1\amp\dotsm\amp a_{r-1}
+        \end{pmatrix}
+      </md>
+      で表す。
+      </p>
+    </definition>
+    <definition>
+      <title>置換のサイクル分解</title>
+      <p><m>[n]</m> 上の置換</p>
     </definition>
     <definition>
       <title>置換の符号</title>
