@@ -92,7 +92,7 @@
         </md>
         である。したがってこれらの基底に対する <m>T</m> の行列表現は
         <md>
-          A_T=\begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\end{bmatrix}
+          B=\begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\end{bmatrix}
         </md>
         となる。
       </p>
