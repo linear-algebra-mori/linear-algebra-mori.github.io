@@ -86,9 +86,9 @@
         とおく。
         このとき、
         <md>
-          <mrow>f\bm{v}_1\amp=A_f\bm{v}_1=\begin{bmatrix}1\\0\end{bmatrix}=\bm{u}_1</mrow>
-          <mrow>f\bm{v}_2\amp=A_f\bm{v}_2=\begin{bmatrix}1\\1\end{bmatrix}=\bm{u}_2</mrow>
-          <mrow>f\bm{v}_3\amp=A_f\bm{v}_3=\begin{bmatrix}0\\0\end{bmatrix}</mrow>
+          <mrow>f(\bm{v}_1)\amp=A_f\bm{v}_1=\begin{bmatrix}1\\0\end{bmatrix}=\bm{u}_1</mrow>
+          <mrow>f(\bm{v}_2)\amp=A_f\bm{v}_2=\begin{bmatrix}1\\1\end{bmatrix}=\bm{u}_2</mrow>
+          <mrow>f(\bm{v}_3)\amp=A_f\bm{v}_3=\begin{bmatrix}0\\0\end{bmatrix}</mrow>
         </md>
         である。したがってこれらの基底に対する <m>f</m> の行列表現は
         <md>
