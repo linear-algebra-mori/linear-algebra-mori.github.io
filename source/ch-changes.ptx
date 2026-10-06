@@ -6,42 +6,42 @@
     <title>行列の入出力の基底変換</title>
       <!-- <p> <xref ref="lem-regular" />より正則行列は基底を基底を基底に写す。</p>-->
     <p>
-      線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> の行列表現 <m>A_T=[a_{i,j}]\in\mathbb{R}^{n\times m}</m> は
+      線形写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> の行列表現 <m>A_f=[a_{i,j}]\in\mathbb{R}^{n\times m}</m> は
     <md>
-      T\bm{e}_j = \sum_{i=1}^n a_{i,j} \bm{e}_i
+      f(\bm{e}_j) = \sum_{i=1}^n a_{i,j} \bm{e}_i
     </md>
       を満たす。
       入出力は標準基底 <m>(\bm{e}_j)_{j=1}^m</m> と <m>(\bm{e}_i)_{i=1}^n</m> に基づいているが、この基底を別のものに変更した行列表現を考えることもできる。
     </p>
     <definition>
     <title>線型写像の基底を指定した行列表現</title>
-    <p>線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> について
+    <p>線形写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> について
     <md>
-      T\bm{v}_j = \sum_{i=1}^n b_{i,j} \bm{u}_i
+      f(\bm{v}_j) = \sum_{i=1}^n b_{i,j} \bm{u}_i
     </md>
-    を満たすとき、<m>[b_{i,j}]</m> を <term><m>T</m> の基底 <m>(\bm{v}_j)</m>, <m>(\bm{u}_i)</m> に対する行列表現</term>という。
+    を満たすとき、<m>[b_{i,j}]</m> を <term><m>f</m> の基底 <m>(\bm{v}_j)</m>, <m>(\bm{u}_i)</m> に対する行列表現</term>という。
     </p>
     </definition>
     <!--<p>線形写像 <m>T</m> の通常の行列表現 <m>A_T\in\mathbb{R}^{n\times m}</m> は標準基底 <m>(\bm{e}_i\in\mathbb{R}^m)</m>, <m>(\bm{e}_j\in\mathbb{R}^n)</m> に対する行列表現である。
     </p>-->
     <proposition>
       <title>行列の基底変換</title>
-      <p>線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> に対する行列表現を <m>B\in\mathbb{R}^{n\times m}</m> とし、
+      <p>線形写像 <m>f\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> に対する行列表現を <m>B\in\mathbb{R}^{n\times m}</m> とし、
       <md>
         <mrow>P \amp= \begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_m\end{bmatrix}</mrow>
         <mrow>Q \amp= \begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_n\end{bmatrix}</mrow>
       </md>
         とおくと
       <md>
-        <mrow>A_T \amp= QBP^{-1}.</mrow>
+        <mrow>A_f \amp= QBP^{-1}.</mrow>
       </md>
       </p>
     <proof>
       <p>
-        任意の <m>\bm{v}\in\mathbb{R}^n</m> について、<m>A_T\bm{v}=T\bm{v}</m> である。
+        任意の <m>\bm{v}\in\mathbb{R}^n</m> について、<m>A_f\bm{v}=f(\bm{v})</m> である。
         また、<m>B=[b_{i,j}]</m> とすると
       <md>
-        <mrow> T\bm{v}_j \amp= \sum_{i=1}^n b_{i,j}\bm{u}_i</mrow>
+        <mrow> f(\bm{v}_j) \amp= \sum_{i=1}^n b_{i,j}\bm{u}_i</mrow>
       </md>
       が成り立つ。
       一方で
@@ -50,22 +50,22 @@
       </md>
       より任意の <m>j\in\{1,\dotsc,m\}</m> について
       <md>
-        <mrow> QBP^{-1}\bm{v}_j \amp= QB\bm{e}_j = Q\sum_{i=1}^n b_{i,j}\bm{e}_i = \sum_{i=1}^n b_{i,j}\bm{u}_i= T\bm{v}_j = A_T\bm{v}_j</mrow>
+        <mrow> QBP^{-1}\bm{v}_j \amp= QB\bm{e}_j = Q\sum_{i=1}^n b_{i,j}\bm{e}_i = \sum_{i=1}^n b_{i,j}\bm{u}_i= f(\bm{v}_j) = A_f\bm{v}_j</mrow>
       </md>
       である。
-      したがって <m>QBP^{-1}=A_T</m> である。
+      したがって <m>QBP^{-1}=A_f</m> である。
       </p>
     </proof>
     </proposition>
     <p>
-      この <m>A_T</m> と <m>B</m> は同じ線形写像 <m>T</m> を表している行列であるが、その際に参照している基底が異なる。その基底を変換するのが、<m>P^{-1}</m> や <m>Q</m> の役割である。
+      この <m>A_f</m> と <m>B</m> は同じ線形写像 <m>f</m> を表している行列であるが、その際に参照している基底が異なる。その基底を変換するのが、<m>P^{-1}</m> や <m>Q</m> の役割である。
     </p>
     <example>
       <title>行列の基底変換</title>
       <p>
-        線形写像 <m>T\colon\mathbb{R}^3\to\mathbb{R}^2</m> の通常の行列表現が
+        線形写像 <m>f\colon\mathbb{R}^3\to\mathbb{R}^2</m> の通常の行列表現が
         <md>
-          A_T=\begin{bmatrix}1\amp1\amp0\\0\amp1\amp1\end{bmatrix}
+          A_f=\begin{bmatrix}1\amp1\amp0\\0\amp1\amp1\end{bmatrix}
         </md>
         であるとする。
         入力側の基底を
@@ -86,15 +86,22 @@
         とおく。
         このとき、
         <md>
-          <mrow>T\bm{v}_1\amp=A_T\bm{v}_1=\begin{bmatrix}1\\0\end{bmatrix}=\bm{u}_1</mrow>
-          <mrow>T\bm{v}_2\amp=A_T\bm{v}_2=\begin{bmatrix}1\\1\end{bmatrix}=\bm{u}_2</mrow>
-          <mrow>T\bm{v}_3\amp=A_T\bm{v}_3=\begin{bmatrix}0\\0\end{bmatrix}</mrow>
+          <mrow>f\bm{v}_1\amp=A_f\bm{v}_1=\begin{bmatrix}1\\0\end{bmatrix}=\bm{u}_1</mrow>
+          <mrow>f\bm{v}_2\amp=A_f\bm{v}_2=\begin{bmatrix}1\\1\end{bmatrix}=\bm{u}_2</mrow>
+          <mrow>f\bm{v}_3\amp=A_f\bm{v}_3=\begin{bmatrix}0\\0\end{bmatrix}</mrow>
         </md>
-        である。したがってこれらの基底に対する <m>T</m> の行列表現は
+        である。したがってこれらの基底に対する <m>f</m> の行列表現は
         <md>
           B=\begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\end{bmatrix}
         </md>
-        となる。
+        となる。このとき
+        <md>
+          A_f=
+          \begin{bmatrix}1\amp1\\0\amp1\end{bmatrix}
+          \begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\end{bmatrix}
+          \begin{bmatrix}1\amp0\amp1\\0\amp1\amp-1\\0\amp0\amp1\end{bmatrix}^{-1}
+        </md>
+        が成り立つ。
       </p>
     </example>
     <definition>
