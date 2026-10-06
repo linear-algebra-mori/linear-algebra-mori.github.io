@@ -166,36 +166,40 @@
       <p>行列のランクは基底変換による同値関係の不変量である。</p>
       <proof>
         <p>
-          行列 <m>A\in\mathbb{R}^{n\times m}</m> の列 <m>\bm{a}_1,\dotsc,\bm{a}_m\in\mathbb{R}^n</m> について
+          任意の正則行列 <m>P\in\mathbb{R}^{m\times m},\,Q\in\mathbb{R}^{n\times n}</m> について
           <md>
-            \mathrm{rank}(A) = \dim\mathrm{Im}(A) = \dim\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+            <mrow>\mathrm{rank}(QA) \amp= \mathrm{rank}(A)</mrow>
+            <mrow>\mathrm{rank}(AP) \amp= \mathrm{rank}(A)</mrow>
           </md>
-          である。
-          <md>
-            c_1\bm{a}_{i_1} + \dotsb + c_k\bm{a}_{i_k} = \bm{0} \implies
-            c_1Q\bm{a}_{i_1} + \dotsb + c_kQ\bm{a}_{i_k} = \bm{0}
-          </md>
-          より <m>Q\in\mathbb{R}^{n\times n}</m> について
-          <md>
-            \dim\mathrm{span}(Q\bm{a}_1,\dotsc,Q\bm{a}_m)\le
-            \dim\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
-          </md>
-          である。
-          したがって
-          <md>
-            \mathrm{rank}(QA) \le \mathrm{rank}(A).
-          </md>
-          また、<m>Q</m> が正則のとき
-          <md>
-            \mathrm{rank}(A) = \mathrm{rank}(Q^{-1}QA) \le  \mathrm{rank}(QA)  
-          </md>
-          である。
-          したがって <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> である。
+          をそれぞれ示す。
         </p>
         <p>
-          次に正則行列 <m>P\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。<m>AP</m> の <m>j</m> 列目は
+          まず正則行列 <m>Q\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> であることを示す。
+          <xref ref="thm-lin-fund"/> より、
           <md>
-            \sum_{i=1}^mp_{i,j}\bm{a}_i \in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
+            \dim\mathrm{Ker}(QA)=\dim\mathrm{Ker}(A)
+          </md>
+          を示せばよい。
+          自明に
+          <md>
+            \mathrm{Ker}(QA)\supseteq \mathrm{Ker}(A)
+          </md>
+          なので
+          <md>
+            \dim\mathrm{Ker}(QA)\ge \dim\mathrm{Ker}(A)
+          </md>
+          である。
+         また、<m>Q</m> が正則であることから
+          <md>
+            \dim\mathrm{Ker}(A)=\dim\mathrm{Ker}(Q^{-1}QA)\ge \dim\mathrm{Ker}(QA)
+          </md>
+          したがって <m>\dim\mathrm{Ker}(QA)=\dim\mathrm{Ker}(A)</m> である。
+        </p>
+        <p>
+          次に正則行列 <m>P\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。
+          自明に
+          <md>
+            \mathrm{Im}(AP)\subseteq\mathrm{Im}(A)
           </md>
           である。したがって
           <md>
@@ -295,60 +299,33 @@
       である。</p>
     <proof>
       <p>
-        任意の <m>j\in\{1,\dotsc,m\}</m> について <m>P^{-1}\bm{v}_j=\bm{e}_j</m> である。
-        <!--したがって、任意の <m>j\in\{r+1,\dotsc,m\}</m> について <m>A\bm{v}_{j}=\bm{0}</m> である。-->
-        よって
-        <md>
-          <mrow>\mathrm{Ker}\left(
-        \begin{bmatrix}
-          I_r\amp O\\
-          O\amp O
-        \end{bmatrix}P^{-1}\right)=\mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
-        </md>
-        である。
-        <!--
-        ランクが入出力の基底変換の不変量であることから <m>\mathrm{rank}(A)=r</m> である。
-        <xref ref="thm-lin-fund"/> より <m>\dim\mathrm{Ker}(A) = m - r</m> なので
-        -->
-        <m>Q</m> は正則であるため
       <md>
-        <mrow>\mathrm{Ker}(A) \amp=\mathrm{Ker}\left(
-        \begin{bmatrix}
-          I_r\amp O\\
-          O\amp O
-        \end{bmatrix}P^{-1}\right)= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
-      </md>
-      である。
-      </p>
-      <p>
-        また、
-      <md>
-        Q
+        <mrow>AP \amp= Q
         \begin{bmatrix}
           I_r\amp O\\
           O\amp O
         \end{bmatrix}
-        =
-        \begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_r\amp\bm{0}\amp\dotsm\amp\bm{0}\end{bmatrix}
+        </mrow>
       </md>
-      であるため
+        より、
       <md>
-        <mrow>\mathrm{Im}\left(Q
+        <mrow>A\bm{v}_j = AP\bm{e}_j = Q
         \begin{bmatrix}
           I_r\amp O\\
           O\amp O
-        \end{bmatrix}\right) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
+        \end{bmatrix}\bm{e}_j
+        =\begin{cases}
+        \bm{u}_j\amp\text{if } j\le r\\
+        \bm{0}\amp\text{otherwise}
+        \end{cases}
+        </mrow>
       </md>
-        である。
-        したがって <m>\mathrm{Im}(P^{-1})=\mathbb{R}^m</m> より
+      したがって
       <md>
-        <mrow>\mathrm{Im}(A)=\mathrm{Im}\left(Q
-        \begin{bmatrix}
-          I_r\amp O\\
-          O\amp O
-        \end{bmatrix}\right) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
+        <mrow>\mathrm{Ker}(A) \amp= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
+        <mrow>\mathrm{Im}(A) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
       </md>
-        である。
+      である。
       </p>
     </proof>
       </proposition>
