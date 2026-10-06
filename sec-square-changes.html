@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>正方行列の基底変換</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
@@ -113,7 +113,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="frontmatter-3.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="frontmatter.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="ch-vector.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-changes.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-changes.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-determinant-2.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -129,11 +129,11 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="目次" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter contains-active">
+<li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">前書き</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-frontmatter">
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">線形代数とは</span></a></div></li>
-<li class="toc-item toc-colophon active"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -292,11 +292,11 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-alg-lineq.html" class="internal"><span class="codenumber">6.4</span> <span class="title">線形方程式を解くアルゴリズム</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-changes.html" class="internal"><span class="codenumber">7</span> <span class="title">行列の基底変換と不変量</span></a></div>
-<ul id="ptx-toc-group-ch-changes" class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-changes">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-changes.html" class="internal"><span class="codenumber">7.1</span> <span class="title">一般の行列の入出力の基底変換</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-square-changes.html" class="internal"><span class="codenumber">7.2</span> <span class="title">正方行列の基底変換</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-square-changes.html" class="internal"><span class="codenumber">7.2</span> <span class="title">正方行列の基底変換</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-determinant-2.html" class="internal"><span class="codenumber">7.3</span> <span class="title"><span class="process-math">\(2\times 2\)</span> 行列の行列式</span></a></div>
 <ul id="ptx-toc-group-sec-determinant-2" class="structural toc-item-list">
@@ -309,21 +309,156 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="colophon" id="front-colophon">
+<section class="section" id="sec-square-changes">
 <h1 class="heading hide-type">
-<span class="type">Colophon</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Colophon</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">正方行列の基底変換</span>
 </h1>
-<div class="credit">
-<b class="title">Website</b> <a class="external" href="https://pretextbook.org" target="_blank">My Website</a>
+<div class="para logical" id="sec-square-changes-2">
+<div class="para">
+<article class="definition definition-like" id="sec-square-changes-2-1"><h2 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">線型写像の基底を指定した行列表現.</span>
+</h2>
+<div class="para logical" id="sec-square-changes-2-1-2">
+<div class="para">線形写像 <span class="process-math">\(f\colon \mathbb{R}^n\to\mathbb{R}^n\)</span> と <span class="process-math">\(\mathbb{R}^n\)</span> の順序付き基底 <span class="process-math">\((\bm{v}_1,\dotsc,\bm{v}_n)\)</span> について</div>
+<div class="displaymath process-math" id="sec-square-changes-2-1-2-4">
+\begin{equation*}
+f(\bm{v}_j) = \sum_{i=1}^n b_{i,j} \bm{v}_i\qquad\forall j\in\{1,\dotsc,n\}
+\end{equation*}
 </div>
-<div class="para copyright">©2026–2026 Ryuhei Mori</div>
-<div class="para license">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a class="external" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CreativeCommons.org</a>
+<div class="para">を満たすとき、<span class="process-math">\([b_{i,j}]\)</span> を <dfn class="terminology"><span class="process-math">\(f\)</span> の基底 <span class="process-math">\((\bm{v}_j)\)</span> に対する行列表現</dfn>という。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Colophon"><a tabindex="-1" href="#front-colophon" title="Copy heading and permalink for Colophon" aria-label="Copy heading and permalink for Colophon">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.2.1: 線型写像の基底を指定した行列表現"><a tabindex="-1" href="#sec-square-changes-2-1" title="Copy heading and permalink for 定義 7.2.1: 線型写像の基底を指定した行列表現" aria-label="Copy heading and permalink for 定義 7.2.1: 線型写像の基底を指定した行列表現">🔗</a></div>
+</article> 線形写像 <span class="process-math">\(f\colon\mathbb{R}^n\to\mathbb{R}^n\)</span> について <span class="process-math">\(\mathbb{R}^n\)</span> の順序付き基底 <span class="process-math">\(\bm{v}_1,\dotsc,\bm{v}_n\in\mathbb{R}^n\)</span> を選択し、入出力両方に共通の基底として用いた行列表現 <span class="process-math">\(B\)</span> を考える。 このとき、</div>
+<div class="displaymath process-math" id="sec-square-changes-2-6">
+\begin{align*}
+P \amp= \begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">について、</div>
+<div class="displaymath process-math" id="sec-square-changes-2-7">
+\begin{equation*}
+A_f = PBP^{-1}
+\end{equation*}
+</div>
+<div class="para">を満たす。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-square-changes-3"><h2 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">正方行列の相似.</span>
+</h2>
+<div class="para logical" id="sec-square-changes-3-2">
+<div class="para">正方行列 <span class="process-math">\(A,B\in\mathbb{R}^{n\times n}\)</span> について、ある正則行列 <span class="process-math">\(P\in\mathbb{R}^{n\times n}\)</span> が存在して</div>
+<div class="displaymath process-math" id="sec-square-changes-3-2-3">
+\begin{equation*}
+A = PBP^{-1}
+\end{equation*}
+</div>
+<div class="para">を満たすとき、<span class="process-math">\(A\)</span> と <span class="process-math">\(B\)</span> は<dfn class="terminology">相似</dfn>であるという。 これは同値関係である。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.2.2: 正方行列の相似"><a tabindex="-1" href="#sec-square-changes-3" title="Copy heading and permalink for 定義 7.2.2: 正方行列の相似" aria-label="Copy heading and permalink for 定義 7.2.2: 正方行列の相似">🔗</a></div>
+</article>
+<div class="para" id="sec-square-changes-4">
+<a href="sec-changes.html#lem-rank-inv" class="xref" data-knowl="./knowl/xref/lem-rank-inv.html" data-reveal-label="Reveal" data-close-label="Close" title="補題 7.1.8: ランクは不変量">補題 7.1.8</a> より、相似の同値関係についてランクは不変量となる。 しかし、ランクは相似の同値関係の完全不変量ではない。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-square-changes-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">例</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ランクは相似の完全不変量ではない.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="sec-square-changes-5-2">
+<div class="displaymath process-math" id="sec-square-changes-5-2-1">
+\begin{align*}
+A\amp=\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}\\
+B\amp=\begin{bmatrix}2\amp 0\\0\amp 2\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">について、<span class="process-math">\(\mathrm{rank}(A)=\mathrm{rank}(B)=2\)</span> である。 しかし、任意の正則行列 <span class="process-math">\(P\in\mathbb{R}^{n\times n}\)</span> について、</div>
+<div class="displaymath process-math" id="sec-square-changes-5-2-4">
+\begin{equation*}
+PAP^{-1} = A \ne B
+\end{equation*}
+</div>
+<div class="para">であるため、<span class="process-math">\(A\)</span> と <span class="process-math">\(B\)</span> は相似ではない。 </div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="例 7.2.3: ランクは相似の完全不変量ではない"><a tabindex="-1" href="#sec-square-changes-5" title="Copy heading and permalink for 例 7.2.3: ランクは相似の完全不変量ではない" aria-label="Copy heading and permalink for 例 7.2.3: ランクは相似の完全不変量ではない">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="sec-square-changes-6"><h2 class="heading">
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列のトレース.</span>
+</h2>
+<div class="para logical" id="sec-square-changes-6-2">
+<div class="para">正方行列 <span class="process-math">\(A=[a_{i,j}]\in\mathbb{R}^{n\times n}\)</span> の<dfn class="terminology">トレース</dfn>を</div>
+<div class="displaymath process-math" id="sec-square-changes-6-2-3">
+\begin{equation*}
+\mathrm{tr}(A) \coloneqq \sum_{i=1}^n a_{i,i}
+\end{equation*}
+</div>
+<div class="para">と定義する。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.2.4: 行列のトレース"><a tabindex="-1" href="#sec-square-changes-6" title="Copy heading and permalink for 定義 7.2.4: 行列のトレース" aria-label="Copy heading and permalink for 定義 7.2.4: 行列のトレース">🔗</a></div>
+</article>
+<article class="proposition theorem-like" id="sec-square-changes-7"><h2 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec-square-changes-7-1">
+<div class="para">任意の正方行列 <span class="process-math">\(A,B\in\mathbb{R}^{n\times n}\)</span> について</div>
+<div class="displaymath process-math" id="sec-square-changes-7-1-2">
+\begin{equation*}
+\mathrm{tr}(AB)=\mathrm{tr}(BA).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="命題 7.2.5"><a tabindex="-1" href="#sec-square-changes-7" title="Copy heading and permalink for 命題 7.2.5" aria-label="Copy heading and permalink for 命題 7.2.5">🔗</a></div>
+</article>
+<details id="sec-square-changes-7-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-square-changes-7-2-1">
+<div class="para">任意の正方行列 <span class="process-math">\(A=[a_{i,j}],B=[b_{i,j}]\in\mathbb{R}^{n\times n}\)</span> について</div>
+<div class="displaymath process-math" id="sec-square-changes-7-2-1-2">
+\begin{equation*}
+\mathrm{tr}(AB)=\sum_{i=1}^n \sum_{j=1}^n a_{i,j}b_{j,i} =\mathrm{tr}(BA).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 7.2.5.1"><a tabindex="-1" href="#sec-square-changes-7-2" title="Copy heading and permalink for 証明 7.2.5.1" aria-label="Copy heading and permalink for 証明 7.2.5.1">🔗</a></div>
+</article></details>
+<article class="corollary theorem-like" id="sec-square-changes-8"><h2 class="heading">
+<span class="type">系</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-square-changes-8-1">トレースは正方行列の相似による同値関係の不変量である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="系 7.2.6"><a tabindex="-1" href="#sec-square-changes-8" title="Copy heading and permalink for 系 7.2.6" aria-label="Copy heading and permalink for 系 7.2.6">🔗</a></div>
+</article>
+<details id="sec-square-changes-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">例</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ランクとトレースのペアは相似の完全不変量ではない.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="sec-square-changes-9-2">
+<div class="displaymath process-math" id="sec-square-changes-9-2-1">
+\begin{align*}
+A\amp=\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}\\
+B\amp=\begin{bmatrix}1\amp 1\\0\amp 1\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">について、<span class="process-math">\(\mathrm{rank}(A)=\mathrm{rank}(B)=2\)</span> であり、<span class="process-math">\(\mathrm{tr}(A)=\mathrm{tr}(B)=2\)</span> である。 しかし、任意の正則行列 <span class="process-math">\(P\in\mathbb{R}^{n\times n}\)</span> について、</div>
+<div class="displaymath process-math" id="sec-square-changes-9-2-5">
+\begin{equation*}
+PAP^{-1} = A \ne B
+\end{equation*}
+</div>
+<div class="para">であるため、<span class="process-math">\(A\)</span> と <span class="process-math">\(B\)</span> は相似ではない。 </div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-square-changes-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="例 7.2.7: ランクとトレースのペアは相似の完全不変量ではない"><a tabindex="-1" href="#sec-square-changes-9" title="Copy heading and permalink for 例 7.2.7: ランクとトレースのペアは相似の完全不変量ではない" aria-label="Copy heading and permalink for 例 7.2.7: ランクとトレースのペアは相似の完全不変量ではない">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 7.2: 正方行列の基底変換"><a tabindex="-1" href="#sec-square-changes" title="Copy heading and permalink for Section 7.2: 正方行列の基底変換" aria-label="Copy heading and permalink for Section 7.2: 正方行列の基底変換">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="frontmatter-3.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-vector.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-changes.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-determinant-2.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
