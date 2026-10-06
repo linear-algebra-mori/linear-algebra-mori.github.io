@@ -3,8 +3,16 @@
 <chapter xml:id="ch-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>行列の基底変換と不変量</title>
   <section xml:id="sec-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>行列の基底変換</title>
+    <title>行列の入出力の基底変換</title>
       <!-- <p> <xref ref="lem-regular" />より正則行列は基底を基底を基底に写す。</p>-->
+    <p>
+      線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> の行列表現 <m>A_T=[a_{i,j}]\in\mathbb{R}^{n\times m}</m> は
+    <md>
+      T\bm{e}_j = \sum_{i=1}^n a_{i,j} \bm{e}_i
+    </md>
+      を満たす。
+      入出力は標準基底 <m>(\bm{e}_j)_{j=1}^m</m> と <m>(\bm{e}_i)_{i=1}^n</m> に基づいているが、この基底を別のものに変更した行列表現を考えることもできる。
+    </p>
     <definition>
     <title>線型写像の基底を指定した行列表現</title>
     <p>線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> について
@@ -14,8 +22,8 @@
     を満たすとき、<m>[b_{i,j}]</m> を <term><m>T</m> の基底 <m>(\bm{v}_j)</m>, <m>(\bm{u}_i)</m> に対する行列表現</term>という。
     </p>
     </definition>
-    <p>線形写像 <m>T</m> の通常の行列表現 <m>A_T\in\mathbb{R}^{n\times m}</m> は標準基底 <m>(\bm{e}_i\in\mathbb{R}^m)</m>, <m>(\bm{e}_j\in\mathbb{R}^n)</m> に対する行列表現である。
-    </p>
+    <!--<p>線形写像 <m>T</m> の通常の行列表現 <m>A_T\in\mathbb{R}^{n\times m}</m> は標準基底 <m>(\bm{e}_i\in\mathbb{R}^m)</m>, <m>(\bm{e}_j\in\mathbb{R}^n)</m> に対する行列表現である。
+    </p>-->
     <proposition>
       <title>行列の基底変換</title>
       <p>線形写像 <m>T\colon \mathbb{R}^m\to\mathbb{R}^n</m> と <m>\mathbb{R}^m</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_m)</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{u}_1,\dotsc,\bm{u}_n)</m> に対する行列表現を <m>B\in\mathbb{R}^{n\times m}</m> とし、
@@ -54,6 +62,40 @@
     </p>
     <example>
       <title>行列の基底変換</title>
+      <p>
+        線形写像 <m>T\colon\mathbb{R}^3\to\mathbb{R}^2</m> の通常の行列表現が
+        <md>
+          A_T=\begin{bmatrix}1\amp1\amp0\\0\amp1\amp1\end{bmatrix}
+        </md>
+        であるとする。
+        入力側の基底を
+        <md>
+          <mrow>
+          \bm{v}_1\amp=\begin{bmatrix}1\\0\\0\end{bmatrix},\amp
+          \bm{v}_2\amp=\begin{bmatrix}0\\1\\0\end{bmatrix},\amp
+          \bm{v}_3\amp=\begin{bmatrix}1\\-1\\1\end{bmatrix}
+          </mrow>
+        </md>
+        とおき、出力側の基底を
+        <md>
+          <mrow>
+          \bm{u}_1\amp=\begin{bmatrix}1\\0\end{bmatrix},\amp
+          \bm{u}_2\amp=\begin{bmatrix}1\\1\end{bmatrix}
+          </mrow>
+        </md>
+        とおく。
+        このとき、
+        <md>
+          <mrow>T\bm{v}_1\amp=A_T\bm{v}_1=\begin{bmatrix}1\\0\end{bmatrix}=\bm{u}_1</mrow>
+          <mrow>T\bm{v}_2\amp=A_T\bm{v}_2=\begin{bmatrix}1\\1\end{bmatrix}=\bm{u}_2</mrow>
+          <mrow>T\bm{v}_3\amp=A_T\bm{v}_3=\begin{bmatrix}0\\0\end{bmatrix}</mrow>
+        </md>
+        である。したがってこれらの基底に対する <m>T</m> の行列表現は
+        <md>
+          A_T=\begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\end{bmatrix}
+        </md>
+        となる。
+      </p>
     </example>
     <definition>
       <title>二項関係</title>
@@ -134,7 +176,7 @@
           したがって <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> である。
         </p>
         <p>
-          次に正則行列 <m>P\in\mathbb{R}^m</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。。<m>AP</m> の <m>j</m> 列目は
+          次に正則行列 <m>P\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。。<m>AP</m> の <m>j</m> 列目は
           <md>
             \sum_{i=1}^mp_{i,j}\bm{a}_i \in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
           </md>
@@ -148,6 +190,9 @@
           </md>
           である。
           したがって <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> である。
+        </p>
+        <p>
+          よって、任意の <m>A\in\mathbb{R}^{n\times m}</m> と正則行列 <m>P\in\mathbb{R}^{m\times m}</m> と <m>Q\in\mathbb{R}^{n\times n}</m> について <m>\mathrm{rank}(QAP^{-1})=\mathrm{rank}(A)</m> である。
         </p>
       </proof>
     </lemma>
@@ -209,5 +254,88 @@
       行列の基底変換の同値関係の場合、各同値類は <m>\begin{bmatrix}I_r\amp O\\O\amp O\end{bmatrix}</m> の形の行列を一つづつ含む。
       この形の行列は各同値類を代表するものだと考えることができ、<term>同値類の代表元</term>と呼ぶ。
     </p>
+    <p>
+      <proposition>
+      <p>任意の正則行列
+      <md>
+        <mrow>P \amp= \begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_m\end{bmatrix}</mrow>
+        <mrow>Q \amp= \begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_n\end{bmatrix}</mrow>
+      </md>
+      と任意の <m>r\in\mathbb{Z}_{\ge 0}</m> について
+      <md>
+        <mrow>A \amp= Q
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+        P^{-1}
+        </mrow>
+      </md>
+      とおくと
+      <md>
+        <mrow>\mathrm{Ker}(A) \amp= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
+        <mrow>\mathrm{Im}(A) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
+      </md>
+      である。</p>
+      </proposition>
+    </p>
+    <proof>
+      <p>
+        任意の <m>j\in\{1,\dotsc,m\}</m> について <m>P^{-1}\bm{v}_j=\bm{e}_j</m> である。
+        <!--したがって、任意の <m>j\in\{r+1,\dotsc,m\}</m> について <m>A\bm{v}_{j}=\bm{0}</m> である。-->
+        よって
+        <md>
+          <mrow>\mathrm{Ker}\left(
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}P^{-1}\right)=\mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
+        </md>
+        である。
+        <!--
+        ランクが入出力の基底変換の不変量であることから <m>\mathrm{rank}(A)=r</m> である。
+        <xref ref="thm-lin-fund"/> より <m>\dim\mathrm{Ker}(A) = m - r</m> なので
+        -->
+        <m>Q</m> は正則であるため
+      <md>
+        <mrow>\mathrm{Ker}(A) \amp=\mathrm{Ker}\left(
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}P^{-1}\right)= \mathrm{span}(\bm{v}_{r+1},\dotsc,\bm{v}_m)</mrow>
+      </md>
+      である。
+      </p>
+      <p>
+        また、
+      <md>
+        Q
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+        =
+        \begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_r\amp\bm{0}\amp\dotsm\amp\bm{0}\end{bmatrix}
+      </md>
+      であるため
+      <md>
+        <mrow>\mathrm{Im}\left(Q
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}\right) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
+      </md>
+        である。
+        したがって <m>\mathrm{Im}(P^{-1})=\mathbb{R}^m</m> より
+      <md>
+        <mrow>\mathrm{Im}(A)=\mathrm{Im}\left(Q
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}\right) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
+      </md>
+        である。
+      </p>
+    </proof>
   </section>
 </chapter>

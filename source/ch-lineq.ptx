@@ -133,7 +133,7 @@
 
      <subsection xml:id="subsec-im-ker" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>線型写像の基本定理</title>
-    <theorem>
+    <theorem xml:id="thm-lin-fund">
       <title>線型写像の基本定理</title>
       <statement>
         <p>任意の行列 <m>A\in\mathbb{R}^{n\times m}</m> について、
