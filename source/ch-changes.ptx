@@ -38,7 +38,7 @@
       </p>
     <proof>
       <p>
-        任意の <m>\bm{v}\in\mathbb{R}^n</m> について、<m>A_f\bm{v}=f(\bm{v})</m> である。
+        任意の <m>\bm{v}\in\mathbb{R}^m</m> について、<m>A_f\bm{v}=f(\bm{v})</m> である。
         また、<m>B=[b_{i,j}]</m> とすると
       <md>
         <mrow> f(\bm{v}_j) \amp= \sum_{i=1}^n b_{i,j}\bm{u}_i</mrow>
@@ -48,11 +48,21 @@
       <md>
         <mrow> B\bm{e}_j \amp= \sum_{i=1}^n b_{i,j}\bm{e}_i</mrow>
       </md>
-      より任意の <m>j\in\{1,\dotsc,m\}</m> について
+      である。したがって
+      <md>
+        <mrow> A_fP\bm{e}_j\amp=A_f\bm{v}_j = f(\bm{v}_j) = \sum_{i=1}^n b_{i,j}\bm{u}_i = QB\bm{e}_j</mrow>
+      </md>
+      より
+      <md>
+        A_fP = QB
+      </md>
+      が成り立つ。
+      <!--より任意の <m>j\in\{1,\dotsc,m\}</m> について
       <md>
         <mrow> QBP^{-1}\bm{v}_j \amp= QB\bm{e}_j = Q\sum_{i=1}^n b_{i,j}\bm{e}_i = \sum_{i=1}^n b_{i,j}\bm{u}_i= f(\bm{v}_j) = A_f\bm{v}_j</mrow>
       </md>
       である。
+      -->
       したがって <m>QBP^{-1}=A_f</m> である。
       </p>
     </proof>
@@ -134,7 +144,7 @@
       </p>
       <proof>
         <ol>
-          <li>[反射律] <m>A = I_nBI_m</m> より <m>A\sim B</m> である。</li>
+          <li>[反射律] <m>A = I_nAI_m</m> より <m>A\sim A</m> である。</li>
           <li>[対称律] <m>A = QBP^{-1}</m> のとき <m>B = Q^{-1}AP</m> である。</li>
           <li>[推移律] <m>A = QBP^{-1}</m> かつ <m>B = Q'CP^{'-1}</m> のとき <m>A = QQ'CP^{'-1}P^{-1}</m> である。よって <m>A = (QQ') C (PP')^{-1}</m> である。</li>
         </ol>
@@ -183,7 +193,7 @@
           したがって <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> である。
         </p>
         <p>
-          次に正則行列 <m>P\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。。<m>AP</m> の <m>j</m> 列目は
+          次に正則行列 <m>P\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(AP)=\mathrm{rank}(A)</m> であることを示す。<m>AP</m> の <m>j</m> 列目は
           <md>
             \sum_{i=1}^mp_{i,j}\bm{a}_i \in\mathrm{span}(\bm{a}_1,\dotsc,\bm{a}_m)
           </md>
@@ -261,14 +271,13 @@
       行列の基底変換の同値関係の場合、各同値類は <m>\begin{bmatrix}I_r\amp O\\O\amp O\end{bmatrix}</m> の形の行列を一つづつ含む。
       この形の行列は各同値類を代表するものだと考えることができ、<term>同値類の代表元</term>と呼ぶ。
     </p>
-    <p>
       <proposition>
       <p>任意の正則行列
       <md>
         <mrow>P \amp= \begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_m\end{bmatrix}</mrow>
         <mrow>Q \amp= \begin{bmatrix}\bm{u}_1\amp\dotsm\amp\bm{u}_n\end{bmatrix}</mrow>
       </md>
-      と任意の <m>r\in\mathbb{Z}_{\ge 0}</m> について
+      と任意の <m>r\in\{0,\dotsc,\min\{n,m\}\}</m> について
       <md>
         <mrow>A \amp= Q
         \begin{bmatrix}
@@ -284,8 +293,6 @@
         <mrow>\mathrm{Im}(A) \amp= \mathrm{span}(\bm{u}_{1},\dotsc,\bm{u}_r)</mrow>
       </md>
       である。</p>
-      </proposition>
-    </p>
     <proof>
       <p>
         任意の <m>j\in\{1,\dotsc,m\}</m> について <m>P^{-1}\bm{v}_j=\bm{e}_j</m> である。
@@ -344,5 +351,6 @@
         である。
       </p>
     </proof>
+      </proposition>
   </section>
 </chapter>
