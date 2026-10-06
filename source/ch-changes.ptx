@@ -499,12 +499,20 @@
   <latex-image>
 \begin{tikzpicture}
 \fill[gray!20] (0,0) -- (1,0) -- (2,1) -- (1,1);
+\fill[gray!20] (0,0) -- (1,0) -- (2,2) -- (1,2);
+\fill[gray!20] (0,0) -- (1,0) -- (3,3) -- (2,3);
 \draw[very thick,->] (-2,0) -- (2,0);
 \draw[very thick,->] (0,-2) -- (0,2);
-\draw[very thick,->] (0,0) -- (1,0) node[anchor=south] {$\bm{v}$};
-\draw[very thick,->] (0,0) -- (1,1) node[anchor=south] {$\bm{w}$};
-\draw[very thick,->,gray] (1,0) -- (2,1) node[anchor=south] {$\bm{v}+\bm{w}$};
+\draw[very thick,->] (0,0) -- (1,0) node[anchor=south] {$\bm{u}$};
+\draw[very thick,->] (0,0) -- (1,1) node[anchor=south] {$\bm{v}$};
+\draw[very thick,->] (0,0) -- (1,2) node[anchor=south] {$\bm{w}$};
+\draw[very thick,->] (0,0) -- (2,3) node[anchor=south] {$\bm{v}+\bm{w}$};
+\draw[very thick,->,gray] (1,0) -- (2,1) node[anchor=south] {$\bm{u}+\bm{v}$};
+\draw[very thick,->,gray] (1,0) -- (2,2) node[anchor=south] {$\bm{u}+\bm{w}$};
+\draw[very thick,->,gray] (1,0) -- (3,3) node[anchor=south] {$\bm{u}+\bm{v}+\bm{w}$};
 \draw[very thick,->,gray] (1,1) -- (2,1);
+\draw[very thick,->,gray] (1,2) -- (2,2);
+\draw[very thick,->,gray] (2,3) -- (3,3);
 \end{tikzpicture}
   </latex-image>
 </image>
