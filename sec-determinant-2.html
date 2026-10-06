@@ -304,7 +304,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-2.html#subsec-determinant-2" class="internal"><span class="codenumber">7.3.2</span> <span class="title"><span class="process-math">\(2\times 2\)</span> 行列の行列式</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.4</span> <span class="title">行列式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.4</span> <span class="title">一般の正方行列の行列式</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -336,7 +336,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">これらのことから <span class="process-math">\(D\colon\mathbb{R}^2\times\mathbb{R}^2\to\mathbb{R}\)</span> について以下の性質が成り立つことが分かる。</div>
 <ol class="decimal" id="subsec-determinant-2-2-2">
 <li id="subsec-determinant-2-2-2-1">
-<div class="para" id="p-derived-subsec-determinant-2-2-2-1">[双線形性] <span class="process-math">\(\forall\bm{w}\in\mathbb{R}^2\quad D_1(\bm{v}):=D(\bm{v},\bm{w})\)</span> と <span class="process-math">\(D_2(\bm{v}):=D(\bm{w},\bm{v})\)</span> は線形。</div>
+<div class="para" id="p-derived-subsec-determinant-2-2-2-1">[双線形性] <span class="process-math">\(\forall\bm{v},\bm{w}\in\mathbb{R}^2\quad D_1(\bm{x}):=D(\bm{x},\bm{w})\)</span> と <span class="process-math">\(D_2(\bm{y}):=D(\bm{v},\bm{y})\)</span> は線形写像。</div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsec-determinant-2-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="subsec-determinant-2-2-2-2">
@@ -422,7 +422,21 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
 \end{align*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.3.2.1"><a tabindex="-1" href="#subsec-determinant-2-5-2" title="Copy heading and permalink for 証明 7.3.2.1" aria-label="Copy heading and permalink for 証明 7.3.2.1">🔗</a></div>
-</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 7.3.2: 2\times 2 行列の行列式"><a tabindex="-1" href="#subsec-determinant-2" title="Copy heading and permalink for Subsection 7.3.2: 2\times 2 行列の行列式" aria-label="Copy heading and permalink for Subsection 7.3.2: 2\times 2 行列の行列式">🔗</a></div>
+</article></details>
+<div class="para logical" id="subsec-determinant-2-6">
+<div class="para">以上のことから、</div>
+<div class="displaymath process-math" id="subsec-determinant-2-6-1">
+\begin{equation*}
+\mathrm{det}\left(
+\begin{bmatrix}
+a\amp b\\c\amp d
+\end{bmatrix}\right)\coloneqq ad-bc
+\end{equation*}
+</div>
+<div class="para">を行列 <span class="process-math">\(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\)</span> の<dfn class="terminology">行列式</dfn>と定義する。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 7.3.2: 2\times 2 行列の行列式"><a tabindex="-1" href="#subsec-determinant-2" title="Copy heading and permalink for Subsection 7.3.2: 2\times 2 行列の行列式" aria-label="Copy heading and permalink for Subsection 7.3.2: 2\times 2 行列の行列式">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Section 7.3: 2\times 2 行列の行列式"><a tabindex="-1" href="#sec-determinant-2" title="Copy heading and permalink for Section 7.3: 2\times 2 行列の行列式" aria-label="Copy heading and permalink for Section 7.3: 2\times 2 行列の行列式">🔗</a></div>
 </section>
 </div>
