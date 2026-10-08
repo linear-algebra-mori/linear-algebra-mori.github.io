@@ -593,18 +593,8 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     </p>
     </subsection>
 </section>
-  <section xml:id="sec-determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>一般の正方行列の行列式</title>
-    <definition>
-      <title>多重線形写像</title>
-      <md>
-        D(\bm{v}_1,\dotsc,\bm{v}_n) =
-      </md>
-    </definition>
-    <definition>
-      <title>行列式</title>
-      写像 <m>D\colon\mathbb{R}^n</m>
-    </definition>
+  <section xml:id="sec-permutation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>置換</title>
     <definition>
       <title>置換</title>
       <p>有限集合上の全単射を<term>置換</term>という。
@@ -655,10 +645,12 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         \end{pmatrix}
       </md>
       で表す。
+      巡回置換を表す要素数 <m>r</m> を巡回置換の長さという。
+      長さ2の巡回置換を <term>互換</term> という。
       </p>
     </definition>
     <p>
-    巡回置換を表す要素の列はは巡回シフトをしても置換としては等しい。
+    巡回置換を表す要素の列は巡回シフトをしても置換としては等しい。
     例えば
     <md>
       \begin{pmatrix}3\amp 2\amp 1\end{pmatrix}=
@@ -669,23 +661,134 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     </p>
     <fact>
       <title>置換のサイクル分解</title>
-      <p>任意の <m>\sigma\in S_n</m> は互いに素な巡回置換の積として唯一の方法で表すことができる。</p>
+      <p>任意の <m>\sigma\in S_n</m> についてある巡回置換の集合 <m>\tau_1,\dotsc,\tau_m</m> が唯一存在し、以下を満たす。
+        <ol>
+          <li><m>\sigma=\tau_1\tau_2\dotsm\tau_m</m>.</li>
+          <li><m>\tau_1,\tau_2\dotsc,\tau_m</m> は互いに素.</li>
+          <li>任意の <m>i\in[n]</m> についてある <m>j\in[m]</m> が存在し、<m>i</m> は <m>\tau_j</m> によって他の元に移るか <m>\tau_j=\begin{pmatrix}i\end{pmatrix}</m></li>
+        </ol></p>
     </fact>
     <definition>
       <title>置換のサイクル数</title>
-      <p><m>\sigma\in S_n</m> について、</p>
+      <p><m>\sigma\in S_n</m> について、そのサイクル分解に含まれるサイクルの個数を置換 <m>\sigma</m> の<term>サイクル数</term> といい <m>c(\sigma)</m> で表す。</p>
     </definition>
     <definition>
       <title>置換の符号</title>
-      <p>集合 <m>[n]\coloneqq\{1,2,\dotsc,n\}</m> 上の全単射を<term>置換</term>という。
-      集合 <m>[n]</m> 上の置換の集合を <m>S_n</m> で表す。</p>
+      <p>置換 <m>\sigma\in S_n</m> の<term>符号</term>を
+        <md>
+          \mathrm{sgn}(\sigma)\coloneqq(-1)^{n-c(\sigma)}
+        </md>
+        と定義する。
+      </p>
+    </definition>
+    <p>例えば恒等写像のサイクル数は <m>c(\mathrm{id})=n</m> なので <m>\mathrm{sgn}(\mathrm{id})=1</m> である。</p>
+    <lemma xml:id="lem-cycle-pm">
+      <title>互換とサイクル数</title>
+      <p>任意の置換 <m>\sigma\in S_n</m> と互換 <m>\tau\in S_n</m> について、
+      <md>
+        |c(\sigma) - c(\tau\circ\sigma)| = 1.
+      </md>
+      </p>
+      <proof>
+        <p>
+          <m>\tau=(i,j)</m> とする。<m>i</m> と <m>j</m> が <m>\sigma</m> のサイクル分解で同じサイクルに属するとき
+      <md>
+        c(\tau\circ\sigma) = c(\sigma)+1.
+      </md>
+          異なるサイクルに属するとき
+      <md>
+        c(\tau\circ\sigma) = c(\sigma)-1.
+      </md>
+        </p>
+      </proof>
+    </lemma>
+    <proposition xml:id="prop-trans">
+      <title>互換の最小回数</title>
+      <p>
+        置換 <m>\sigma\in S_n</m> を互換の積として表す際の互換の最小個数は <m>n-c(\sigma)</m> である。
+      </p>
+      <proof>
+        <p>
+          恒等置換のサイクル数は <m>n</m> である。互換を一回掛ける毎にサイクル数は1増減するので、サイクル数を <m>c(\sigma)</m> にするために、最低 <m>n-c(\sigma)</m> 個の互換が必要である。
+        </p>
+        <p>
+          巡回置換の長さを <m>\ell</m> とすると、<m>\ell-1</m> 回の互換で実現できる。
+          したがって、<m>\sigma</m> の各サイクルの長さを <m>(\ell_i)_{i=1,\dotsc,c(\sigma)}</m> とおくと、
+          <md>
+            \sum_{i=1}^{c(\sigma)} (\ell_i-1) = n - c(\sigma)
+          </md>
+          回の互換の積で <m>\sigma</m> を表すことができる。
+        </p>
+      </proof>
+    </proposition>
+    <proposition>
+      <p>
+        任意の <m>\sigma,\rho\in S_n</m> について
+      <md>
+        \mathrm{sgn}(\sigma\circ\rho) = \mathrm{sgn}(\sigma)\mathrm{sgn}(\rho)
+      </md>
+      </p>
+      <proof>
+        <p>
+          <xref ref="lem-cycle-pm"/> より
+          <md>
+            \mathrm{sgn}(\tau\circ\sigma) = -\mathrm{sgn}(\sigma).
+          </md>
+          また、<xref ref="prop-trans"/> より、ある互換 <m>\tau_1,\dotsc,\tau_{n-c(\sigma)}</m> が存在し
+          <md>
+            \sigma = \tau_1\tau_2\dotsm\tau_{n-c(\sigma)}.
+          </md>
+          よって、
+          <md>
+            <mrow>\mathrm{sgn}(\sigma\circ\rho) \amp= \mathrm{sgn}(\tau_1\dotsm\tau_{n-c(\sigma)}\rho)</mrow>
+            <mrow>\amp= -\mathrm{sgn}(\tau_2\dotsm\tau_{n-c(\sigma)}\rho)</mrow>
+            <mrow>\amp= (-1)^{n-c(\sigma)}\mathrm{sgn}(\rho)</mrow>
+            <mrow>\amp= \mathrm{sgn}(\sigma)\cdot\mathrm{sgn}(\rho)</mrow>
+          </md>
+        </p>
+      </proof>
+    </proposition>
+    <corollary>
+      <p>
+        任意の <m>\sigma\in S_n</m> について
+      <md>
+        \mathrm{sgn}(\sigma^{-1}) = \mathrm{sgn}(\sigma)
+      </md>
+      </p>
+    </corollary>
+    <proposition>
+      <p>
+        任意の <m>\sigma\in S_n</m> について、それを互換の積として表すときの個数の偶奇は一定である。
+      </p>
+      <proof>
+        <p>
+          <md>
+            <mrow>\sigma\amp=\tau_1\dotsm\tau_k</mrow>
+            <mrow>\amp=\rho_1\dotsm\rho_m</mrow>
+          </md>
+          と二通りの互換の積で表せるとき、互換の符号は <m>-1</m> なので <m>\mathrm{sgn}(\sigma) = (-1)^k = (-1)^m</m> である。
+        </p>
+      </proof>
+    </proposition>
+  </section>
+  <section xml:id="sec-determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>一般サイズの行列式</title>
+    <definition>
+      <title>多重線形写像</title>
+      <md>
+        D(\bm{v}_1,\dotsc,\bm{v}_n) =
+      </md>
+    </definition>
+    <definition>
+      <title>行列式</title>
+      写像 <m>D\colon\mathbb{R}^n</m>
     </definition>
     <definition>
       <title>行列式</title>
       <p>
         正方行列 <m>A=[a_{i,j}]\in\mathbb{R}^{n\times n}</m> の行列式を
         <md>
-          \mathrm{det}(A) \coloneqq \sum_{\sigma\in S_n} a_{i,\sigma(i)}
+          \mathrm{det}(A) \coloneqq \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
         </md>
       </p>
     </definition>
