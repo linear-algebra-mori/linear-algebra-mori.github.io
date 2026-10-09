@@ -775,13 +775,21 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <title>一般サイズの行列式</title>
     <definition>
       <title>多重線形写像</title>
+      写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が多重線形写像 <m>\defiff</m>
       <md>
         D(\bm{v}_1,\dotsc,\bm{v}_n) =
       </md>
     </definition>
     <definition>
       <title>行列式</title>
-      写像 <m>D\colon\mathbb{R}^n</m>
+      <p>
+      写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_n\to\mathbb{R}</m>
+      <ol>
+        <li>[多重線形写像]</li>
+        <li>[交代性]</li>
+        <li>[正規化]</li>
+      </ol>
+      </p>
     </definition>
     <definition>
       <title>行列式</title>
