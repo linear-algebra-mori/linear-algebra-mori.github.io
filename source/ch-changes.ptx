@@ -48,7 +48,7 @@
       <md>
         <mrow> B\bm{e}_j \amp= \sum_{i=1}^n b_{i,j}\bm{e}_i</mrow>
       </md>
-      である。したがって
+      である。したがって <m>j\in\{1,\dotsc,m\}</m> について
       <md>
         <mrow> A_fP\bm{e}_j\amp=A_f\bm{v}_j = f(\bm{v}_j) = \sum_{i=1}^n b_{i,j}\bm{u}_i = QB\bm{e}_j</mrow>
       </md>
@@ -288,7 +288,7 @@
           I_r\amp O\\
           O\amp O
         \end{bmatrix}
-        P^{-1}
+        P^{-1}\in\mathbb{R}^{n\times m}
         </mrow>
       </md>
       とおくと
@@ -334,6 +334,25 @@
       </p>
     </proof>
       </proposition>
+    <p>
+      行列の分解
+      <md>
+        <mrow>A \amp= Q
+        \begin{bmatrix}
+          I_r\amp O\\
+          O\amp O
+        \end{bmatrix}
+        P^{-1}
+        </mrow>
+      </md>
+      より、<m>Q</m> の左 <m>r</m> 列からなる行列 <m>C\in\mathbb{R}^{n\times r}</m> と <m>P^{-1}</m> の上 <m>r</m> 行からなる行列 <m>F\in\mathbb{R}^{r\times m}</m> を用いて
+      <md>
+        <mrow>A \amp= CF
+        </mrow>
+      </md>
+      と表すことができる。これを<term>階数因数分解 (rank decomposition)</term>という。
+      階数因数分解は一意ではない。
+    </p>
   </section>
   <section xml:id="sec-square-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>正方行列の基底変換</title>
@@ -358,6 +377,111 @@
       </md>
       を満たす。
     </p>
+    <example>
+      <title>行列の基底変換の例</title>
+      <p>
+        <md>
+          A=\begin{bmatrix}
+           18 \amp -12\\
+           20 \amp -13
+          \end{bmatrix}
+        </md>
+        について、
+        <md>
+          <mrow>
+          \bm{v}_1\amp=\begin{bmatrix}
+            3 \\ 4
+          \end{bmatrix}\amp
+          \bm{v}_2\amp=\begin{bmatrix}
+            4 \\ 5
+          \end{bmatrix}\amp
+          </mrow>
+        </md>
+        という基底で線形変換 <m>f_A</m> を表すことを考える。
+        このとき、
+        <md>
+          <mrow>
+          \begin{bmatrix}
+          3\\4
+          \end{bmatrix}
+          \amp\longmapsto
+          2
+          \begin{bmatrix}
+          3\\4
+          \end{bmatrix},
+          </mrow>
+          <mrow>
+          \begin{bmatrix}
+          4\\5
+          \end{bmatrix}
+          \amp\longmapsto
+          3
+          \begin{bmatrix}
+          4\\5
+          \end{bmatrix}
+          </mrow>
+        </md>
+        である。
+        よって、
+        <md>
+          P=\begin{bmatrix}
+            3 \amp 4\\
+            4 \amp 5
+          \end{bmatrix}
+        </md>
+        とおくと
+        <md>
+          P^{-1}=\begin{bmatrix}
+            -5 \amp 4\\
+            4 \amp -3
+          \end{bmatrix}
+        </md>
+        となり、この基底を用いると
+        <md>
+          A=PBP^{-1}=
+          \begin{bmatrix}
+            3 \amp 4\\
+            4 \amp 5
+          \end{bmatrix}
+          \begin{bmatrix}
+            2 \amp 0\\
+            0 \amp 3
+          \end{bmatrix}
+          \begin{bmatrix}
+            -5 \amp 4\\
+            4 \amp -3
+          \end{bmatrix}
+        </md>
+        と分解することができる。
+        この行列 <m>A\in\mathbb{R}^{2\times 2}</m> が表す線形写像は
+        という理解ができる。
+        基底変換により対角行列にする操作のことを<term>対角化</term>という。
+        任意の行列が対角化できるわけではない。
+      </p>
+    </example>
+    <exercise>
+        <title>行列の基底変換</title>
+        <p>
+          以下の行列を与えられた基底を用いて表せ。<m>A=PBP^{-1}</m> の形に分解すればよい。
+          <ol>
+            <li>
+              <md>
+                <mrow>A\amp=\begin{bmatrix}-5\amp 4\\-12\amp 9\end{bmatrix}\amp
+                \bm{v}_1\amp=\begin{bmatrix}1\\2\end{bmatrix}\amp
+                \bm{v}_2\amp=\begin{bmatrix}2\\3\end{bmatrix}
+                </mrow>
+              </md>
+            </li>
+            <li>
+              <md><mrow>
+                A\amp=\begin{bmatrix}-4\amp4\\-9\amp8\end{bmatrix}\amp
+                \bm{v}_1\amp=\begin{bmatrix}2\\3\end{bmatrix}\amp
+                \bm{v}_2\amp=\begin{bmatrix}1\\2\end{bmatrix}
+              </mrow></md>
+            </li>
+          </ol>
+        </p>
+    </exercise>
     <definition>
       <title>正方行列の相似</title>
       <p>
