@@ -351,7 +351,7 @@
         </mrow>
       </md>
       と表すことができる。これを<term>階数因数分解 (rank decomposition)</term>という。
-      階数因数分解は一意ではない。
+      階数因数分解は一意ではない。CR分解も階数因数分解である。
     </p>
   </section>
   <section xml:id="sec-square-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -757,19 +757,19 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <definition>
       <title>巡回置換</title>
       <p>
-      任意の相異なる <m>a_0,\dotsc,a_{r-1}\in[n]</m> について
+      任意の相異なる <m>a_0,\dotsc,a_{\ell-1}\in[n]</m> について
       <md>
-        <mrow>\sigma(a_i) \amp= a_{i+1\bmod r}\amp\forall i\in\{0,\dotsc,r-1\}</mrow>
-        <mrow>\sigma(a) \amp= a\amp\forall a\in [n]\setminus\{a_0,\dotsc,a_{r-1}\}</mrow>
+        <mrow>\sigma(a_i) \amp= a_{i+1\bmod \ell}\amp\forall i\in\{0,\dotsc,\ell-1\}</mrow>
+        <mrow>\sigma(a) \amp= a\amp\forall a\in [n]\setminus\{a_0,\dotsc,a_{\ell-1}\}</mrow>
       </md>
-      を長さ <m>r</m> の<term>巡回置換</term> といい、
+      を長さ <m>\ell</m> の<term>巡回置換</term> といい、
       <md>
         \begin{pmatrix}
-          a_0\amp a_1\amp\dotsm\amp a_{r-1}
+          a_0\amp a_1\amp\dotsm\amp a_{\ell-1}
         \end{pmatrix}
       </md>
       で表す。
-      巡回置換を表す要素数 <m>r</m> を巡回置換の長さという。
+      巡回置換を表す要素数 <m>\ell</m> を巡回置換の長さという。
       長さ2の巡回置換を <term>互換</term> という。
       </p>
     </definition>
@@ -854,7 +854,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </p>
       <proof>
         <p>
-          <xref ref="lem-cycle-pm"/> より
+          <xref ref="lem-cycle-pm"/> より、任意の置換 <m>\sigma\in S_n</m> と互換 <m>\tau\in S_n</m> について
           <md>
             \mathrm{sgn}(\tau\circ\sigma) = -\mathrm{sgn}(\sigma).
           </md>
