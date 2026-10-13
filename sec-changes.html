@@ -58,15 +58,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.3.3';
+eBookConfig.runestone_version = '8.3.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.dd07797f77620576.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.11d27cdc38930c2c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/prefix-runtime.3adcbea95009347b.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.7a45395f326e122c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -304,7 +304,8 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-2.html#subsec-determinant-2" class="internal"><span class="codenumber">7.3.2</span> <span class="title"><span class="process-math">\(2\times 2\)</span> 行列の行列式</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.4</span> <span class="title">一般の正方行列の行列式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-permutation.html" class="internal"><span class="codenumber">7.4</span> <span class="title">置換</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.5</span> <span class="title">一般サイズの行列式</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -374,14 +375,14 @@ f(\bm{v}_j) \amp= \sum_{i=1}^n b_{i,j}\bm{u}_i
 B\bm{e}_j \amp= \sum_{i=1}^n b_{i,j}\bm{e}_i
 \end{align*}
 </div>
-<div class="para">である。したがって</div>
-<div class="displaymath process-math" id="sec-changes-4-3-1-6">
+<div class="para">である。したがって <span class="process-math">\(j\in\{1,\dotsc,m\}\)</span> について</div>
+<div class="displaymath process-math" id="sec-changes-4-3-1-7">
 \begin{align*}
 A_fP\bm{e}_j\amp=A_f\bm{v}_j = f(\bm{v}_j) = \sum_{i=1}^n b_{i,j}\bm{u}_i = QB\bm{e}_j
 \end{align*}
 </div>
 <div class="para">より</div>
-<div class="displaymath process-math" id="sec-changes-4-3-1-7">
+<div class="displaymath process-math" id="sec-changes-4-3-1-8">
 \begin{equation*}
 A_fP = QB
 \end{equation*}
@@ -391,7 +392,7 @@ A_fP = QB
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.1.2.1"><a tabindex="-1" href="#sec-changes-4-3" title="Copy heading and permalink for 証明 7.1.2.1" aria-label="Copy heading and permalink for 証明 7.1.2.1">🔗</a></div>
 </article></details>
-<div class="para" id="sec-changes-5">この <span class="process-math">\(A_f\)</span> と <span class="process-math">\(B\)</span> は同じ線形写像 <span class="process-math">\(f\)</span> を表している行列であるが、その際に参照している基底が異なる。その基底を変換するのが、<span class="process-math">\(P^{-1}\)</span> や <span class="process-math">\(Q\)</span> の役割である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-changes-5">この <span class="process-math">\(A_f\)</span> と <span class="process-math">\(B\)</span> は同じ線形写像 <span class="process-math">\(f\)</span> を表している行列であるが、その際に参照している基底が異なる。 <span class="process-math">\(P^{-1}\)</span> は入力の標準基底に関する座標を新しい基底に関する座標に変換し、<span class="process-math">\(Q\)</span> は出力の新しい基底に関する座標を標準基底に関する座標に変換する。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sec-changes-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
 <span class="type">例</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列の基底変換.</span>
@@ -559,7 +560,7 @@ A\sim B\implies \Phi(A)=\Phi(B)
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-rank-inv-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="lem-rank-inv-3-2">
-<div class="para">まず正則行列 <span class="process-math">\(Q\in\mathbb{R}^{m\times m}\)</span> について <span class="process-math">\(\mathrm{rank}(QA)=\mathrm{rank}(A)\)</span> であることを示す。 <a href="sec-im-ker.html#thm-lin-fund" class="xref" data-knowl="./knowl/xref/thm-lin-fund.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 6.1.9: 線型写像の基本定理">定理 6.1.9</a> より、</div>
+<div class="para">まず正則行列 <span class="process-math">\(Q\in\mathbb{R}^{n\times n}\)</span> について <span class="process-math">\(\mathrm{rank}(QA)=\mathrm{rank}(A)\)</span> であることを示す。 <a href="sec-im-ker.html#thm-lin-fund" class="xref" data-knowl="./knowl/xref/thm-lin-fund.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 6.1.9: 線型写像の基本定理">定理 6.1.9</a> より、</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lin-fund.html" id="lem-rank-inv-3-2-4">
 \begin{equation*}
 \dim\mathrm{Ker}(QA)=\dim\mathrm{Ker}(A)
@@ -702,7 +703,7 @@ A \amp= Q
 I_r\amp O\\
 O\amp O
 \end{bmatrix}
-P^{-1}
+P^{-1}\in\mathbb{R}^{n\times m}
 \end{align*}
 </div>
 <div class="para">とおくと</div>
@@ -760,7 +761,29 @@ O\amp O
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.1.10.1"><a tabindex="-1" href="#sec-changes-16-2" title="Copy heading and permalink for 証明 7.1.10.1" aria-label="Copy heading and permalink for 証明 7.1.10.1">🔗</a></div>
-</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 7.1: 一般の行列の入出力の基底変換"><a tabindex="-1" href="#sec-changes" title="Copy heading and permalink for Section 7.1: 一般の行列の入出力の基底変換" aria-label="Copy heading and permalink for Section 7.1: 一般の行列の入出力の基底変換">🔗</a></div>
+</article></details>
+<div class="para logical" id="sec-changes-17">
+<div class="para">行列の分解</div>
+<div class="displaymath process-math" id="sec-changes-17-1">
+\begin{align*}
+A \amp= Q
+\begin{bmatrix}
+I_r\amp O\\
+O\amp O
+\end{bmatrix}
+P^{-1}
+\end{align*}
+</div>
+<div class="para">より、<span class="process-math">\(Q\)</span> の左 <span class="process-math">\(r\)</span> 列からなる行列 <span class="process-math">\(C\in\mathbb{R}^{n\times r}\)</span> と <span class="process-math">\(P^{-1}\)</span> の上 <span class="process-math">\(r\)</span> 行からなる行列 <span class="process-math">\(F\in\mathbb{R}^{r\times m}\)</span> を用いて</div>
+<div class="displaymath process-math" id="sec-changes-17-8">
+\begin{align*}
+A \amp= CF
+\end{align*}
+</div>
+<div class="para">と表すことができる。これを<dfn class="terminology">階数因数分解 (rank decomposition)</dfn>という。 階数因数分解は一意ではない。CR分解も階数因数分解である。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-changes-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Section 7.1: 一般の行列の入出力の基底変換"><a tabindex="-1" href="#sec-changes" title="Copy heading and permalink for Section 7.1: 一般の行列の入出力の基底変換" aria-label="Copy heading and permalink for Section 7.1: 一般の行列の入出力の基底変換">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">

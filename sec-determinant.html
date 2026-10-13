@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>一般の正方行列の行列式</title>
+<title>一般サイズの行列式</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
@@ -58,15 +58,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.3.3';
+eBookConfig.runestone_version = '8.3.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.dd07797f77620576.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.11d27cdc38930c2c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/prefix-runtime.3adcbea95009347b.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.7a45395f326e122c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -113,7 +113,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-determinant-2.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-changes.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-permutation.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-changes.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -304,62 +304,68 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-2.html#subsec-determinant-2" class="internal"><span class="codenumber">7.3.2</span> <span class="title"><span class="process-math">\(2\times 2\)</span> 行列の行列式</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.4</span> <span class="title">一般の正方行列の行列式</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-permutation.html" class="internal"><span class="codenumber">7.4</span> <span class="title">置換</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.5</span> <span class="title">一般サイズの行列式</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-determinant">
 <h1 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">一般の正方行列の行列式</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">一般サイズの行列式</span>
 </h1>
 <article class="definition definition-like" id="sec-determinant-2"><h2 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">多重線形写像.</span>
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">多重線形写像.</span>
 </h2>
-<div class="displaymath process-math" id="sec-determinant-2-2">
+<span class="process-math">\(D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}\)</span><span class="process-math">\(\defiff\)</span><div class="displaymath process-math" id="sec-determinant-2-4">
 \begin{equation*}
 D(\bm{v}_1,\dotsc,\bm{v}_n) =
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="定義 7.4.1: 多重線形写像"><a tabindex="-1" href="#sec-determinant-2" title="Copy heading and permalink for 定義 7.4.1: 多重線形写像" aria-label="Copy heading and permalink for 定義 7.4.1: 多重線形写像">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.5.1: 多重線形写像"><a tabindex="-1" href="#sec-determinant-2" title="Copy heading and permalink for 定義 7.5.1: 多重線形写像" aria-label="Copy heading and permalink for 定義 7.5.1: 多重線形写像">🔗</a></div>
 </article>
 <article class="definition definition-like" id="sec-determinant-3"><h2 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列式.</span>
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列式.</span>
 </h2>
-<span class="process-math">\(D\colon\mathbb{R}^n\)</span><div class="autopermalink" aria-hidden="true" data-description="定義 7.4.2: 行列式"><a tabindex="-1" href="#sec-determinant-3" title="Copy heading and permalink for 定義 7.4.2: 行列式" aria-label="Copy heading and permalink for 定義 7.4.2: 行列式">🔗</a></div>
+<div class="para logical" id="sec-determinant-3-2">
+<div class="para">写像 <span class="process-math">\(D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_n\to\mathbb{R}\)</span>
+</div>
+<ol class="decimal" id="sec-determinant-3-2-2">
+<li id="sec-determinant-3-2-2-1">
+<div class="para" id="p-derived-sec-determinant-3-2-2-1">[多重線形写像]</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-determinant-3-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-determinant-3-2-2-2">
+<div class="para" id="p-derived-sec-determinant-3-2-2-2">[交代性]</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-determinant-3-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-determinant-3-2-2-3">
+<div class="para" id="p-derived-sec-determinant-3-2-2-3">[正規化]</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#sec-determinant-3-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.5.2: 行列式"><a tabindex="-1" href="#sec-determinant-3" title="Copy heading and permalink for 定義 7.5.2: 行列式" aria-label="Copy heading and permalink for 定義 7.5.2: 行列式">🔗</a></div>
 </article>
 <article class="definition definition-like" id="sec-determinant-4"><h2 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">置換.</span>
+<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列式.</span>
 </h2>
-<div class="para" id="sec-determinant-4-2">集合 <span class="process-math">\([n]\coloneqq\{1,2,\dotsc,n\}\)</span> 上の全単射を<dfn class="terminology">置換</dfn>という。 集合 <span class="process-math">\([n]\)</span> 上の置換の集合を <span class="process-math">\(S_n\)</span> で表す。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="定義 7.4.3: 置換"><a tabindex="-1" href="#sec-determinant-4" title="Copy heading and permalink for 定義 7.4.3: 置換" aria-label="Copy heading and permalink for 定義 7.4.3: 置換">🔗</a></div>
-</article>
-<article class="definition definition-like" id="sec-determinant-5"><h2 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">置換の符号.</span>
-</h2>
-<div class="para" id="sec-determinant-5-2">集合 <span class="process-math">\([n]\coloneqq\{1,2,\dotsc,n\}\)</span> 上の全単射を<dfn class="terminology">置換</dfn>という。 集合 <span class="process-math">\([n]\)</span> 上の置換の集合を <span class="process-math">\(S_n\)</span> で表す。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="定義 7.4.4: 置換の符号"><a tabindex="-1" href="#sec-determinant-5" title="Copy heading and permalink for 定義 7.4.4: 置換の符号" aria-label="Copy heading and permalink for 定義 7.4.4: 置換の符号">🔗</a></div>
-</article>
-<article class="definition definition-like" id="sec-determinant-6"><h2 class="heading">
-<span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列式.</span>
-</h2>
-<div class="para logical" id="sec-determinant-6-2">
+<div class="para logical" id="sec-determinant-4-2">
 <div class="para">正方行列 <span class="process-math">\(A=[a_{i,j}]\in\mathbb{R}^{n\times n}\)</span> の行列式を</div>
-<div class="displaymath process-math" id="sec-determinant-6-2-2">
+<div class="displaymath process-math" id="sec-determinant-4-2-2">
 \begin{equation*}
-\mathrm{det}(A) \coloneqq \sum_{\sigma\in S_n} a_{i,\sigma(i)}
+\mathrm{det}(A) \coloneqq \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="定義 7.4.5: 行列式"><a tabindex="-1" href="#sec-determinant-6" title="Copy heading and permalink for 定義 7.4.5: 行列式" aria-label="Copy heading and permalink for 定義 7.4.5: 行列式">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Section 7.4: 一般の正方行列の行列式"><a tabindex="-1" href="#sec-determinant" title="Copy heading and permalink for Section 7.4: 一般の正方行列の行列式" aria-label="Copy heading and permalink for Section 7.4: 一般の正方行列の行列式">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.5.3: 行列式"><a tabindex="-1" href="#sec-determinant-4" title="Copy heading and permalink for 定義 7.5.3: 行列式" aria-label="Copy heading and permalink for 定義 7.5.3: 行列式">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 7.5: 一般サイズの行列式"><a tabindex="-1" href="#sec-determinant" title="Copy heading and permalink for Section 7.5: 一般サイズの行列式" aria-label="Copy heading and permalink for Section 7.5: 一般サイズの行列式">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-determinant-2.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-permutation.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
