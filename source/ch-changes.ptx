@@ -582,6 +582,17 @@
         </md>-->
       </p>
     </example>
+  <!--
+    <definition>
+      <title>クリロフ基底とコンパニオン行列</title>
+      <p>任意の行列 <m>A\in\mathbb{R}^{n\times n}</m> と任意のベクトル <m>\bm{v}\in\mathbb{R}^n</m> について、
+        <md>
+          \mathcal{K}(A, \bm{v})\coloneqq \mathrm{span}(\bm{v},A\bm{v},A^2\bm{v},\dotsc)
+        </md>
+        をクリロフ部分空間という。
+      </p>
+    </definition>
+    -->
   </section>
   <section xml:id="sec-determinant-2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title><m>2\times 2</m> 行列の行列式</title>
@@ -610,7 +621,7 @@
 <p>
 この面積を<m>\overline{D}(\bm{v},\bm{w})</m> と定義する。
 このときに<m>\bm{v}</m> を固定して<m>\bm{w}</m> を変化させることを考える。<m>\bm{w}</m> を<m>c>0</m> 倍すると平行四辺形の面積も<m>c</m> 倍されるため
-<m>\overline{D}(\bm{v},c\bm{w})=c\overline{D}(\bm{v},c\bm{w})</m> である。
+<m>\overline{D}(\bm{v},c\bm{w})=c\overline{D}(\bm{v},\bm{w})</m> である。
 一方で<m>\bm{w}</m> を <m>-1</m> 倍したときに平行四辺形の面積は変化しない。
 </p>
 
@@ -638,7 +649,7 @@
 このとき任意の <m>c\in\mathbb{R}</m> について<m>D(\bm{v},c\bm{w})=cD(\bm{v},\bm{w})</m> となる。
 同様に <m>D(c\bm{v},\bm{w})=cD(\bm{v},\bm{w})</m> である。
 また、任意の <m>\bm{u},\,\bm{v},\,\bm{w}\in\mathbb{R}^2</m> について
-<m>D(\bm{v},\bm{u}+\bm{w})=D(\bm{v},\bm{u})+D(\bm{v},\bm{w})</m> である。
+<m>D(\bm{u},\bm{v}+\bm{w})=D(\bm{u},\bm{v})+D(\bm{u},\bm{w})</m> である。
 </p>
 
 <image>
@@ -664,6 +675,40 @@
 </image>
 
 </subsection>
+<!--
+<subsection xml:id="subsec-bilinear">
+  <title>双線形形式</title>
+    <definition>
+      <p><m>D\colon\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}</m> が双線形形式 <m>\defiff</m>
+        任意の <m>\bm{u},\bm{v},\bm{w}\in\mathbb{R}^n</m> と <m>c\in\mathbb{R}</m> について
+        <ol>
+          <li><m>D(\bm{u}+\bm{v},\bm{w}) = D(\bm{u},\bm{w})+D(\bm{v},\bm{w})</m></li>
+          <li><m>D(\bm{u},\bm{v}+\bm{w}) = D(\bm{u},\bm{v})+D(\bm{u},\bm{w})</m></li>
+          <li><m>D(c\bm{u},\bm{v})=D(\bm{u},c\bm{v})=cD(\bm{u},\bm{v})</m></li>
+        </ol>
+      </p>
+    </definition>
+    <definition>
+      <p>
+        任意の双線形形式 <m>D\colon\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}</m> と <m>\mathbb{R}^n</m> の基底 <m>(\bm{v}_i)</m> について
+        <md>
+          b_{i,j} = D(\bm{v}_i,\bm{v}_j)
+        </md>
+        とすると、<m>B=(b_{i,j})\in\mathbb{R}^{n\times n}</m> を <m>D</m> の基底 <m>(v_{i})</m> に対する行列表現という。
+      </p>
+    </definition>
+    <definition>
+      <p>
+        任意の双線形形式 <m>D\colon\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}</m> と <m>\mathbb{R}^n</m> の基底 <m>(\bm{v}_i)</m> について、
+        <m>B=(b_{i,j})\in\mathbb{R}^{n\times n}</m> を <m>D</m> の基底 <m>(v_{i})</m> に対する行列表現とする。
+        このとき、
+        <md>
+          D(\bm{u},\bm{w})=
+        </md>
+      </p>
+    </definition>
+</subsection>
+-->
 <subsection xml:id="subsec-determinant-2">
   <title><m>2\times 2</m> 行列の行列式</title>
 <p>
@@ -677,9 +722,9 @@
 
 <lemma>
 <statement>
-<p>双線形写像 <m>D\colon \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}</m> について
+<p>交代性を持つ双線形写像 <m>D\colon \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}</m> について
 <md>
-\forall\bm{v}\in\mathbb{R}^n\quad D(\bm{v},\bm{v})=0\implies \forall\bm{v},\,\bm{w}\in\mathbb{R}^n\quad D(\bm{v},\bm{w})=-D(\bm{w},\bm{v})
+\forall\bm{v},\,\bm{w}\in\mathbb{R}^n\quad D(\bm{v},\bm{w})=-D(\bm{w},\bm{v})
 </md></p>
 </statement>
 <proof>
@@ -921,10 +966,20 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <title>一般サイズの行列式</title>
     <definition>
       <title>多重線形写像</title>
-      写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が多重線形写像 <m>\defiff</m>
-      <md>
-        D(\bm{v}_1,\dotsc,\bm{v}_n) =
-      </md>
+      <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が多重線形写像 <m>\defiff</m>
+      任意の <m>\bm{u},\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m>, <m>c\in\mathbb{R}</m> と <m>i\in\{1,2,\dotsc,m\}</m> について
+      <ol>
+      <li><md>
+        <mrow>\amp D(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{u}+\bm{v}_{i},\bm{v}_{i+1},\dotsc,\bm{v}_m)</mrow>
+        <mrow>=\amp\,
+        D(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{u},\bm{v}_{i+1},\dotsc,\bm{v}_m) + D(\bm{v}_1,\dotsc,\bm{v}_m).</mrow>
+      </md></li>
+      <li><md>
+        D(\bm{v}_1,\dotsc,\bm{v}_{i-1},c\bm{v}_{i},\bm{v}_{i+1},\dotsc,\bm{v}_m) =
+        cD(\bm{v}_1,\dotsc,\bm{v}_m).
+      </md></li>
+      </ol>
+      </p>
     </definition>
     <definition>
       <title>行列式</title>
