@@ -68,7 +68,8 @@
     </proof>
     </proposition>
     <p>
-      この <m>A_f</m> と <m>B</m> は同じ線形写像 <m>f</m> を表している行列であるが、その際に参照している基底が異なる。その基底を変換するのが、<m>P^{-1}</m> や <m>Q</m> の役割である。
+      この <m>A_f</m> と <m>B</m> は同じ線形写像 <m>f</m> を表している行列であるが、その際に参照している基底が異なる。
+      <m>P^{-1}</m> は入力の標準基底に関する座標を新しい基底に関する座標に変換し、<m>Q</m> は出力の新しい基底に関する座標を標準基底に関する座標に変換する。
     </p>
     <example>
       <title>行列の基底変換</title>
@@ -174,7 +175,7 @@
           をそれぞれ示す。
         </p>
         <p>
-          まず正則行列 <m>Q\in\mathbb{R}^{m\times m}</m> について <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> であることを示す。
+          まず正則行列 <m>Q\in\mathbb{R}^{n\times n}</m> について <m>\mathrm{rank}(QA)=\mathrm{rank}(A)</m> であることを示す。
           <xref ref="thm-lin-fund"/> より、
           <md>
             \dim\mathrm{Ker}(QA)=\dim\mathrm{Ker}(A)
@@ -357,6 +358,8 @@
   <section xml:id="sec-square-changes" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>正方行列の基底変換</title>
     <p>
+      前節では入力側と出力側の基底を独立に選んだ。この節では、同じ空間からそれ自身への線形写像について、入力側と出力側に同じ基底を用いる場合を考える。
+    </p>
     <definition>
     <title>線型写像の基底を指定した行列表現</title>
     <p>線形写像 <m>f\colon \mathbb{R}^n\to\mathbb{R}^n</m> と <m>\mathbb{R}^n</m> の順序付き基底 <m>(\bm{v}_1,\dotsc,\bm{v}_n)</m> について
@@ -366,6 +369,7 @@
     を満たすとき、<m>[b_{i,j}]</m> を <term><m>f</m> の基底 <m>(\bm{v}_j)</m> に対する行列表現</term>という。
     </p>
     </definition>
+    <p>
       線形写像 <m>f\colon\mathbb{R}^n\to\mathbb{R}^n</m> について <m>\mathbb{R}^n</m> の順序付き基底 <m>\bm{v}_1,\dotsc,\bm{v}_n\in\mathbb{R}^n</m> を選択し、入出力両方に共通の基底として用いた行列表現 <m>B</m> を考える。
       このとき、
       <md>
@@ -408,9 +412,7 @@
           2
           \begin{bmatrix}
           3\\4
-          \end{bmatrix},
-          </mrow>
-          <mrow>
+          \end{bmatrix},\amp
           \begin{bmatrix}
           4\\5
           \end{bmatrix}
@@ -422,7 +424,29 @@
           </mrow>
         </md>
         である。
-        よって、
+        より一般に
+        <md>
+          <mrow>
+          a \begin{bmatrix}
+          3\\4
+          \end{bmatrix}
+          +b
+          \begin{bmatrix}
+          4\\5
+          \end{bmatrix}
+          \amp\longmapsto
+          2a \begin{bmatrix}
+          3\\4
+          \end{bmatrix}
+          +
+          3b
+          \begin{bmatrix}
+          4\\5
+          \end{bmatrix}
+          </mrow>
+        </md>
+        が成り立つ。
+        そこで、
         <md>
           P=\begin{bmatrix}
             3 \amp 4\\
@@ -453,8 +477,6 @@
           \end{bmatrix}
         </md>
         と分解することができる。
-        この行列 <m>A\in\mathbb{R}^{2\times 2}</m> が表す線形写像は
-        という理解ができる。
         基底変換により対角行列にする操作のことを<term>対角化</term>という。
         任意の行列が対角化できるわけではない。
       </p>
@@ -683,7 +705,7 @@ D(\bm{w},\bm{w})</mrow>
 これらの性質から<m>D</m> は一意に定まる。</p>
 
 <proposition>
-<p>上記の三つの性質を満たす写像 <m>D\colon \mathbb{R}^2\times \mathbb{R}^2\to \mathbb{R}</m> は
+<p>双線形性、交代性、正規化の条件を満たす写像 <m>D\colon \mathbb{R}^2\times \mathbb{R}^2\to \mathbb{R}</m> は
 <md>
 D\left(\begin{bmatrix}a\\c\end{bmatrix}, \begin{bmatrix}b\\d\end{bmatrix}\right)=ad-bc
 </md>
