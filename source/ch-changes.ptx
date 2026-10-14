@@ -720,7 +720,7 @@
 </ol>
 </p>
 
-<lemma>
+<lemma xml:id="lem-alt-as">
 <statement>
 <p>交代性を持つ双線形写像 <m>D\colon \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}</m> について
 <md>
@@ -966,7 +966,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <title>一般サイズの行列式</title>
     <definition>
       <title>多重線形写像</title>
-      <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が多重線形写像 <m>\defiff</m>
+      <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が<term>多重線形写像</term> <m>\defiff</m>
       任意の <m>\bm{u},\bm{v}_1,\dotsc,\bm{v}_m\in\mathbb{R}^n</m>, <m>c\in\mathbb{R}</m> と <m>i\in\{1,2,\dotsc,m\}</m> について
       <ol>
       <li><md>
@@ -982,16 +982,37 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </p>
     </definition>
     <definition>
-      <title>行列式</title>
-      <p>
-      写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_n\to\mathbb{R}</m>
-      <ol>
-        <li>[多重線形写像]</li>
-        <li>[交代性]</li>
-        <li>[正規化]</li>
-      </ol>
+      <title>交代性と反対称性</title>
+      <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が<term>交代的</term> <m>\defiff</m>
+      <m>\bm{v}_1,\dotsc,\bm{v}_{m}\in\mathbb{R}^n</m> について、
+      <md>
+        \exists\, i\lt j \in [m], \bm{v}_i=\bm{v}_j\implies D(\bm{v}_1,\dotsc,\bm{v}_m)=0.
+      </md>
+      </p>
+      <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が<term>反対称的</term> <m>\defiff</m>
+        任意の <m>\bm{v}_1,\dotsc,\bm{v}_{m}\in\mathbb{R}^n</m>  と <m>i\lt j\in[m]</m> について、
+      <md>
+        D(\bm{v}_1,\dotsc,\bm{v}_m)= -D(\bm{v}_1,\dotsc,\bm{v}_{i-1},\bm{v}_j,\bm{v}_{i+1},\dotsc,\bm{v}_{j-1},\bm{v}_i,\bm{v}_{j+1},\dotsc,\bm{v}_m).
+      </md>
       </p>
     </definition>
+    <lemma>
+      <p>多重線形写像について、交代性と反対称性は等価である。</p>
+    </lemma>
+    <proof>
+      <p>[反対称性 <m>\implies</m> 交代性]: <m>\bm{v}_i=\bm{v}_j</m> とすると、反対称性より
+        <md>
+          D(\bm{v}_1,\dotsc,\bm{v}_m)= -D(\bm{v}_1,\dotsc,\bm{v}_m)
+        </md>
+        よって、
+        <md>
+          D(\bm{v}_1,\dotsc,\bm{v}_m)= 0
+        </md>
+        であり <m>D</m> は交代的である。
+      </p>
+      <p>[交代性 <m>\implies</m> 反対称性]: <xref ref="lem-alt-as"/> の証明と同様。
+      </p>
+    </proof>
     <definition>
       <title>行列式</title>
       <p>
@@ -1001,5 +1022,192 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         </md>
       </p>
     </definition>
+    <theorem xml:id="thm-determinant">
+      <title>行列式の特徴付け</title>
+      <p>
+      多重形写像写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_n\to\mathbb{R}</m> が交代的であるとき、
+      <md>D(\bm{v}_1,\dotsc,\bm{v}_n)=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)D(\bm{e}_1,\dotsc,\bm{e}_n)</md>
+       である。
+      </p>
+      <p>
+        特に
+      <md>
+        D(\bm{e}_1,\dotsc,\bm{e}_n)=1
+      </md>
+        のとき、
+      <md>D(\bm{v}_1,\dotsc,\bm{v}_n)=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right).</md>
+      </p>
+    </theorem>
+    <proof>
+      <p>各 <m>j\in [n]</m> について、<m>\bm{v}_j=(v_{i,j})_{i=1}^n</m> とする。
+      <md>
+        <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{i=1}^nv_{i,1}D(\bm{e}_i,\bm{v}_2,\dotsc,\bm{v}_n)</mrow>
+        <mrow>\amp=\sum_{i_1=1}^n\dotsm\sum_{i_n=1}^n \left(\prod_{j=1}^n v_{i_j,j}\right)D(\bm{e}_{i_1},\dotsc,\bm{e}_{i_n}).</mrow>
+      </md>
+      <m>D</m> の交代性より、
+      <md>
+        <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{\sigma\in S_n} \left(\prod_{j=1}^n v_{\sigma(j),j}\right)D(\bm{e}_{\sigma(1)},\dotsc,\bm{e}_{\sigma(n)})</mrow>
+        <mrow>\amp=\sum_{\sigma\in S_n} \left(\prod_{j=1}^n v_{\sigma(j),j}\right)\mathrm{sgn}(\sigma)D(\bm{e}_{1},\dotsc,\bm{e}_{n})</mrow>
+        <mrow>\amp=D(\bm{e}_1,\dotsc,\bm{e}_n)\sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\left(\prod_{j=1}^n v_{\sigma(j),j}\right)</mrow>
+        <mrow>\amp=D(\bm{e}_1,\dotsc,\bm{e}_n)\sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\left(\prod_{j=1}^n v_{j,\sigma^{-1}(j)}\right)</mrow>
+        <mrow>\amp=D(\bm{e}_1,\dotsc,\bm{e}_n)\sum_{\sigma\in S_n} \mathrm{sgn}(\sigma^{-1})\left(\prod_{j=1}^n v_{j,\sigma(j)}\right)</mrow>
+        <mrow>\amp=D(\bm{e}_1,\dotsc,\bm{e}_n)\sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\left(\prod_{j=1}^n v_{j,\sigma(j)}\right)</mrow>
+        <mrow>\amp=D(\bm{e}_1,\dotsc,\bm{e}_n)\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right).</mrow>
+      </md>
+      </p>
+    </proof>
+      <p>
+        <m>A=(a_{i,j})\in\mathbb{R}^{3\times 3}</m> について
+        <md>
+          <mrow>\det(A)\amp=a_{1,1}a_{2,2}a_{3,3} + a_{1,2}a_{2,3}a_{3,1} + a_{1,3}a_{2,1}a_{3,2}</mrow>
+          <mrow>\amp\quad - (a_{1,1}a_{2,3}a_{3,2} + a_{1,3}a_{2,2}a_{3,1} + a_{1,2}a_{2,1}a_{3,3}).</mrow>
+        </md>
+        各項に対応する置換は順番に
+        <md>
+          <mrow>
+            \amp
+          \begin{pmatrix}1\end{pmatrix}
+          \begin{pmatrix}2\end{pmatrix}
+          \begin{pmatrix}3\end{pmatrix},\quad
+          \begin{pmatrix}1\amp 2\amp 3\end{pmatrix},\quad
+          \begin{pmatrix}3\amp 2\amp 1\end{pmatrix},</mrow>
+          <mrow>
+            \amp
+          \begin{pmatrix}1\end{pmatrix}
+          \begin{pmatrix}2\amp 3\end{pmatrix},\quad
+          \begin{pmatrix}2\end{pmatrix}
+          \begin{pmatrix}1\amp 3\end{pmatrix},\quad
+          \begin{pmatrix}3\end{pmatrix}
+          \begin{pmatrix}1\amp 2\end{pmatrix}
+          </mrow>
+        </md>
+        である。
+      </p>
+      <p>
+        一般的に <m>n!</m> 項登場するので、<m>n\ge 4</m> のときに、行列式を定義通りに計算するのは効率が悪い。
+      </p>
+    <proposition xml:id="prop-det-AB">
+      <p>正方行列 <m>A,B\in\mathbb{R}^{n\times n}</m> について
+      <md>
+        \det(AB)=\det(A)\det(B).
+      </md>
+      </p>
+      <proof>
+        <p>
+        <md>
+          D(\bm{v}_1,\dotsc,\bm{v}_n)\coloneqq \det\left(A\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)
+        </md>
+        と定義する。
+        すると、
+        <md>
+          D(\bm{v}_1,\dotsc,\bm{v}_n)=\det\left(\begin{bmatrix}A\bm{v}_1\amp\dotsm\amp A\bm{v}_n\end{bmatrix}\right)
+        </md>
+        より、<m>D</m> は多重線形写像であり、交代的である。
+        よって<xref ref="thm-determinant"/>より、
+        <md>
+          <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(\begin{bmatrix}A\bm{e}_1\amp\dotsm\amp A\bm{e}_n\end{bmatrix}\right)</mrow>
+          <mrow>\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(A\right)</mrow>
+        </md>
+        ここで
+        <md>
+          B = \begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}
+        </md>
+        とおくと
+        <md>
+          \det(AB)=\det(A)\det(B)
+        </md>
+        である。
+        </p>
+      </proof>
+    </proposition>
+    <corollary>
+      <p>行列式は正方行列の相似による同値関係の不変量である。</p>
+    </corollary>
+  <!--
+    <proposition>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<m>A</m> が正則 <m>\iff\det(A)\ne 0</m>.</p>
+      <proof>
+        <p><m>\implies:</m>
+          <md>
+            1 = \det(I) = \det(AA^{-1}) = \det(A)\det(A^{-1})
+          </md>
+          したがって、<m>\det(A)\ne 0</m>
+        </p>
+        <p><m>\impliedby:</m>
+        </p>
+      </proof>
+    </proposition>
+    -->
+    <corollary>
+      <p>正則な正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<md>\det(A^{-1})=\det(A)^{-1}.</md></p>
+    </corollary>
+  </section>
+  <section xml:id="sec-determinant-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>行列式の計算アルゴリズム</title>
+    <subsection>
+      <title>三角行列とブロック三角行列</title>
+    <definition>
+      <title>三角行列</title>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> が<term>上三角行列</term> <m>\defiff</m>
+        任意の <m>i\gt j\in[n]</m> について <m>A</m> の  <m>(i, j)</m> 成分が 0。</p>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> が<term>下三角行列</term> <m>\defiff</m>
+        任意の <m>i\lt j\in[n]</m> について <m>A</m> の  <m>(i, j)</m> 成分が 0。</p>
+    </definition>
+    <fact>
+      <p>三角行列の行列式は対角成分の積である。</p>
+    </fact>
+    <definition>
+      <title>ブロック三角行列</title>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> が<term>ブロック上三角行列</term> <m>\defiff</m>
+        <md>
+          A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
+        </md>
+        を満たす <m>m\in\mathbb{Z}_{\ge 1},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> が存在する。</p>
+      <p>
+        同様に<term>ブロック下三角行列</term>も定義する。
+      </p>
+    </definition>
+    <proposition>
+      <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> がブロック上三角行列で、
+        ある <m>m\in\mathbb{Z}_{\ge 1},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> について
+        <md>
+          A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
+        </md>
+        を満たすとすると
+        <md>
+          \det(A)=\det(B)\det(D)
+        </md>
+      </p>
+      <proof>
+        <p>
+        行列式の定義より
+        <md>
+          \mathrm{det}(A) = \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
+        </md>
+        である。
+        ここで、<m>A</m> の構造から
+        <md>
+          <mrow>\sigma(i)\in\{m+1,\dotsc,n\}\qquad\forall i\in\{m+1,\dotsc,n\}</mrow>
+        </md>
+        を満たす <m>\sigma\in S_n</m> 以外の項は 0 となる。
+        上の条件を満たす <m>\sigma</m> について、<m>\{1,\dotsc,m\}</m> 上の置換 <m>\sigma_1</m> と <m>\{m+1,\dotsc,n\}</m> 上の置換 <m>\sigma_2</m> を用いて、<m>\sigma=\sigma_1\sigma_2</m> と分解できる。
+        したがって、
+        <md>
+          <mrow>\mathrm{det}(A) \amp= \sum_{\sigma_1\sigma_2} \mathrm{sgn}(\sigma_1\sigma_2)\prod_{i=1}^m a_{i,\sigma_1(i)}\prod_{i=m+1}^n a_{i,\sigma_2(i)}</mrow>
+          <mrow>\amp= \sum_{\sigma_1\sigma_2} \mathrm{sgn}(\sigma_1)\mathrm{sgn}(\sigma_2)\prod_{i=1}^m a_{i,\sigma_1(i)}\prod_{i=m+1}^n a_{i,\sigma_2(i)}</mrow>
+          <mrow>\amp= \left(\sum_{\sigma_1} \mathrm{sgn}(\sigma_1)\prod_{i=1}^m a_{i,\sigma_1(i)}\right)\left(\sum_{\sigma_2} \mathrm{sgn}(\sigma_2)\prod_{i=m+1}^n a_{i,\sigma_2(i)}\right)</mrow>
+          <mrow>\amp=\det(B)\det(D).</mrow>
+        </md>
+        </p>
+      </proof>
+    </proposition>
+    </subsection>
+    <subsection>
+      <title>行列式の計算アルゴリズム</title>
+      <p>
+        与えられた正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の行列式を計算するアルゴリズムを考える。<xref ref="prop-det-AB"/> より、行列式が1である行列を左右から掛けても行列式は変化しない。
+        このことから、行列式が1である行列をかけて、行列式の値を保存したまま行列を変化させることを考える。
+      </p>
+    </subsection>
   </section>
 </chapter>
