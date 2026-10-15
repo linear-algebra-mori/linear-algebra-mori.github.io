@@ -20,6 +20,7 @@
     <xi:include href="./ch-square-matrix.ptx" />
     <xi:include href="./ch-lineq.ptx" />
     <xi:include href="./ch-changes.ptx" />
+    <xi:include href="./ch-cpoly.ptx" />
 
 
     <!-- Include backmatter -->

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>特性多項式</title>
+  <section xml:id="sec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>特性多項式</title>
+    <subsection xml:id="subsec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>特性多項式の定義</title>
+    <definition>
+      <title>特性多項式</title>
+      <p>
+        正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、
+        <md>
+          \varphi_A(t)\coloneqq \det(tI-A)
+        </md>
+        を <term><m>A</m> の特性多項式(固有多項式)</term> という。
+      </p>
+    </definition>
+    <example>
+      <title><m>2\times 2</m> 行列の特性多項式</title>
+      <p>
+      <md>
+        A=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}
+      </md>
+      について、
+      <md>
+        <mrow>\varphi_A(t)\amp=\det\left(\begin{bmatrix}t-a\amp -b\\-c\amp t-d\end{bmatrix}\right)</mrow>
+        <mrow>\amp=(t-a)(t-d)-bc</mrow>
+        <mrow>\amp=t^2 - (a+d) t + ad-bc</mrow>
+      </md>
+      </p>
+    </example>
+    <lemma>
+      <p>
+        <md>
+          A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
+        </md>
+        のとき
+        <md>
+          \varphi_A(t) = \varphi_B(t)\varphi_D(t)
+        </md>
+      </p>
+    </lemma>
+   </subsection>
+   <subsection xml:id="subsec-comp" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>コンパニオン行列</title>
+     <definition>
+       <title>コンパニオン行列</title>
+       <p>
+         <m>a_0,\dotsc,a_{n-1}\in\mathbb{R}</m> について
+         <md>
+           C(a_0,\dotsc,a_{n-1})\coloneqq
+           \begin{bmatrix}
+             0\amp0\amp0\amp\dotsm\amp0\amp a_0\\
+             1\amp0\amp0\amp\dotsm\amp0\amp a_1\\
+             0\amp1\amp0\amp\dotsm\amp0\amp a_2\\
+             \vdots\amp\vdots\amp\vdots\amp\vdots\amp\vdots\amp\vdots\\
+             0\amp0\amp0\amp\dotsm\amp1\amp a_{n-1}\\
+           \end{bmatrix}
+         </md>
+         を<term>コンパニオン行列(同伴行列)</term>という。
+       </p>
+     </definition>
+     <proposition>
+       <title>コンパニオン行列の行列式</title>
+       <p>
+         <md>
+           \varphi_{C(a_0,\dotsc,a_{n-1})}(t) = t^n - \sum_{i=0}^{n-1} a_i t^i
+         </md>
+       </p>
+     </proposition>
+     <p>コンパニオン行列は線形漸化式を満たす数列を理解する際に現れる。
+     また、行列を
+     <md>
+       \bm{v}, A\bm{v}, A^2\bm{v},\dotsc,
+     </md>
+     </p>
+     <lemma>
+       <p>
+         任意の <m>a_0,\dotsc,a_{n-1}\in\mathbb{R}</m> について <m>C=C(a_0,\dotsc,a_{n-1})</m> とすると
+         <md>
+           \varphi_C(C) = O.
+         </md>
+       </p>
+       <proof>
+         <p>
+           任意の <m>j\in\{1,2,\dotsc,n\}</m> について
+         <md>
+           \varphi_C(C)\bm{e}_j = \bm{0}.
+         </md>
+           を示せばよい。
+         <md>
+           \bm{e}_j = C^{j-1}\bm{e}_1.
+         </md>
+         より、
+         <md>
+           \varphi_C(C)\bm{e}_j = \varphi_C(C)C^{j-1}\bm{e}_1 = C^{j-1}\varphi_C(C)\bm{e}_1.
+         </md>
+         である。
+         したがって、<m>\varphi_C(C)\bm{e}_1=\bm{0}</m> だけ示せば十分である。
+         <md>
+           <mrow>\varphi_C(C)\bm{e}_1 \amp= C^n\bm{e}_1 - \sum_{i=0}^{n-1} a_i C^i\bm{e}_1</mrow>
+           <mrow>\amp= \sum_{i=0}^{n-1} a_i\bm{e}_{i+1} - \sum_{i=0}^{n-1} a_i \bm{e}_{i+1}=\bm{0}</mrow>
+         </md>
+         </p>
+       </proof>
+     </lemma>
+   </subsection>
+   <subsection xml:id="subsec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>ケイリー・ハミルトンの定理</title>
+     <theorem>
+       <title>ケイリー・ハミルトンの定理</title>
+       <p>
+         任意の正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について
+         <md>
+           \varphi_A(A) = O.
+         </md>
+       </p>
+     </theorem>
+   </subsection>
+  </section>
+</chapter>
