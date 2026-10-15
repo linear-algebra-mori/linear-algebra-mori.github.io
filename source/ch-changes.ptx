@@ -1141,6 +1141,9 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <corollary>
       <p>正則な正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<md>\det(A^{-1})=\det(A)^{-1}.</md></p>
     </corollary>
+    <p>
+      行列式の定義は行と列について対称的なので、<term>行列式は行についても多重線形で交代的である</term>。
+    </p>
   </section>
   <section xml:id="sec-determinant-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列式の計算アルゴリズム</title>
@@ -1153,7 +1156,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> が<term>下三角行列</term> <m>\defiff</m>
         任意の <m>i\lt j\in[n]</m> について <m>A</m> の  <m>(i, j)</m> 成分が 0。</p>
     </definition>
-    <fact>
+    <fact xml:id="fact-triangle">
       <p>三角行列の行列式は対角成分の積である。</p>
     </fact>
     <definition>
@@ -1167,7 +1170,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         同様に<term>ブロック下三角行列</term>も定義する。
       </p>
     </definition>
-    <proposition>
+    <proposition xml:id="block-determinant">
       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> がブロック上三角行列で、
         ある <m>m\in\mathbb{Z}_{\ge 1},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> について
         <md>
@@ -1203,10 +1206,143 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     </proposition>
     </subsection>
     <subsection>
-      <title>行列式の計算アルゴリズム</title>
+      <title>ガウスの消去法による行列式の計算</title>
       <p>
-        与えられた正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の行列式を計算するアルゴリズムを考える。<xref ref="prop-det-AB"/> より、行列式が1である行列を左右から掛けても行列式は変化しない。
-        このことから、行列式が1である行列をかけて、行列式の値を保存したまま行列を変化させることを考える。
+        与えられた正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の行列式を計算するアルゴリズムを考える。<xref ref="prop-det-AB"/> より、行列式が <m>a\in\mathbb{R}</m> である行列を左右から掛けると行列式は <m>a</m> 倍になる。
+        <xref ref="subsec-elementary-rows"/>にあるように行基本変形のうち <m>i</m> 行目の <m>a</m> 倍を <m>j</m> 行目に足す操作は行列式が1なので行列式の値を変化させない。
+        これを用いて三角行列にすれば<xref ref="fact-triangle"/>より行列式が計算できる。
+        同様の操作を列に対しておこなうこともできる。
+      </p>
+      <p>
+        行を <m>a</m> 倍することで行列式は <m>a</m> 倍される。行の互換(<m>i</m> 行目と <m>j</m> 行目の交換)をすることで行列式は <m>-1</m> 倍される。
+        これらの操作も便利なので使うとよい。
+      </p>
+      <example>
+        <title>ガウスの消去法による行列式の計算</title>
+        <p>
+          <md>
+            A=
+            \begin{bmatrix}
+            1\amp1\amp1\amp1\\
+            2\amp2\amp5\amp3\\
+            3\amp5\amp4\amp4\\
+            1\amp5\amp6\amp8\\
+            \end{bmatrix}
+          </md>
+          の行列式を計算してみよう。
+          行基本変形で1列目の2行目以降を0にする。
+          <md>
+            <mrow>
+            \begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            2\amp2\amp5\amp3\\
+            3\amp5\amp4\amp4\\
+            1\amp5\amp6\amp8\\
+            \end{vmatrix}
+            \amp=
+            \begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp4\amp5\amp7\\
+            \end{vmatrix}
+            </mrow>
+          </md>
+          2行目と3行目を入れ替える。この操作で行列式が <m>-1</m> 倍されるので、行列式自体を <m>-1</m> 倍しておく。
+          <md>
+            <mrow>
+            \begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp4\amp5\amp7\\
+            \end{vmatrix}
+            \amp=
+            -\begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp4\amp5\amp7\\
+            \end{vmatrix}
+            </mrow>
+          </md>
+          2行目の <m>-2</m> 倍を4行目に足す。
+          <md>
+            <mrow>
+            -\begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp4\amp5\amp7\\
+            \end{vmatrix}
+            \amp=
+            -\begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp0\amp3\amp5\\
+            \end{vmatrix}
+            </mrow>
+          </md>
+          3行目の <m>-1</m> 倍を4行目に足す。
+          <md>
+            <mrow>
+            -\begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp0\amp3\amp5\\
+            \end{vmatrix}
+            \amp=
+            -\begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp0\amp0\amp4\\
+            \end{vmatrix}
+            =-1\cdot2\cdot3\cdot4=-24
+            </mrow>
+          </md>
+          よって <m>\det(A)=-24</m> と計算することができた。
+          また、<xref ref="block-determinant"/> より
+          <md>
+            <mrow>
+            -\begin{vmatrix}
+            1\amp1\amp1\amp1\\
+            0\amp2\amp1\amp1\\
+            0\amp0\amp3\amp1\\
+            0\amp0\amp3\amp5\\
+            \end{vmatrix}
+            \amp=
+            -\begin{vmatrix}
+            1\amp1\\
+            0\amp2\\
+            \end{vmatrix}
+            \cdot
+            \begin{vmatrix}
+            3\amp1\\
+            3\amp5\\
+            \end{vmatrix}
+            =-2\cdot (3\cdot 5 - 1\cdot 3) = -24
+            </mrow>
+          </md>
+          と計算することもできる。
+        </p>
+        <p>
+          今回は使わなかったが、列に対して同様の操作をして計算することもできる。
+        </p>
+      </example>
+    </subsection>
+    <subsection>
+      <title>余因子展開による行列式の計算</title>
+      <p>
+        行列式を <m>j</m> 列目で展開すると、
+        <md>
+          <mrow>\det(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix})
+          \amp=\sum_{i=1}^nv_{i,j}\det(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{e}_i\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
+          <mrow>
+          \amp=\sum_{i=1}^nv_{i,j}(-1)^{j-1}\det(\begin{bmatrix}\bm{e}_i\amp\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
+        </md>
       </p>
     </subsection>
   </section>
