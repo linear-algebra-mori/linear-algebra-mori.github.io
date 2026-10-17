@@ -16,6 +16,9 @@
         を <term><m>A</m> の特性多項式(固有多項式)</term> という。
       </p>
     </definition>
+    <corollary>
+      <p>特性多項式は正方行列の相似による同値関係の不変量である。</p>
+    </corollary>
     <example>
       <title><m>2\times 2</m> 行列の特性多項式</title>
       <p>
@@ -108,6 +111,60 @@
    </subsection>
    <subsection xml:id="subsec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>ケイリー・ハミルトンの定理</title>
+     <definition>
+       <title>巡回部分空間</title>
+       <p>任意の <m>A\in\mathbb{R}^{n\times n}</m> と <m>\bm{v}\in\mathbb{R}^n\setminus\{\bm{0}\}</m> について、
+         <md>
+           K(A,\bm{v})\coloneqq \mathrm{span}(\bm{v},A\bm{v},A^2\bm{v},\dotsc)
+         </md>
+         を <term><m>\bm{v}</m> が生成する <m>A</m>-巡回部分空間</term> という。
+         </p>
+     </definition>
+     <lemma>
+       <title>巡回部分空間の基底</title>
+       <p>任意の <m>A\in\mathbb{R}^{n\times n}</m> と <m>\bm{v}\in\mathbb{R}^n\setminus\{\bm{0}\}</m> について、
+         ある <m>r\in\{1,2,\dotsc,n\}</m> が存在して、
+         <md>
+           \bm{v},A\bm{v},\dotsc,A^{r-1}\bm{v}
+         </md>
+         は <m>K(A,\bm{v})</m> の基底となる。
+       </p>
+       <proof>
+         <p>
+         <md>
+           \bm{v},A\bm{v},\dotsc,A^{r-1}\bm{v}
+         </md>
+         が線形独立で、
+         <md>
+           \bm{v},A\bm{v},\dotsc,A^{r}\bm{v}
+         </md>
+         が線形従属であると仮定する。
+         このとき、ある <m>a_0,\dotsc,a_{r-1}\in\mathbb{R}</m> が存在し、
+         <md>
+           A^{r}\bm{v} = \sum_{i=0}^{r-1}a_iA^i\bm{v}
+         </md>
+         よって、任意の <m>k\in\mathbb{Z}_{\ge 0}</m> について
+         <md>
+           A^{r+k}\bm{v} = A^k\sum_{i=0}^{r-1}a_iA^i\bm{v}\in \mathrm{span}(\bm{v},A\bm{v},\dotsc A^{r+k-1}\bm{v}).
+         </md>
+         したがって、任意の <m>k\in\mathbb{Z}_{\ge 0}</m> について
+         <md>
+           <mrow>\mathrm{span}(\bm{v},A\bm{v},\dotsc A^{r+k}\bm{v})\amp=
+           \mathrm{span}(\bm{v},A\bm{v},\dotsc A^{r+k-1}\bm{v}).</mrow>
+         </md>
+         よって、任意の <m>k\in\mathbb{Z}_{\ge 0}</m> について
+         <md>
+           <mrow>\mathrm{span}(\bm{v},A\bm{v},\dotsc A^{r+k}\bm{v})\amp=
+           \mathrm{span}(\bm{v},A\bm{v},\dotsc A^{r-1}\bm{v}).</mrow>
+         </md>
+         よって
+         <md>
+           <mrow>K(A,\bm{v})\amp=
+           \mathrm{span}(\bm{v},A\bm{v},\dotsc A^{r-1}\bm{v}).</mrow>
+         </md>
+         </p>
+       </proof>
+     </lemma>
      <theorem>
        <title>ケイリー・ハミルトンの定理</title>
        <p>
@@ -116,6 +173,43 @@
            \varphi_A(A) = O.
          </md>
        </p>
+       <proof>
+         <p>
+           任意の <m>\bm{v}\in\mathbb{R}^n</m> について <m>\varphi_A(A)\bm{v}=\bm{0}</m> を示せばよい。
+           任意に <m>\bm{v}\in\mathbb{R}^n\setminus\{\bm{0}\}</m> を固定する。
+           <md>
+             \bm{v},A\bm{v},\dotsc, A^{r-1}\bm{v}
+           </md>
+           が巡回部分空間 <m>K(A,\bm{v})</m> の基底であるとする。
+           このとき、ある <m>a_0,\dotsc,a_{r-1}\in\mathbb{R}</m> が存在し、
+           <md>
+             A^{r}\bm{v} = \sum_{i=0}^{r-1}a_iA^i\bm{v}
+           </md>
+           が成り立つ。
+           この <m>K(A,\bm{v})</m> の基底を拡張することで、<m>\mathbb{R}^n</m> の基底
+           <md>
+             \bm{v},A\bm{v},\dotsc, A^{r-1}\bm{v},\bm{w}_1,\dotsc,\bm{w}_{n-r}
+           </md>
+           を選ぶ。
+           この基底のもとで線形写像 <m>f_A</m> は
+           <md>
+             \begin{bmatrix}
+             C(a_0,\dotsc,a_{r-1})\amp B\\
+             O\amp D
+             \end{bmatrix}
+           </md>
+           よって、
+           <md>
+             \varphi_A(t) = \varphi_{C(a_0,\dotsc,a_{r-1})}(t) \varphi_D(t).
+           </md>
+           したがって
+           <md>
+             <mrow>\varphi_A(A)\bm{v}\amp= \varphi_D(A)\varphi_{C(a_0,\dotsc,a_{r-1})}(A) \bm{v}</mrow>
+             <mrow>\amp= \varphi_D(A)\left(A^r\bm{v}-\sum_{i=0}^{r-1}a_i A^i\right) \bm{v}</mrow>
+             <mrow>\amp=\bm{0}</mrow>
+           </md>
+         </p>
+       </proof>
      </theorem>
    </subsection>
   </section>
