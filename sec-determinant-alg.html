@@ -424,9 +424,9 @@ A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
 <h2 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ガウスの消去法による行列式の計算</span>
 </h2>
-<div class="para" id="sec-determinant-alg-3-2">与えられた正方行列 <span class="process-math">\(A\in\mathbb{R}^{n\times n}\)</span> の行列式を計算するアルゴリズムを考える。<a href="sec-determinant.html#prop-det-AB" class="xref" data-knowl="./knowl/xref/prop-det-AB.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 7.5.6">命題 7.5.6</a> より、行列式が <span class="process-math">\(a\in\mathbb{R}\)</span> である行列を左右から掛けると行列式は <span class="process-math">\(a\)</span> 倍になる。 <a href="sec-square-gauss.html#subsec-elementary-rows" class="internal" title="Subsection 5.2.1: 行基本変形">Subsection 5.2.1</a>にあるように行基本変形のうち <span class="process-math">\(i\)</span> 行目の <span class="process-math">\(a\)</span> 倍を <span class="process-math">\(j\)</span> 行目に足す操作は行列式が1なので行列式の値を変化させない。 これを用いて三角行列にすれば<a href="sec-determinant-alg.html#fact-triangle" class="xref" data-knowl="./knowl/xref/fact-triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="事実 7.6.2">事実 7.6.2</a>より行列式が計算できる。 同様の操作を列に対しておこなうこともできる。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-determinant-alg-3-2">与えられた正方行列 <span class="process-math">\(A\in\mathbb{R}^{n\times n}\)</span> の行列式を計算するアルゴリズムを考える。<a href="sec-determinant.html#prop-det-AB" class="xref" data-knowl="./knowl/xref/prop-det-AB.html" data-reveal-label="Reveal" data-close-label="Close" title="命題 7.5.7">命題 7.5.7</a> より、行列式が <span class="process-math">\(a\in\mathbb{R}\)</span> である行列を左右から掛けると行列式は <span class="process-math">\(a\)</span> 倍になる。 <a href="sec-square-gauss.html#subsec-elementary-rows" class="internal" title="Subsection 5.2.1: 行基本変形">Subsection 5.2.1</a>にあるように行基本変形のうち <span class="process-math">\(i\)</span> 行目の <span class="process-math">\(a\)</span> 倍を <span class="process-math">\(j\)</span> 行目に足す操作は行列式が1なので行列式の値を変化させない。 これを用いて三角行列にすれば<a href="sec-determinant-alg.html#fact-triangle" class="xref" data-knowl="./knowl/xref/fact-triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="事実 7.6.2">事実 7.6.2</a>より行列式が計算できる。 同様の操作を列に対しておこなうこともできる。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-determinant-alg-3-3">行を <span class="process-math">\(a\)</span> 倍することで行列式は <span class="process-math">\(a\)</span> 倍される。行の互換(<span class="process-math">\(i\)</span> 行目と <span class="process-math">\(j\)</span> 行目の交換)をすることで行列式は <span class="process-math">\(-1\)</span> 倍される。 これらの操作も便利なので使うとよい。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-determinant-alg-3-3">行を <span class="process-math">\(a\)</span> 倍することで行列式は <span class="process-math">\(a\)</span> 倍される。行の互換( <span class="process-math">\(i\)</span> 行目と <span class="process-math">\(j\)</span> 行目の交換)をすることで行列式は <span class="process-math">\(-1\)</span> 倍される。 これらの操作も便利なので使うとよい。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sec-determinant-alg-3-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">例</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ガウスの消去法による行列式の計算.</span>
@@ -444,7 +444,7 @@ A=
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">の行列式を計算してみよう。 行基本変形で1列目の2行目以降を0にする。</div>
+<div class="para">の行列式を計算してみよう。 1行目のスカラー倍を2, 3, 4行目に足すことで、1列目の2行目以降を0にする。</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/block-determinant.html" id="sec-determinant-alg-3-4-2-2">
 \begin{align*}
 \begin{vmatrix}
@@ -545,7 +545,10 @@ A=
 <div class="para" id="sec-determinant-alg-3-4-3">今回は使わなかったが、列に対して同様の操作をして計算することもできる。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="例 7.6.5: ガウスの消去法による行列式の計算"><a tabindex="-1" href="#sec-determinant-alg-3-4" title="Copy heading and permalink for 例 7.6.5: ガウスの消去法による行列式の計算" aria-label="Copy heading and permalink for 例 7.6.5: ガウスの消去法による行列式の計算">🔗</a></div>
-</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 7.6.2: ガウスの消去法による行列式の計算"><a tabindex="-1" href="#sec-determinant-alg-3" title="Copy heading and permalink for Subsection 7.6.2: ガウスの消去法による行列式の計算" aria-label="Copy heading and permalink for Subsection 7.6.2: ガウスの消去法による行列式の計算">🔗</a></div>
+</article></details>
+<div class="para" id="sec-determinant-alg-3-5">このガウスの消去法による行列式の計算は <span class="process-math">\(n^3\)</span> の定数倍で演算回数を抑えることができる。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 7.6.2: ガウスの消去法による行列式の計算"><a tabindex="-1" href="#sec-determinant-alg-3" title="Copy heading and permalink for Subsection 7.6.2: ガウスの消去法による行列式の計算" aria-label="Copy heading and permalink for Subsection 7.6.2: ガウスの消去法による行列式の計算">🔗</a></div>
 </section>
 <section class="subsection" id="sec-determinant-alg-4">
 <h2 class="heading hide-type">
