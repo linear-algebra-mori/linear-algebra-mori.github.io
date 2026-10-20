@@ -802,7 +802,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </md>
       と定義する。
       置換の合成を <m>\sigma\rho\coloneqq\sigma\circ\rho</m> で表す。
-      任意の <m>\sigma\in S_n</m> について、<m>\tau\sigma =\mathrm{id}</m> を満たす <m>\tau\in S_n</m> を <m>\sigma</m> の逆置換と呼び <m>\sigma^{-1}</m> で表す。
+      任意の <m>\sigma\in S_n</m> について、<m>\rho\sigma =\mathrm{id}</m> を満たす <m>\rho\in S_n</m> を <m>\sigma</m> の逆置換と呼び <m>\sigma^{-1}</m> で表す。
       </p>
     </definition>
       <p>
@@ -977,11 +977,12 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </p>
       <proof>
         <p>
+          ある互換 <m>\tau_1,\dotsc,\tau_k\in S_n</m> について
           <md>
             <mrow>\sigma\amp=\tau_1\dotsm\tau_k</mrow>
-            <mrow>\amp=\rho_1\dotsm\rho_m</mrow>
           </md>
-          と二通りの互換の積で表せるとき、互換の符号は <m>-1</m> なので <m>\mathrm{sgn}(\sigma) = (-1)^k = (-1)^m</m> である。
+          と表せるとき、<m>\mathrm{sgn}(\sigma) = (-1)^k</m> である。
+          したがって、<m>k</m> の偶奇は一定。
         </p>
       </proof>
     </proposition>
