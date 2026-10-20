@@ -801,7 +801,8 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <mrow>i\amp\longmapsto i</mrow>
       </md>
       と定義する。
-      任意の <m>\sigma\in S_n</m> について、<m>\tau\circ\sigma =\mathrm{id}</m> を満たす <m>\tau\in S_n</m> を <m>\sigma</m> の逆置換と呼び <m>\sigma^{-1}</m> で表す。
+      置換の合成を <m>\sigma\rho\coloneqq\sigma\circ\rho</m> で表す。
+      任意の <m>\sigma\in S_n</m> について、<m>\tau\sigma =\mathrm{id}</m> を満たす <m>\tau\in S_n</m> を <m>\sigma</m> の逆置換と呼び <m>\sigma^{-1}</m> で表す。
       </p>
     </definition>
       <p>
@@ -849,6 +850,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     例えば
     <md>
       \begin{pmatrix}3\amp 2\amp 1\end{pmatrix}=
+      \begin{pmatrix}2\amp 1\amp 3\end{pmatrix}=
       \begin{pmatrix}1\amp 3\amp 2\end{pmatrix}
     </md>
     である。
@@ -856,13 +858,31 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     </p>
     <fact>
       <title>置換のサイクル分解</title>
-      <p>任意の <m>\sigma\in S_n</m> についてある巡回置換の集合 <m>\tau_1,\dotsc,\tau_m</m> が唯一存在し、以下を満たす。
-        <ol>
-          <li><m>\sigma=\tau_1\tau_2\dotsm\tau_m</m>.</li>
-          <li><m>\tau_1,\tau_2\dotsc,\tau_m</m> は互いに素.</li>
-          <li>任意の <m>i\in[n]</m> についてある <m>j\in[m]</m> が存在し、<m>i</m> は <m>\tau_j</m> によって他の元に移るか <m>\tau_j=\begin{pmatrix}i\end{pmatrix}</m></li>
-        </ol></p>
+      <p>
+        任意の <m>\sigma\in S_n</m> は、<m>1,\ldots,n</m> をそれぞれちょうど一度ずつ用いたサイクル表示を持つ。
+        すなわち、これらの元をいくつかの括弧に分けて並べ、巡回置換の積として表すことができる。
+        この表示を、固定点を含めた <m>\sigma</m> のサイクル分解という。
+        この表示は、括弧の並べ順と各括弧の巡回シフトを除いて一意である。
+      </p>
     </fact>
+    <example>
+      <title>置換のサイクル分解</title>
+      <p>
+      <md>
+      \sigma=\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\\ 2\amp 3\amp 1\amp 4\amp 5\end{pmatrix}
+      </md>
+      について、
+      <md>
+        \sigma=\begin{pmatrix}1\amp 2\amp 3\end{pmatrix}\begin{pmatrix}4\end{pmatrix}\begin{pmatrix}5\end{pmatrix}
+      </md>
+      の右辺の表示はサイクル分解である。
+      巡回置換の並び順や巡回置換の表示の巡回置換は自由なので
+      <md>
+        \sigma=\begin{pmatrix}4\end{pmatrix}\begin{pmatrix}2\amp 3\amp 1\end{pmatrix}\begin{pmatrix}5\end{pmatrix}
+      </md>
+      などもサイクル分解である。
+      </p>
+    </example>
     <definition>
       <title>置換のサイクル数</title>
       <p><m>\sigma\in S_n</m> について、そのサイクル分解に含まれるサイクルの個数を置換 <m>\sigma</m> の<term>サイクル数</term> といい <m>c(\sigma)</m> で表す。</p>
@@ -881,18 +901,18 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <title>互換とサイクル数</title>
       <p>任意の置換 <m>\sigma\in S_n</m> と互換 <m>\tau\in S_n</m> について、
       <md>
-        |c(\sigma) - c(\tau\circ\sigma)| = 1.
+        |c(\sigma) - c(\tau\sigma)| = 1.
       </md>
       </p>
       <proof>
         <p>
           <m>\tau=(i,j)</m> とする。<m>i</m> と <m>j</m> が <m>\sigma</m> のサイクル分解で同じサイクルに属するとき
       <md>
-        c(\tau\circ\sigma) = c(\sigma)+1.
+        c(\tau\sigma) = c(\sigma)+1.
       </md>
           異なるサイクルに属するとき
       <md>
-        c(\tau\circ\sigma) = c(\sigma)-1.
+        c(\tau\sigma) = c(\sigma)-1.
       </md>
         </p>
       </proof>
@@ -920,14 +940,14 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         任意の <m>\sigma,\rho\in S_n</m> について
       <md>
-        \mathrm{sgn}(\sigma\circ\rho) = \mathrm{sgn}(\sigma)\mathrm{sgn}(\rho)
+        \mathrm{sgn}(\sigma\rho) = \mathrm{sgn}(\sigma)\mathrm{sgn}(\rho)
       </md>
       </p>
       <proof>
         <p>
           <xref ref="lem-cycle-pm"/> より、任意の置換 <m>\sigma\in S_n</m> と互換 <m>\tau\in S_n</m> について
           <md>
-            \mathrm{sgn}(\tau\circ\sigma) = -\mathrm{sgn}(\sigma).
+            \mathrm{sgn}(\tau\sigma) = -\mathrm{sgn}(\sigma).
           </md>
           また、<xref ref="prop-trans"/> より、ある互換 <m>\tau_1,\dotsc,\tau_{n-c(\sigma)}</m> が存在し
           <md>
@@ -935,7 +955,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
           </md>
           よって、
           <md>
-            <mrow>\mathrm{sgn}(\sigma\circ\rho) \amp= \mathrm{sgn}(\tau_1\dotsm\tau_{n-c(\sigma)}\rho)</mrow>
+            <mrow>\mathrm{sgn}(\sigma\rho) \amp= \mathrm{sgn}(\tau_1\dotsm\tau_{n-c(\sigma)}\rho)</mrow>
             <mrow>\amp= -\mathrm{sgn}(\tau_2\dotsm\tau_{n-c(\sigma)}\rho)</mrow>
             <mrow>\amp= (-1)^{n-c(\sigma)}\mathrm{sgn}(\rho)</mrow>
             <mrow>\amp= \mathrm{sgn}(\sigma)\cdot\mathrm{sgn}(\rho)</mrow>
@@ -965,6 +985,19 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         </p>
       </proof>
     </proposition>
+    <exercise>
+      <title>置換</title>
+      <p>
+        <md>
+          \sigma=\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\\ 4\amp 6\amp 5\amp 2\amp 3\amp 1\amp 7\end{pmatrix}
+        </md>
+        <ol>
+          <li><m>\sigma</m> のサイクル分解をひとつもとめよ。</li>
+          <li><m>\sigma</m> のサイクル数 <m>c(\sigma)</m> と符号 <m>\mathrm{sgn}(\sigma)</m> をもとめよ。</li>
+          <li><m>\sigma</m> を互換の積として表せ。ただし、互換の個数が最小になるようにすること。例えば <m>\begin{pmatrix}1\amp2\amp3\end{pmatrix}=\begin{pmatrix}1\amp3\end{pmatrix}\begin{pmatrix}1\amp2\end{pmatrix}</m> のように互換の積に分解すればよい。</li>
+        </ol>
+      </p>
+    </exercise>
   </section>
   <section xml:id="sec-determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>一般サイズの行列式</title>
@@ -990,7 +1023,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が<term>交代的</term> <m>\defiff</m>
       <m>\bm{v}_1,\dotsc,\bm{v}_{m}\in\mathbb{R}^n</m> について、
       <md>
-        \exists\, i\lt j \in [m], \bm{v}_i=\bm{v}_j\implies D(\bm{v}_1,\dotsc,\bm{v}_m)=0.
+        (\exists\, i\lt j \in [m], \bm{v}_i=\bm{v}_j)\implies D(\bm{v}_1,\dotsc,\bm{v}_m)=0.
       </md>
       </p>
       <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が<term>反対称的</term> <m>\defiff</m>
