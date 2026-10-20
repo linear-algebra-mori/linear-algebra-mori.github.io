@@ -940,7 +940,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         任意の <m>\sigma,\rho\in S_n</m> について
       <md>
-        \mathrm{sgn}(\sigma\rho) = \mathrm{sgn}(\sigma)\mathrm{sgn}(\rho)
+        \mathrm{sgn}(\sigma\rho) = \mathrm{sgn}(\sigma)\mathrm{sgn}(\rho).
       </md>
       </p>
       <proof>
@@ -967,7 +967,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         任意の <m>\sigma\in S_n</m> について
       <md>
-        \mathrm{sgn}(\sigma^{-1}) = \mathrm{sgn}(\sigma)
+        \mathrm{sgn}(\sigma^{-1}) = \mathrm{sgn}(\sigma).
       </md>
       </p>
     </corollary>
@@ -990,8 +990,9 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <title>置換</title>
       <p>
         <md>
-          \sigma=\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\\ 4\amp 6\amp 5\amp 2\amp 3\amp 1\amp 7\end{pmatrix}
+          \sigma=\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\\ 4\amp 6\amp 5\amp 2\amp 3\amp 1\amp 7\end{pmatrix}.
         </md>
+        とするとき、以下の問に答えよ。
         <ol>
           <li><m>\sigma</m> のサイクル分解をひとつもとめよ。</li>
           <li><m>\sigma</m> のサイクル数 <m>c(\sigma)</m> と符号 <m>\mathrm{sgn}(\sigma)</m> をもとめよ。</li>
@@ -1056,10 +1057,16 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         正方行列 <m>A=[a_{i,j}]\in\mathbb{R}^{n\times n}</m> の行列式を
         <md>
-          \mathrm{det}(A) \coloneqq \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
+          \det(A) \coloneqq \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
         </md>
+        と定義する。
       </p>
     </definition>
+    <fact>
+      <p>
+        行列式は列と行について多重線形性と交代性を満たす。また <m>\det(I)=1</m> である。
+      </p>
+    </fact>
     <theorem xml:id="thm-determinant">
       <title>行列式の特徴付け</title>
       <p>
@@ -1179,9 +1186,11 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <corollary>
       <p>正則な正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<md>\det(A^{-1})=\det(A)^{-1}.</md></p>
     </corollary>
+    <!--
     <p>
       行列式の定義は行と列について対称的なので、<term>行列式は行についても多重線形で交代的である</term>。
     </p>
+    -->
   </section>
   <section xml:id="sec-determinant-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列式の計算アルゴリズム</title>
@@ -1252,7 +1261,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         同様の操作を列に対しておこなうこともできる。
       </p>
       <p>
-        行を <m>a</m> 倍することで行列式は <m>a</m> 倍される。行の互換(<m>i</m> 行目と <m>j</m> 行目の交換)をすることで行列式は <m>-1</m> 倍される。
+        行を <m>a</m> 倍することで行列式は <m>a</m> 倍される。行の互換( <m>i</m> 行目と <m>j</m> 行目の交換)をすることで行列式は <m>-1</m> 倍される。
         これらの操作も便利なので使うとよい。
       </p>
       <example>
@@ -1268,7 +1277,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
             \end{bmatrix}
           </md>
           の行列式を計算してみよう。
-          行基本変形で1列目の2行目以降を0にする。
+          1行目のスカラー倍を2, 3, 4行目に足すことで、1列目の2行目以降を0にする。
           <md>
             <mrow>
             \begin{vmatrix}
@@ -1370,6 +1379,9 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
           今回は使わなかったが、列に対して同様の操作をして計算することもできる。
         </p>
       </example>
+      <p>
+        このガウスの消去法による行列式の計算は <m>n^3</m> の定数倍で演算回数を抑えることができる。
+      </p>
     </subsection>
     <subsection>
       <title>余因子展開による行列式の計算</title>
