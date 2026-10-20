@@ -65,7 +65,7 @@
        </p>
      </definition>
      <proposition>
-       <title>コンパニオン行列の行列式</title>
+       <title>コンパニオン行列の特性多項式</title>
        <p>
          <md>
            \varphi_{C(a_0,\dotsc,a_{n-1})}(t) = t^n - \sum_{i=0}^{n-1} a_i t^i
@@ -212,5 +212,14 @@
        </proof>
      </theorem>
    </subsection>
+  </section>
+  <section xml:id="sec-poly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>多項式</title>
+  </section>
+  <section xml:id="sec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>ケイリー・ハミルトンの定理</title>
+  </section>
+  <section xml:id="sec-directsum" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>直和分解</title>
   </section>
 </chapter>

@@ -1102,7 +1102,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </p>
     </proof>
       <p>
-        <m>A=(a_{i,j})\in\mathbb{R}^{3\times 3}</m> について
+        行列式の定義より、<m>A=(a_{i,j})\in\mathbb{R}^{3\times 3}</m> について
         <md>
           <mrow>\det(A)\amp=a_{1,1}a_{2,2}a_{3,3} + a_{1,2}a_{2,3}a_{3,1} + a_{1,3}a_{2,1}a_{3,2}</mrow>
           <mrow>\amp\quad - (a_{1,1}a_{2,3}a_{3,2} + a_{1,3}a_{2,2}a_{3,1} + a_{1,2}a_{2,1}a_{3,3}).</mrow>
