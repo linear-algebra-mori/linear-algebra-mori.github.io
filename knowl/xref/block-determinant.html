@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">正方行列 <span class="process-math">\(A\in\mathbb{R}^{n\times n}\)</span> がブロック上三角行列で、 ある <span class="process-math">\(m\in\mathbb{Z}_{\ge 1},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}\)</span> について</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">を満たすとすると</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(A)=\det(B)\det(D)
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#block-determinant-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="命題 7.6.4"><a tabindex="-1" href="#block-determinant" title="Copy heading and permalink for 命題 7.6.4" aria-label="Copy heading and permalink for 命題 7.6.4">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">行列式の定義より</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{det}(A) = \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
+\end{equation*}
+</div>
+<div class="para">である。 ここで、<span class="process-math">\(A\)</span> の構造から</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\sigma(i)\in\{m+1,\dotsc,n\}\qquad\forall i\in\{m+1,\dotsc,n\}
+\end{gather*}
+</div>
+<div class="para">を満たす <span class="process-math">\(\sigma\in S_n\)</span> 以外の項は 0 となる。 上の条件を満たす <span class="process-math">\(\sigma\)</span> について、<span class="process-math">\(\{1,\dotsc,m\}\)</span> 上の置換 <span class="process-math">\(\sigma_1\)</span> と <span class="process-math">\(\{m+1,\dotsc,n\}\)</span> 上の置換 <span class="process-math">\(\sigma_2\)</span> を用いて、<span class="process-math">\(\sigma=\sigma_1\sigma_2\)</span> と分解できる。 したがって、</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathrm{det}(A) \amp= \sum_{\sigma_1\sigma_2} \mathrm{sgn}(\sigma_1\sigma_2)\prod_{i=1}^m a_{i,\sigma_1(i)}\prod_{i=m+1}^n a_{i,\sigma_2(i)}\\
+\amp= \sum_{\sigma_1\sigma_2} \mathrm{sgn}(\sigma_1)\mathrm{sgn}(\sigma_2)\prod_{i=1}^m a_{i,\sigma_1(i)}\prod_{i=m+1}^n a_{i,\sigma_2(i)}\\
+\amp= \left(\sum_{\sigma_1} \mathrm{sgn}(\sigma_1)\prod_{i=1}^m a_{i,\sigma_1(i)}\right)\left(\sum_{\sigma_2} \mathrm{sgn}(\sigma_2)\prod_{i=m+1}^n a_{i,\sigma_2(i)}\right)\\
+\amp=\det(B)\det(D).
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#block-determinant-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 7.6.4.1"><a tabindex="-1" href="#block-determinant-2" title="Copy heading and permalink for 証明 7.6.4.1" aria-label="Copy heading and permalink for 証明 7.6.4.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-determinant-alg.html#block-determinant">In Context</a></span>
+</body>
+</html>

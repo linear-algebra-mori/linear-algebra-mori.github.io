@@ -58,14 +58,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.3.5';
+eBookConfig.runestone_version = '8.3.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.3adcbea95009347b.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.7a45395f326e122c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.4beca1fdeed766a2.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.ebd33f6a21eed414.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -306,7 +306,26 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-permutation.html" class="internal"><span class="codenumber">7.4</span> <span class="title">置換</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinant.html" class="internal"><span class="codenumber">7.5</span> <span class="title">一般サイズの行列式</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-determinant-alg.html" class="internal"><span class="codenumber">7.6</span> <span class="title">行列式の計算アルゴリズム</span></a></div>
+<ul id="ptx-toc-group-sec-determinant-alg" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">三角行列とブロック三角行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">ガウスの消去法による行列式の計算</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">余因子展開による行列式の計算</span></a></div></li>
 </ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cpoly.html" class="internal"><span class="codenumber">8</span> <span class="title">特性多項式</span></a></div>
+<ul id="ptx-toc-group-ch-cpoly" class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cpoly.html" class="internal"><span class="codenumber">8.1</span> <span class="title">特性多項式</span></a></div>
+<ul id="ptx-toc-group-sec-cpoly" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cpoly.html#subsec-cpoly" class="internal"><span class="codenumber">8.1.1</span> <span class="title">特性多項式の定義</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cpoly.html#subsec-comp" class="internal"><span class="codenumber">8.1.2</span> <span class="title">コンパニオン行列</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cpoly.html#subsec-ch" class="internal"><span class="codenumber">8.1.3</span> <span class="title">ケイリー・ハミルトンの定理</span></a></div></li>
+</ul>
+</li></ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
@@ -321,10 +340,10 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="subsec-signed-area-2">行列式は天下り的に定義したり、動機が不明な代数的な性質を述べてから導出することが多いのだが、 ここでは幾何学的な動機を最初に説明する。 一言で言うと行列式は符号付き体積(二次元の場合は面積, 一次元の場合は長さ)である。 まず最初に二次元数ベクトル <span class="process-math">\(\bm{v},\,\bm{w}\in\mathbb{R}^2\)</span> が作る平行四辺形の面積について考える。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-signed-area-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/subsec-signed-area-3.svg" role="img" class="contained"></div>
-<div class="para" id="subsec-signed-area-4">この面積を<span class="process-math">\(\overline{D}(\bm{v},\bm{w})\)</span> と定義する。 このときに<span class="process-math">\(\bm{v}\)</span> を固定して<span class="process-math">\(\bm{w}\)</span> を変化させることを考える。<span class="process-math">\(\bm{w}\)</span> を<span class="process-math">\(c&gt;0\)</span> 倍すると平行四辺形の面積も<span class="process-math">\(c\)</span> 倍されるため <span class="process-math">\(\overline{D}(\bm{v},c\bm{w})=c\overline{D}(\bm{v},c\bm{w})\)</span> である。 一方で<span class="process-math">\(\bm{w}\)</span> を <span class="process-math">\(-1\)</span> 倍したときに平行四辺形の面積は変化しない。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-signed-area-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-signed-area-4">この面積を<span class="process-math">\(\overline{D}(\bm{v},\bm{w})\)</span> と定義する。 このときに<span class="process-math">\(\bm{v}\)</span> を固定して<span class="process-math">\(\bm{w}\)</span> を変化させることを考える。<span class="process-math">\(\bm{w}\)</span> を<span class="process-math">\(c&gt;0\)</span> 倍すると平行四辺形の面積も<span class="process-math">\(c\)</span> 倍されるため <span class="process-math">\(\overline{D}(\bm{v},c\bm{w})=c\overline{D}(\bm{v},\bm{w})\)</span> である。 一方で<span class="process-math">\(\bm{w}\)</span> を <span class="process-math">\(-1\)</span> 倍したときに平行四辺形の面積は変化しない。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-signed-area-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/subsec-signed-area-5.svg" role="img" class="contained"></div>
-<div class="para" id="subsec-signed-area-6">ここで、符号付き面積 <span class="process-math">\(D(\bm{v},\bm{w})\)</span>というものを導入し、<span class="process-math">\(D(\bm{v},-\bm{w})=-D(\bm{v},\bm{w})\)</span>であるものとする。 具体的には <span class="process-math">\(\bm{v}\)</span> を <span class="process-math">\(\bm{w}\)</span> に重なるように <span class="process-math">\(\theta\in[0,\pi)\)</span> 回転させるとき、回転の向きが反時計回りのときに符号が正で時計回りのときに符号が負になる。 このとき任意の <span class="process-math">\(c\in\mathbb{R}\)</span> について<span class="process-math">\(D(\bm{v},c\bm{w})=cD(\bm{v},\bm{w})\)</span> となる。 同様に <span class="process-math">\(D(c\bm{v},\bm{w})=cD(\bm{v},\bm{w})\)</span> である。 また、任意の <span class="process-math">\(\bm{u},\,\bm{v},\,\bm{w}\in\mathbb{R}^2\)</span> について <span class="process-math">\(D(\bm{v},\bm{u}+\bm{w})=D(\bm{v},\bm{u})+D(\bm{v},\bm{w})\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-signed-area-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-signed-area-6">ここで、符号付き面積 <span class="process-math">\(D(\bm{v},\bm{w})\)</span>というものを導入し、<span class="process-math">\(D(\bm{v},-\bm{w})=-D(\bm{v},\bm{w})\)</span>であるものとする。 具体的には <span class="process-math">\(\bm{v}\)</span> を <span class="process-math">\(\bm{w}\)</span> に重なるように <span class="process-math">\(\theta\in[0,\pi)\)</span> 回転させるとき、回転の向きが反時計回りのときに符号が正で時計回りのときに符号が負になる。 このとき任意の <span class="process-math">\(c\in\mathbb{R}\)</span> について<span class="process-math">\(D(\bm{v},c\bm{w})=cD(\bm{v},\bm{w})\)</span> となる。 同様に <span class="process-math">\(D(c\bm{v},\bm{w})=cD(\bm{v},\bm{w})\)</span> である。 また、任意の <span class="process-math">\(\bm{u},\,\bm{v},\,\bm{w}\in\mathbb{R}^2\)</span> について <span class="process-math">\(D(\bm{u},\bm{v}+\bm{w})=D(\bm{u},\bm{v})+D(\bm{u},\bm{w})\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-signed-area-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/subsec-signed-area-7.svg" role="img" class="contained"></div>
 <div class="autopermalink" aria-hidden="true" data-description="Subsection 7.3.1: 符号付き面積"><a tabindex="-1" href="#subsec-signed-area" title="Copy heading and permalink for Subsection 7.3.1: 符号付き面積" aria-label="Copy heading and permalink for Subsection 7.3.1: 符号付き面積">🔗</a></div>
@@ -353,24 +372,24 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="lemma theorem-like" id="subsec-determinant-2-3"><h3 class="heading">
+<article class="lemma theorem-like" id="lem-alt-as"><h3 class="heading">
 <span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="subsec-determinant-2-3-1-1">
-<div class="para">双線形写像 <span class="process-math">\(D\colon \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}\)</span> について</div>
-<div class="displaymath process-math" id="subsec-determinant-2-3-1-1-2">
+<div class="para logical" id="lem-alt-as-1-1">
+<div class="para">交代性を持つ双線形写像 <span class="process-math">\(D\colon \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}\)</span> について</div>
+<div class="displaymath process-math" id="lem-alt-as-1-1-2">
 \begin{equation*}
-\forall\bm{v}\in\mathbb{R}^n\quad D(\bm{v},\bm{v})=0\implies \forall\bm{v},\,\bm{w}\in\mathbb{R}^n\quad D(\bm{v},\bm{w})=-D(\bm{w},\bm{v})
+\forall\bm{v},\,\bm{w}\in\mathbb{R}^n\quad D(\bm{v},\bm{w})=-D(\bm{w},\bm{v})
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-alt-as-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="補題 7.3.1"><a tabindex="-1" href="#subsec-determinant-2-3" title="Copy heading and permalink for 補題 7.3.1" aria-label="Copy heading and permalink for 補題 7.3.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="補題 7.3.1"><a tabindex="-1" href="#lem-alt-as" title="Copy heading and permalink for 補題 7.3.1" aria-label="Copy heading and permalink for 補題 7.3.1">🔗</a></div>
 </article>
-<details id="subsec-determinant-2-3-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<details id="lem-alt-as-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
-<div class="para logical" id="subsec-determinant-2-3-2-1">
-<div class="displaymath process-math" id="subsec-determinant-2-3-2-1-1">
+<div class="para logical" id="lem-alt-as-2-1">
+<div class="displaymath process-math" id="lem-alt-as-2-1-1">
 \begin{align*}
 D(\bm{v}+\bm{w},\bm{v}+\bm{w})\amp=
 D(\bm{v},\bm{v}+\bm{w})
@@ -383,9 +402,9 @@ D(\bm{w},\bm{w})
 \end{align*}
 </div>
 <div class="para">ここで <span class="process-math">\(D(\bm{v}+\bm{w},\bm{v}+\bm{w})=D(\bm{v},\bm{v})=D(\bm{w},\bm{w})=0\)</span> より <span class="process-math">\(D(\bm{v},\bm{w})=-D(\bm{w},\bm{v})\)</span>。</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-alt-as-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="証明 7.3.1.1"><a tabindex="-1" href="#subsec-determinant-2-3-2" title="Copy heading and permalink for 証明 7.3.1.1" aria-label="Copy heading and permalink for 証明 7.3.1.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 7.3.1.1"><a tabindex="-1" href="#lem-alt-as-2" title="Copy heading and permalink for 証明 7.3.1.1" aria-label="Copy heading and permalink for 証明 7.3.1.1">🔗</a></div>
 </article></details>
 <div class="para" id="subsec-determinant-2-4"> これらの性質から<span class="process-math">\(D\)</span> は一意に定まる。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -436,6 +455,8 @@ a\amp b\\c\amp d
 </div>
 <div class="para">を行列 <span class="process-math">\(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\)</span> の<dfn class="terminology">行列式</dfn>と定義する。</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-determinant-2-7">この行列式が三条件を満たすことは簡単に確認できる。 また、列だけなく行についても双線形性と交代性を満たす。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Subsection 7.3.2: 2\times 2 行列の行列式"><a tabindex="-1" href="#subsec-determinant-2" title="Copy heading and permalink for Subsection 7.3.2: 2\times 2 行列の行列式" aria-label="Copy heading and permalink for Subsection 7.3.2: 2\times 2 行列の行列式">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Section 7.3: 2\times 2 行列の行列式"><a tabindex="-1" href="#sec-determinant-2" title="Copy heading and permalink for Section 7.3: 2\times 2 行列の行列式" aria-label="Copy heading and permalink for Section 7.3: 2\times 2 行列の行列式">🔗</a></div>
