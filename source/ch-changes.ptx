@@ -894,6 +894,8 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
           \mathrm{sgn}(\sigma)\coloneqq(-1)^{n-c(\sigma)}
         </md>
         と定義する。
+        符号が <m>+1</m> の置換を<term>偶置換</term>、
+        符号が <m>-1</m> の置換を<term>奇置換</term>という。
       </p>
     </definition>
     <p>例えば恒等写像のサイクル数は <m>c(\mathrm{id})=n</m> なので <m>\mathrm{sgn}(\mathrm{id})=1</m> である。</p>
