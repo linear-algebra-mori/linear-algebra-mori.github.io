@@ -1393,7 +1393,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
           <mrow>\det(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix})
           \amp=\sum_{i=1}^nv_{i,j}\det(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{e}_i\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
           <mrow>
-          \amp=\sum_{i=1}^nv_{i,j}(-1)^{j-1}\det(\begin{bmatrix}\bm{e}_i\amp\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
+          \amp=\sum_{i=1}^nv_{i,j}(-1)^{j-i}\det(\begin{bmatrix}\bm{e}_i\amp\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
         </md>
       </p>
     </subsection>
