@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>特性多項式</title>
+  <title>特性多項式と直和分解</title>
   <section xml:id="sec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>特性多項式</title>
     <subsection xml:id="subsec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -45,6 +45,87 @@
       </p>
     </lemma>
    </subsection>
+  </section>
+  <section xml:id="sec-poly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>多項式</title>
+    <subsection xml:id="subsec-polyroots" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>多項式と根</title>
+    <definition>
+      <title>多項式</title>
+      <p>
+        関数 <m>p\colon\mathbb{R}\to\mathbb{R}</m> について、ある <m>a_0,\dotsc,a_n\in\mathbb{R}</m> が存在し
+      <md>
+        p(x)=a_0+a_1x+\dotsm a_n x^n
+      </md>
+        を満たすとき、<m>p</m> を<term>多項式</term>という。
+        また、<m>a_n\ne 0</m> のとき、<m>n</m> を多項式 <m>p</m> の<term>次数</term>という。
+        ただし、<m>p(x)=0</m> の場合は <m>p</m> の次数は <m>-\infty</m> と定義する。
+      </p>
+    </definition>
+    <definition>
+      <title>多項式の根</title>
+      <p>
+      多項式 <m>p</m> について、
+      <md>
+        p(\lambda) = 0
+      </md>
+      を満たす <m>\lambda\in\mathbb{R}</m> を <m>p</m> の<term>根</term>という。
+      </p>
+    </definition>
+    <lemma>
+      <p>
+      <m>d\ge 0</m> 次多項式 <m>p</m> が <m>\lambda</m> を根に持つとき、ある <m>d-1</m>次多項式 <m>q</m> が存在し、
+      <md>
+        p(x) = (x-\lambda)q(x)
+      </md>
+      </p>
+      <proof>
+      <p>
+      <md>
+        p(x) = \sum_{i=0}^d a_i x^i
+      </md>
+      とする。
+      このとき、
+      <md>
+        <mrow>p(x) \amp= p(x) - p(\lambda) = \left(\sum_{i=0}^d a_i x^i\right)-\left(\sum_{i=0}^d a_i x^i\right)</mrow>
+        <mrow>\amp= \sum_{i=0}^d a_i \left(x^i-\lambda^i\right)</mrow>
+        <mrow>\amp= \sum_{i=0}^d a_i (x-\lambda)\left(\sum_{j=0}^{i-1}x^j\lambda^{i-1-j}\right)</mrow>
+        <mrow>\amp= (x-\lambda)\sum_{i=0}^d a_i \left(\sum_{j=0}^{i-1}x^j\lambda^{i-1-j}\right)</mrow>
+        </md>
+      </p>
+      </proof>
+    </lemma>
+    <proposition>
+      <p>
+      <m>d\ge 0</m> 次多項式 <m>p</m> は高々 <m>d</m> 個の根を持つ。
+      </p>
+      <proof>
+      <p>
+        <m>d</m> に関する帰納法で示す。
+      </p>
+      </proof>
+    </proposition>
+    <theorem>
+      <title>代数学の基本定理</title>
+      <p>
+        任意の次数1以上の <m>p\in\mathbb{C}[x]</m> は根を持つ。
+      </p>
+    </theorem>
+    <proposition>
+      <p>
+        任意の次数1以上の <m>p\in\mathbb{C}[x]</m> について
+        <md>
+          p(x) = c(x-\lambda_1)\dotsm(x-\lambda_d)
+        </md>
+      </p>
+    </proposition>
+    </subsection>
+    <subsection xml:id="subsec-polydiv" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>多項式の剰余</title>
+    </subsection>
+  </section>
+  <section xml:id="sec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>ケイリー・ハミルトンの定理</title>
    <subsection xml:id="subsec-comp" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>コンパニオン行列</title>
      <definition>
@@ -212,12 +293,6 @@
        </proof>
      </theorem>
    </subsection>
-  </section>
-  <section xml:id="sec-poly" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>多項式</title>
-  </section>
-  <section xml:id="sec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>ケイリー・ハミルトンの定理</title>
   </section>
   <section xml:id="sec-directsum" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>直和分解</title>
