@@ -898,7 +898,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         符号が <m>-1</m> の置換を<term>奇置換</term>という。
       </p>
     </definition>
-    <p>例えば恒等写像のサイクル数は <m>c(\mathrm{id})=n</m> なので <m>\mathrm{sgn}(\mathrm{id})=1</m> である。</p>
+    <p>例えば恒等置換のサイクル数は <m>c(\mathrm{id})=n</m> なので <m>\mathrm{sgn}(\mathrm{id})=1</m> である。</p>
     <lemma xml:id="lem-cycle-pm">
       <title>互換とサイクル数</title>
       <p>任意の置換 <m>\sigma\in S_n</m> と互換 <m>\tau\in S_n</m> について、
