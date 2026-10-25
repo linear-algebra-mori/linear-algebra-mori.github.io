@@ -1005,6 +1005,8 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
   </section>
   <section xml:id="sec-determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>一般サイズの行列式</title>
+    <subsection xml:id="subsec-determinant" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列式の定義と特徴付け</title>
     <definition>
       <title>多重線形写像</title>
       <p>写像 <m>D\colon \underbrace{\mathbb{R}^n\times\dotsm\times\mathbb{R}^n}_m\to\mathbb{R}</m> が<term>多重線形写像</term> <m>\defiff</m>
@@ -1068,6 +1070,13 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         行列式は列と行について多重線形性と交代性を満たす。また <m>\det(I)=1</m> である。
       </p>
+      <proof>
+        <p>
+        各項には、各行・各列の成分がちょうど一つずつ現れるので、行と列についてそれぞれ多重線形である。
+        第 <m>j</m> 列と第 <m>k</m> 列が等しいとし、<m>\tau=(j\,k)</m> とする。<m>\sigma</m> と <m>\tau\sigma</m> に対応する積は等しく、符号は逆である。これらの項を二つずつ組にして打ち消すと、<m>\det A=0</m> が得られる。行についても同様である。
+        また、<m>A=I_n</m> の場合は恒等置換の項だけが <m>1</m> となり、ほかは零なので、<m>\det(I_n)=1</m> である。
+      </p>
+      </proof>
     </fact>
     <theorem xml:id="thm-determinant">
       <title>行列式の特徴付け</title>
@@ -1133,6 +1142,9 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         一般的に <m>n!</m> 項登場するので、<m>n\ge 4</m> のときに、行列式を定義通りに計算するのは効率が悪い。
       </p>
+    </subsection>
+    <subsection xml:id="subsec-det-prop" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列式の性質</title>
     <proposition xml:id="prop-det-AB">
       <p>正方行列 <m>A,B\in\mathbb{R}^{n\times n}</m> について
       <md>
@@ -1193,6 +1205,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       行列式の定義は行と列について対称的なので、<term>行列式は行についても多重線形で交代的である</term>。
     </p>
     -->
+    </subsection>
   </section>
   <section xml:id="sec-determinant-alg" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>行列式の計算アルゴリズム</title>
@@ -1214,14 +1227,14 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         <md>
           A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
         </md>
-        を満たす <m>m\in\mathbb{Z}_{\ge 1},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> が存在する。</p>
+        を満たす <m>m\in\{1,2,\dotsc,n-1\},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> が存在する。</p>
       <p>
         同様に<term>ブロック下三角行列</term>も定義する。
       </p>
     </definition>
     <proposition xml:id="block-determinant">
       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> がブロック上三角行列で、
-        ある <m>m\in\mathbb{Z}_{\ge 1},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> について
+        ある <m>m\in\{1,2,\dotsc,n-1\},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}</m> について
         <md>
           A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
         </md>
@@ -1257,8 +1270,8 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     <subsection>
       <title>ガウスの消去法による行列式の計算</title>
       <p>
-        与えられた正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の行列式を計算するアルゴリズムを考える。<xref ref="prop-det-AB"/> より、行列式が <m>a\in\mathbb{R}</m> である行列を左右から掛けると行列式は <m>a</m> 倍になる。
-        <xref ref="subsec-elementary-rows"/>にあるように行基本変形のうち <m>i</m> 行目の <m>a</m> 倍を <m>j</m> 行目に足す操作は行列式が1なので行列式の値を変化させない。
+        与えられた正方行列 <m>A\in\mathbb{R}^{n\times n}</m> の行列式を計算するアルゴリズムを考える。<xref ref="prop-det-AB"/> より、行列式が <m>a\in\mathbb{R}</m> である行列を左または右から掛けると行列式は <m>a</m> 倍になる。
+        <xref ref="subsec-elementary-rows"/>にあるように行基本変形のうち <m>i</m> 行目の <m>a</m> 倍を <m>j</m> 行目に足す操作は行列式が1なので行列式の値を変化させない(この事実は行列式の多重線形性と交代性から直接示すこともできる)。
         これを用いて三角行列にすれば<xref ref="fact-triangle"/>より行列式が計算できる。
         同様の操作を列に対しておこなうこともできる。
       </p>
@@ -1297,7 +1310,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
             \end{vmatrix}
             </mrow>
           </md>
-          2行目と3行目を入れ替える。この操作で行列式が <m>-1</m> 倍されるので、行列式自体を <m>-1</m> 倍しておく。
+          2行目と3行目を入れ替える。この操作で行列式が <m>-1</m> 倍されるので、変換後の行列式を <m>-1</m> 倍しておく。
           <md>
             <mrow>
             \begin{vmatrix}
@@ -1384,6 +1397,62 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>
         このガウスの消去法による行列式の計算は <m>n^3</m> の定数倍で演算回数を抑えることができる。
       </p>
+      <exercise>
+        <title>行列式の計算</title>
+        <p>
+          以下の行列の行列式をもとめよ。
+        <ol>
+          <li><md>
+                A_1=
+    \begin{bmatrix}
+       1 \amp 1 \amp 0 \amp 1 \\
+       2 \amp 4 \amp 1 \amp 1 \\
+       1 \amp 3 \amp 0 \amp 2 \\
+      -1 \amp 1 \amp 3 \amp 0
+    \end{bmatrix}.
+          </md></li>
+          <li><md>
+                A_2=
+    \begin{bmatrix}
+      1 \amp 2 \amp 1 \amp 0 \\
+      2 \amp 4 \amp 1 \amp 1 \\
+      1 \amp 3 \amp 2 \amp 1 \\
+      3 \amp 8 \amp 4 \amp 5
+    \end{bmatrix}.
+          </md></li>
+          <li><md>
+                A_3=
+    \begin{bmatrix}
+       1 \amp  2 \amp  0 \amp 1 \\
+       2 \amp  5 \amp  1 \amp 0 \\
+      -1 \amp -1 \amp  2 \amp 1 \\
+       4 \amp  8 \amp -1 \amp 0
+    \end{bmatrix}.
+          </md></li>
+        </ol>
+        </p>
+      </exercise>
+      <proposition>
+        <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、
+          <md>
+            \text{$A$ が正則} \iff \det(A)\ne 0.
+          </md>
+        </p>
+        <proof>
+          <p>
+            <m>\implies:</m> <m>A</m> が正則のとき、
+            <md>
+              1=\det(I) =\det(AA^{-1}) = \det(A)\det(A^{-1}).
+            </md>
+            したがって、<m>\det(A)\ne 0</m> である。
+          </p>
+          <p>
+            <m>\impliedby:</m> 対偶を示す。<m>A</m> が正則でないと仮定する。
+            このとき、<m>A</m> の列は線形従属である。したがって、列基本変形で零ベクトルを作ることができる。
+            列の定数倍を他の列に加える操作で行列式は変化しないため、<m>\det(A)=0</m> である。
+          </p>
+        </proof>
+      </proposition>
     </subsection>
     <subsection>
       <title>余因子展開による行列式の計算</title>
