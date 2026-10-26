@@ -438,33 +438,35 @@ D(\bm{v}_1,\dotsc,\bm{v}_m)= 0
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.5.1.1"><a tabindex="-1" href="#subsec-determinant-5" title="Copy heading and permalink for 証明 7.5.1.1" aria-label="Copy heading and permalink for 証明 7.5.1.1">🔗</a></div>
 </article></details>
-<article class="definition definition-like" id="subsec-determinant-6"><h3 class="heading">
+<div class="para" id="subsec-determinant-6">これまでの線形代数の議論はすべて実数 <span class="process-math">\(\mathbb{R}\)</span> で説明してきたが、複素数や四則演算が定義されているもの(専門的には<dfn class="terminology">体</dfn>と呼ばれる)でも成り立つ。 ただし、この「反対称性 <span class="process-math">\(\implies\)</span> 交代性」は <span class="process-math">\(1+1=0\)</span> が成り立つ世界では成り立たない。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="subsec-determinant-7"><h3 class="heading">
 <span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列式.</span>
 </h3>
-<div class="para logical" id="subsec-determinant-6-2">
+<div class="para logical" id="subsec-determinant-7-2">
 <div class="para">正方行列 <span class="process-math">\(A=[a_{i,j}]\in\mathbb{R}^{n\times n}\)</span> の行列式を</div>
-<div class="displaymath process-math" id="subsec-determinant-6-2-2">
+<div class="displaymath process-math" id="subsec-determinant-7-2-2">
 \begin{equation*}
 \det(A) \coloneqq \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\prod_{i=1}^n a_{i,\sigma(i)}
 \end{equation*}
 </div>
 <div class="para">と定義する。</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="定義 7.5.4: 行列式"><a tabindex="-1" href="#subsec-determinant-6" title="Copy heading and permalink for 定義 7.5.4: 行列式" aria-label="Copy heading and permalink for 定義 7.5.4: 行列式">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.5.4: 行列式"><a tabindex="-1" href="#subsec-determinant-7" title="Copy heading and permalink for 定義 7.5.4: 行列式" aria-label="Copy heading and permalink for 定義 7.5.4: 行列式">🔗</a></div>
 </article>
-<article class="fact theorem-like" id="subsec-determinant-7"><h3 class="heading">
+<article class="fact theorem-like" id="subsec-determinant-8"><h3 class="heading">
 <span class="type">事実</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="subsec-determinant-7-1">行列式は列と行について多重線形性と交代性を満たす。また <span class="process-math">\(\det(I)=1\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-determinant-8-1">行列式は列と行について多重線形性と交代性を満たす。また <span class="process-math">\(\det(I)=1\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="事実 7.5.5"><a tabindex="-1" href="#subsec-determinant-7" title="Copy heading and permalink for 事実 7.5.5" aria-label="Copy heading and permalink for 事実 7.5.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="事実 7.5.5"><a tabindex="-1" href="#subsec-determinant-8" title="Copy heading and permalink for 事実 7.5.5" aria-label="Copy heading and permalink for 事実 7.5.5">🔗</a></div>
 </article>
-<details id="subsec-determinant-7-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<details id="subsec-determinant-8-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
-<div class="para" id="subsec-determinant-7-2-1">各項には、各行・各列の成分がちょうど一つずつ現れるので、行と列についてそれぞれ多重線形である。 第 <span class="process-math">\(j\)</span> 列と第 <span class="process-math">\(k\)</span> 列が等しいとし、<span class="process-math">\(\tau=(j\,k)\)</span> とする。<span class="process-math">\(\sigma\)</span> と <span class="process-math">\(\tau\sigma\)</span> に対応する積は等しく、符号は逆である。これらの項を二つずつ組にして打ち消すと、<span class="process-math">\(\det A=0\)</span> が得られる。行についても同様である。 また、<span class="process-math">\(A=I_n\)</span> の場合は恒等置換の項だけが <span class="process-math">\(1\)</span> となり、ほかは零なので、<span class="process-math">\(\det(I_n)=1\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-determinant-8-2-1">各項には、各行・各列の成分がちょうど一つずつ現れるので、行と列についてそれぞれ多重線形である。 第 <span class="process-math">\(j\)</span> 列と第 <span class="process-math">\(k\)</span> 列が等しいとし、<span class="process-math">\(\tau=(j\,k)\)</span> とする。<span class="process-math">\(\sigma\)</span> と <span class="process-math">\(\tau\sigma\)</span> に対応する積は等しく、符号は逆である。これらの項を二つずつ組にして打ち消すと、<span class="process-math">\(\det A=0\)</span> が得られる。行についても同様である。 また、<span class="process-math">\(A=I_n\)</span> の場合は恒等置換の項だけが <span class="process-math">\(1\)</span> となり、ほかは零なので、<span class="process-math">\(\det(I_n)=1\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="証明 7.5.5.1"><a tabindex="-1" href="#subsec-determinant-7-2" title="Copy heading and permalink for 証明 7.5.5.1" aria-label="Copy heading and permalink for 証明 7.5.5.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 7.5.5.1"><a tabindex="-1" href="#subsec-determinant-8-2" title="Copy heading and permalink for 証明 7.5.5.1" aria-label="Copy heading and permalink for 証明 7.5.5.1">🔗</a></div>
 </article></details>
 <article class="theorem theorem-like" id="thm-determinant"><h3 class="heading">
 <span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">行列式の特徴付け.</span>
@@ -496,11 +498,11 @@ D(\bm{v}_1,\dotsc,\bm{v}_n)=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="定理 7.5.6: 行列式の特徴付け"><a tabindex="-1" href="#thm-determinant" title="Copy heading and permalink for 定理 7.5.6: 行列式の特徴付け" aria-label="Copy heading and permalink for 定理 7.5.6: 行列式の特徴付け">🔗</a></div>
 </article>
-<details id="subsec-determinant-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<details id="subsec-determinant-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
-<div class="para logical" id="subsec-determinant-9-1">
+<div class="para logical" id="subsec-determinant-10-1">
 <div class="para">各 <span class="process-math">\(j\in [n]\)</span> について、<span class="process-math">\(\bm{v}_j=(v_{i,j})_{i=1}^n\)</span> とする。</div>
-<div class="displaymath process-math" id="subsec-determinant-9-1-3">
+<div class="displaymath process-math" id="subsec-determinant-10-1-3">
 \begin{align*}
 D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{i=1}^nv_{i,1}D(\bm{e}_i,\bm{v}_2,\dotsc,\bm{v}_n)\\
 \amp=\sum_{i_1=1}^n\dotsm\sum_{i_n=1}^n \left(\prod_{j=1}^n v_{i_j,j}\right)D(\bm{e}_{i_1},\dotsc,\bm{e}_{i_n}).
@@ -508,7 +510,7 @@ D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{i=1}^nv_{i,1}D(\bm{e}_i,\bm{v}_2,\dotsc,\b
 </div>
 <div class="para">
 <span class="process-math">\(D\)</span> の交代性より、</div>
-<div class="displaymath process-math" id="subsec-determinant-9-1-5">
+<div class="displaymath process-math" id="subsec-determinant-10-1-5">
 \begin{align*}
 D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{\sigma\in S_n} \left(\prod_{j=1}^n v_{\sigma(j),j}\right)D(\bm{e}_{\sigma(1)},\dotsc,\bm{e}_{\sigma(n)})\\
 \amp=\sum_{\sigma\in S_n} \left(\prod_{j=1}^n v_{\sigma(j),j}\right)\mathrm{sgn}(\sigma)D(\bm{e}_{1},\dotsc,\bm{e}_{n})\\
@@ -519,20 +521,20 @@ D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{\sigma\in S_n} \left(\prod_{j=1}^n v_{\sig
 \amp=D(\bm{e}_1,\dotsc,\bm{e}_n)\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right).
 \end{align*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="証明 7.5.1.2"><a tabindex="-1" href="#subsec-determinant-9" title="Copy heading and permalink for 証明 7.5.1.2" aria-label="Copy heading and permalink for 証明 7.5.1.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 7.5.1.2"><a tabindex="-1" href="#subsec-determinant-10" title="Copy heading and permalink for 証明 7.5.1.2" aria-label="Copy heading and permalink for 証明 7.5.1.2">🔗</a></div>
 </article></details>
-<div class="para logical" id="subsec-determinant-10">
+<div class="para logical" id="subsec-determinant-11">
 <div class="para">行列式の定義より、<span class="process-math">\(A=(a_{i,j})\in\mathbb{R}^{3\times 3}\)</span> について</div>
-<div class="displaymath process-math" id="subsec-determinant-10-2">
+<div class="displaymath process-math" id="subsec-determinant-11-2">
 \begin{align*}
 \det(A)\amp=a_{1,1}a_{2,2}a_{3,3} + a_{1,2}a_{2,3}a_{3,1} + a_{1,3}a_{2,1}a_{3,2}\\
 \amp\quad - (a_{1,1}a_{2,3}a_{3,2} + a_{1,3}a_{2,2}a_{3,1} + a_{1,2}a_{2,1}a_{3,3}).
 \end{align*}
 </div>
 <div class="para">各項に対応する置換は順番に</div>
-<div class="displaymath process-math" id="subsec-determinant-10-3">
+<div class="displaymath process-math" id="subsec-determinant-11-3">
 \begin{align*}
 \amp
 \begin{pmatrix}1\end{pmatrix}
@@ -550,9 +552,9 @@ D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\sum_{\sigma\in S_n} \left(\prod_{j=1}^n v_{\sig
 \end{align*}
 </div>
 <div class="para">である。</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-determinant-11">一般的に <span class="process-math">\(n!\)</span> 項登場するので、<span class="process-math">\(n\ge 4\)</span> のときに、行列式を定義通りに計算するのは効率が悪い。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-determinant-12">一般的に <span class="process-math">\(n!\)</span> 項登場するので、<span class="process-math">\(n\ge 4\)</span> のときに、行列式を定義通りに計算するのは効率が悪い。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-determinant-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Subsection 7.5.1: 行列式の定義と特徴付け"><a tabindex="-1" href="#subsec-determinant" title="Copy heading and permalink for Subsection 7.5.1: 行列式の定義と特徴付け" aria-label="Copy heading and permalink for Subsection 7.5.1: 行列式の定義と特徴付け">🔗</a></div>
 </section>
@@ -591,7 +593,8 @@ D(\bm{v}_1,\dotsc,\bm{v}_n)=\det\left(\begin{bmatrix}A\bm{v}_1\amp\dotsm\amp A\b
 <div class="para">より、<span class="process-math">\(D\)</span> は多重線形写像であり、交代的である。 よって<a href="sec-determinant.html#thm-determinant" class="xref" data-knowl="./knowl/xref/thm-determinant.html" data-reveal-label="Reveal" data-close-label="Close" title="定理 7.5.6: 行列式の特徴付け">定理 7.5.6</a>より、</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-determinant.html" id="prop-det-AB-2-1-5">
 \begin{align*}
-D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(\begin{bmatrix}A\bm{e}_1\amp\dotsm\amp A\bm{e}_n\end{bmatrix}\right)\\
+D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)D\left(\begin{bmatrix}\bm{e}_1\amp\dotsm\amp \bm{e}_n\end{bmatrix}\right)\\
+\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(\begin{bmatrix}A\bm{e}_1\amp\dotsm\amp A\bm{e}_n\end{bmatrix}\right)\\
 \amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(A\right)
 \end{align*}
 </div>

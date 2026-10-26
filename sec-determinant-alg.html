@@ -365,6 +365,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="定義 7.6.1: 三角行列"><a tabindex="-1" href="#sec-determinant-alg-2-2" title="Copy heading and permalink for 定義 7.6.1: 三角行列" aria-label="Copy heading and permalink for 定義 7.6.1: 三角行列">🔗</a></div>
 </article>
+<div class="para" id="sec-determinant-alg-2-3">三角行列の行列式は恒等置換以外の置換の重みが0になるため以下の事実が成り立つ。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="fact theorem-like" id="fact-triangle"><h3 class="heading">
 <span class="type">事実</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
@@ -372,23 +374,23 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="事実 7.6.2"><a tabindex="-1" href="#fact-triangle" title="Copy heading and permalink for 事実 7.6.2" aria-label="Copy heading and permalink for 事実 7.6.2">🔗</a></div>
 </article>
-<article class="definition definition-like" id="sec-determinant-alg-2-4"><h3 class="heading">
+<article class="definition definition-like" id="sec-determinant-alg-2-5"><h3 class="heading">
 <span class="type">定義</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ブロック三角行列.</span>
 </h3>
-<div class="para logical" id="sec-determinant-alg-2-4-2">
+<div class="para logical" id="sec-determinant-alg-2-5-2">
 <div class="para">正方行列 <span class="process-math">\(A\in\mathbb{R}^{n\times n}\)</span> が<dfn class="terminology">ブロック上三角行列</dfn> <span class="process-math">\(\defiff\)</span>
 </div>
-<div class="displaymath process-math" id="sec-determinant-alg-2-4-2-4">
+<div class="displaymath process-math" id="sec-determinant-alg-2-5-2-4">
 \begin{equation*}
 A=\begin{bmatrix}B\amp C\\O\amp D\end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">を満たす <span class="process-math">\(m\in\{1,2,\dotsc,n-1\},\,B\in\mathbb{R}^{m\times m},\, C\in\mathbb{R}^{m\times (n-m)},\, D\in\mathbb{R}^{(n-m)\times(n-m)}\)</span> が存在する。</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-determinant-alg-2-4-3">同様に<dfn class="terminology">ブロック下三角行列</dfn>も定義する。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-2-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-determinant-alg-2-5-3">同様に<dfn class="terminology">ブロック下三角行列</dfn>も定義する。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-2-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="定義 7.6.3: ブロック三角行列"><a tabindex="-1" href="#sec-determinant-alg-2-4" title="Copy heading and permalink for 定義 7.6.3: ブロック三角行列" aria-label="Copy heading and permalink for 定義 7.6.3: ブロック三角行列">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="定義 7.6.3: ブロック三角行列"><a tabindex="-1" href="#sec-determinant-alg-2-5" title="Copy heading and permalink for 定義 7.6.3: ブロック三角行列" aria-label="Copy heading and permalink for 定義 7.6.3: ブロック三角行列">🔗</a></div>
 </article>
 <article class="proposition theorem-like" id="block-determinant"><h3 class="heading">
 <span class="type">命題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -649,7 +651,7 @@ A_3=
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-determinant-alg-3-7-2-2">
-<span class="process-math">\(\impliedby:\)</span> 対偶を示す。<span class="process-math">\(A\)</span> が正則でないと仮定する。 このとき、<span class="process-math">\(A\)</span> の列は線形従属である。したがって、列基本変形で零ベクトルを作ることができる。 列の定数倍を他の列に加える操作で行列式は変化しないため、<span class="process-math">\(\det(A)=0\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\impliedby:\)</span> 対偶を示す。<span class="process-math">\(A\)</span> が正則でないと仮定する。 このとき、<span class="process-math">\(A\)</span> の列は線形従属である。したがって、列の定数倍を他の列に加える操作で零ベクトルの列を作ることができる。 列の定数倍を他の列に加える操作で行列式は変化しないため、<span class="process-math">\(\det(A)=0\)</span> である。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-alg-3-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="証明 7.6.7.1"><a tabindex="-1" href="#sec-determinant-alg-3-7-2" title="Copy heading and permalink for 証明 7.6.7.1" aria-label="Copy heading and permalink for 証明 7.6.7.1">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 7.6.2: ガウスの消去法による行列式の計算"><a tabindex="-1" href="#sec-determinant-alg-3" title="Copy heading and permalink for Subsection 7.6.2: ガウスの消去法による行列式の計算" aria-label="Copy heading and permalink for Subsection 7.6.2: ガウスの消去法による行列式の計算">🔗</a></div>
