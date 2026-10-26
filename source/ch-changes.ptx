@@ -1056,6 +1056,10 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>[交代性 <m>\implies</m> 反対称性]: <xref ref="lem-alt-as"/> の証明と同様。
       </p>
     </proof>
+    <p>
+      これまでの線形代数の議論はすべて実数 <m>\mathbb{R}</m> で説明してきたが、複素数や四則演算が定義されているもの(専門的には<term>体</term>と呼ばれる)でも成り立つ。
+      ただし、この「反対称性 <m>\implies</m> 交代性」は <m>1+1=0</m> が成り立つ世界では成り立たない。
+    </p>
     <definition>
       <title>行列式</title>
       <p>
@@ -1164,7 +1168,8 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         より、<m>D</m> は多重線形写像であり、交代的である。
         よって<xref ref="thm-determinant"/>より、
         <md>
-          <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(\begin{bmatrix}A\bm{e}_1\amp\dotsm\amp A\bm{e}_n\end{bmatrix}\right)</mrow>
+          <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)D\left(\begin{bmatrix}\bm{e}_1\amp\dotsm\amp \bm{e}_n\end{bmatrix}\right)</mrow>
+          <mrow>\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(\begin{bmatrix}A\bm{e}_1\amp\dotsm\amp A\bm{e}_n\end{bmatrix}\right)</mrow>
           <mrow>\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(A\right)</mrow>
         </md>
         ここで
@@ -1218,6 +1223,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> が<term>下三角行列</term> <m>\defiff</m>
         任意の <m>i\lt j\in[n]</m> について <m>A</m> の  <m>(i, j)</m> 成分が 0。</p>
     </definition>
+    <p>三角行列の行列式は恒等置換以外の置換の重みが0になるため以下の事実が成り立つ。</p>
     <fact xml:id="fact-triangle">
       <p>三角行列の行列式は対角成分の積である。</p>
     </fact>
@@ -1448,7 +1454,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
           </p>
           <p>
             <m>\impliedby:</m> 対偶を示す。<m>A</m> が正則でないと仮定する。
-            このとき、<m>A</m> の列は線形従属である。したがって、列基本変形で零ベクトルを作ることができる。
+            このとき、<m>A</m> の列は線形従属である。したがって、列の定数倍を他の列に加える操作で零ベクトルの列を作ることができる。
             列の定数倍を他の列に加える操作で行列式は変化しないため、<m>\det(A)=0</m> である。
           </p>
         </proof>
