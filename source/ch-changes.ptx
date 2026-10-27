@@ -1185,6 +1185,9 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </proof>
     </proposition>
     <corollary>
+      <p>正則な正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<md>\det(A^{-1})=\det(A)^{-1}.</md></p>
+    </corollary>
+    <corollary>
       <p>行列式は正方行列の相似による同値関係の不変量である。</p>
     </corollary>
   <!--
@@ -1202,9 +1205,6 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       </proof>
     </proposition>
     -->
-    <corollary>
-      <p>正則な正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、<md>\det(A^{-1})=\det(A)^{-1}.</md></p>
-    </corollary>
     <!--
     <p>
       行列式の定義は行と列について対称的なので、<term>行列式は行についても多重線形で交代的である</term>。
