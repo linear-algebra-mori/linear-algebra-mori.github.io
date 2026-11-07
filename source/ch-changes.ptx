@@ -1464,13 +1464,220 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
       <title>余因子展開による行列式の計算</title>
       <p>
         行列式を <m>j</m> 列目で展開すると、
-        <md>
-          <mrow>\det(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix})
-          \amp=\sum_{i=1}^nv_{i,j}\det(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{e}_i\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
-          <mrow>
-          \amp=\sum_{i=1}^nv_{i,j}(-1)^{j-i}\det(\begin{bmatrix}\bm{e}_i\amp\bm{v}_1\amp\dotsm\amp\bm{v}_{j-1}\amp\bm{v}_{j+1}\amp\dotsm\amp\bm{v}_n\end{bmatrix})</mrow>
-        </md>
+  <md number="no">
+    <mrow>
+      \det A
+      \amp =
+      \begin{vmatrix}
+        a_{11} \amp \cdots \amp a_{1j} \amp \cdots \amp a_{1n} \\
+        \vdots \amp        \amp \vdots \amp        \amp \vdots \\
+        a_{i1} \amp \cdots \amp a_{ij} \amp \cdots \amp a_{in} \\
+        \vdots \amp        \amp \vdots \amp        \amp \vdots \\
+        a_{n1} \amp \cdots \amp a_{nj} \amp \cdots \amp a_{nn}
+      \end{vmatrix}
+    </mrow>
+
+    <mrow>
+      \amp =
+      \sum_{i=1}^{n} a_{ij}
+      \begin{vmatrix}
+        a_{11} \amp \cdots \amp 0      \amp \cdots \amp a_{1n} \\
+        \vdots \amp        \amp \vdots \amp        \amp \vdots \\
+        a_{i1} \amp \cdots \amp 1      \amp \cdots \amp a_{in} \\
+        \vdots \amp        \amp \vdots \amp        \amp \vdots \\
+        a_{n1} \amp \cdots \amp 0      \amp \cdots \amp a_{nn}
+      \end{vmatrix}
+    </mrow>
+
+    <mrow>
+      \amp =
+      \sum_{i=1}^{n} (-1)^{i-1}(-1)^{j-1} a_{ij}
+      \begin{vmatrix}
+        1 \amp a_{i1}
+          \amp \cdots \amp a_{i,j-1} \amp a_{i,j+1}
+          \amp \cdots \amp a_{in} \\
+        0 \amp a_{11}
+          \amp \cdots \amp a_{1,j-1} \amp a_{1,j+1}
+          \amp \cdots \amp a_{1n} \\
+        \vdots \amp \vdots
+          \amp        \amp \vdots \amp \vdots
+          \amp        \amp \vdots \\
+        0 \amp a_{i-1,1}
+          \amp \cdots \amp a_{i-1,j-1} \amp a_{i-1,j+1}
+          \amp \cdots \amp a_{i-1,n} \\
+        0 \amp a_{i+1,1}
+          \amp \cdots \amp a_{i+1,j-1} \amp a_{i+1,j+1}
+          \amp \cdots \amp a_{i+1,n} \\
+        \vdots \amp \vdots
+          \amp        \amp \vdots \amp \vdots
+          \amp        \amp \vdots \\
+        0 \amp a_{n1}
+          \amp \cdots \amp a_{n,j-1} \amp a_{n,j+1}
+          \amp \cdots \amp a_{nn}
+      \end{vmatrix}
+    </mrow>
+
+    <mrow>
+      \amp =
+      \sum_{i=1}^{n} (-1)^{i+j} a_{ij}
+      \begin{vmatrix}
+        a_{11}
+          \amp \cdots \amp a_{1,j-1} \amp a_{1,j+1}
+          \amp \cdots \amp a_{1n} \\
+        \vdots
+          \amp        \amp \vdots \amp \vdots
+          \amp        \amp \vdots \\
+        a_{i-1,1}
+          \amp \cdots \amp a_{i-1,j-1} \amp a_{i-1,j+1}
+          \amp \cdots \amp a_{i-1,n} \\
+        a_{i+1,1}
+          \amp \cdots \amp a_{i+1,j-1} \amp a_{i+1,j+1}
+          \amp \cdots \amp a_{i+1,n} \\
+        \vdots
+          \amp        \amp \vdots \amp \vdots
+          \amp        \amp \vdots \\
+        a_{n1}
+          \amp \cdots \amp a_{n,j-1} \amp a_{n,j+1}
+          \amp \cdots \amp a_{nn}
+      \end{vmatrix}
+    </mrow>
+  </md>
+  ここで、<m>A</m> の <m>i</m> 行目と <m>j</m> 列目を削除した行列を <m>\widetilde{A}_{i,j}\in\mathbb{R}^{(n-1)\times (n-1)}</m> とおくと、
+  <md>
+    \det(A) = \sum_{i=1}^n (-1)^{i+j} a_{i,j}\det(\widetilde{A}_{i,j})
+  </md>
+  である。
+  同様に行の多重線形性より、行で余因子展開することもできる。
+  <m>i</m> 行目で余因子展開すると
+  <md>
+    \det(A) = \sum_{j=1}^n (-1)^{i+j} a_{i,j}\det(\widetilde{A}_{i,j})
+  </md>
+  が得られる。
       </p>
-    </subsection>
+    <p>
+      余因子展開を使うことで <m>n\times n</m> 行列の行列式の計算をするためには <m>(n-1)\times(n-1)</m> 行列の行列式の計算 <m>n</m> 回すればよいことが分かる。
+      これを行列のサイズが 1 になるまで繰り返すと <m>n!</m> 個の項が現れ行列式の定義そのものとなってしまう。
+      余因子展開が有用なのは疎な行列(成分に0が多い行列)の行列式の計算である。
+    </p>
+    <example>
+      <title>余因子展開による行列式の計算</title>
+    <p>
+      <md>
+        A=\begin{bmatrix}
+        1\amp 0\amp 2\amp 0\\
+        0\amp 0\amp 3\amp 1\\
+        2\amp 4\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 2\\
+        \end{bmatrix}
+      </md>
+      の行列式を余因子展開で計算しよう。
+      2列目は零でない要素が1つだけなので2列目で余因子展開する。
+      すると、
+      <md>
+        \begin{vmatrix}
+        1\amp 0\amp 2\amp 0\\
+        0\amp 0\amp 3\amp 1\\
+        2\amp 4\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 2\\
+        \end{vmatrix}
+        =
+        -4
+        \begin{vmatrix}
+        1\amp 2\amp 0\\
+        0\amp 3\amp 1\\
+        0\amp 1\amp 2\\
+        \end{vmatrix}
+      </md>
+      が得られる。さらに <m>3\times 3</m> 行列の1列目で余因子展開すると
+      <md>
+        -4
+        \begin{vmatrix}
+        1\amp 2\amp 0\\
+        0\amp 3\amp 1\\
+        0\amp 1\amp 2\\
+        \end{vmatrix}
+        =
+        -4
+        \begin{vmatrix}
+        3\amp 1\\
+        1\amp 2\\
+        \end{vmatrix}
+        =
+        -4(3\times 2 - 1\times 1) = -20
+      </md>
+      が得られる。二回目の余因子展開はブロック三角行列の公式だと思ってもいい。
+    </p>
+    <p>
+      他の方法で余因子展開してみよう。2行目で余因子展開すると
+      <md>
+        \begin{vmatrix}
+        1\amp 0\amp 2\amp 0\\
+        0\amp 0\amp 3\amp 1\\
+        2\amp 4\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 2\\
+        \end{vmatrix}
+        =
+        -3
+        \begin{vmatrix}
+        1\amp 0\amp 0\\
+        2\amp 4\amp 0\\
+        0\amp 0\amp 2\\
+        \end{vmatrix}
+        +
+        \begin{vmatrix}
+        1\amp 0\amp 2\\
+        2\amp 4\amp 0\\
+        0\amp 0\amp 1\\
+        \end{vmatrix}
+      </md>
+      ここで、一つ目の行列は三角行列なので行列式は対角成分の積である。二つ目の行列式の2列目で展開すると、
+      <md>
+        -3
+        \begin{vmatrix}
+        1\amp 0\amp 0\\
+        2\amp 4\amp 0\\
+        0\amp 0\amp 2\\
+        \end{vmatrix}
+        +
+        \begin{vmatrix}
+        1\amp 0\amp 2\\
+        2\amp 4\amp 0\\
+        0\amp 0\amp 1\\
+        \end{vmatrix}
+        =
+        -3(1\cdot4\cdot 2) + 4
+        \begin{vmatrix}
+        1\amp 2\\
+        0\amp 1\\
+        \end{vmatrix}
+     </md>
+      したがって、<m>A</m> の行列式は <m>-3\cdot(1\cdot 4 \cdot 2) + 4 = -20</m> と計算できる。      
+    </p>
+    </example>
+    <exercise>
+      <title>余因子展開による行列式の計算</title>
+      <p>
+      </p>
+    </exercise>
+   </subsection>
+   <subsection xml:id="subsec-cofactor-matrix">
+     <title>余因子行列</title>
+     <definition>
+       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について<term>余因子行列</term> <m>\mathrm{adj}(A)=[b_{i,j}]_{1\le i,j\le n}</m> を
+       <md>
+         b_{i,j}=(-1)^{i+j}\det(\widetilde{A}_{j,i})
+       </md>
+       で定義する。</p>
+     </definition>
+   </subsection>
+   <theorem>
+     <title>余因子行列と逆行列</title>
+     <p>
+       任意の正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について
+       <md>
+         \mathrm{adj}(A)A = A\,\mathrm{adj}(A) = \det(A)I
+       </md>
+     </p>
+   </theorem>
   </section>
 </chapter>
