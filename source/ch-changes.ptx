@@ -153,7 +153,7 @@
     </proposition>
     <definition>
       <title>同値関係の不変量</title>
-      <p>集合 <m>U</m> 上の同値関係 <m>\sim</m> とする。
+      <p>集合 <m>U</m> 上の同値関係を <m>\sim</m> とする。
         ある集合 <m>C</m> と写像 <m>\Phi\colon U\to C</m> が
         <md>A\sim B\implies \Phi(A)=\Phi(B)</md>
         を満たすとき <m>\Phi</m> を <term>同値関係 <m>\sim</m> の不変量</term> という。
@@ -273,7 +273,7 @@
         [a]\coloneqq\left\{b\in U\mid a\sim b\right\}
       </md>
       と定義する。
-      行列の基底変換の同値関係の場合、各同値類は <m>\begin{bmatrix}I_r\amp O\\O\amp O\end{bmatrix}</m> の形の行列を一つづつ含む。
+      行列の基底変換の同値関係の場合、各同値類は <m>\begin{bmatrix}I_r\amp O\\O\amp O\end{bmatrix}</m> の形の行列を一つずつ含む。
       この形の行列は各同値類を代表するものだと考えることができ、<term>同値類の代表元</term>と呼ぶ。
     </p>
       <proposition>
@@ -527,7 +527,7 @@
           <mrow>B\amp=\begin{bmatrix}2\amp 0\\0\amp 2\end{bmatrix}</mrow>
         </md>
         について、<m>\mathrm{rank}(A)=\mathrm{rank}(B)=2</m> である。
-        しかし、任意の正則行列 <m>P\in\mathbb{R}^{n\times n}</m> について、
+        しかし、任意の正則行列 <m>P\in\mathbb{R}^{2\times 2}</m> について、
         <md>
           PAP^{-1} = A \ne B
         </md>
@@ -571,7 +571,7 @@
           <mrow>B\amp=\begin{bmatrix}1\amp 1\\0\amp 1\end{bmatrix}</mrow>
         </md>
         について、<m>\mathrm{rank}(A)=\mathrm{rank}(B)=2</m> であり、<m>\mathrm{tr}(A)=\mathrm{tr}(B)=2</m> である。
-        しかし、任意の正則行列 <m>P\in\mathbb{R}^{n\times n}</m> について、
+        しかし、任意の正則行列 <m>P\in\mathbb{R}^{2\times 2}</m> について、
         <md>
           PAP^{-1} = A \ne B
         </md>
@@ -601,7 +601,7 @@
     <p>
 行列式は天下り的に定義したり、動機が不明な代数的な性質を述べてから導出することが多いのだが、
 ここでは幾何学的な動機を最初に説明する。
-一言で言うと行列式は<emph>符号付き体積</emph>(二次元の場合は面積, 一次元の場合は長さ)である。
+一言で言うと行列式は<em>符号付き体積</em>(二次元の場合は面積, 一次元の場合は長さ)である。
 まず最初に二次元数ベクトル <m>\bm{v},\,\bm{w}\in\mathbb{R}^2</m> が作る平行四辺形の面積について考える。</p>
 
 <image>
@@ -644,7 +644,7 @@
 </image>
 
 <p>
-ここで、<emph>符号付き面積</emph> <m>D(\bm{v},\bm{w})</m>というものを導入し、<m>D(\bm{v},-\bm{w})=-D(\bm{v},\bm{w})</m>であるものとする。
+ここで、<em>符号付き面積</em> <m>D(\bm{v},\bm{w})</m>というものを導入し、<m>D(\bm{v},-\bm{w})=-D(\bm{v},\bm{w})</m>であるものとする。
 具体的には <m>\bm{v}</m> を <m>\bm{w}</m> に重なるように <m>\theta\in[0,\pi)</m> 回転させるとき、回転の向きが反時計回りのときに符号が正で時計回りのときに符号が負になる。
 このとき任意の <m>c\in\mathbb{R}</m> について<m>D(\bm{v},c\bm{w})=cD(\bm{v},\bm{w})</m> となる。
 同様に <m>D(c\bm{v},\bm{w})=cD(\bm{v},\bm{w})</m> である。
@@ -784,7 +784,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     </p>
     <p>
       この行列式が三条件を満たすことは簡単に確認できる。
-      また、列だけなく行についても双線形性と交代性を満たす。
+      また、列だけでなく行についても双線形性と交代性を満たす。
     </p>
     </subsection>
 </section>
@@ -1168,7 +1168,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         より、<m>D</m> は多重線形写像であり、交代的である。
         よって<xref ref="thm-determinant"/>より、
         <md>
-          <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)D\left(\begin{bmatrix}\bm{e}_1\amp\dotsm\amp \bm{e}_n\end{bmatrix}\right)</mrow>
+          <mrow>D(\bm{v}_1,\dotsc,\bm{v}_n)\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)D\left(\bm{e}_1,\dotsc,\bm{e}_n\right)</mrow>
           <mrow>\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(\begin{bmatrix}A\bm{e}_1\amp\dotsm\amp A\bm{e}_n\end{bmatrix}\right)</mrow>
           <mrow>\amp=\det\left(\begin{bmatrix}\bm{v}_1\amp\dotsm\amp\bm{v}_n\end{bmatrix}\right)\det\left(A\right)</mrow>
         </md>
@@ -1547,6 +1547,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     \det(A) = \sum_{i=1}^n (-1)^{i+j} a_{i,j}\det(\widetilde{A}_{i,j})
   </md>
   である。
+  ここで、<m>(-1)^{i+j}\det(\widetilde{A}_{i,j})</m> を <term><m>A</m> の <m>(i,j)</m> 余因子</term>といい、上記の式を<term>余因子展開</term>という。
   同様に行の多重線形性と交代性より、行で余因子展開することもできる。
   <m>i</m> 行目で余因子展開すると
   <md>
@@ -1555,7 +1556,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
   が得られる。
       </p>
     <p>
-      余因子展開を使うことで <m>n\times n</m> 行列の行列式の計算をするためには <m>(n-1)\times(n-1)</m> 行列の行列式の計算 <m>n</m> 回すればよいことが分かる。
+      余因子展開を使うことで <m>n\times n</m> 行列の行列式の計算をするためには <m>(n-1)\times(n-1)</m> 行列の行列式の計算を <m>n</m> 回すればよいことが分かる。
       これを行列のサイズが 1 になるまで繰り返すと <m>n!</m> 個の項が現れ行列式の定義そのものとなってしまう。
       余因子展開が有用なのは疎な行列(成分に0が多い行列)の行列式の計算である。
     </p>

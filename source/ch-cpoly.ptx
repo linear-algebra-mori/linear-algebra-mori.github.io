@@ -296,5 +296,52 @@
   </section>
   <section xml:id="sec-directsum" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>直和分解</title>
+    <subsection xml:id="subsec-dsum" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>線形空間の直和</title>
+    </subsection>
+    <subsection xml:id="subsec-dsum-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>行列の不変空間と直和分解</title>
+    <p>
+      <m>\varphi_A(x) = p(x)q(x)</m> と因数分解でき、<m>\mathrm{gcd}(p, q)=1</m> と仮定する。
+      このとき
+      <md>
+        a(x)p(x) + b(x)q(x)=1
+      </md>
+      を満たす <m>a,b\in\mathbb{R}[x]</m> が存在する。
+      したがって、
+      <md>
+        a(A)p(A) + b(A)q(A)=I
+      </md>
+      である。
+      任意の <m>\bm{v}\in\mathbb{R}^n</m> について
+      <md>
+        a(A)p(A)\bm{v} + b(A)q(A)\bm{v}=\bm{v}
+      </md>
+      が成り立つ。
+      このとき、
+      <md>
+        q(A)(a(A)p(A)\bm{v}) = a(A)(p(A)q(A))\bm{v} = a(A)\varphi_A(A)\bm{v} = \bm{0}
+      </md>
+      より、
+      <md>
+        <mrow>a(A)p(A)\bm{v}\amp\in \mathrm{Ker}(q(A))</mrow>
+      </md>
+      である。同様に
+      <md>
+        <mrow>b(A)q(A)\bm{v}\amp\in \mathrm{Ker}(p(A))</mrow>
+      </md>
+      である。
+      また、<m>\bm{v}\in\mathrm{Ker}(p(A))\cap\mathrm{Ker}(q(A))</m> について、<m>\bm{v}=\bm{0}</m> である。
+      したがって、<m>\mathbb{R}^n = \mathrm{Ker}(p(A)) \oplus \mathrm{Ker}(q(A))</m> と直和分解できる。
+    </p>
+    <p>
+      このとき、<m>\bm{v}\in\mathrm{Ker}(p(A))</m> のとき、
+      <md>
+        p(A)(A\bm{v}) = Ap(A)\bm{v} = \bm{0}
+      </md>
+      より、<m>A\bm{v}\in\mathrm{Ker}(p(A))</m> である。
+      同様に<m>A\bm{v}\in\mathrm{Ker}(q(A))</m> である。
+    </p>
+    </subsection>
   </section>
 </chapter>
