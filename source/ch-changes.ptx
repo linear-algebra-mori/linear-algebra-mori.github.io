@@ -1547,7 +1547,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
     \det(A) = \sum_{i=1}^n (-1)^{i+j} a_{i,j}\det(\widetilde{A}_{i,j})
   </md>
   である。
-  同様に行の多重線形性より、行で余因子展開することもできる。
+  同様に行の多重線形性と交代性より、行で余因子展開することもできる。
   <m>i</m> 行目で余因子展開すると
   <md>
     \det(A) = \sum_{j=1}^n (-1)^{i+j} a_{i,j}\det(\widetilde{A}_{i,j})
@@ -1661,7 +1661,7 @@ cbD\left(\begin{bmatrix}0\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\righ
         <ol>
           <li>
             <md>
-              A_1=
+              A=
 \begin{bmatrix}
 0\amp 1\amp 0\amp 2\amp 0\\
 1\amp 2\amp -2\amp 1\amp 0\\
