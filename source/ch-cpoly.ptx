@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>特性多項式と直和分解</title>
+  <title>特性多項式と固有値</title>
   <section xml:id="sec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>特性多項式</title>
     <subsection xml:id="subsec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -294,6 +294,20 @@
      </theorem>
    </subsection>
   </section>
+  <section xml:id="sec-eigen" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>固有値と固有ベクトル</title>
+    <definition>
+      <title>固有値と固有ベクトル</title>
+      <p>
+        正方行列 <m>A\in\mathbb{C}^{n\times n}</m> について、<m>\lambda\in\mathbb{C}</m> と非零ベクトル <m>\bm{v}\in\mathbb{C}^n\setminus\{\bm{0}\}</m> が
+        <md>
+          A\bm{v} = \lambda\bm{v}
+        </md>
+        を満たすとき、<m>\lambda</m> を <m>A</m> の<term>固有値</term>といい、<m>\bm{v}</m> を<term><m>A</m>の固有値 <m>\lambda</m> に対応する固有ベクトル</term>という。
+      </p>
+    </definition>
+  </section>
+<!--
   <section xml:id="sec-directsum" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>直和分解</title>
     <subsection xml:id="subsec-dsum" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -344,4 +358,5 @@
     </p>
     </subsection>
   </section>
+  -->
 </chapter>
