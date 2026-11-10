@@ -36,7 +36,7 @@ lang: "en-US",
 <meta name="twitter:description" content="Introduction to linear algebra.">
 <meta property="og:description" content="Introduction to linear algebra.">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.56"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.56"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -58,15 +58,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.3.6';
+eBookConfig.runestone_version = '8.4.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.4beca1fdeed766a2.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.ebd33f6a21eed414.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
+<script src="_static/prefix-runtime.7e2ee203f2ecd6c8.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -318,12 +317,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">三角行列とブロック三角行列</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">ガウスの消去法による行列式の計算</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">余因子展開による行列式の計算</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#subsec-cofactor-matrix" class="internal"><span class="codenumber">7.6.4</span> <span class="title">余因子行列</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-cpoly.html" class="internal"><span class="codenumber">8</span> <span class="title">特性多項式と直和分解</span></a></div>
+<div class="toc-title-box"><a href="ch-cpoly.html" class="internal"><span class="codenumber">8</span> <span class="title">特性多項式と固有値</span></a></div>
 <ul id="ptx-toc-group-ch-cpoly" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-cpoly.html" class="internal"><span class="codenumber">8.1</span> <span class="title">特性多項式</span></a></div>
@@ -343,7 +343,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ch.html#subsec-ch" class="internal"><span class="codenumber">8.3.2</span> <span class="title">ケイリー・ハミルトンの定理</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-directsum.html" class="internal"><span class="codenumber">8.4</span> <span class="title">直和分解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-eigen.html" class="internal"><span class="codenumber">8.4</span> <span class="title">固有値と固有ベクトル</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -552,23 +552,23 @@ A^{n-1} A\amp\text{otherwise}
 <ol class="decimal" id="subsec-matrix-mul-assos-5-2-1-2">
 <li id="subsec-matrix-mul-assos-5-2-1-2-1">
 <div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-1">反時計回りに <span class="process-math">\(\pi/3\)</span> 回転する</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.6.1"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-1" title="Copy heading and permalink for Item 2.8.6.1" aria-label="Copy heading and permalink for Item 2.8.6.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="subsec-matrix-mul-assos-5-2-1-2-2">
 <div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-2">二番目の要素を2倍する</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.6.2"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-2" title="Copy heading and permalink for Item 2.8.6.2" aria-label="Copy heading and permalink for Item 2.8.6.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="subsec-matrix-mul-assos-5-2-1-2-3">
 <div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-3">二つの要素を入れ替える</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.6.3"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-3" title="Copy heading and permalink for Item 2.8.6.3" aria-label="Copy heading and permalink for Item 2.8.6.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 <li id="subsec-matrix-mul-assos-5-2-1-2-4">
 <div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-4">二番目の要素を-1倍する</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.6.4"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-4" title="Copy heading and permalink for Item 2.8.6.4" aria-label="Copy heading and permalink for Item 2.8.6.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 <li id="subsec-matrix-mul-assos-5-2-1-2-5">
 <div class="para" id="p-derived-subsec-matrix-mul-assos-5-2-1-2-5">一番最初の <span class="process-math">\(\bm{v}\)</span> を足す</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.6.5"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-5" title="Copy heading and permalink for Item 2.8.6.5" aria-label="Copy heading and permalink for Item 2.8.6.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#subsec-matrix-mul-assos-5-2-1-2-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
 </li>
 </ol>
 <div class="para">という操作をする。 この操作をまとめて一つの <span class="process-math">\(2\times 2\)</span> 行列で表せ。</div>
@@ -692,7 +692,7 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 \end{bmatrix}
 \end{equation*}
 </div></div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.8.1"><a tabindex="-1" href="#sec-matrix-mul-9-4-2-1-1-1" title="Copy heading and permalink for Item 2.8.8.1" aria-label="Copy heading and permalink for Item 2.8.8.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-matrix-mul-9-4-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="sec-matrix-mul-9-4-2-1-1-2">
 <div class="para" id="p-derived-sec-matrix-mul-9-4-2-1-1-2"><div class="displaymath process-math" id="sec-matrix-mul-9-4-2-1-1-2-1">
@@ -710,7 +710,7 @@ A(B+C) \amp= \left[\sum_{k=1}^r a_{i,k} (b_{k,j}+c_{k,j})\right]_{i,j}\\
 \end{bmatrix}
 \end{equation*}
 </div></div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2.8.8.2"><a tabindex="-1" href="#sec-matrix-mul-9-4-2-1-1-2" title="Copy heading and permalink for Item 2.8.8.2" aria-label="Copy heading and permalink for Item 2.8.8.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-matrix-mul-9-4-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-matrix-mul-9-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

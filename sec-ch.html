@@ -36,7 +36,7 @@ lang: "en-US",
 <meta name="twitter:description" content="Introduction to linear algebra.">
 <meta property="og:description" content="Introduction to linear algebra.">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.56"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.56"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -58,15 +58,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.3.6';
+eBookConfig.runestone_version = '8.4.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.4beca1fdeed766a2.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.ebd33f6a21eed414.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
+<script src="_static/prefix-runtime.7e2ee203f2ecd6c8.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -113,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-poly.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-cpoly.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-directsum.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-poly.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="up-button button" href="ch-cpoly.html" title="一つ上"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">上</span></a><a class="next-button button" href="sec-eigen.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -318,12 +317,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">三角行列とブロック三角行列</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">ガウスの消去法による行列式の計算</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#sec-determinant-alg-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">余因子展開による行列式の計算</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-alg.html#subsec-cofactor-matrix" class="internal"><span class="codenumber">7.6.4</span> <span class="title">余因子行列</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-cpoly.html" class="internal"><span class="codenumber">8</span> <span class="title">特性多項式と直和分解</span></a></div>
+<div class="toc-title-box"><a href="ch-cpoly.html" class="internal"><span class="codenumber">8</span> <span class="title">特性多項式と固有値</span></a></div>
 <ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-cpoly">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-cpoly.html" class="internal"><span class="codenumber">8.1</span> <span class="title">特性多項式</span></a></div>
@@ -343,7 +343,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ch.html#subsec-ch" class="internal"><span class="codenumber">8.3.2</span> <span class="title">ケイリー・ハミルトンの定理</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-directsum.html" class="internal"><span class="codenumber">8.4</span> <span class="title">直和分解</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-eigen.html" class="internal"><span class="codenumber">8.4</span> <span class="title">固有値と固有ベクトル</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -599,7 +599,7 @@ O\amp D
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-poly.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-directsum.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-poly.html" title="一つ前"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">前</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-eigen.html" title="一つ後"><span class="name">次</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
