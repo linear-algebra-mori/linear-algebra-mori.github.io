@@ -1701,21 +1701,134 @@ D_n=
    <subsection xml:id="subsec-cofactor-matrix">
      <title>余因子行列</title>
      <definition>
-       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について<term>余因子行列</term> <m>\mathrm{adj}(A)=[b_{i,j}]_{1\le i,j\le n}</m> を
+       <p>正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について<term>余因子行列</term> <m>\mathrm{adj}(A)=[\widetilde{a}_{i,j}]_{1\le i,j\le n}</m> を
        <md>
-         b_{i,j}=(-1)^{i+j}\det(\widetilde{A}_{j,i})
+         \widetilde{a}_{i,j}=(-1)^{i+j}\det(\widetilde{A}_{j,i})
        </md>
        で定義する。</p>
+       <p>
+         つまり、<m>A</m> の余因子行列の <m>(i,j)</m> 成分は <m>A</m> の <m>(j,i)</m> 余因子である。
+       </p>
      </definition>
-   </subsection>
-   <theorem>
+   <example>
+     <title><m>2\times2</m>行列の余因子行列</title>
+     <p>
+       行列
+       <md>
+         \begin{bmatrix}
+         a\amp b\\
+         c\amp d
+         \end{bmatrix}
+       </md>
+       の余因子行列は
+       <md>
+         \begin{bmatrix}
+         d\amp -b\\
+         -c\amp a
+         \end{bmatrix}
+       </md>
+       である。
+     </p>
+   </example>
+   <theorem xml:id="thm-adj">
      <title>余因子行列と逆行列</title>
      <p>
        任意の正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について
        <md>
-         \mathrm{adj}(A)A = A\,\mathrm{adj}(A) = \det(A)I
+         \mathrm{adj}(A)A = A\,\mathrm{adj}(A) = \det(A)I.
        </md>
      </p>
+     <p>特に <m>\det(A)\ne 0</m> のとき、
+       <md>
+         A^{-1} = \frac1{\det(A)}\mathrm{adj}(A).
+       </md>
+     </p>
+   <proof>
+     <p>
+       <m>\mathrm{adj}(A)A</m> の <m>(i,j)</m> 成分は
+       <md>
+         \sum_{k=1}^n \widetilde{a}_{i,k}a_{k,j}
+       </md>
+       である。特に <m>j=i</m> の場合は
+       <md>
+         \sum_{k=1}^n \widetilde{a}_{i,k}a_{k,i}
+       </md>
+       であるが、これは <m>A</m> の行列式の <m>i</m> 列目に対する余因子展開である。
+       したがって、<m>\mathrm{adj}(A)A</m> の <m>(i,i)</m> 成分は <m>\det(A)</m> である。
+     </p>
+     <p>
+       <m>i\ne j</m> の場合を考える。<m>A</m> の <m>i</m> 列目を <m>j</m> 列目に置き換えた行列を <m>B=[b_{i,j}]</m> とおくと、
+       <md>
+         <mrow>\sum_{k=1}^n \widetilde{a}_{i,k}a_{k,j}\amp= \sum_{k=1}^n(-1)^{i+k}\det(\widetilde{A}_{k,i})a_{k,j}</mrow>
+         <mrow>\amp= \sum_{k=1}^n(-1)^{i+k}\det(\widetilde{B}_{k,i})b_{k,j}</mrow>
+         <mrow>\amp= \sum_{k=1}^n(-1)^{i+k}\det(\widetilde{B}_{k,i})b_{k,i}</mrow>
+         <mrow>\amp= \det(B)=0</mrow>
+       </md>
+       一つ目の等号は余因子行列の定義である。
+       二つ目の等号は <m>A</m> と <m>B</m> が <m>i</m> 列目のみ異なることから従う。
+       三つ目の等号は <m>B</m> の <m>i</m> 列目が <m>j</m> 列目と等しいことから従う。
+       四つ目の等号は <m>B</m> の <m>i</m> 列目の余因子展開から従う。
+       最後の等号は <m>B</m> が二つ同じ列を持つことから、行列式の交代性より従う。
+       したがって、<m>\mathrm{adj}(A)A</m> の非対角成分は0である。
+     </p>
+     <p>
+       <m>A\,\mathrm{adj}(A)</m> についても同様に示せる。
+     </p>
+   </proof>
    </theorem>
+   <example>
+     <title><m>2\times2</m>行列の余因子行列と逆行列</title>
+     <p>
+       行列
+       <md>
+         A=\begin{bmatrix}
+         a\amp b\\
+         c\amp d
+         \end{bmatrix}
+       </md>
+       の余因子行列は
+       <md>
+         \mathrm{adj}(A)=\begin{bmatrix}
+         d\amp -b\\
+         -c\amp a
+         \end{bmatrix}
+       </md>
+       であるが、
+       <md>
+         \mathrm{adj}(A)A=
+         \begin{bmatrix}
+         ad-bc\amp 0\\
+         0\amp ad-bc
+         \end{bmatrix}
+         =\det(A)I.
+       </md>
+       したがって、<m>\det(A)\ne0</m> のとき
+       <md>
+         A^{-1}=
+         \frac1{ad-bc}
+         \begin{bmatrix}
+         d\amp -b\\
+         -c\amp a
+         \end{bmatrix}.
+       </md>
+     </p>
+   </example>
+   <theorem>
+     <p>
+       整数行列 <m>A\in\mathbb{Z}^{n\times n}</m> について、
+       <md>
+         A\text{は正則で逆行列も整数行列}\iff \det(A)=\pm1.
+       </md>
+     </p>
+     <proof>
+       <p>
+         <m>\impliedby</m>: <xref ref="thm-adj"/> より <m>A^{-1}=\pm\mathrm{adj}(A)</m> のどちらかである。整数行列の余因子行列は整数行列なので、<m>A^{-1}</m> は整数行列である。
+       </p>
+       <p>
+         <m>\implies</m>: <m>1=\det(I)=\det(AA^{-1})=\det(A)\det(A^{-1})</m> である。<m>A</m> と <m>A^{-1}</m> が整数行列であることから、<m>\det(A)</m> と <m>\det(A^{-1})</m> も整数である。したがって、<m>\det(A)=\pm1</m> である。
+       </p>
+     </proof>
+   </theorem>
+   </subsection>
   </section>
 </chapter>
