@@ -1,6 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <section xml:id="sec-poly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>多項式</title>
+    <subsection xml:id="subsec-polyroots" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>多項式と根</title>
+    <definition xml:id="def-polynomial">
+  <title>多項式</title>
+  <statement>
+    <p>
+      <m>a_0,\ldots,a_n\in\mathbb{C}</m> について、文字 <m>t</m> を用いた
+      <md>
+        p(t)=a_0+a_1t+\cdots+a_nt^n
+      </md>
+      という形の式を、<m>t</m> の<term>多項式</term>という。
+      ここで、<m>a_0,\ldots,a_n\in\mathbb{C}</m> を各項の<term>係数</term>と呼ばれる。
+      <m>a_n\ne 0</m> と仮定して一般性を失なわない。この <m>n</m> を多項式の<term>次数</term>という。
+      ただし、<m>p(t)=0</m> のとき、<m>p</m> の次数は <m>-\infty</m> と定義する。
+      多項式の集合を <m>\mathbb{C}[t]</m> と表す。
+    </p>
+    <p>
+      多項式の和と積は、通常の式の計算によって定める。
+    </p>
+    <p>
+      多項式 <m>p\in\mathbb{C}[t]</m> と <m>a\in\mathbb{C}</m> について <m>p(a)\in\mathbb{C}</m> を <m>p</m> に含まれる <m>t</m> を <m>a</m> で置き換えて得られる値として定義する。
+    </p>
+  </statement>
+</definition>
+   <definition>
+      <title>多項式の根</title>
+      <p>
+      多項式 <m>p\in\mathbb{C}[t]</m> について、
+      <md>
+        p(\lambda) = 0
+      </md>
+      を満たす <m>\lambda\in\mathbb{C}</m> を <m>p</m> の<term>根</term>という。
+      </p>
+    </definition>
+    <lemma xml:id="lem-poly-root">
+      <p>
+      <m>d\ge 0</m> 次多項式 <m>p\in\mathbb{C}[t]</m> が <m>\lambda</m> を根に持つとき、ある <m>d-1</m>次多項式 <m>q</m> が存在し、
+      <md>
+        p(t) = (t-\lambda)q(t)
+      </md>
+      </p>
+      <proof>
+      <p>
+      <md>
+        p(t) = \sum_{i=0}^d a_i t^i
+      </md>
+      とする。
+      このとき、
+      <md>
+        <mrow>p(t) \amp= p(t) - p(\lambda) = \left(\sum_{i=0}^d a_i t^i\right)-\left(\sum_{i=0}^d a_i t^i\right)</mrow>
+        <mrow>\amp= \sum_{i=0}^d a_i \left(t^i-\lambda^i\right)</mrow>
+        <mrow>\amp= \sum_{i=0}^d a_i (t-\lambda)\left(\sum_{j=0}^{i-1}t^j\lambda^{i-1-j}\right)</mrow>
+        <mrow>\amp= (t-\lambda)\sum_{i=0}^d a_i \left(\sum_{j=0}^{i-1}t^j\lambda^{i-1-j}\right)</mrow>
+        </md>
+      </p>
+      </proof>
+    </lemma>
+    <proposition xml:id="prop-poly-roots">
+      <p>
+      <m>d\ge 0</m> 次多項式 <m>p\in\mathbb{C}[t]</m> は高々 <m>d</m> 個の根を持つ。
+      </p>
+      <proof>
+      <p>
+        次数 <m>d</m> に関する帰納法で示す。
+        <m>d=0</m> のとき、<m>p(t) = c\ne 0</m> なので根を持たない。
+      </p>
+      <p>
+        <m>d\ge 1</m> 次以下の多項式について命題が成り立つと仮定する。
+        このとき、<m>p</m> が根を持たない場合、命題は成り立つ。
+        <m>p</m> が根 <m>\lambda\in\mathbb{C}</m> を持つとき<xref ref="lem-poly-root"/>より
+        <md>
+          p(t) = (t-\lambda)q(t)
+        </md>
+        を満たす <m>d-1</m> 次多項式 <m>q</m> が存在する。
+        このとき、<m>a\in\mathbb{C}</m> について、
+        <md>
+          p(a)=0\implies a = \lambda \text{ or } q(a) = 0
+        </md>
+        である。
+        帰納法の仮定より <m>q</m> は高々 <m>d-1</m> 個の根を持つので、<m>p</m> は高々 <m>d</m> 個の根を持つ。
+      </p>
+      </proof>
+    </proposition>
+    <theorem xml:id="thm-alg">
+      <title>代数学の基本定理</title>
+      <p>
+        任意の次数1以上の多項式は根を持つ。
+      </p>
+    </theorem>
+    <proposition>
+      <p>
+        任意の次数 <m>d\ge 0</m> の多項式 <m>p\in\mathbb{C}[t]</m> について、ある <m>c\ne 0,\lambda_1,\dotsc,\lambda_d\in\mathbb{C}</m> が存在して
+        <md>
+          p(t) = c(t-\lambda_1)\dotsm(t-\lambda_d).
+        </md>
+      </p>
+      <proof>
+        <p>
+          次数 <m>d</m> に関する帰納法で示す。
+          <m>d=0</m> のとき、<m>p(t)=c\ne 0</m> と表すことができるため命題は成り立つ。
+        </p>
+        <p>
+          <m>d\ge 1</m> 次以下の多項式について命題が成り立つと仮定する。
+          <xref ref="thm-alg"/>より <m>p</m> は根 <m>\lambda_d\in\mathbb{C}</m> を持つ。
+          このとき、<xref ref="lem-poly-root"/>より
+          <md>
+            p(t) = (t-\lambda_d)q(t)
+          </md>
+          を満たす <m>d-1</m> 次多項式 <m>q</m> が存在する。
+          帰納法の仮定より
+          <md>
+            q(t) = c(t-\lambda_1)\dotsm(t-\lambda_{d-1}).
+          </md>
+          を満たす <m>c\ne 0,\lambda_1,\dotsc,\lambda_d\in\mathbb{C}</m> が存在する。
+          このとき、
+          <md>
+            p(t) = c(t-\lambda_1)\dotsm(t-\lambda_d).
+          </md>
+        </p>
+      </proof>
+    </proposition>
+    </subsection>
+    <subsection xml:id="subsec-eval" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>多項式の一意性</title>
+      <p>
+        任意の <m>x_0,y_0,x_1,y_1\in\mathbb{R}</m> について <m>x_0\ne x_1</m> のとき、
+        <md>
+          p(x_i)=y_i \qquad i\in\{0,1\}
+        </md>
+        を満たす1次以下の多項式 <m>p\in\mathbb{C}[t]</m> は必ず存在し一意に定まる。
+        これは任意の <m>d</m> 次以下の多項式へ一般化できる。
+      </p>
+      <theorem>
+        <title>評価点から多項式の復元</title>
+        <p>
+          任意の <m>x_0,\dotsc,x_n,y_0,\dotsc,y_n\in\mathbb{C}</m> を選択し、<m>x_0,\dotsc,x_n</m> が相異なるとする。
+          このとき、
+        <md>
+          p(x_i)=y_i \qquad i\in\{0,1,\dotsc,n\}
+        </md>
+          を満たす <m>n</m> 次以下の <m>p\in\mathbb{C}[t]</m> が一意に存在する。
+        </p>
+        <proof>
+          <p>
+            <md>
+              p(t)=a_0+a_1t+\cdots+a_nt^n
+            </md>
+            とする。
+            このとき、評価点の条件は
+            <md>
+              \begin{bmatrix}
+              1\amp x_0\amp x_0^2\amp\dotsm\amp x_0^n\\
+              1\amp x_1\amp x_1^2\amp\dotsm\amp x_1^n\\
+              \vdots\amp \vdots\amp \vdots\amp\dotsm\amp \vdots\\
+              1\amp x_n\amp x_n^2\amp\dotsm\amp x_n^n\\
+              \end{bmatrix}
+              \begin{bmatrix}
+              a_0\\a_1\\\vdots\\a_n
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+              y_0\\y_1\\\vdots\\y_n
+              \end{bmatrix}
+            </md>
+            と表すことができる。
+            よって、
+            <md>
+              A=
+              \begin{bmatrix}
+              1\amp x_0\amp x_0^2\amp\dotsm\amp x_0^n\\
+              1\amp x_1\amp x_1^2\amp\dotsm\amp x_1^n\\
+              \vdots\amp \vdots\amp \vdots\amp\dotsm\amp \vdots\\
+              1\amp x_n\amp x_n^2\amp\dotsm\amp x_n^n\\
+              \end{bmatrix}
+            </md>
+            が正則であることを示せばよい。
+            したがって、<m>\mathrm{Ker}A=\{\bm{0}\}</m> を示せばよい。
+            ある
+            <md>
+              <mrow>
+              \amp\begin{bmatrix}
+              c_0\\c_1\\\vdots\\c_n
+              \end{bmatrix}\in\mathrm{Ker}(A)
+              </mrow>
+              <mrow>
+                \iff\amp
+              \begin{bmatrix}
+              1\amp x_0\amp x_0^2\amp\dotsm\amp x_0^n\\
+              1\amp x_1\amp x_1^2\amp\dotsm\amp x_1^n\\
+              \vdots\amp \vdots\amp \vdots\amp\dotsm\amp \vdots\\
+              1\amp x_n\amp x_n^2\amp\dotsm\amp x_n^n\\
+              \end{bmatrix}
+              \begin{bmatrix}
+              c_0\\c_1\\\vdots\\c_n
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+              0\\0\\\vdots\\0
+              \end{bmatrix}
+              </mrow>
+            </md>
+            である。
+            ここで、
+            <md>
+              q(t)\coloneqq c_0+c_1t+\cdots+c_nt^n
+            </md>
+            と定義すると、<m>i\in\{0,\dotsc,n\}</m> について <m>q(x_i)=0</m> である。
+            <xref ref="prop-poly-roots"/> より <m>q</m> が非零多項式の場合、高々 <m>n</m> 個の根を持つ。
+            <m>x_i</m> が相異なることから、<m>q</m> は <m>n+1</m> 個以上の根を持つため零多項式である。
+            したがって
+            <md>
+              <mrow>
+              \begin{bmatrix}
+              c_0\\c_1\\\vdots\\c_n
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+              0\\0\\\vdots\\0
+              \end{bmatrix}
+              </mrow>
+            </md>
+            であり、<m>A</m> は正則である。
+          </p>
+        </proof>
+      </theorem>
+    </subsection>
+    <subsection xml:id="subsec-polydiv" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>多項式の剰余</title>
+    </subsection>
+  </section>
   <title>特性多項式と固有値</title>
   <section xml:id="sec-cpoly" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>特性多項式</title>
@@ -9,13 +241,48 @@
     <definition>
       <title>特性多項式</title>
       <p>
-        正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について、
+        正方行列 <m>A\in\mathbb{R}^{n\times n}</m> について
         <md>
           \varphi_A(t)\coloneqq \det(tI-A)
         </md>
         を <term><m>A</m> の特性多項式(固有多項式)</term> という。
       </p>
+      <p>
+        ここで行列式は通常の <m>\mathbb{R}^{n\times n}</m> の行列の行列式の定義(<xref ref="def-det"/>)をそのまま用いる。
+      </p>
     </definition>
+    <lemma>
+      <title>特性多項式の係数</title>
+      <p>
+        任意の行列 <m>A\in\mathbb{R}^{n\times n}</m> について
+        <md>
+        \varphi_A(t) = \sum_{i=0}^n c_i t^i
+        </md>
+        とおくと、
+        <md>
+          <mrow>c_n\amp=1,\amp c_{n-1}\amp=\mathrm{tr}(A),\amp c_0\amp=(-1)^n\det(A).</mrow>
+        </md>
+      </p>
+      <proof>
+        <p>
+          行列式の定義において恒等置換に対応する項は
+          <md>
+            \prod_{i=1}^n (t- a_{i,i})
+          </md>
+          である。
+          この項の <m>t^n</m> の係数は1であり、<m>t^{n-1}</m> の係数は <m>-\mathrm{tr}(A)</m> である。
+          恒等置換以外の置換 <m>\sigma\in S_n</m> について、<m>\sigma(i)=j</m> を満たす <m>i\ne j\in[n]</m> が存在する。このとき、<m>\sigma(j)\ne j</m> なので、<m>\sigma</m> に対応する項の次数は高々 <m>n-2</m> である。
+          したがって、<m>c_n=1</m> と <m>c_{n-1}=\mathrm{tr}(A)</m> が得られた。
+        </p>
+        <p>
+          また、特性多項式の定数項は
+          <md>
+            c_0 = \varphi_A(0) = \det\left(-A\right) = (-1)^n\det(A)
+          </md>
+          である。
+        </p>
+      </proof>
+    </lemma>
     <corollary>
       <p>特性多項式は正方行列の相似による同値関係の不変量である。</p>
     </corollary>
@@ -43,88 +310,19 @@
           \varphi_A(t) = \varphi_B(t)\varphi_D(t)
         </md>
       </p>
+      <proof>
+        <p>
+          <md>
+            <mrow>\det(tI -A)\amp=\det\left(\begin{bmatrix}tI-B\amp C\\O\amp tI-D\end{bmatrix}\right)</mrow>
+            <mrow>\amp=\det\left(tI-B\right)\det\left(tI-D\right)</mrow>
+            <mrow>\amp=\varphi_B(t)\varphi_C(t)</mrow>
+          </md>
+        </p>
+      </proof>
     </lemma>
    </subsection>
   </section>
-  <section xml:id="sec-poly" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>多項式</title>
-    <subsection xml:id="subsec-polyroots" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>多項式と根</title>
-    <definition>
-      <title>多項式</title>
-      <p>
-        関数 <m>p\colon\mathbb{R}\to\mathbb{R}</m> について、ある <m>a_0,\dotsc,a_n\in\mathbb{R}</m> が存在し
-      <md>
-        p(x)=a_0+a_1x+\dotsm a_n x^n
-      </md>
-        を満たすとき、<m>p</m> を<term>多項式</term>という。
-        また、<m>a_n\ne 0</m> のとき、<m>n</m> を多項式 <m>p</m> の<term>次数</term>という。
-        ただし、<m>p(x)=0</m> の場合は <m>p</m> の次数は <m>-\infty</m> と定義する。
-      </p>
-    </definition>
-    <definition>
-      <title>多項式の根</title>
-      <p>
-      多項式 <m>p</m> について、
-      <md>
-        p(\lambda) = 0
-      </md>
-      を満たす <m>\lambda\in\mathbb{R}</m> を <m>p</m> の<term>根</term>という。
-      </p>
-    </definition>
-    <lemma>
-      <p>
-      <m>d\ge 0</m> 次多項式 <m>p</m> が <m>\lambda</m> を根に持つとき、ある <m>d-1</m>次多項式 <m>q</m> が存在し、
-      <md>
-        p(x) = (x-\lambda)q(x)
-      </md>
-      </p>
-      <proof>
-      <p>
-      <md>
-        p(x) = \sum_{i=0}^d a_i x^i
-      </md>
-      とする。
-      このとき、
-      <md>
-        <mrow>p(x) \amp= p(x) - p(\lambda) = \left(\sum_{i=0}^d a_i x^i\right)-\left(\sum_{i=0}^d a_i x^i\right)</mrow>
-        <mrow>\amp= \sum_{i=0}^d a_i \left(x^i-\lambda^i\right)</mrow>
-        <mrow>\amp= \sum_{i=0}^d a_i (x-\lambda)\left(\sum_{j=0}^{i-1}x^j\lambda^{i-1-j}\right)</mrow>
-        <mrow>\amp= (x-\lambda)\sum_{i=0}^d a_i \left(\sum_{j=0}^{i-1}x^j\lambda^{i-1-j}\right)</mrow>
-        </md>
-      </p>
-      </proof>
-    </lemma>
-    <proposition>
-      <p>
-      <m>d\ge 0</m> 次多項式 <m>p</m> は高々 <m>d</m> 個の根を持つ。
-      </p>
-      <proof>
-      <p>
-        <m>d</m> に関する帰納法で示す。
-      </p>
-      </proof>
-    </proposition>
-    <theorem>
-      <title>代数学の基本定理</title>
-      <p>
-        任意の次数1以上の <m>p\in\mathbb{C}[x]</m> は根を持つ。
-      </p>
-    </theorem>
-    <proposition>
-      <p>
-        任意の次数1以上の <m>p\in\mathbb{C}[x]</m> について
-        <md>
-          p(x) = c(x-\lambda_1)\dotsm(x-\lambda_d)
-        </md>
-      </p>
-    </proposition>
-    </subsection>
-    <subsection xml:id="subsec-polydiv" xmlns:xi="http://www.w3.org/2001/XInclude">
-      <title>多項式の剰余</title>
-    </subsection>
-  </section>
-  <section xml:id="sec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <section xml:id="sec-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>ケイリー・ハミルトンの定理</title>
    <subsection xml:id="subsec-comp" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>コンパニオン行列</title>
