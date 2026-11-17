@@ -92,6 +92,18 @@
         任意の次数1以上の複素多項式は根を持つ。
       </p>
     </theorem>
+    <p>
+      多項式 <m>p,q\in\mathbb{C}[t]</m> について、
+      <md>
+        p(t)q(t) = 0\implies p(t) = 0 \text{ or } q(t) = 0
+      </md>
+      である。この左の <m>p(t)q(t)=0</m> というのは、<m>p(t)q(t)</m> が零多項式であるという条件であり、<m>t</m> に関する条件ではないことに注意せよ。
+      したがって、<m>p(t)</m> が非零多項式のとき
+      <md>
+        p(t)q(t) = 0\implies q(t) = 0
+      </md>
+      である。
+    </p>
     <proposition>
       <p>
         任意の次数 <m>d\ge 0</m> の多項式 <m>p\in\mathbb{C}[t]</m> について、ある <m>c\ne 0,\lambda_1,\dotsc,\lambda_d\in\mathbb{C}</m> が存在して
