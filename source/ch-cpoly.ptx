@@ -14,8 +14,8 @@
         p(t)=a_0+a_1t+\cdots+a_nt^n
       </md>
       という形の式を、<m>t</m> の<term>多項式</term>という。
-      ここで、<m>a_0,\ldots,a_n\in\mathbb{C}</m> を各項の<term>係数</term>と呼ばれる。
-      <m>a_n\ne 0</m> と仮定して一般性を失なわない。この <m>n</m> を多項式の<term>次数</term>という。
+      ここで、<m>a_0,\ldots,a_n\in\mathbb{C}</m> を各項の<term>係数</term>と呼ぶ。
+      すべての係数が <m>0</m> である多項式を<term>零多項式</term>という。零多項式でない場合は、<m>a_n\ne0</m> となるように書くことができ、この <m>n</m> を多項式の<term>次数</term>という。
       ただし、<m>p(t)=0</m> のとき、<m>p</m> の次数は <m>-\infty</m> と定義する。
       多項式の集合を <m>\mathbb{C}[t]</m> と表す。
     </p>
@@ -52,7 +52,7 @@
       とする。
       このとき、
       <md>
-        <mrow>p(t) \amp= p(t) - p(\lambda) = \left(\sum_{i=0}^d a_i t^i\right)-\left(\sum_{i=0}^d a_i t^i\right)</mrow>
+        <mrow>p(t) \amp= p(t) - p(\lambda) = \left(\sum_{i=0}^d a_i t^i\right)-\left(\sum_{i=0}^d a_i \lambda^i\right)</mrow>
         <mrow>\amp= \sum_{i=0}^d a_i \left(t^i-\lambda^i\right)</mrow>
         <mrow>\amp= \sum_{i=0}^d a_i (t-\lambda)\left(\sum_{j=0}^{i-1}t^j\lambda^{i-1-j}\right)</mrow>
         <mrow>\amp= (t-\lambda)\sum_{i=0}^d a_i \left(\sum_{j=0}^{i-1}t^j\lambda^{i-1-j}\right)</mrow>
@@ -70,7 +70,7 @@
         <m>d=0</m> のとき、<m>p(t) = c\ne 0</m> なので根を持たない。
       </p>
       <p>
-        <m>d\ge 1</m> 次以下の多項式について命題が成り立つと仮定する。
+        <m>d\ge 1</m> とし、<m>d-1</m> 次以下の多項式について命題が成り立つと仮定する。
         このとき、<m>p</m> が根を持たない場合、命題は成り立つ。
         <m>p</m> が根 <m>\lambda\in\mathbb{C}</m> を持つとき<xref ref="lem-poly-root"/>より
         <md>
@@ -96,8 +96,9 @@
       <p>
         任意の次数 <m>d\ge 0</m> の多項式 <m>p\in\mathbb{C}[t]</m> について、ある <m>c\ne 0,\lambda_1,\dotsc,\lambda_d\in\mathbb{C}</m> が存在して
         <md>
-          p(t) = c(t-\lambda_1)\dotsm(t-\lambda_d).
+          p(t) = c(t-\lambda_1)\dotsm(t-\lambda_d)
         </md>
+        と表せる。また、この表現は因子の並び順を除き一意である。
       </p>
       <proof>
         <p>
@@ -116,11 +117,32 @@
           <md>
             q(t) = c(t-\lambda_1)\dotsm(t-\lambda_{d-1}).
           </md>
-          を満たす <m>c\ne 0,\lambda_1,\dotsc,\lambda_d\in\mathbb{C}</m> が存在する。
+          を満たす <m>c\ne 0,\lambda_1,\dotsc,\lambda_{d-1}\in\mathbb{C}</m> が存在する。
           このとき、
           <md>
             p(t) = c(t-\lambda_1)\dotsm(t-\lambda_d).
           </md>
+        </p>
+        <p>
+          最後に一次式への因数分解表現が一意であることを <m>d</m> に関する帰納法で示す。
+          <md>
+            p(t) = c(t-\lambda_1)\dotsm(t-\lambda_d)
+            = f(t-\rho_1)\dotsm(t-\rho_d)
+          </md>
+          が成り立つと仮定する。
+          <m>t^d</m> の係数を比較することで <m>c=f</m> である。
+          したがって、<m>d=0</m> のときは自明に一意である。
+        </p>
+        <p>
+          次数 <m>d-1</m> 以下の多項式について、一次式への因数分解表現が因子の並び順を除き一意であると仮定する。
+          このとき、<m>p(\lambda_1)=0</m> より、ある <m>j\in\{1,\dotsc,d\}</m> が存在して <m>\rho_j=\lambda_1</m> である。<m>j=1</m> と仮定して一般性を失なわない。このとき
+          <md>
+            <mrow>\amp c(t-\lambda_1)\dotsm(t-\lambda_d) - c(t-\lambda_1)(t-\rho_2)\dotsm(t-\rho_d) =0</mrow>
+            <mrow>\iff\amp c(t-\lambda_1)[(t-\lambda_2)\dotsm(t-\lambda_d) - (t-\rho_2)\dotsm(t-\rho_d)] =0</mrow>
+            <mrow>\iff\amp (t-\lambda_2)\dotsm(t-\lambda_d) - (t-\rho_2)\dotsm(t-\rho_d) =0</mrow>
+            <mrow>\iff\amp (t-\lambda_2)\dotsm(t-\lambda_d) = (t-\rho_2)\dotsm(t-\rho_d)</mrow>
+          </md>
+          である。帰納法の仮定により、<m>\lambda_2,\dotsc,\lambda_d</m> と <m>\rho_2,\dotsc,\rho_d</m> は並び順を除き等しい。したがって、<m>\lambda_1,\dotsc,\lambda_d</m> と <m>\rho_1,\dotsc,\rho_d</m> は並び順を除き等しい。
         </p>
       </proof>
     </proposition>
@@ -132,18 +154,19 @@
         <md>
           p(x_i)=y_i \qquad i\in\{0,1\}
         </md>
-        を満たす1次以下の多項式 <m>p\in\mathbb{C}[t]</m> は必ず存在し一意に定まる。
+        を満たす1次以下の多項式 <m>p\in\mathbb{R}[t]</m> は必ず存在し一意に定まる。
         これは任意の <m>d</m> 次以下の多項式へ一般化できる。
       </p>
       <theorem>
         <title>評価点から多項式の復元</title>
         <p>
-          任意の <m>x_0,\dotsc,x_n,y_0,\dotsc,y_n\in\mathbb{C}</m> を選択し、<m>x_0,\dotsc,x_n</m> が相異なるとする。
+          <m>F</m> を <m>\mathbb{R}</m> もしくは <m>\mathbb{C}</m> とする。
+          任意の <m>x_0,\dotsc,x_n,y_0,\dotsc,y_n\in F</m> を選択し、<m>x_0,\dotsc,x_n</m> が相異なるとする。
           このとき、
         <md>
           p(x_i)=y_i \qquad i\in\{0,1,\dotsc,n\}
         </md>
-          を満たす <m>n</m> 次以下の <m>p\in\mathbb{C}[t]</m> が一意に存在する。
+          を満たす <m>n</m> 次以下の <m>p\in F[t]</m> が一意に存在する。
         </p>
         <proof>
           <p>

@@ -1705,7 +1705,7 @@ D_n=
        <md>
          \widetilde{a}_{i,j}=(-1)^{i+j}\det(\widetilde{A}_{j,i})
        </md>
-       で定義する。</p>
+       で定義する。ただし、<m>0\times0</m> 行列の行列式は1と定義し、<m>1\times 1</m> 行列の余因子は <m>1</m> と定義される。</p>
        <p>
          つまり、<m>A</m> の余因子行列の <m>(i,j)</m> 成分は <m>A</m> の <m>(j,i)</m> 余因子である。
        </p>
@@ -1730,6 +1730,19 @@ D_n=
        である。
      </p>
    </example>
+   <exercise>
+     <title><m>3\times3</m>行列の余因子行列</title>
+     <p>以下の行列の余因子行列をもとめよ。
+       <md>
+A=
+\begin{bmatrix}
+1\amp2\amp0\\
+-1\amp1\amp2\\
+2\amp0\amp1
+\end{bmatrix}.
+       </md>
+     </p>
+   </exercise>
    <theorem xml:id="thm-adj">
      <title>余因子行列と逆行列</title>
      <p>
@@ -1813,7 +1826,7 @@ D_n=
        </md>
      </p>
    </example>
-   <theorem>
+   <proposition>
      <p>
        整数行列 <m>A\in\mathbb{Z}^{n\times n}</m> について、
        <md>
@@ -1828,7 +1841,7 @@ D_n=
          <m>\implies</m>: <m>1=\det(I)=\det(AA^{-1})=\det(A)\det(A^{-1})</m> である。<m>A</m> と <m>A^{-1}</m> が整数行列であることから、<m>\det(A)</m> と <m>\det(A^{-1})</m> も整数である。したがって、<m>\det(A)=\pm1</m> である。
        </p>
      </proof>
-   </theorem>
+   </proposition>
    </subsection>
   </section>
 </chapter>
