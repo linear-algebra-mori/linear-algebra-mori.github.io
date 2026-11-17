@@ -89,7 +89,7 @@
     <theorem xml:id="thm-alg">
       <title>代数学の基本定理</title>
       <p>
-        任意の次数1以上の多項式は根を持つ。
+        任意の次数1以上の複素多項式は根を持つ。
       </p>
     </theorem>
     <proposition>
