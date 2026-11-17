@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">補題</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(d\ge 0\)</span> 次多項式 <span class="process-math">\(p\in\mathbb{C}[t]\)</span> が <span class="process-math">\(\lambda\)</span> を根に持つとき、ある <span class="process-math">\(d-1\)</span>次多項式 <span class="process-math">\(q\)</span> が存在し、</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p(t) = (t-\lambda)q(t)
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-poly-root-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="補題 8.1.3"><a tabindex="-1" href="#lem-poly-root" title="Copy heading and permalink for 補題 8.1.3" aria-label="Copy heading and permalink for 補題 8.1.3">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+p(t) = \sum_{i=0}^d a_i t^i
+\end{equation*}
+</div>
+<div class="para">とする。 このとき、</div>
+<div class="displaymath process-math">
+\begin{align*}
+p(t) \amp= p(t) - p(\lambda) = \left(\sum_{i=0}^d a_i t^i\right)-\left(\sum_{i=0}^d a_i \lambda^i\right)\\
+\amp= \sum_{i=0}^d a_i \left(t^i-\lambda^i\right)\\
+\amp= \sum_{i=0}^d a_i (t-\lambda)\left(\sum_{j=0}^{i-1}t^j\lambda^{i-1-j}\right)\\
+\amp= (t-\lambda)\sum_{i=0}^d a_i \left(\sum_{j=0}^{i-1}t^j\lambda^{i-1-j}\right)
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-poly-root-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 8.1.3.1"><a tabindex="-1" href="#lem-poly-root-2" title="Copy heading and permalink for 証明 8.1.3.1" aria-label="Copy heading and permalink for 証明 8.1.3.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-poly.html#lem-poly-root">In Context</a></span>
+</body>
+</html>

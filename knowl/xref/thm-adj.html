@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">定理</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6.13</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">余因子行列と逆行列.</span>
+</h2>
+<div class="para logical">
+<div class="para">任意の正方行列 <span class="process-math">\(A\in\mathbb{R}^{n\times n}\)</span> について</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{adj}(A)A = A\,\mathrm{adj}(A) = \det(A)I.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-adj-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">特に <span class="process-math">\(\det(A)\ne 0\)</span> のとき、</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1} = \frac1{\det(A)}\mathrm{adj}(A).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-adj-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="定理 7.6.13: 余因子行列と逆行列"><a tabindex="-1" href="#thm-adj" title="Copy heading and permalink for 定理 7.6.13: 余因子行列と逆行列" aria-label="Copy heading and permalink for 定理 7.6.13: 余因子行列と逆行列">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">証明<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(\mathrm{adj}(A)A\)</span> の <span class="process-math">\((i,j)\)</span> 成分は</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n \widetilde{a}_{i,k}a_{k,j}
+\end{equation*}
+</div>
+<div class="para">である。特に <span class="process-math">\(j=i\)</span> の場合は</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n \widetilde{a}_{i,k}a_{k,i}
+\end{equation*}
+</div>
+<div class="para">であるが、これは <span class="process-math">\(A\)</span> の行列式の <span class="process-math">\(i\)</span> 列目に対する余因子展開である。 したがって、<span class="process-math">\(\mathrm{adj}(A)A\)</span> の <span class="process-math">\((i,i)\)</span> 成分は <span class="process-math">\(\det(A)\)</span> である。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-adj-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(i\ne j\)</span> の場合を考える。<span class="process-math">\(A\)</span> の <span class="process-math">\(i\)</span> 列目を <span class="process-math">\(j\)</span> 列目に置き換えた行列を <span class="process-math">\(B=[b_{i,j}]\)</span> とおくと、</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sum_{k=1}^n \widetilde{a}_{i,k}a_{k,j}\amp= \sum_{k=1}^n(-1)^{i+k}\det(\widetilde{A}_{k,i})a_{k,j}\\
+\amp= \sum_{k=1}^n(-1)^{i+k}\det(\widetilde{B}_{k,i})b_{k,j}\\
+\amp= \sum_{k=1}^n(-1)^{i+k}\det(\widetilde{B}_{k,i})b_{k,i}\\
+\amp= \det(B)=0
+\end{align*}
+</div>
+<div class="para">一つ目の等号は余因子行列の定義である。 二つ目の等号は <span class="process-math">\(A\)</span> と <span class="process-math">\(B\)</span> が <span class="process-math">\(i\)</span> 列目のみ異なることから従う。 三つ目の等号は <span class="process-math">\(B\)</span> の <span class="process-math">\(i\)</span> 列目が <span class="process-math">\(j\)</span> 列目と等しいことから従う。 四つ目の等号は <span class="process-math">\(B\)</span> の <span class="process-math">\(i\)</span> 列目の余因子展開から従う。 最後の等号は <span class="process-math">\(B\)</span> が二つ同じ列を持つことから、行列式の交代性より従う。 したがって、<span class="process-math">\(\mathrm{adj}(A)A\)</span> の非対角成分は0である。</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-adj-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<span class="process-math">\(A\,\mathrm{adj}(A)\)</span> についても同様に示せる。<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-adj-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="証明 7.6.13.1"><a tabindex="-1" href="#thm-adj-4" title="Copy heading and permalink for 証明 7.6.13.1" aria-label="Copy heading and permalink for 証明 7.6.13.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-determinant-alg.html#thm-adj">In Context</a></span>
+</body>
+</html>
